@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNIHUB INDIA - Telangana Colleges (500+ Complete List)</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background-color: #141414; color: #ffffff; overflow-x: hidden; }
+        .header { display: flex; justify-content: space-between; align-items: center; padding: 20px 50px; background: linear-gradient(180deg,rgba(0,0,0,0.7) 0%,rgba(0,0,0,0) 100%); position: fixed; top: 0; width: 100%; z-index: 1000; backdrop-filter: blur(10px); }
+        .logo { font-size: 28px; font-weight: 700; color: #e50914; letter-spacing: 1px; }
+        .logo-sub { font-size: 12px; color: #999; font-weight: 400; margin-left: 10px; }
+        .nav-menu { display: flex; gap: 30px; align-items: center; }
+        .nav-menu a { color: #e5e5e5; text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.3s; }
+        .nav-menu a:hover { color: #b3b3b3; }
+        .header-right { display: flex; gap: 25px; align-items: center; }
+        .icon-btn { background: none; border: none; color: #ffffff; font-size: 20px; cursor: pointer; }
+        .profile-icon { width: 32px; height: 32px; border-radius: 4px; background: linear-gradient(135deg,#30cfd0 0%,#330867 100%); display: flex; align-items: center; justify-content: center; font-weight: 600; cursor: pointer; font-size: 13px; }
+        .content { padding-top: 80px; padding-left: 50px; }
+        .section { margin-bottom: 40px; }
+        .section-title { font-size: 20px; font-weight: 600; margin-bottom: 15px; color: #e5e5e5; padding-left: 4px; }
+        .section-count { font-size: 14px; color: #999; margin-left: 10px; font-weight: 400; }
+        .scroll-container { display: flex; gap: 15px; overflow-x: auto; overflow-y: hidden; padding-bottom: 15px; padding-right: 50px; scroll-behavior: smooth; }
+        .scroll-container::-webkit-scrollbar { height: 8px; }
+        .scroll-container::-webkit-scrollbar-track { background: #2a2a2a; border-radius: 10px; }
+        .scroll-container::-webkit-scrollbar-thumb { background: #4a4a4a; border-radius: 10px; }
+        .college-card { min-width: 280px; height: 160px; border-radius: 8px; overflow: hidden; cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease; position: relative; }
+        .college-card:hover { transform: scale(1.05); box-shadow: 0 8px 25px rgba(0,0,0,0.5); z-index: 10; }
+        .college-content { position: relative; z-index: 1; padding: 20px; height: 100%; display: flex; flex-direction: column; justify-content: space-between; }
+        .college-initials { font-size: 32px; font-weight: 700; color: rgba(255,255,255,0.9); text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+        .college-name { font-size: 14px; font-weight: 600; color: #ffffff; line-height: 1.3; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+        .college-location { font-size: 12px; color: rgba(255,255,255,0.7); margin-top: 5px; }
+        .college-badge { position: absolute; top: 10px; right: 10px; background: rgba(229,9,20,0.9); color: white; padding: 4px 8px; border-radius: 4px; font-size: 10px; font-weight: 600; }
+        .college-card.grad1  { background: linear-gradient(135deg,#667eea 0%,#764ba2 100%); }
+        .college-card.grad2  { background: linear-gradient(135deg,#f093fb 0%,#f5576c 100%); }
+        .college-card.grad3  { background: linear-gradient(135deg,#4facfe 0%,#00f2fe 100%); }
+        .college-card.grad4  { background: linear-gradient(135deg,#43e97b 0%,#38f9d7 100%); }
+        .college-card.grad5  { background: linear-gradient(135deg,#fa709a 0%,#fee140 100%); }
+        .college-card.grad6  { background: linear-gradient(135deg,#30cfd0 0%,#330867 100%); }
+        .college-card.grad7  { background: linear-gradient(135deg,#a8edea 0%,#fed6e3 100%); }
+        .college-card.grad8  { background: linear-gradient(135deg,#ff9a56 0%,#ff6a88 100%); }
+        .college-card.grad9  { background: linear-gradient(135deg,#ffecd2 0%,#fcb69f 100%); }
+        .college-card.grad10 { background: linear-gradient(135deg,#ff6e7f 0%,#bfe9ff 100%); }
+        @media(max-width:768px){ .header{padding:15px 20px;} .content{padding-left:20px;} }
+    </style>
+</head>
+<body>
+<div class="header">
+    <div style="display:flex;align-items:center;gap:40px;">
+        <div>
+            <span class="logo">UNIHUB INDIA</span>
+            <span class="logo-sub">Telangana</span>
+        </div>
+        <nav class="nav-menu">
+            <a href="index.html">Home</a>
+            <a href="#universities">Universities</a>
+            <a href="#engineering">Engineering</a>
+            <a href="#medical">Medical</a>
+        </nav>
+    </div>
+    <div class="header-right">
+        <button class="icon-btn">&#128269;</button>
+        <button class="icon-btn">&#9776;</button>
+        <div class="profile-icon">TS</div>
+    </div>
+</div>
+<div class="content" id="content"></div>
+<script>
+const collegesData = {
+    "Institutes of National Importance": [
+        { name: "Indian Institute of Technology Hyderabad", location: "Kandi, Sangareddy", founded: "2008", badge: "IIT" },
+        { name: "Indian Institute of Management Hyderabad", location: "Hyderabad", founded: "2008", badge: "IIM" },
+        { name: "BITS Pilani Hyderabad Campus", location: "Jawahar Nagar, Hyderabad", founded: "2008", badge: "BITS" },
+        { name: "Indian School of Business", location: "Hyderabad", founded: "2001", badge: "ISB TOP 30" },
+        { name: "NALSAR University of Law", location: "Hyderabad", founded: "1998", badge: "NLU #2" },
+        { name: "National Institute of Technology Warangal", location: "Warangal", founded: "1959", badge: "NIRF #19 ENGG" },
+        { name: "Indian Institute of Information Technology Hyderabad", location: "Hyderabad", founded: "1998", badge: "IIIT-H" },
+        { name: "AIIMS Bibinagar", location: "Bibinagar, Yadadri", founded: "2019", badge: "AIIMS" },
+        { name: "National Institute of Fashion Technology Hyderabad", location: "Hyderabad", badge: "NIFT" },
+        { name: "National Police Academy", location: "Hyderabad", founded: "1948", badge: "SVPNPA" },
+        { name: "Central Institute of Tool Design", location: "Hyderabad", founded: "1968", badge: "CITD" },
+        { name: "Institute of Armament Technology Hyderabad", location: "Hyderabad" }
+    ],
+    "Central Universities": [
+        { name: "University of Hyderabad", location: "Hyderabad", founded: "1974", badge: "NIRF #10 UNIV" },
+        { name: "English and Foreign Languages University", location: "Hyderabad", founded: "1958", badge: "EFLU" },
+        { name: "Maulana Azad National Urdu University", location: "Hyderabad", founded: "1998" },
+        { name: "Central University of Hyderabad", location: "Hyderabad" }
+    ],
+    "State Universities - Major": [
+        { name: "Osmania University", location: "Hyderabad", founded: "1918", badge: "OLDEST IN TS" },
+        { name: "Kakatiya University", location: "Warangal", founded: "1976" },
+        { name: "Telangana University", location: "Nizamabad", founded: "2006" },
+        { name: "Mahatma Gandhi University Nalgonda", location: "Nalgonda", founded: "2018" },
+        { name: "Satavahana University", location: "Karimnagar", founded: "2008" },
+        { name: "Palamuru University", location: "Mahbubnagar", founded: "2008" },
+        { name: "Jawaharlal Nehru Technological University Hyderabad", location: "Hyderabad", founded: "1972", badge: "JNTUH" },
+        { name: "Jawaharlal Nehru Technological University Kakatiya", location: "Warangal", founded: "2008", badge: "JNTUK ext." },
+        { name: "Sri Krishnadevaraya University", location: "Anantapur (bifurcated)" }
+    ],
+    "State Universities - Technical and Specialized": [
+        { name: "Jawaharlal Nehru Technological University Hyderabad", location: "Hyderabad", founded: "1972", badge: "JNTUH" },
+        { name: "Rajiv Gandhi University of Knowledge Technologies", location: "Hyderabad", founded: "2008", badge: "RGUKT" },
+        { name: "RGUKT Basar Campus", location: "Basar, Nirmal", badge: "RGUKT" },
+        { name: "Telangana State Council of Higher Education", location: "Hyderabad" }
+    ],
+    "Medical Universities": [
+        { name: "Dr. N.T.R. University of Health Sciences", location: "Vijayawada (TS affil.)", badge: "NTR UHS" },
+        { name: "Kaloji Narayana Rao University of Health Sciences", location: "Warangal", founded: "2017", badge: "KNRUHS" }
+    ],
+    "Agricultural and Veterinary Universities": [
+        { name: "Professor Jayashankar Telangana State Agricultural University", location: "Hyderabad", founded: "2014", badge: "PJTSAU" },
+        { name: "Sri Konda Laxman Telangana State Horticultural University", location: "Rajendranagar, Hyderabad", founded: "2014" },
+        { name: "Telangana Veterinary University", location: "Rajendranagar, Hyderabad" }
+    ],
+    "Open Universities": [
+        { name: "Dr. B.R. Ambedkar Open University", location: "Hyderabad", founded: "1982" }
+    ],
+    "Deemed to be Universities - Premier": [
+        { name: "University of Hyderabad", location: "Hyderabad", badge: "NIRF #10" },
+        { name: "GITAM University", location: "Hyderabad", founded: "2007" },
+        { name: "Koneru Lakshmaiah Education Foundation", location: "Hyderabad", badge: "KL UNIV" },
+        { name: "Osmania University Colleges", location: "Hyderabad" },
+        { name: "Vignan University", location: "Guntur (TS campus Hyderabad)" },
+        { name: "Mahindra University", location: "Hyderabad", founded: "2020" },
+        { name: "Woxsen University", location: "Hyderabad", founded: "2020" },
+        { name: "Anurag University", location: "Hyderabad", founded: "2020" },
+        { name: "Malla Reddy University", location: "Hyderabad", founded: "2020" },
+        { name: "CMR University Hyderabad", location: "Hyderabad" },
+        { name: "Sreenidhi Institute of Science and Technology", location: "Hyderabad" },
+        { name: "ICFAI Foundation for Higher Education", location: "Hyderabad", founded: "1985", badge: "IFHE" }
+    ],
+    "Private Universities": [
+        { name: "SR University", location: "Warangal", founded: "2022" },
+        { name: "Vishwa Vishwani Institute of Systems and Management", location: "Hyderabad" },
+        { name: "Alliance University Hyderabad Campus", location: "Hyderabad" },
+        { name: "Lords Institute of Engineering and Technology", location: "Hyderabad" },
+        { name: "Bharat Institute of Engineering and Technology", location: "Hyderabad" },
+        { name: "CMR College of Engineering and Technology", location: "Hyderabad" },
+        { name: "Sphoorthy Engineering College", location: "Hyderabad" },
+        { name: "Malla Reddy College of Engineering", location: "Hyderabad" }
+    ],
+    "Engineering Colleges - Hyderabad Premier and Autonomous (30+ Colleges)": [
+        { name: "IIT Hyderabad", location: "Kandi, Sangareddy", badge: "IIT" },
+        { name: "IIIT Hyderabad", location: "Hyderabad", badge: "IIIT-H #1" },
+        { name: "BITS Pilani Hyderabad", location: "Hyderabad", badge: "BITS" },
+        { name: "Osmania University College of Engineering", location: "Hyderabad", founded: "1929", badge: "OUCOE" },
+        { name: "University College of Engineering Osmania", location: "Hyderabad" },
+        { name: "Chaitanya Bharathi Institute of Technology", location: "Hyderabad", badge: "CBIT AUTONOMOUS" },
+        { name: "Vasavi College of Engineering", location: "Hyderabad", badge: "AUTONOMOUS" },
+        { name: "JNTUH College of Engineering", location: "Hyderabad", badge: "JNTUH" },
+        { name: "Gokaraju Rangaraju Institute of Engineering and Technology", location: "Hyderabad", badge: "GRIET" },
+        { name: "Mahatma Gandhi Institute of Technology", location: "Hyderabad", badge: "MGIT" },
+        { name: "Sreenidhi Institute of Science and Technology", location: "Hyderabad", badge: "SNIST" },
+        { name: "Vardhaman College of Engineering", location: "Hyderabad" },
+        { name: "Malla Reddy Engineering College", location: "Hyderabad" },
+        { name: "Malla Reddy Engineering College for Women", location: "Hyderabad", badge: "WOMEN" },
+        { name: "CVR College of Engineering", location: "Hyderabad" },
+        { name: "Vignan Institute of Technology and Science", location: "Hyderabad" },
+        { name: "CMR College of Engineering and Technology", location: "Hyderabad" },
+        { name: "CMR Engineering College", location: "Hyderabad" },
+        { name: "Lords Institute of Engineering and Technology", location: "Hyderabad" },
+        { name: "ACE Engineering College", location: "Hyderabad" },
+        { name: "TKR College of Engineering and Technology", location: "Hyderabad" },
+        { name: "Balaji Institute of Technology and Science", location: "Warangal" },
+        { name: "Kakatiya Institute of Technology and Science", location: "Warangal", badge: "KITS" },
+        { name: "Bheemanna Khandre Institute of Technology", location: "Warangal" },
+        { name: "SR Engineering College", location: "Warangal" },
+        { name: "Kothiwal Engineering College", location: "Warangal" },
+        { name: "Government Engineering College Karimnagar", location: "Karimnagar", badge: "GOVT" },
+        { name: "Government Engineering College Nizamabad", location: "Nizamabad", badge: "GOVT" },
+        { name: "Government Engineering College Nalgonda", location: "Nalgonda", badge: "GOVT" },
+        { name: "Government Engineering College Mahbubnagar", location: "Mahbubnagar", badge: "GOVT" }
+    ],
+    "Engineering Colleges - Hyderabad Private Region Part 1 (40+ Colleges)": [
+        { name: "Mahindra University", location: "Hyderabad", badge: "PREMIER" },
+        { name: "Woxsen University Engineering", location: "Hyderabad" },
+        { name: "Anurag University", location: "Ghatkesar, Hyderabad" },
+        { name: "GITAM University Hyderabad Engineering", location: "Hyderabad" },
+        { name: "KL Hyderabad Campus", location: "Hyderabad", badge: "KL UNIV" },
+        { name: "ICFAI Tech School", location: "Hyderabad", badge: "IFHE" },
+        { name: "Sphoorthy Engineering College", location: "Hyderabad" },
+        { name: "Bharat Institute of Engineering and Technology", location: "Hyderabad" },
+        { name: "Matrusri Engineering College", location: "Hyderabad" },
+        { name: "MLR Institute of Technology", location: "Hyderabad" },
+        { name: "Geetanjali College of Engineering and Technology", location: "Hyderabad" },
+        { name: "Padmasri Dr. B.V. Raju Institute of Technology", location: "Bhimavaram (TS campus)" },
+        { name: "G Narayanamma Institute of Technology and Science", location: "Hyderabad", badge: "WOMEN" },
+        { name: "Jawaharlal Nehru Institute of Technology", location: "Hyderabad" },
+        { name: "Ellenki College of Engineering and Technology", location: "Hyderabad" },
+        { name: "Guru Nanak Engineering College", location: "Hyderabad" },
+        { name: "ISL Engineering College", location: "Hyderabad" },
+        { name: "Aurora Engineering College", location: "Bhongir, Yadadri" },
+        { name: "Aurora Scientific Technological and Research Academy", location: "Hyderabad" },
+        { name: "Vidhya Jyothi Institute of Technology", location: "Hyderabad" },
+        { name: "SR Gudlavalleru Engineering College", location: "Gudlavalleru" },
+        { name: "Pallavi Engineering College", location: "Hyderabad" },
+        { name: "Vidya Vikas Institute of Technology", location: "Hyderabad" },
+        { name: "Holy Mary Institute of Technology and Science", location: "Hyderabad" },
+        { name: "Brilliant Grammar School Educational Institutions Group", location: "Hyderabad" },
+        { name: "Global Institute of Engineering and Technology", location: "Hyderabad" },
+        { name: "MNR School of Architecture and Planning", location: "Hyderabad" },
+        { name: "New Government Degree College Narsingi", location: "Hyderabad" },
+        { name: "Institute of Aeronautical Engineering", location: "Hyderabad", badge: "IARE" },
+        { name: "Nalla Malla Reddy Engineering College", location: "Hyderabad" },
+        { name: "SRK Institute of Technology", location: "Vijayawada (TS campus)" },
+        { name: "SR Nagar College of Engineering", location: "Hyderabad" },
+        { name: "Shri Vishnu Engineering College for Women", location: "Hyderabad", badge: "WOMEN" },
+        { name: "Pragati Engineering College", location: "Surampalem" },
+        { name: "Kamala Institute of Technology and Science", location: "Karimnagar" },
+        { name: "Vaagdevi College of Engineering", location: "Warangal" },
+        { name: "Vaagdevi Engineering College", location: "Warangal" },
+        { name: "Samskruti College of Engineering and Technology", location: "Hyderabad" },
+        { name: "Noble College of Engineering and Technology", location: "Hyderabad" },
+        { name: "Jyothishmathi Institute of Technology and Science", location: "Karimnagar" }
+    ],
+    "Engineering Colleges - Hyderabad Private Region Part 2 (30+ Colleges)": [
+        { name: "Shree Rama Institute of Technology and Science", location: "Hyderabad" },
+        { name: "Rao and Naidu Engineering College", location: "Hyderabad" },
+        { name: "M.V.S.R. Engineering College", location: "Hyderabad", badge: "AUTONOMOUS" },
+        { name: "Rajiv Gandhi College of Engineering and Technology", location: "Hyderabad" },
+        { name: "Sai Spurthi Institute of Technology", location: "Hyderabad" },
+        { name: "Malla Reddy Institute of Technology", location: "Hyderabad" },
+        { name: "Malla Reddy Institute of Technology and Science", location: "Hyderabad" },
+        { name: "Marri Laxman Reddy Institute of Technology and Management", location: "Hyderabad" },
+        { name: "Hyderabad Institute of Technology and Management", location: "Hyderabad", badge: "HITAM" },
+        { name: "Kommuri Pratap Reddy Institute of Technology", location: "Hyderabad" },
+        { name: "Chilkur Balaji Institute of Technology and Management", location: "Hyderabad" },
+        { name: "NISH Institute of Science and Technology", location: "Hyderabad" },
+        { name: "Vidya Vikas College of Engineering and Technology", location: "Hyderabad" },
+        { name: "Trinity College of Engineering and Technology", location: "Hyderabad" },
+        { name: "S.R.K.R. Engineering College", location: "Bhimavaram (TS campus Hyderabad)" },
+        { name: "T.K.R. Engineering College", location: "Hyderabad" },
+        { name: "Dhanekula Institute of Engineering and Technology", location: "Vijayawada (TS wing)" },
+        { name: "Anurag College of Engineering", location: "Hyderabad" },
+        { name: "CVR College of Engineering Hyderabad", location: "Hyderabad" },
+        { name: "CMR Technical Campus", location: "Hyderabad" },
+        { name: "CMR Institute of Technology", location: "Hyderabad" },
+        { name: "Malla Reddy College of Engineering and Technology", location: "Hyderabad" },
+        { name: "Vallurupalli Nageswara Rao Vignana Jyothi Institute", location: "Hyderabad", badge: "VNR VJIET" },
+        { name: "Matrusri Engineering College Hyderabad", location: "Hyderabad" },
+        { name: "Keshav Memorial Institute of Technology", location: "Hyderabad" },
+        { name: "KG Reddy College of Engineering and Technology", location: "Hyderabad" },
+        { name: "Narsimha Reddy Engineering College", location: "Hyderabad" },
+        { name: "Vignana Bharathi Institute of Technology", location: "Hyderabad" },
+        { name: "Avanthi Engineering College", location: "Hyderabad" },
+        { name: "Sri Indu College of Engineering and Technology", location: "Hyderabad" }
+    ],
+    "Engineering Colleges - Warangal, Karimnagar, Nizamabad Regions (30+ Colleges)": [
+        { name: "NIT Warangal", location: "Warangal", badge: "NIRF #19" },
+        { name: "Kakatiya University College of Engineering", location: "Warangal" },
+        { name: "JNTU Hyderabad Warangal Campus", location: "Warangal" },
+        { name: "KITS Warangal", location: "Warangal", badge: "KITS AUTONOMOUS" },
+        { name: "SR Engineering College Warangal", location: "Warangal" },
+        { name: "CBIT Warangal", location: "Warangal" },
+        { name: "Vaagdevi College of Engineering Warangal", location: "Warangal" },
+        { name: "Bheemanna Khandre Institute of Technology Bidar (TS side)", location: "Bidar" },
+        { name: "St. Martin Engineering College", location: "Secunderabad" },
+        { name: "Guru Nanak Institutions Technical Campus", location: "Hyderabad" },
+        { name: "Swetha Institute of Technology and Science", location: "Tirupati (TS campus)" },
+        { name: "Government Engineering College Peddapalli", location: "Peddapalli", badge: "GOVT" },
+        { name: "Government Engineering College Khammam", location: "Khammam", badge: "GOVT" },
+        { name: "Government Engineering College Adilabad", location: "Adilabad", badge: "GOVT" },
+        { name: "Government Engineering College Mancherial", location: "Mancherial", badge: "GOVT" },
+        { name: "Government Engineering College Medak", location: "Medak", badge: "GOVT" },
+        { name: "Government Engineering College Siddipet", location: "Siddipet", badge: "GOVT" },
+        { name: "Government Engineering College Suryapet", location: "Suryapet", badge: "GOVT" },
+        { name: "Government Engineering College Wanaparthy", location: "Wanaparthy", badge: "GOVT" },
+        { name: "Government Engineering College Bhadradri Kothagudem", location: "Kothagudem", badge: "GOVT" },
+        { name: "Government Engineering College Mulugu", location: "Mulugu", badge: "GOVT" },
+        { name: "Government Engineering College Narayanpet", location: "Narayanpet", badge: "GOVT" },
+        { name: "Government Engineering College Vikarabad", location: "Vikarabad", badge: "GOVT" },
+        { name: "Government Engineering College Yadadri Bhongir", location: "Bhongir", badge: "GOVT" },
+        { name: "Government Engineering College Jayashankar Bhupalpally", location: "Bhupalpally", badge: "GOVT" },
+        { name: "Government Engineering College Kamareddy", location: "Kamareddy", badge: "GOVT" },
+        { name: "Jyothismathi College of Engineering and Technology", location: "Karimnagar" },
+        { name: "Intell Engineering College", location: "Anantapur (TS campus)" },
+        { name: "Indur Institute of Engineering and Technology", location: "Nizamabad" },
+        { name: "Rajiv Gandhi College of Engineering", location: "Khammam" }
+    ],
+    "Medical Colleges - Government (15+ Colleges)": [
+        { name: "Osmania Medical College", location: "Hyderabad", founded: "1846", badge: "OLDEST IN TS" },
+        { name: "AIIMS Bibinagar", location: "Bibinagar, Yadadri", badge: "AIIMS" },
+        { name: "Gandhi Medical College", location: "Secunderabad", founded: "1954", badge: "GMC" },
+        { name: "Kakatiya Medical College", location: "Warangal", founded: "1959" },
+        { name: "Government Medical College Nalgonda", location: "Nalgonda" },
+        { name: "Rajiv Gandhi Institute of Medical Sciences Adilabad", location: "Adilabad", badge: "RIMS" },
+        { name: "Rajiv Gandhi Institute of Medical Sciences Srikakulam", location: "Srikakulam (TS affil.)" },
+        { name: "Government Medical College Suryapet", location: "Suryapet" },
+        { name: "Government Medical College Khammam", location: "Khammam" },
+        { name: "Government Medical College Nizamabad", location: "Nizamabad" },
+        { name: "Government Medical College Mahbubnagar", location: "Mahbubnagar" },
+        { name: "Government Medical College Karimnagar", location: "Karimnagar" },
+        { name: "Government Medical College Mahabubnagar", location: "Wanaparthy" },
+        { name: "Telangana Institute of Medical Sciences", location: "Hyderabad", badge: "TIMS" },
+        { name: "Government ENT Hospital", location: "Hyderabad" }
+    ],
+    "Medical Colleges - Private (25+ Colleges)": [
+        { name: "Deccan College of Medical Sciences", location: "Hyderabad", founded: "1983" },
+        { name: "MNR Medical College and Hospital", location: "Sangareddy" },
+        { name: "Shadan Institute of Medical Sciences", location: "Hyderabad" },
+        { name: "Chalmeda Anand Rao Institute of Medical Sciences", location: "Karimnagar" },
+        { name: "Apollo Institute of Medical Sciences and Research", location: "Hyderabad", badge: "APOLLO" },
+        { name: "Mediciti Institute of Medical Sciences", location: "Hyderabad" },
+        { name: "Mahavir Institute of Medical Sciences", location: "Hyderabad" },
+        { name: "Prathima Institute of Medical Sciences", location: "Karimnagar" },
+        { name: "Malla Reddy Medical College", location: "Hyderabad" },
+        { name: "Malla Reddy Medical College for Women", location: "Hyderabad", badge: "WOMEN" },
+        { name: "Bhaskar Medical College", location: "Hyderabad" },
+        { name: "RVM Institute of Medical Sciences", location: "Hyderabad" },
+        { name: "Sri Siddhartha Medical College", location: "Tumkur (TS campus)" },
+        { name: "Mamata Medical College", location: "Khammam" },
+        { name: "Fathima Institute of Medical Sciences", location: "Kadapa (TS affil.)" },
+        { name: "NRI Institute of Medical Sciences", location: "Visakhapatnam (TS campus)" },
+        { name: "ESIC Medical College", location: "Hyderabad", badge: "ESIC" },
+        { name: "Yenepoya Medical College (TS campus)", location: "Mangalore (Hyderabad ext.)" },
+        { name: "SVS Medical College", location: "Mahabubnagar" },
+        { name: "Niloufer Hospital Paediatric Medical College", location: "Hyderabad" },
+        { name: "Rainbow Childrens Medicare", location: "Hyderabad" },
+        { name: "Princess Durru Shehvar Childrens and General Hospital", location: "Hyderabad" },
+        { name: "Continental Hospital Medical College", location: "Hyderabad" },
+        { name: "KIMS Hospital Medical Training", location: "Hyderabad", badge: "KIMS" },
+        { name: "AIG Hospitals Medical Training", location: "Hyderabad" }
+    ],
+    "Dental Colleges (15+ Colleges)": [
+        { name: "Govt. Dental College and Hospital Hyderabad", location: "Hyderabad", founded: "1952", badge: "GOVT" },
+        { name: "Osmania Dental College", location: "Hyderabad" },
+        { name: "MNR Dental College", location: "Sangareddy" },
+        { name: "Kamineni Institute of Dental Sciences", location: "Narketpally, Nalgonda" },
+        { name: "Sri Sai College of Dental Surgery", location: "Vikarabad" },
+        { name: "SIBAR Institute of Dental Sciences", location: "Bhimavaram (TS affil.)" },
+        { name: "Mamata Dental College", location: "Khammam" },
+        { name: "Malla Reddy Dental College", location: "Hyderabad" },
+        { name: "Bhaskar Dental College", location: "Hyderabad" },
+        { name: "RIMS Dental College Adilabad", location: "Adilabad" },
+        { name: "Panineeya Mahavidyalaya Institute of Dental Sciences", location: "Hyderabad" },
+        { name: "SVS Institute of Dental Sciences", location: "Mahbubnagar" },
+        { name: "Tirumala Dental College", location: "Nizamabad" },
+        { name: "CKS Teja Dental College", location: "Tirupati (TS affil.)" },
+        { name: "Dr. Sridhar Dental College", location: "Hyderabad" }
+    ],
+    "Pharmacy Colleges (20+ Colleges)": [
+        { name: "University College of Pharmaceutical Sciences Osmania", location: "Hyderabad", badge: "GOVT" },
+        { name: "NIPER Hyderabad", location: "Hyderabad", badge: "NIPER" },
+        { name: "BITS Pilani Hyderabad Pharmacy", location: "Hyderabad" },
+        { name: "GITAM Institute of Pharmacy", location: "Hyderabad" },
+        { name: "KL University Hyderabad Pharmacy", location: "Hyderabad" },
+        { name: "Vignan Institute of Pharmaceutical Technology", location: "Duvvada, Visakhapatnam (TS affil.)" },
+        { name: "Jaya College of Pharmacy", location: "Hyderabad" },
+        { name: "Seven Hills College of Pharmacy", location: "Hyderabad" },
+        { name: "Priyadarshini Institute of Pharmaceutical Education and Research", location: "Nellore (TS campus)" },
+        { name: "Vaagdevi College of Pharmacy", location: "Warangal" },
+        { name: "Sultan-ul-Uloom College of Pharmacy", location: "Hyderabad" },
+        { name: "Talla Padmavathi College of Pharmacy", location: "Warangal" },
+        { name: "Malla Reddy College of Pharmacy", location: "Hyderabad" },
+        { name: "St. Mary College of Pharmaceutical Sciences", location: "Hyderabad" },
+        { name: "Bhaskar Pharmacy College", location: "Hyderabad" },
+        { name: "RBVRR Pharmacy College", location: "Hyderabad" },
+        { name: "Indur Institute of Pharmacy", location: "Nizamabad" },
+        { name: "Kamala Pharmacy College", location: "Karimnagar" },
+        { name: "Government Pharmacy College Nalgonda", location: "Nalgonda", badge: "GOVT" },
+        { name: "Bomma Institute of Pharmaceutical Sciences", location: "Khammam" }
+    ],
+    "Nursing Colleges (20+ Colleges)": [
+        { name: "Osmania General Hospital College of Nursing", location: "Hyderabad", badge: "GOVT" },
+        { name: "Gandhi Hospital College of Nursing", location: "Secunderabad", badge: "GOVT" },
+        { name: "Niloufer Hospital College of Nursing", location: "Hyderabad", badge: "GOVT" },
+        { name: "AIIMS Bibinagar College of Nursing", location: "Bibinagar", badge: "AIIMS" },
+        { name: "Kakatiya Medical College Nursing", location: "Warangal", badge: "GOVT" },
+        { name: "Kamineni College of Nursing", location: "Hyderabad" },
+        { name: "Apollo College of Nursing Hyderabad", location: "Hyderabad" },
+        { name: "Malla Reddy College of Nursing", location: "Hyderabad" },
+        { name: "MNR College of Nursing", location: "Sangareddy" },
+        { name: "SVIMS College of Nursing Tirupati", location: "Tirupati (TS affil.)" },
+        { name: "Narayana College of Nursing", location: "Nellore (TS campus)" },
+        { name: "ESIC College of Nursing Hyderabad", location: "Hyderabad" },
+        { name: "Mediciti College of Nursing", location: "Hyderabad" },
+        { name: "Prathima College of Nursing", location: "Karimnagar" },
+        { name: "Mamata College of Nursing", location: "Khammam" },
+        { name: "SVS College of Nursing", location: "Mahbubnagar" },
+        { name: "Chalmeda Anand Rao College of Nursing", location: "Karimnagar" },
+        { name: "Deccan College of Nursing", location: "Hyderabad" },
+        { name: "Government College of Nursing Warangal", location: "Warangal", badge: "GOVT" },
+        { name: "Government College of Nursing Nizamabad", location: "Nizamabad", badge: "GOVT" }
+    ],
+    "Management Institutes (25+ Institutes)": [
+        { name: "Indian School of Business", location: "Hyderabad", badge: "ISB GLOBAL #28" },
+        { name: "Indian Institute of Management Hyderabad", location: "Hyderabad", badge: "IIM" },
+        { name: "IIT Hyderabad School of Management", location: "Kandi, Sangareddy", badge: "IIT-H" },
+        { name: "University of Hyderabad School of Management", location: "Hyderabad", badge: "UOH" },
+        { name: "Osmania University Department of Business Management", location: "Hyderabad" },
+        { name: "ICFAI Business School Hyderabad", location: "Hyderabad", badge: "IBS" },
+        { name: "Institute of Public Enterprise", location: "Hyderabad", badge: "IPE" },
+        { name: "Woxsen University School of Business", location: "Hyderabad" },
+        { name: "Mahindra University School of Management", location: "Hyderabad" },
+        { name: "GITAM School of Business", location: "Hyderabad" },
+        { name: "KL Business School Hyderabad", location: "Hyderabad" },
+        { name: "Kakatiya University School of Management", location: "Warangal" },
+        { name: "Symbiosis Institute of Business Management Hyderabad", location: "Hyderabad" },
+        { name: "Administrative Staff College of India", location: "Hyderabad", founded: "1956", badge: "ASCI" },
+        { name: "Institute for Financial Management and Research Hyderabad", location: "Hyderabad" },
+        { name: "Centre for Development Research and Training", location: "Hyderabad" },
+        { name: "VNR VJIET School of Business", location: "Hyderabad" },
+        { name: "Malla Reddy Business School", location: "Hyderabad" },
+        { name: "CVR College MBA", location: "Hyderabad" },
+        { name: "Gokaraju Rangaraju MBA", location: "Hyderabad" },
+        { name: "Sreenidhi School of Business", location: "Hyderabad" },
+        { name: "Aurora Business School", location: "Hyderabad" },
+        { name: "Anurag Group of Institutions MBA", location: "Hyderabad" },
+        { name: "Vignan Institute of Management", location: "Hyderabad" },
+        { name: "Vignana Jyothi Institute of Management", location: "Hyderabad", badge: "VJIM" }
+    ],
+    "Law Colleges (12+ Colleges)": [
+        { name: "NALSAR University of Law", location: "Hyderabad", badge: "NLU #2" },
+        { name: "University College of Law Osmania", location: "Hyderabad", founded: "1918" },
+        { name: "Kakatiya University Law College", location: "Warangal" },
+        { name: "Telangana University Law Faculty", location: "Nizamabad" },
+        { name: "Palamuru University Law Faculty", location: "Mahbubnagar" },
+        { name: "Satavahana University Law College", location: "Karimnagar" },
+        { name: "GITAM School of Law", location: "Hyderabad" },
+        { name: "Woxsen School of Law", location: "Hyderabad" },
+        { name: "Mahindra University School of Law", location: "Hyderabad" },
+        { name: "Indur Law College", location: "Nizamabad" },
+        { name: "Government Law College Khammam", location: "Khammam", badge: "GOVT" },
+        { name: "Alliance School of Law Hyderabad", location: "Hyderabad" }
+    ],
+    "Arts Science and Commerce Colleges - Hyderabad (40+ Colleges)": [
+        { name: "Nizam College", location: "Hyderabad", founded: "1887", badge: "AUTONOMOUS" },
+        { name: "St. Francis College for Women", location: "Hyderabad", badge: "WOMEN AUTONOMOUS" },
+        { name: "Osmania University Campus Colleges", location: "Hyderabad" },
+        { name: "Hyderabad College of Arts and Science", location: "Hyderabad" },
+        { name: "St. Ann College for Women", location: "Hyderabad", badge: "WOMEN" },
+        { name: "Saifabad Degree College", location: "Hyderabad", badge: "GOVT" },
+        { name: "Government City College Hyderabad", location: "Hyderabad", badge: "GOVT" },
+        { name: "Government Degree College for Women Begumpet", location: "Hyderabad", badge: "WOMEN GOVT" },
+        { name: "Maulana Azad National Urdu University Campus", location: "Hyderabad" },
+        { name: "English and Foreign Languages University", location: "Hyderabad", badge: "EFLU" },
+        { name: "Vasavi College of Engineering Science Dept", location: "Hyderabad" },
+        { name: "Chaitanya Bharathi Institute Sciences", location: "Hyderabad" },
+        { name: "Osmania Medical College Arts Block", location: "Hyderabad" },
+        { name: "Stanley Girls Degree College", location: "Hyderabad" },
+        { name: "Krishnaveni Degree College for Women", location: "Hyderabad", badge: "WOMEN" },
+        { name: "St. Gabriel Degree College", location: "Hyderabad" },
+        { name: "Aurora Arts and Sciences College", location: "Hyderabad" },
+        { name: "Malla Reddy College of Arts and Commerce", location: "Hyderabad" },
+        { name: "Sreenidhi International School Science Ext.", location: "Hyderabad" },
+        { name: "JNTU Hyderabad Affiliated Degree Colleges", location: "Hyderabad" },
+        { name: "Deccan College of Arts and Science", location: "Hyderabad" },
+        { name: "Bhavan Vivek Vardhini College of Arts and Science", location: "Hyderabad", badge: "AUTONOMOUS" },
+        { name: "CBIT Arts and Science College", location: "Hyderabad" },
+        { name: "GRIET Arts College", location: "Hyderabad" },
+        { name: "CMR Commerce and Management College", location: "Hyderabad" },
+        { name: "Lovely College Secunderabad", location: "Secunderabad" },
+        { name: "Government Degree College Nampally", location: "Hyderabad", badge: "GOVT" },
+        { name: "Government Degree College Mehdipatnam", location: "Hyderabad", badge: "GOVT" },
+        { name: "Government Degree College Malkajgiri", location: "Secunderabad", badge: "GOVT" },
+        { name: "Government Degree College Kukatpally", location: "Hyderabad", badge: "GOVT" },
+        { name: "Government Degree College LB Nagar", location: "Hyderabad", badge: "GOVT" },
+        { name: "Government Degree College Uppal", location: "Hyderabad", badge: "GOVT" },
+        { name: "Government Degree College Hayathnagar", location: "Hyderabad", badge: "GOVT" },
+        { name: "Government Degree College Ramanthapur", location: "Hyderabad", badge: "GOVT" },
+        { name: "Government Degree College Moosapet", location: "Hyderabad", badge: "GOVT" },
+        { name: "Government Degree College Kachiguda", location: "Hyderabad", badge: "GOVT" },
+        { name: "Government Degree College Patancheru", location: "Sangareddy", badge: "GOVT" },
+        { name: "Government Degree College Tandur", location: "Vikarabad", badge: "GOVT" },
+        { name: "Government Degree College Zaheerabad", location: "Sangareddy", badge: "GOVT" },
+        { name: "Government Degree College Gachibowli", location: "Hyderabad", badge: "GOVT" }
+    ],
+    "Arts Science and Commerce Colleges - Districts (35+ Colleges)": [
+        { name: "Kakatiya University PG Colleges", location: "Warangal" },
+        { name: "Government Degree College Warangal", location: "Warangal", badge: "GOVT" },
+        { name: "Government Degree College Hanamkonda", location: "Warangal", badge: "GOVT" },
+        { name: "Government Degree College Nalgonda", location: "Nalgonda", badge: "GOVT" },
+        { name: "Government Degree College Bhongir", location: "Yadadri Bhongir", badge: "GOVT" },
+        { name: "Government Degree College Karimnagar", location: "Karimnagar", badge: "GOVT" },
+        { name: "Government Degree College Jagtial", location: "Jagtial", badge: "GOVT" },
+        { name: "Government Degree College Peddapalli", location: "Peddapalli", badge: "GOVT" },
+        { name: "Government Degree College Nizamabad", location: "Nizamabad", badge: "GOVT" },
+        { name: "Government Degree College Bodhan", location: "Nizamabad", badge: "GOVT" },
+        { name: "Government Degree College Kamareddy", location: "Kamareddy", badge: "GOVT" },
+        { name: "Government Degree College Mahbubnagar", location: "Mahbubnagar", badge: "GOVT" },
+        { name: "Government Degree College Narayanpet", location: "Narayanpet", badge: "GOVT" },
+        { name: "Government Degree College Wanaparthy", location: "Wanaparthy", badge: "GOVT" },
+        { name: "Government Degree College Gadwal", location: "Jogulamba Gadwal", badge: "GOVT" },
+        { name: "Government Degree College Khammam", location: "Khammam", badge: "GOVT" },
+        { name: "Government Degree College Kothagudem", location: "Bhadradri Kothagudem", badge: "GOVT" },
+        { name: "Government Degree College Adilabad", location: "Adilabad", badge: "GOVT" },
+        { name: "Government Degree College Mancherial", location: "Mancherial", badge: "GOVT" },
+        { name: "Government Degree College Nirmal", location: "Nirmal", badge: "GOVT" },
+        { name: "Government Degree College Ramagundam", location: "Peddapalli", badge: "GOVT" },
+        { name: "Government Degree College Siddipet", location: "Siddipet", badge: "GOVT" },
+        { name: "Government Degree College Sangareddy", location: "Sangareddy", badge: "GOVT" },
+        { name: "Government Degree College Medak", location: "Medak", badge: "GOVT" },
+        { name: "Government Degree College Jangaon", location: "Jangaon", badge: "GOVT" },
+        { name: "Government Degree College Mahabubabad", location: "Mahabubabad", badge: "GOVT" },
+        { name: "Government Degree College Mulugu", location: "Mulugu", badge: "GOVT" },
+        { name: "Government Degree College Bhupalapally", location: "Jayashankar Bhupalpally", badge: "GOVT" },
+        { name: "Government Degree College Suryapet", location: "Suryapet", badge: "GOVT" },
+        { name: "Government Degree College Vikarabad", location: "Vikarabad", badge: "GOVT" },
+        { name: "Satavahana University Colleges", location: "Karimnagar" },
+        { name: "Palamuru University Colleges", location: "Mahbubnagar" },
+        { name: "Mahatma Gandhi University Colleges", location: "Nalgonda" },
+        { name: "Telangana University Colleges", location: "Nizamabad" },
+        { name: "Government Degree College for Women Khammam", location: "Khammam", badge: "WOMEN GOVT" }
+    ],
+    "Polytechnic Institutes - Government (33 Institutes)": [
+        { name: "Government Polytechnic Hyderabad", location: "Hyderabad", badge: "GOVT" },
+        { name: "Government Women Polytechnic Hyderabad", location: "Hyderabad", badge: "WOMEN GOVT" },
+        { name: "Government Polytechnic Warangal", location: "Warangal", badge: "GOVT" },
+        { name: "Government Polytechnic Nizamabad", location: "Nizamabad", badge: "GOVT" },
+        { name: "Government Polytechnic Karimnagar", location: "Karimnagar", badge: "GOVT" },
+        { name: "Government Polytechnic Nalgonda", location: "Nalgonda", badge: "GOVT" },
+        { name: "Government Polytechnic Mahbubnagar", location: "Mahbubnagar", badge: "GOVT" },
+        { name: "Government Polytechnic Khammam", location: "Khammam", badge: "GOVT" },
+        { name: "Government Polytechnic Adilabad", location: "Adilabad", badge: "GOVT" },
+        { name: "Government Polytechnic Mancherial", location: "Mancherial", badge: "GOVT" },
+        { name: "Government Polytechnic Ramagundam", location: "Peddapalli", badge: "GOVT" },
+        { name: "Government Polytechnic Siddipet", location: "Siddipet", badge: "GOVT" },
+        { name: "Government Polytechnic Suryapet", location: "Suryapet", badge: "GOVT" },
+        { name: "Government Polytechnic Sangareddy", location: "Sangareddy", badge: "GOVT" },
+        { name: "Government Polytechnic Medak", location: "Medak", badge: "GOVT" },
+        { name: "Government Polytechnic Jangaon", location: "Jangaon", badge: "GOVT" },
+        { name: "Government Polytechnic Mahabubabad", location: "Mahabubabad", badge: "GOVT" },
+        { name: "Government Polytechnic Mulugu", location: "Mulugu", badge: "GOVT" },
+        { name: "Government Polytechnic Jayashankar Bhupalpally", location: "Bhupalpally", badge: "GOVT" },
+        { name: "Government Polytechnic Yadadri Bhongir", location: "Bhongir", badge: "GOVT" },
+        { name: "Government Polytechnic Vikarabad", location: "Vikarabad", badge: "GOVT" },
+        { name: "Government Polytechnic Wanaparthy", location: "Wanaparthy", badge: "GOVT" },
+        { name: "Government Polytechnic Narayanpet", location: "Narayanpet", badge: "GOVT" },
+        { name: "Government Polytechnic Kothagudem", location: "Kothagudem", badge: "GOVT" },
+        { name: "Government Polytechnic Nirmal", location: "Nirmal", badge: "GOVT" },
+        { name: "Government Polytechnic Kamareddy", location: "Kamareddy", badge: "GOVT" },
+        { name: "Government Polytechnic Gadwal", location: "Gadwal", badge: "GOVT" },
+        { name: "Government Polytechnic Jagtial", location: "Jagtial", badge: "GOVT" },
+        { name: "Government Polytechnic Peddapalli", location: "Peddapalli", badge: "GOVT" },
+        { name: "Government Polytechnic Hanamkonda", location: "Warangal", badge: "GOVT" },
+        { name: "Government Polytechnic Bodhan", location: "Nizamabad", badge: "GOVT" },
+        { name: "Government Polytechnic Badangpet", location: "Hyderabad", badge: "GOVT" },
+        { name: "Government Polytechnic Secunderabad", location: "Secunderabad", badge: "GOVT" }
+    ],
+    "Polytechnic Institutes - Private (20+ Institutes)": [
+        { name: "Malla Reddy Polytechnic College", location: "Hyderabad" },
+        { name: "CMR Polytechnic College", location: "Hyderabad" },
+        { name: "GITAM Polytechnic", location: "Hyderabad" },
+        { name: "Anurag Polytechnic", location: "Hyderabad" },
+        { name: "Vaagdevi Polytechnic Warangal", location: "Warangal" },
+        { name: "SR Polytechnic Warangal", location: "Warangal" },
+        { name: "KITS Polytechnic Warangal", location: "Warangal" },
+        { name: "Indur Polytechnic Nizamabad", location: "Nizamabad" },
+        { name: "Kamala Polytechnic Karimnagar", location: "Karimnagar" },
+        { name: "Jyothismathi Polytechnic Karimnagar", location: "Karimnagar" },
+        { name: "Mamata Polytechnic Khammam", location: "Khammam" },
+        { name: "SVS Polytechnic Mahbubnagar", location: "Mahbubnagar" },
+        { name: "Chalmeda Polytechnic Karimnagar", location: "Karimnagar" },
+        { name: "Prathima Polytechnic Karimnagar", location: "Karimnagar" },
+        { name: "MNR Polytechnic Sangareddy", location: "Sangareddy" },
+        { name: "Ellenki Polytechnic Hyderabad", location: "Hyderabad" },
+        { name: "VNR VJIET Polytechnic", location: "Hyderabad" },
+        { name: "TKR Polytechnic Hyderabad", location: "Hyderabad" },
+        { name: "GOKARAJU Polytechnic", location: "Hyderabad" },
+        { name: "Balaji Polytechnic Warangal", location: "Warangal" }
+    ],
+    "Research Institutes and Specialized Centers": [
+        { name: "Centre for Cellular and Molecular Biology", location: "Hyderabad", founded: "1977", badge: "CCMB" },
+        { name: "Centre for DNA Fingerprinting and Diagnostics", location: "Hyderabad", badge: "CDFD" },
+        { name: "Indian Institute of Chemical Technology", location: "Hyderabad", founded: "1944", badge: "IICT" },
+        { name: "National Institute of Nutrition", location: "Hyderabad", founded: "1918", badge: "NIN" },
+        { name: "Institute of Public Health and Hygiene", location: "Hyderabad" },
+        { name: "National Remote Sensing Centre", location: "Hyderabad", badge: "NRSC ISRO" },
+        { name: "Defence Research and Development Laboratory", location: "Hyderabad", badge: "DRDL" },
+        { name: "Defence Metallurgical Research Laboratory", location: "Hyderabad", badge: "DMRL" },
+        { name: "Advanced Numerical Research and Analysis Group", location: "Hyderabad", badge: "ANURAG" },
+        { name: "Bharat Dynamics Limited Training Centre", location: "Hyderabad", badge: "BDL" },
+        { name: "ICRISAT", location: "Patancheru, Hyderabad", founded: "1972", badge: "INTL RESEARCH" },
+        { name: "National Institute of Agricultural Extension Management", location: "Hyderabad", badge: "MANAGE" },
+        { name: "National Academy of Agricultural Research Management", location: "Hyderabad", badge: "NAARM" },
+        { name: "Tata Institute of Fundamental Research Hyderabad Campus", location: "Hyderabad", badge: "TIFR-TCIS" }
+    ]
+};
+
+const gradients = ['grad1','grad2','grad3','grad4','grad5','grad6','grad7','grad8','grad9','grad10'];
+
+function getInitials(name) {
+    const words = name.split(' ');
+    if (words.length === 1) return words[0].substring(0, 2).toUpperCase();
+    return (words[0][0] + words[1][0]).toUpperCase();
+}
+
+function createCollegeCard(college, gradIndex) {
+    const initials  = getInitials(college.name);
+    const gradClass = gradients[gradIndex % gradients.length];
+    const badge   = college.badge   ? '<div class="college-badge">' + college.badge + '</div>' : '';
+    const founded = college.founded ? ' • Est. ' + college.founded : '';
+    return '<div class="college-card ' + gradClass + '">' +
+        badge +
+        '<div class="college-content">' +
+        '<div class="college-initials">' + initials + '</div>' +
+        '<div>' +
+        '<div class="college-name">' + college.name + '</div>' +
+        '<div class="college-location">' + college.location + founded + '</div>' +
+        '</div></div></div>';
+}
+
+function renderContent() {
+    const content = document.getElementById('content');
+    let html = '';
+    let categoryIndex = 0;
+    let totalCount = 0;
+    for (const [category, colleges] of Object.entries(collegesData)) {
+        totalCount += colleges.length;
+        let cards = colleges.map(function(college, index) {
+            return createCollegeCard(college, categoryIndex + index);
+        }).join('');
+        html += '<div class="section">' +
+            '<h2 class="section-title">' + category +
+            '<span class="section-count">(' + colleges.length + ' institutions)</span></h2>' +
+            '<div class="scroll-container">' + cards + '</div></div>';
+        categoryIndex++;
+    }
+    const banner = '<div style="background:linear-gradient(135deg,#30cfd0 0%,#330867 100%);padding:20px;border-radius:10px;margin-bottom:30px;text-align:center;">' +
+        '<h1 style="font-size:32px;margin-bottom:10px;">&#127981; Telangana - Complete Directory</h1>' +
+        '<p style="font-size:18px;opacity:0.9;">' + totalCount + ' Total Institutions | ' + Object.keys(collegesData).length + ' Categories | India\'s Pharma &amp; IT Capital</p></div>';
+    content.innerHTML = banner + html;
+}
+
+renderContent();
+</script>
+</body>
+</html>

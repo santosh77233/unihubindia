@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNIHUB INDIA - Andhra Pradesh Colleges (500+ Complete List)</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background-color: #141414; color: #ffffff; overflow-x: hidden; }
+        .header { display: flex; justify-content: space-between; align-items: center; padding: 20px 50px; background: linear-gradient(180deg,rgba(0,0,0,0.7) 0%,rgba(0,0,0,0) 100%); position: fixed; top: 0; width: 100%; z-index: 1000; backdrop-filter: blur(10px); }
+        .logo { font-size: 28px; font-weight: 700; color: #e50914; letter-spacing: 1px; }
+        .logo-sub { font-size: 12px; color: #999; font-weight: 400; margin-left: 10px; }
+        .nav-menu { display: flex; gap: 30px; align-items: center; }
+        .nav-menu a { color: #e5e5e5; text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.3s; }
+        .nav-menu a:hover { color: #b3b3b3; }
+        .header-right { display: flex; gap: 25px; align-items: center; }
+        .icon-btn { background: none; border: none; color: #ffffff; font-size: 20px; cursor: pointer; }
+        .profile-icon { width: 32px; height: 32px; border-radius: 4px; background: linear-gradient(135deg,#4facfe 0%,#00f2fe 100%); display: flex; align-items: center; justify-content: center; font-weight: 600; cursor: pointer; font-size: 13px; color: #000; }
+        .content { padding-top: 80px; padding-left: 50px; }
+        .section { margin-bottom: 40px; }
+        .section-title { font-size: 20px; font-weight: 600; margin-bottom: 15px; color: #e5e5e5; padding-left: 4px; }
+        .section-count { font-size: 14px; color: #999; margin-left: 10px; font-weight: 400; }
+        .scroll-container { display: flex; gap: 15px; overflow-x: auto; overflow-y: hidden; padding-bottom: 15px; padding-right: 50px; scroll-behavior: smooth; }
+        .scroll-container::-webkit-scrollbar { height: 8px; }
+        .scroll-container::-webkit-scrollbar-track { background: #2a2a2a; border-radius: 10px; }
+        .scroll-container::-webkit-scrollbar-thumb { background: #4a4a4a; border-radius: 10px; }
+        .college-card { min-width: 280px; height: 160px; border-radius: 8px; overflow: hidden; cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease; position: relative; }
+        .college-card:hover { transform: scale(1.05); box-shadow: 0 8px 25px rgba(0,0,0,0.5); z-index: 10; }
+        .college-content { position: relative; z-index: 1; padding: 20px; height: 100%; display: flex; flex-direction: column; justify-content: space-between; }
+        .college-initials { font-size: 32px; font-weight: 700; color: rgba(255,255,255,0.9); text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+        .college-name { font-size: 14px; font-weight: 600; color: #ffffff; line-height: 1.3; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+        .college-location { font-size: 12px; color: rgba(255,255,255,0.7); margin-top: 5px; }
+        .college-badge { position: absolute; top: 10px; right: 10px; background: rgba(229,9,20,0.9); color: white; padding: 4px 8px; border-radius: 4px; font-size: 10px; font-weight: 600; }
+        .college-card.grad1  { background: linear-gradient(135deg,#667eea 0%,#764ba2 100%); }
+        .college-card.grad2  { background: linear-gradient(135deg,#f093fb 0%,#f5576c 100%); }
+        .college-card.grad3  { background: linear-gradient(135deg,#4facfe 0%,#00f2fe 100%); }
+        .college-card.grad4  { background: linear-gradient(135deg,#43e97b 0%,#38f9d7 100%); }
+        .college-card.grad5  { background: linear-gradient(135deg,#fa709a 0%,#fee140 100%); }
+        .college-card.grad6  { background: linear-gradient(135deg,#30cfd0 0%,#330867 100%); }
+        .college-card.grad7  { background: linear-gradient(135deg,#a8edea 0%,#fed6e3 100%); }
+        .college-card.grad8  { background: linear-gradient(135deg,#ff9a56 0%,#ff6a88 100%); }
+        .college-card.grad9  { background: linear-gradient(135deg,#ffecd2 0%,#fcb69f 100%); }
+        .college-card.grad10 { background: linear-gradient(135deg,#ff6e7f 0%,#bfe9ff 100%); }
+        @media(max-width:768px){ .header{padding:15px 20px;} .content{padding-left:20px;} }
+    </style>
+</head>
+<body>
+<div class="header">
+    <div style="display:flex;align-items:center;gap:40px;">
+        <div>
+            <span class="logo">UNIHUB INDIA</span>
+            <span class="logo-sub">Andhra Pradesh</span>
+        </div>
+        <nav class="nav-menu">
+            <a href="index.html">Home</a>
+            <a href="#universities">Universities</a>
+            <a href="#engineering">Engineering</a>
+            <a href="#medical">Medical</a>
+        </nav>
+    </div>
+    <div class="header-right">
+        <button class="icon-btn">&#128269;</button>
+        <button class="icon-btn">&#9776;</button>
+        <div class="profile-icon">AP</div>
+    </div>
+</div>
+<div class="content" id="content"></div>
+<script>
+const collegesData = {
+    "Institutes of National Importance": [
+        { name: "Indian Institute of Technology Tirupati", location: "Tirupati, Chittoor", founded: "2015", badge: "IIT" },
+        { name: "National Institute of Technology Andhra Pradesh", location: "Tadepalligudem, West Godavari", founded: "2015", badge: "NIT" },
+        { name: "National Institute of Technology Warangal (AP side)", location: "Warangal", founded: "1959", badge: "NIRF #19" },
+        { name: "AIIMS Mangalagiri", location: "Mangalagiri, Guntur", founded: "2019", badge: "AIIMS" },
+        { name: "Indian Institute of Information Technology Sri City", location: "Sri City, Chittoor", founded: "2015", badge: "IIIT" },
+        { name: "Indian Institute of Information Technology Kurnool", location: "Kurnool", founded: "2015", badge: "IIIT" },
+        { name: "Indian Institute of Information Technology Rajiv Gandhi University of Knowledge Technologies", location: "Nuzvid, Krishna", badge: "RGUKT" },
+        { name: "National Institute of Fashion Technology Amaravati", location: "Amaravati", badge: "NIFT" },
+        { name: "Dr. B.R. Ambedkar National Law University", location: "Sonipat (AP affil.)" },
+        { name: "National Academy of Legal Studies and Research", location: "Hyderabad (AP origin)", founded: "1998", badge: "NALSAR" },
+        { name: "SRM University AP", location: "Amaravati, Guntur", founded: "2017" }
+    ],
+    "Central Universities": [
+        { name: "Central University of Andhra Pradesh", location: "Ananthapuramu", founded: "2009" },
+        { name: "Dr. B.R. Ambedkar University Srikakulam", location: "Srikakulam", founded: "2008" }
+    ],
+    "State Universities - Major": [
+        { name: "Andhra University", location: "Visakhapatnam", founded: "1926", badge: "OLDEST IN AP" },
+        { name: "Sri Venkateswara University", location: "Tirupati", founded: "1954" },
+        { name: "Acharya Nagarjuna University", location: "Guntur", founded: "1976" },
+        { name: "Sri Krishnadevaraya University", location: "Ananthapuramu", founded: "1981" },
+        { name: "Yogi Vemana University", location: "Kadapa", founded: "2004" },
+        { name: "Krishna University", location: "Machilipatnam", founded: "2008" },
+        { name: "Rayalaseema University", location: "Kurnool", founded: "2008" },
+        { name: "Adikavi Nannaya University", location: "Rajahmundry", founded: "2006" },
+        { name: "Vikrama Simhapuri University", location: "Nellore", founded: "2008" },
+        { name: "Dravidian University", location: "Kuppam, Chittoor", founded: "1997" },
+        { name: "Pulivendula University", location: "Pulivendula, Kadapa", founded: "2020" }
+    ],
+    "State Universities - Technical and Specialized": [
+        { name: "Jawaharlal Nehru Technological University Kakatiya", location: "Warangal (AP affil.)" },
+        { name: "Jawaharlal Nehru Technological University Anantapur", location: "Ananthapuramu", founded: "2008", badge: "JNTUA" },
+        { name: "Jawaharlal Nehru Technological University Kakinada", location: "Kakinada", founded: "2008", badge: "JNTUK" },
+        { name: "Rajiv Gandhi University of Knowledge Technologies AP", location: "Basar (AP affil.)", badge: "RGUKT" },
+        { name: "RGUKT Nuzvid Campus", location: "Nuzvid, Krishna", badge: "RGUKT" },
+        { name: "RGUKT Srikakulam Campus", location: "Etcherla, Srikakulam", badge: "RGUKT" },
+        { name: "RGUKT RK Valley Campus", location: "Idupulapaya, Kadapa", badge: "RGUKT" },
+        { name: "AP State Council of Higher Education", location: "Amaravati" }
+    ],
+    "Medical Universities": [
+        { name: "Dr. N.T.R. University of Health Sciences", location: "Vijayawada", founded: "1986", badge: "NTR UHS" },
+        { name: "Sri Venkateswara Vedic University", location: "Tirupati", founded: "2006" }
+    ],
+    "Agricultural Universities": [
+        { name: "Acharya N.G. Ranga Agricultural University", location: "Guntur", founded: "1964", badge: "ANGRAU" },
+        { name: "Sri Venkateswara Veterinary University", location: "Tirupati", founded: "2005", badge: "SVVU" },
+        { name: "Dr. Y.S.R. Horticultural University", location: "Venkataramannagudem, West Godavari", founded: "2007" }
+    ],
+    "Open University": [
+        { name: "Dr. B.R. Ambedkar Open University", location: "Hyderabad (AP affil.)", founded: "1982" }
+    ],
+    "Deemed to be Universities - Premier": [
+        { name: "GITAM University", location: "Visakhapatnam", founded: "1980", badge: "GITAM" },
+        { name: "Andhra Loyola College Vijayawada (Autonomous)", location: "Vijayawada", badge: "AUTONOMOUS" },
+        { name: "Vignan University", location: "Vadlamudi, Guntur", founded: "2008" },
+        { name: "KL University", location: "Vaddeswaram, Guntur", founded: "1980", badge: "KL UNIV" },
+        { name: "Vels University (AP campus)", location: "Tirupati" },
+        { name: "Sri Sathya Sai Institute of Higher Learning", location: "Puttaparthi", founded: "1981", badge: "SSSIHL" },
+        { name: "Rashtriya Sanskrit Vidyapeetha", location: "Tirupati", founded: "1961" },
+        { name: "Centurion University of Technology and Management AP", location: "Vizianagaram", founded: "2010" },
+        { name: "ICFAI Foundation for Higher Education Hyderabad", location: "Hyderabad (AP)" },
+        { name: "Koneru Lakshmaiah Education Foundation University", location: "Vaddeswaram, Guntur", badge: "KL UNIV" }
+    ],
+    "Private Universities": [
+        { name: "SRM University AP", location: "Amaravati", founded: "2017" },
+        { name: "Amrita University AP Campus", location: "Amaravati" },
+        { name: "Vel Tech University AP Campus", location: "Tirupati" },
+        { name: "Presidency University AP", location: "Amaravati" },
+        { name: "Vishnu Institute of Technology", location: "Bhimavaram, West Godavari" },
+        { name: "Vignan Deemed to be University", location: "Guntur" },
+        { name: "Miracle Education Society Group of Institutions", location: "Vizianagaram" },
+        { name: "Dr. Lankapalli Bullayya College", location: "Visakhapatnam", badge: "AUTONOMOUS" }
+    ],
+    "Engineering Colleges - Visakhapatnam Region (40+ Colleges)": [
+        { name: "Andhra University College of Engineering", location: "Visakhapatnam", founded: "1935", badge: "AUTONOMOUS" },
+        { name: "GITAM School of Technology Visakhapatnam", location: "Visakhapatnam", badge: "GITAM" },
+        { name: "GITAM Institute of Technology", location: "Visakhapatnam" },
+        { name: "JNTUK University College of Engineering Vizianagaram", location: "Vizianagaram" },
+        { name: "Government Model Residential Educational Institutions", location: "Visakhapatnam", badge: "RGUKT PREP" },
+        { name: "Raghu Engineering College", location: "Visakhapatnam", badge: "AUTONOMOUS" },
+        { name: "Lendi Institute of Engineering and Technology", location: "Rajam, Srikakulam", badge: "AUTONOMOUS" },
+        { name: "Sri Vasavi Institute of Engineering and Technology", location: "Nandamuru, West Godavari" },
+        { name: "MVR College of Engineering and Technology", location: "Paritala, Krishna" },
+        { name: "Dadi Institute of Engineering and Technology", location: "Visakhapatnam" },
+        { name: "Sai Spurthi Institute of Technology", location: "B Gangaram, West Godavari" },
+        { name: "Gayatri Vidya Parishad College of Engineering", location: "Visakhapatnam", badge: "AUTONOMOUS" },
+        { name: "JNTU Kakinada University College Vizianagaram", location: "Vizianagaram" },
+        { name: "Narasaraopeta Engineering College", location: "Narasaraopeta, Guntur", badge: "AUTONOMOUS" },
+        { name: "Swarna Bharathi Institute of Science and Technology", location: "Khammam (AP)" },
+        { name: "Sri Vasavi Institute of Engineering Bhimavaram", location: "Bhimavaram" },
+        { name: "Vishnu Institute of Technology Bhimavaram", location: "Bhimavaram", badge: "AUTONOMOUS" },
+        { name: "Shri Vishnu Engineering College for Women", location: "Bhimavaram", badge: "WOMEN AUTONOMOUS" },
+        { name: "Vignan Engineering College", location: "Vadlamudi, Guntur" },
+        { name: "Vignan Institute of Information Technology", location: "Visakhapatnam", badge: "AUTONOMOUS" },
+        { name: "Gayatri Vidya Parishad College for Degree and PG", location: "Visakhapatnam" },
+        { name: "ANITS - Anil Neerukonda Institute of Technology and Sciences", location: "Visakhapatnam", badge: "AUTONOMOUS" },
+        { name: "Dhanekula Institute of Engineering and Technology", location: "Ganguru, Krishna", badge: "AUTONOMOUS" },
+        { name: "RVR and JC College of Engineering", location: "Guntur", badge: "AUTONOMOUS" },
+        { name: "Srinivasa Institute of Engineering and Technology", location: "Cheyyeru, East Godavari" },
+        { name: "UCEK Jawaharlal Nehru Technological University Kakinada", location: "Kakinada" },
+        { name: "Andhra Loyola Institute of Engineering and Technology", location: "Vijayawada" },
+        { name: "Keshav Memorial Institute of Technology AP", location: "Visakhapatnam" },
+        { name: "Government Engineering College Peddapuram", location: "Peddapuram, East Godavari", badge: "GOVT" },
+        { name: "Government Engineering College Gangavathi", location: "Gangavathi, Kurnool", badge: "GOVT" }
+    ],
+    "Engineering Colleges - Vijayawada, Guntur, Krishna Region (40+ Colleges)": [
+        { name: "IIT Tirupati", location: "Tirupati", badge: "IIT" },
+        { name: "NIT Andhra Pradesh", location: "Tadepalligudem", badge: "NIT" },
+        { name: "IIIT Sri City", location: "Sri City, Chittoor", badge: "IIIT" },
+        { name: "IIIT Kurnool", location: "Kurnool", badge: "IIIT" },
+        { name: "SRM University AP Engineering", location: "Amaravati", badge: "SRM" },
+        { name: "KL University Engineering Vaddeswaram", location: "Vaddeswaram, Guntur", badge: "KL UNIV" },
+        { name: "KL University Engineering Hyderabad", location: "Hyderabad" },
+        { name: "Vignan University Engineering Vadlamudi", location: "Vadlamudi, Guntur" },
+        { name: "JNTUK University College of Engineering Kakinada", location: "Kakinada", badge: "JNTUK" },
+        { name: "PBR Visvodaya Institute of Technology and Science", location: "Kavali, Nellore" },
+        { name: "Vasireddy Venkatadri Institute of Technology", location: "Guntur", badge: "AUTONOMOUS" },
+        { name: "Kallam Haranadhareddy Institute of Technology", location: "Guntur", badge: "AUTONOMOUS" },
+        { name: "Bapatla Engineering College", location: "Bapatla, Guntur", badge: "AUTONOMOUS" },
+        { name: "Gudlavalleru Engineering College", location: "Gudlavalleru, Krishna", badge: "AUTONOMOUS" },
+        { name: "V.R. Siddhartha Engineering College", location: "Vijayawada", badge: "AUTONOMOUS" },
+        { name: "Prakasam Engineering College", location: "Kandukur, Prakasam" },
+        { name: "Sri Chundi Ranganayakulu Engineering College", location: "Guntur" },
+        { name: "Malla Reddy College of Engineering AP", location: "Guntur" },
+        { name: "R.V.R. and J.C. College of Engineering", location: "Chowdavaram, Guntur" },
+        { name: "Vignana Bharathi Institute of Technology AP", location: "Aushapur, Ranga Reddy" },
+        { name: "Sri Durga Malleswara Siddhartha Mahila Kalasala", location: "Vijayawada", badge: "WOMEN" },
+        { name: "SRKR Engineering College", location: "Bhimavaram, West Godavari", badge: "AUTONOMOUS" },
+        { name: "Koneru Lakshmaiah College of Engineering", location: "Vaddeswaram" },
+        { name: "St. Ann College of Engineering and Technology", location: "Chirala, Prakasam" },
+        { name: "Chirala Engineering College", location: "Chirala, Prakasam" },
+        { name: "Chebrolu Engineering College", location: "Chebrolu, Guntur" },
+        { name: "Sri Vasavi Engineering College", location: "Tadepalligudem, West Godavari" },
+        { name: "Sri Sai Institute of Technology and Science", location: "Rayachoti, Kadapa" },
+        { name: "PVP Siddhartha Institute of Technology", location: "Vijayawada" },
+        { name: "Sri Datta Institute of Engineering", location: "Sheriguda, Ranga Reddy" }
+    ],
+    "Engineering Colleges - Tirupati, Kurnool, Anantapur, Nellore Regions (35+ Colleges)": [
+        { name: "Sri Venkateswara University College of Engineering", location: "Tirupati", badge: "SVU" },
+        { name: "Sri Venkateswara College of Engineering Tirupati", location: "Tirupati" },
+        { name: "JNTUA University College of Engineering Ananthapuramu", location: "Ananthapuramu", badge: "JNTUA" },
+        { name: "JNTUA College of Engineering Pulivendula", location: "Pulivendula, Kadapa" },
+        { name: "Sri Krishnadevaraya University College of Engineering", location: "Ananthapuramu" },
+        { name: "Yogi Vemana University College of Engineering", location: "Kadapa" },
+        { name: "GATE Institute of Technology", location: "Gooty, Ananthapuramu" },
+        { name: "Annamacharya Institute of Technology and Sciences Rajampet", location: "Rajampet, Kadapa", badge: "AUTONOMOUS" },
+        { name: "Annamacharya Institute of Technology and Sciences Tirupati", location: "Tirupati" },
+        { name: "G. Pullaiah College of Engineering and Technology", location: "Kurnool", badge: "AUTONOMOUS" },
+        { name: "Kurnool College of Engineering for Women", location: "Kurnool", badge: "WOMEN" },
+        { name: "Brindavan College of Engineering AP", location: "Kurnool" },
+        { name: "Audisankara College of Engineering and Technology", location: "Gudur, Nellore", badge: "AUTONOMOUS" },
+        { name: "PBR Visvodaya Institute of Technology", location: "Kavali, Nellore" },
+        { name: "Sri Sarathi Institute of Engineering and Technology", location: "Nuzvid, Krishna" },
+        { name: "QIS College of Engineering and Technology", location: "Ongole, Prakasam", badge: "AUTONOMOUS" },
+        { name: "Sri Sivani College of Engineering", location: "Srikakulam" },
+        { name: "DVIT - Dhanekula Venkata Rao Institute of Technology", location: "Vijayawada" },
+        { name: "JNTUACEA - JNTUA College of Engineering Ananthapuramu", location: "Ananthapuramu" },
+        { name: "Sri Balaji College of Engineering and Technology Jaipur (AP campus)", location: "Nellore" },
+        { name: "Government Engineering College Kuppam", location: "Kuppam, Chittoor", badge: "GOVT" },
+        { name: "Government Engineering College Nandyal", location: "Nandyal, Kurnool", badge: "GOVT" },
+        { name: "Government Engineering College Vizianagaram", location: "Vizianagaram", badge: "GOVT" },
+        { name: "Government Engineering College Srikakulam", location: "Srikakulam", badge: "GOVT" },
+        { name: "Government Engineering College Kadapa", location: "Kadapa", badge: "GOVT" },
+        { name: "Government Engineering College Nellore", location: "Nellore", badge: "GOVT" },
+        { name: "Government Engineering College Rajahmundry", location: "Rajahmundry", badge: "GOVT" },
+        { name: "Government Engineering College Bhimavaram", location: "Bhimavaram", badge: "GOVT" },
+        { name: "Government Engineering College Markapur", location: "Markapur, Prakasam", badge: "GOVT" },
+        { name: "Madanapalle Institute of Technology and Science", location: "Madanapalle, Chittoor", badge: "AUTONOMOUS" },
+        { name: "Sri Mittapalli College of Engineering", location: "Guntur" },
+        { name: "Bonam Venkata Chalamayya Engineering College", location: "Odalarevu, East Godavari", badge: "AUTONOMOUS" },
+        { name: "Sri Vasavi College of Engineering Tadepalligudem", location: "Tadepalligudem" },
+        { name: "Mekala Engineering College", location: "Guntur" },
+        { name: "KKR and KSR Institute of Technology and Sciences", location: "Guntur" }
+    ],
+    "Medical Colleges - Government (20+ Colleges)": [
+        { name: "Andhra Medical College", location: "Visakhapatnam", founded: "1923", badge: "OLDEST IN AP" },
+        { name: "AIIMS Mangalagiri", location: "Mangalagiri, Guntur", badge: "AIIMS" },
+        { name: "Guntur Medical College", location: "Guntur", founded: "1946" },
+        { name: "Rangaraya Medical College", location: "Kakinada", founded: "1958" },
+        { name: "Kurnool Medical College", location: "Kurnool", founded: "1956" },
+        { name: "Sri Venkateswara Medical College", location: "Tirupati", founded: "1963" },
+        { name: "Siddhartha Medical College", location: "Vijayawada", founded: "1979" },
+        { name: "Rajiv Gandhi Institute of Medical Sciences Ongole", location: "Ongole, Prakasam", founded: "1998", badge: "RIMS" },
+        { name: "Government Medical College Nellore", location: "Nellore" },
+        { name: "Government Medical College Vizianagaram", location: "Vizianagaram" },
+        { name: "Government Medical College Srikakulam", location: "Srikakulam" },
+        { name: "Government Medical College Eluru", location: "Eluru, West Godavari" },
+        { name: "Government Medical College Ananthapuramu", location: "Ananthapuramu" },
+        { name: "Government Medical College Kadapa", location: "Kadapa" },
+        { name: "Government Medical College Machilipatnam", location: "Machilipatnam, Krishna" },
+        { name: "Government Medical College Chirala", location: "Chirala, Prakasam" },
+        { name: "Government Medical College Rajampet", location: "Rajampet, Kadapa" },
+        { name: "Government Medical College Narasaraopeta", location: "Narasaraopeta, Guntur" },
+        { name: "Government Medical College Tadepalligudem", location: "Tadepalligudem" },
+        { name: "Government Medical College Bhimavaram", location: "Bhimavaram, West Godavari" }
+    ],
+    "Medical Colleges - Private (25+ Colleges)": [
+        { name: "Sri Venkateswara Institute of Medical Sciences", location: "Tirupati", founded: "1990", badge: "SVIMS" },
+        { name: "NRI Medical College", location: "Chinakakani, Guntur" },
+        { name: "Narayana Medical College", location: "Nellore", badge: "AUTONOMOUS" },
+        { name: "Great Eastern Medical School", location: "Srikakulam" },
+        { name: "Konaseema Institute of Medical Sciences", location: "Amalapuram, East Godavari" },
+        { name: "Mamata Medical College Khammam (AP affil.)", location: "Khammam" },
+        { name: "Pinnamaneni Siddhartha Medical College", location: "Chinoutpalli, Krishna" },
+        { name: "Shadan Institute of Medical Sciences Hyderabad (AP affil.)", location: "Hyderabad" },
+        { name: "Andhra Medical College Private Wing", location: "Visakhapatnam" },
+        { name: "MNR Medical College Sangareddy (AP affil.)", location: "Sangareddy" },
+        { name: "GSL Medical College", location: "Rajahmundry", badge: "AUTONOMOUS" },
+        { name: "Santhiram Medical College", location: "Nandyal, Kurnool" },
+        { name: "Fathima Institute of Medical Sciences", location: "Kadapa" },
+        { name: "Dr. Pinnamaneni Siddhartha Institute of Medical Sciences", location: "Vijaywada" },
+        { name: "Apollo Institute of Medical Sciences Hyderabad (AP wing)", location: "Hyderabad" },
+        { name: "Seven Hills Hospital Medical College", location: "Visakhapatnam" },
+        { name: "Aditya Medical College", location: "Kakinada" },
+        { name: "Maharajah Institute of Medical Sciences", location: "Vizianagaram" },
+        { name: "Eswar Medical College", location: "Narasaraopeta, Guntur" },
+        { name: "KVG Medical College (AP affil.)", location: "Sullia" },
+        { name: "Narayana Medical College Nellore", location: "Nellore" },
+        { name: "Sri Siddhartha Medical College (AP campus)", location: "Tumkur" },
+        { name: "Meenakshi Medical College (AP campus)", location: "Kancheepuram" },
+        { name: "Viswabharathi Medical College", location: "Kurnool" },
+        { name: "Guntur Shyam Sai Medical College", location: "Guntur" }
+    ],
+    "Dental Colleges (15+ Colleges)": [
+        { name: "Government Dental College and Hospital Hyderabad (AP affil.)", location: "Hyderabad", badge: "GOVT" },
+        { name: "Anil Neerukonda Institute of Dental Sciences", location: "Visakhapatnam", badge: "ANIDS" },
+        { name: "GITAM Dental College and Hospital", location: "Visakhapatnam" },
+        { name: "CKS Teja Institute of Dental Sciences and Research", location: "Tirupati" },
+        { name: "Vishnu Dental College", location: "Bhimavaram", badge: "AUTONOMOUS" },
+        { name: "SIBAR Institute of Dental Sciences", location: "Guntur" },
+        { name: "GSL Dental College", location: "Rajahmundry" },
+        { name: "Lenora Institute of Dental Sciences", location: "Rajanagaram, East Godavari" },
+        { name: "St. Joseph Dental College", location: "Eluru" },
+        { name: "Sri Sai College of Dental Surgery Vikarabad (AP affil.)", location: "Vikarabad" },
+        { name: "Narayana Dental College", location: "Nellore" },
+        { name: "Maharajah Institute of Dental Sciences", location: "Vizianagaram" },
+        { name: "Sree Sai Dental College", location: "Srikakulam" },
+        { name: "Saraswati Dhanwantari Dental College (AP campus)", location: "Kadapa" },
+        { name: "Andhra Pradesh Dental College", location: "Guntur" }
+    ],
+    "Ayurveda and AYUSH Colleges (15+ Colleges)": [
+        { name: "Government Ayurvedic College Vijayawada", location: "Vijayawada", badge: "GOVT" },
+        { name: "Government Ayurvedic College Rajahmundry", location: "Rajahmundry", badge: "GOVT" },
+        { name: "Government Homeopathic Medical College Hyderabad (AP affil.)", location: "Hyderabad", badge: "GOVT" },
+        { name: "Government Homeopathic Medical College Vijayawada", location: "Vijayawada", badge: "GOVT" },
+        { name: "Dr. B.R.K.R Government Ayurvedic College Hyderabad", location: "Hyderabad", badge: "GOVT" },
+        { name: "Sri Venkateshwara Ayurvedic College Tirupati", location: "Tirupati" },
+        { name: "KVG Ayurvedic Medical College (AP campus)", location: "Sullia" },
+        { name: "Potti Sriramulu Telugu University Ayurvedic College", location: "Hyderabad" },
+        { name: "Sri Sai Institute of Ayurvedic Research and Medicine", location: "Bhopal (AP affil.)" },
+        { name: "Dhanvantari Ayurvedic College Vijayawada", location: "Vijayawada" },
+        { name: "Sri Venkateshwara College of Naturopathy and Yogic Sciences", location: "Tirupati" },
+        { name: "Bhavani Ayurvedic College Visakhapatnam", location: "Visakhapatnam" },
+        { name: "Anantapur Ayurvedic College", location: "Ananthapuramu" },
+        { name: "Kadapa Homeopathic Medical College", location: "Kadapa" },
+        { name: "Nellore Unani Medical College", location: "Nellore" }
+    ],
+    "Nursing Colleges (20+ Colleges)": [
+        { name: "College of Nursing Andhra Medical College", location: "Visakhapatnam", badge: "GOVT" },
+        { name: "College of Nursing AIIMS Mangalagiri", location: "Mangalagiri", badge: "AIIMS" },
+        { name: "College of Nursing Guntur Medical College", location: "Guntur", badge: "GOVT" },
+        { name: "College of Nursing Rangaraya Medical College", location: "Kakinada", badge: "GOVT" },
+        { name: "College of Nursing Kurnool Medical College", location: "Kurnool", badge: "GOVT" },
+        { name: "College of Nursing SVU", location: "Tirupati", badge: "GOVT" },
+        { name: "SVIMS College of Nursing", location: "Tirupati" },
+        { name: "GITAM College of Nursing", location: "Visakhapatnam" },
+        { name: "Narayana College of Nursing Nellore", location: "Nellore" },
+        { name: "NRI College of Nursing", location: "Guntur" },
+        { name: "GSL College of Nursing", location: "Rajahmundry" },
+        { name: "Government College of Nursing Vijayawada", location: "Vijayawada", badge: "GOVT" },
+        { name: "Government College of Nursing Ananthapuramu", location: "Ananthapuramu", badge: "GOVT" },
+        { name: "Government College of Nursing Nellore", location: "Nellore", badge: "GOVT" },
+        { name: "Government College of Nursing Rajahmundry", location: "Rajahmundry", badge: "GOVT" },
+        { name: "Santhiram College of Nursing", location: "Nandyal" },
+        { name: "Konaseema College of Nursing", location: "Amalapuram" },
+        { name: "KL University College of Nursing", location: "Vaddeswaram" },
+        { name: "SRM AP College of Nursing", location: "Amaravati" },
+        { name: "Vignan College of Nursing", location: "Guntur" }
+    ],
+    "Management Institutes (20+ Institutes)": [
+        { name: "IIT Tirupati School of Management", location: "Tirupati", badge: "IIT" },
+        { name: "Andhra University Department of Business Management", location: "Visakhapatnam", badge: "AU" },
+        { name: "Sri Venkateswara University MBA", location: "Tirupati" },
+        { name: "Acharya Nagarjuna University MBA", location: "Guntur" },
+        { name: "GITAM Institute of Management", location: "Visakhapatnam", badge: "GITAM" },
+        { name: "KL Business School Vaddeswaram", location: "Guntur" },
+        { name: "Vignan Business School", location: "Guntur" },
+        { name: "SRM School of Business AP", location: "Amaravati" },
+        { name: "IBS Hyderabad AP Campus", location: "Hyderabad" },
+        { name: "JNTUK MBA Department", location: "Kakinada" },
+        { name: "JNTUA MBA Department", location: "Ananthapuramu" },
+        { name: "Andhra Loyola Institute of Engineering MBA", location: "Vijayawada" },
+        { name: "Sri Krishna Devaraya University MBA", location: "Ananthapuramu" },
+        { name: "Yogi Vemana University MBA", location: "Kadapa" },
+        { name: "Vikrama Simhapuri University MBA", location: "Nellore" },
+        { name: "Rayalaseema University MBA", location: "Kurnool" },
+        { name: "Andhra University PG Centre Tadepalligudem", location: "Tadepalligudem" },
+        { name: "Dravidian University MBA Kuppam", location: "Kuppam" },
+        { name: "KKR and KSR Institute MBA", location: "Guntur" },
+        { name: "Centurion University MBA AP", location: "Vizianagaram" }
+    ],
+    "Law Colleges (15+ Colleges)": [
+        { name: "Andhra University School of Law", location: "Visakhapatnam", founded: "1966" },
+        { name: "Sri Venkateswara University School of Law", location: "Tirupati" },
+        { name: "Acharya Nagarjuna University Law Faculty", location: "Guntur" },
+        { name: "Sri Krishnadevaraya University Law Faculty", location: "Ananthapuramu" },
+        { name: "JNTUA Law Faculty", location: "Ananthapuramu" },
+        { name: "Yogi Vemana University Law College", location: "Kadapa" },
+        { name: "Vikrama Simhapuri University Law Faculty", location: "Nellore" },
+        { name: "Rayalaseema University Law Faculty", location: "Kurnool" },
+        { name: "Government Law College Vijayawada", location: "Vijayawada", badge: "GOVT" },
+        { name: "Government Law College Visakhapatnam", location: "Visakhapatnam", badge: "GOVT" },
+        { name: "Government Law College Guntur", location: "Guntur", badge: "GOVT" },
+        { name: "Government Law College Kakinada", location: "Kakinada", badge: "GOVT" },
+        { name: "Government Law College Tirupati", location: "Tirupati", badge: "GOVT" },
+        { name: "Government Law College Kurnool", location: "Kurnool", badge: "GOVT" },
+        { name: "Government Law College Nellore", location: "Nellore", badge: "GOVT" }
+    ],
+    "Arts Science and Commerce - Visakhapatnam, East and West Godavari (40+ Colleges)": [
+        { name: "Andhra University Campus Colleges", location: "Visakhapatnam", founded: "1926" },
+        { name: "Mrs. A.V.N. College Visakhapatnam", location: "Visakhapatnam", badge: "AUTONOMOUS" },
+        { name: "Gayatri Vidya Parishad Degree College for Women", location: "Visakhapatnam", badge: "WOMEN AUTONOMOUS" },
+        { name: "Sri Sarada Niketan Degree College for Women", location: "Visakhapatnam", badge: "WOMEN" },
+        { name: "Ideal College of Arts and Sciences", location: "Kakinada" },
+        { name: "Dr. VRK Womens College of Arts Science and Commerce", location: "Hyderabad", badge: "WOMEN" },
+        { name: "P.R. Government College Kakinada", location: "Kakinada", badge: "GOVT" },
+        { name: "S.K.B.R. College Amalapuram", location: "Amalapuram, East Godavari", badge: "AUTONOMOUS" },
+        { name: "Government Degree College Rajahmundry", location: "Rajahmundry", badge: "GOVT" },
+        { name: "Government Degree College Eluru", location: "Eluru", badge: "GOVT" },
+        { name: "Government Degree College Bhimavaram", location: "Bhimavaram", badge: "GOVT" },
+        { name: "Government Degree College Tadepalligudem", location: "Tadepalligudem", badge: "GOVT" },
+        { name: "Government Degree College Palakol", location: "Palakol, West Godavari", badge: "GOVT" },
+        { name: "Government Degree College Narsapur", location: "Narsapur, West Godavari", badge: "GOVT" },
+        { name: "Government Degree College Vizianagaram", location: "Vizianagaram", badge: "GOVT" },
+        { name: "Government Degree College Srikakulam", location: "Srikakulam", badge: "GOVT" },
+        { name: "Government Degree College Narasannapeta", location: "Narasannapeta, Srikakulam", badge: "GOVT" },
+        { name: "Government Degree College Rajam", location: "Rajam, Srikakulam", badge: "GOVT" },
+        { name: "Adikavi Nannaya University Colleges", location: "Rajahmundry" },
+        { name: "GITAM Arts and Science College Visakhapatnam", location: "Visakhapatnam" },
+        { name: "St. Joseph College for Women Visakhapatnam", location: "Visakhapatnam", badge: "WOMEN" },
+        { name: "Sri Durga Malleswara Mahila Kalasala Vijayawada", location: "Vijayawada", badge: "WOMEN AUTONOMOUS" },
+        { name: "Government Degree College Amalapuram", location: "Amalapuram", badge: "GOVT" },
+        { name: "Government Degree College Tanuku", location: "Tanuku, West Godavari", badge: "GOVT" },
+        { name: "Government Degree College Kovvur", location: "Kovvur, West Godavari", badge: "GOVT" },
+        { name: "Adikavi Nannaya University PG Centre Vizianagaram", location: "Vizianagaram" },
+        { name: "Rajiv Gandhi University of Knowledge Technologies Nuzvid", location: "Nuzvid", badge: "RGUKT" },
+        { name: "RGUKT Srikakulam Campus", location: "Srikakulam", badge: "RGUKT" },
+        { name: "Government Degree College Nidadavole", location: "Nidadavole, West Godavari", badge: "GOVT" },
+        { name: "Government Degree College Peddapuram", location: "Peddapuram, East Godavari", badge: "GOVT" }
+    ],
+    "Arts Science and Commerce - Guntur, Krishna, Vijayawada, Prakasam (35+ Colleges)": [
+        { name: "Acharya Nagarjuna University Departments", location: "Guntur" },
+        { name: "Andhra Loyola College Vijayawada", location: "Vijayawada", badge: "AUTONOMOUS" },
+        { name: "St. Josephs College for Women Vijayawada", location: "Vijayawada", badge: "WOMEN" },
+        { name: "Maris Stella College Vijayawada", location: "Vijayawada", badge: "WOMEN AUTONOMOUS" },
+        { name: "A.C. College Guntur", location: "Guntur", founded: "1952", badge: "AUTONOMOUS" },
+        { name: "Marri Laxman Reddy Degree College", location: "Guntur" },
+        { name: "V.R. Siddhartha Engineering Science College", location: "Vijayawada" },
+        { name: "Government Degree College Guntur", location: "Guntur", badge: "GOVT" },
+        { name: "Government Degree College Vijayawada", location: "Vijayawada", badge: "GOVT" },
+        { name: "Government Degree College Machilipatnam", location: "Machilipatnam", badge: "GOVT" },
+        { name: "Government Degree College Narasaraopeta", location: "Narasaraopeta", badge: "GOVT" },
+        { name: "Government Degree College Bapatla", location: "Bapatla", badge: "GOVT" },
+        { name: "Government Degree College Tenali", location: "Tenali, Guntur", badge: "GOVT" },
+        { name: "Government Degree College Chirala", location: "Chirala, Prakasam", badge: "GOVT" },
+        { name: "Government Degree College Ongole", location: "Ongole, Prakasam", badge: "GOVT" },
+        { name: "Government Degree College Kandukur", location: "Kandukur, Prakasam", badge: "GOVT" },
+        { name: "Government Degree College Markapur", location: "Markapur, Prakasam", badge: "GOVT" },
+        { name: "Government Degree College Vinukonda", location: "Vinukonda, Guntur", badge: "GOVT" },
+        { name: "Krishna University Departments", location: "Machilipatnam" },
+        { name: "Government Degree College Gudivada", location: "Gudivada, Krishna", badge: "GOVT" },
+        { name: "Government Degree College Nuzvid", location: "Nuzvid, Krishna", badge: "GOVT" },
+        { name: "Government Degree College Nandigama", location: "Nandigama, Krishna", badge: "GOVT" },
+        { name: "Government Degree College Tiruvuru", location: "Tiruvuru, Krishna", badge: "GOVT" },
+        { name: "Government Degree College for Women Vijayawada", location: "Vijayawada", badge: "WOMEN GOVT" },
+        { name: "Government Degree College for Women Guntur", location: "Guntur", badge: "WOMEN GOVT" },
+        { name: "Government Degree College for Women Machilipatnam", location: "Machilipatnam", badge: "WOMEN GOVT" },
+        { name: "RGUKT RK Valley Campus", location: "Idupulapaya, Kadapa", badge: "RGUKT" },
+        { name: "Government Degree College Kavali", location: "Kavali, Nellore", badge: "GOVT" },
+        { name: "Government Degree College Nellore", location: "Nellore", badge: "GOVT" },
+        { name: "Government Degree College Gudur", location: "Gudur, Nellore", badge: "GOVT" }
+    ],
+    "Arts Science and Commerce - Rayalaseema (35+ Colleges)": [
+        { name: "Sri Venkateswara University Colleges Tirupati", location: "Tirupati" },
+        { name: "Sri Krishnadevaraya University Departments", location: "Ananthapuramu" },
+        { name: "Yogi Vemana University Departments", location: "Kadapa" },
+        { name: "Rayalaseema University Departments", location: "Kurnool" },
+        { name: "Sri Sathya Sai Institute of Higher Learning", location: "Puttaparthi", badge: "DEEMED" },
+        { name: "Sri Venkateswara Arts College Tirupati", location: "Tirupati" },
+        { name: "Government Degree College Tirupati", location: "Tirupati", badge: "GOVT" },
+        { name: "Government Degree College Chittoor", location: "Chittoor", badge: "GOVT" },
+        { name: "Government Degree College Madanapalle", location: "Madanapalle", badge: "GOVT" },
+        { name: "Government Degree College Kuppam", location: "Kuppam", badge: "GOVT" },
+        { name: "Government Degree College Puttur", location: "Puttur, Chittoor", badge: "GOVT" },
+        { name: "Government Degree College Srikalahasti", location: "Srikalahasti, Chittoor", badge: "GOVT" },
+        { name: "Government Degree College Kadapa", location: "Kadapa", badge: "GOVT" },
+        { name: "Government Degree College Rajampet", location: "Rajampet, Kadapa", badge: "GOVT" },
+        { name: "Government Degree College Proddatur", location: "Proddatur, Kadapa", badge: "GOVT" },
+        { name: "Government Degree College Jammalamadugu", location: "Jammalamadugu, Kadapa", badge: "GOVT" },
+        { name: "Government Degree College Pulivendula", location: "Pulivendula, Kadapa", badge: "GOVT" },
+        { name: "Government Degree College Kurnool", location: "Kurnool", badge: "GOVT" },
+        { name: "Government Degree College Nandyal", location: "Nandyal, Kurnool", badge: "GOVT" },
+        { name: "Government Degree College Adoni", location: "Adoni, Kurnool", badge: "GOVT" },
+        { name: "Government Degree College Dhone", location: "Dhone, Kurnool", badge: "GOVT" },
+        { name: "Government Degree College Ananthapuramu", location: "Ananthapuramu", badge: "GOVT" },
+        { name: "Government Degree College Guntakal", location: "Guntakal, Ananthapuramu", badge: "GOVT" },
+        { name: "Government Degree College Hindupur", location: "Hindupur, Ananthapuramu", badge: "GOVT" },
+        { name: "Government Degree College Tadipatri", location: "Tadipatri, Ananthapuramu", badge: "GOVT" },
+        { name: "Government Degree College Kadiri", location: "Kadiri, Ananthapuramu", badge: "GOVT" },
+        { name: "Government Degree College for Women Tirupati", location: "Tirupati", badge: "WOMEN GOVT" },
+        { name: "Government Degree College for Women Kurnool", location: "Kurnool", badge: "WOMEN GOVT" },
+        { name: "Government Degree College for Women Ananthapuramu", location: "Ananthapuramu", badge: "WOMEN GOVT" },
+        { name: "Government Degree College for Women Kadapa", location: "Kadapa", badge: "WOMEN GOVT" },
+        { name: "Dravidian University Departments Kuppam", location: "Kuppam" },
+        { name: "Sri Padmavathi Womens University Tirupati", location: "Tirupati", badge: "WOMEN UNIV" },
+        { name: "Vikrama Simhapuri University Departments", location: "Nellore" },
+        { name: "Government Degree College Naidupet", location: "Naidupet, Nellore", badge: "GOVT" },
+        { name: "Government Degree College Sullurpeta", location: "Sullurpeta, Nellore", badge: "GOVT" }
+    ],
+    "Pharmacy Colleges (20+ Colleges)": [
+        { name: "Department of Pharmaceutical Sciences Andhra University", location: "Visakhapatnam" },
+        { name: "GITAM Institute of Pharmacy", location: "Visakhapatnam" },
+        { name: "KL University Pharmacy Vaddeswaram", location: "Guntur" },
+        { name: "Vignan Institute of Pharmaceutical Technology", location: "Visakhapatnam" },
+        { name: "Acharya Nagarjuna University Pharmacy", location: "Guntur" },
+        { name: "JNTUA Pharmaceutical Sciences", location: "Ananthapuramu" },
+        { name: "JNTUK Pharmacy Department", location: "Kakinada" },
+        { name: "SVU Pharmacy College Tirupati", location: "Tirupati" },
+        { name: "RGUKT Nuzvid Pharmacy Wing", location: "Nuzvid" },
+        { name: "Shri Vishnu College of Pharmacy", location: "Bhimavaram", badge: "AUTONOMOUS" },
+        { name: "Chebrolu Hanumaiah Institute of Pharmaceutical Sciences", location: "Guntur" },
+        { name: "V.V. Institute of Pharmaceutical Sciences", location: "Gudlavalleru" },
+        { name: "Sri Padmavathi School of Pharmacy", location: "Tirupati" },
+        { name: "Annamacharya College of Pharmacy", location: "Rajampet, Kadapa" },
+        { name: "Narasaraopeta Institute of Pharmaceutical Sciences", location: "Narasaraopeta" },
+        { name: "P. Rami Reddy Memorial College of Pharmacy", location: "Utukur, Kadapa" },
+        { name: "Sree Vidyanikethan College of Pharmacy", location: "Tirupati" },
+        { name: "Sri Venkateshwara College of Pharmacy", location: "Tirupati" },
+        { name: "Government Pharmacy College Vijayawada", location: "Vijayawada", badge: "GOVT" },
+        { name: "Government Pharmacy College Rajahmundry", location: "Rajahmundry", badge: "GOVT" }
+    ],
+    "Polytechnic Institutes - Government (25 Institutes)": [
+        { name: "Government Polytechnic Visakhapatnam", location: "Visakhapatnam", badge: "GOVT" },
+        { name: "Government Women Polytechnic Visakhapatnam", location: "Visakhapatnam", badge: "WOMEN GOVT" },
+        { name: "Government Polytechnic Vijayawada", location: "Vijayawada", badge: "GOVT" },
+        { name: "Government Polytechnic Guntur", location: "Guntur", badge: "GOVT" },
+        { name: "Government Polytechnic Kakinada", location: "Kakinada", badge: "GOVT" },
+        { name: "Government Polytechnic Tirupati", location: "Tirupati", badge: "GOVT" },
+        { name: "Government Polytechnic Kurnool", location: "Kurnool", badge: "GOVT" },
+        { name: "Government Polytechnic Nellore", location: "Nellore", badge: "GOVT" },
+        { name: "Government Polytechnic Ananthapuramu", location: "Ananthapuramu", badge: "GOVT" },
+        { name: "Government Polytechnic Rajahmundry", location: "Rajahmundry", badge: "GOVT" },
+        { name: "Government Polytechnic Eluru", location: "Eluru", badge: "GOVT" },
+        { name: "Government Polytechnic Bhimavaram", location: "Bhimavaram", badge: "GOVT" },
+        { name: "Government Polytechnic Ongole", location: "Ongole", badge: "GOVT" },
+        { name: "Government Polytechnic Kadapa", location: "Kadapa", badge: "GOVT" },
+        { name: "Government Polytechnic Vizianagaram", location: "Vizianagaram", badge: "GOVT" },
+        { name: "Government Polytechnic Srikakulam", location: "Srikakulam", badge: "GOVT" },
+        { name: "Government Polytechnic Machilipatnam", location: "Machilipatnam", badge: "GOVT" },
+        { name: "Government Polytechnic Tadepalligudem", location: "Tadepalligudem", badge: "GOVT" },
+        { name: "Government Polytechnic Chittoor", location: "Chittoor", badge: "GOVT" },
+        { name: "Government Polytechnic Proddatur", location: "Proddatur, Kadapa", badge: "GOVT" },
+        { name: "Government Polytechnic Nandyal", location: "Nandyal", badge: "GOVT" },
+        { name: "Government Polytechnic Adoni", location: "Adoni", badge: "GOVT" },
+        { name: "Government Polytechnic Hindupur", location: "Hindupur", badge: "GOVT" },
+        { name: "Government Polytechnic Chirala", location: "Chirala", badge: "GOVT" },
+        { name: "Government Polytechnic Narasaraopeta", location: "Narasaraopeta", badge: "GOVT" }
+    ],
+    "Polytechnic Institutes - Private (20+ Institutes)": [
+        { name: "GITAM Polytechnic Visakhapatnam", location: "Visakhapatnam" },
+        { name: "Andhra Polytechnic College Kakinada", location: "Kakinada", badge: "AUTONOMOUS" },
+        { name: "Prasad V. Potluri Siddhartha Institute Polytechnic", location: "Vijayawada" },
+        { name: "Vignan Polytechnic Vadlamudi", location: "Guntur" },
+        { name: "KL University Polytechnic", location: "Vaddeswaram" },
+        { name: "SRKR Polytechnic Bhimavaram", location: "Bhimavaram" },
+        { name: "Vishnu Polytechnic Bhimavaram", location: "Bhimavaram" },
+        { name: "NRI Polytechnic Guntur", location: "Guntur" },
+        { name: "Bapatla Polytechnic", location: "Bapatla" },
+        { name: "Lendi Polytechnic Rajam", location: "Rajam, Srikakulam" },
+        { name: "Raghu Polytechnic Visakhapatnam", location: "Visakhapatnam" },
+        { name: "ANITS Polytechnic Visakhapatnam", location: "Visakhapatnam" },
+        { name: "SVR Polytechnic Nandyal", location: "Nandyal" },
+        { name: "Sri Sai Polytechnic Rayachoti", location: "Rayachoti, Kadapa" },
+        { name: "Annamacharya Polytechnic Rajampet", location: "Rajampet" },
+        { name: "CKS Teja Polytechnic Tirupati", location: "Tirupati" },
+        { name: "Madanapalle Polytechnic", location: "Madanapalle" },
+        { name: "QIS Polytechnic Ongole", location: "Ongole" },
+        { name: "Sri Vasavi Polytechnic Tadepalligudem", location: "Tadepalligudem" },
+        { name: "Sri Siddhartha Polytechnic Vijayawada", location: "Vijayawada" }
+    ],
+    "Agriculture and Veterinary Colleges (15+ Colleges)": [
+        { name: "Acharya N.G. Ranga Agricultural University", location: "Guntur", badge: "ANGRAU" },
+        { name: "College of Agriculture Bapatla", location: "Bapatla, Guntur", badge: "ANGRAU" },
+        { name: "College of Agriculture Naira", location: "Naira, Srikakulam", badge: "ANGRAU" },
+        { name: "College of Agriculture Tirupati", location: "Tirupati", badge: "ANGRAU" },
+        { name: "College of Agriculture Lam Guntur", location: "Lam, Guntur", badge: "ANGRAU" },
+        { name: "College of Agriculture Nandyal", location: "Nandyal, Kurnool", badge: "ANGRAU" },
+        { name: "Sri Venkateswara Veterinary University", location: "Tirupati", badge: "SVVU" },
+        { name: "College of Veterinary Science Tirupati", location: "Tirupati", badge: "SVVU" },
+        { name: "College of Veterinary Science Hyderabad (AP)", location: "Rajendranagar" },
+        { name: "College of Veterinary Science Gannavaram", location: "Gannavaram, Krishna" },
+        { name: "College of Fisheries Science Muthukur", location: "Muthukur, Nellore" },
+        { name: "Dr. Y.S.R. Horticultural University", location: "Venkataramannagudem" },
+        { name: "College of Horticulture Ananthapuramu", location: "Ananthapuramu" },
+        { name: "College of Horticulture Venkataramannagudem", location: "West Godavari" },
+        { name: "Sri Venkateswara Institute of Agri-Business Management", location: "Tirupati" }
+    ],
+    "Research Institutes and Specialized Centers": [
+        { name: "ICAR - Central Research Institute for Dryland Agriculture", location: "Hyderabad (AP affil.)", badge: "CRIDA" },
+        { name: "ICAR - Indian Institute of Rice Research", location: "Hyderabad (AP affil.)", badge: "IIRR" },
+        { name: "ICAR - Central Tobacco Research Institute", location: "Rajahmundry", badge: "CTRI" },
+        { name: "ICAR - Central Institute for Cotton Research Nagpur (AP campus)", location: "Guntur" },
+        { name: "National Institute of Oceanography Goa (AP field station)", location: "Visakhapatnam", badge: "NIO" },
+        { name: "Defence Research and Development Laboratory Hyderabad (AP)", location: "Visakhapatnam" },
+        { name: "Naval Science and Technological Laboratory", location: "Visakhapatnam", badge: "NSTL" },
+        { name: "Eastern Naval Command Research Wing", location: "Visakhapatnam" },
+        { name: "Sri Venkateswara Institute of Medical Sciences Research", location: "Tirupati", badge: "SVIMS" },
+        { name: "Centre for Biotechnology Sri Venkateswara University", location: "Tirupati" },
+        { name: "AP State Remote Sensing Applications Centre", location: "Hyderabad" },
+        { name: "Andhra Pradesh Biodiversity Board", location: "Hyderabad" }
+    ]
+};
+
+const gradients = ['grad1','grad2','grad3','grad4','grad5','grad6','grad7','grad8','grad9','grad10'];
+
+function getInitials(name) {
+    const words = name.split(' ');
+    if (words.length === 1) return words[0].substring(0, 2).toUpperCase();
+    return (words[0][0] + words[1][0]).toUpperCase();
+}
+
+function createCollegeCard(college, gradIndex) {
+    const initials  = getInitials(college.name);
+    const gradClass = gradients[gradIndex % gradients.length];
+    const badge   = college.badge   ? '<div class="college-badge">' + college.badge + '</div>' : '';
+    const founded = college.founded ? ' \u2022 Est. ' + college.founded : '';
+    return '<div class="college-card ' + gradClass + '">' +
+        badge +
+        '<div class="college-content">' +
+        '<div class="college-initials">' + initials + '</div>' +
+        '<div>' +
+        '<div class="college-name">' + college.name + '</div>' +
+        '<div class="college-location">' + college.location + founded + '</div>' +
+        '</div></div></div>';
+}
+
+function renderContent() {
+    const content = document.getElementById('content');
+    let html = '';
+    let categoryIndex = 0;
+    let totalCount = 0;
+    for (const [category, colleges] of Object.entries(collegesData)) {
+        totalCount += colleges.length;
+        const cards = colleges.map(function(college, index) {
+            return createCollegeCard(college, categoryIndex + index);
+        }).join('');
+        html += '<div class="section">' +
+            '<h2 class="section-title">' + category +
+            '<span class="section-count">(' + colleges.length + ' institutions)</span></h2>' +
+            '<div class="scroll-container">' + cards + '</div></div>';
+        categoryIndex++;
+    }
+    const banner = '<div style="background:linear-gradient(135deg,#4facfe 0%,#00f2fe 100%);padding:20px;border-radius:10px;margin-bottom:30px;text-align:center;color:#000;">' +
+        '<h1 style="font-size:32px;margin-bottom:10px;">&#127981; Andhra Pradesh - Complete Directory</h1>' +
+        '<p style="font-size:18px;opacity:0.85;">' + totalCount + ' Total Institutions | ' + Object.keys(collegesData).length + ' Categories | Land of Temples and Technology</p></div>';
+    content.innerHTML = banner + html;
+}
+
+renderContent();
+</script>
+</body>
+</html>

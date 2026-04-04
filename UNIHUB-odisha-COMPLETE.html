@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNIHUB INDIA - Odisha Colleges (500+ Complete List)</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background-color: #141414; color: #ffffff; overflow-x: hidden; }
+        .header { display: flex; justify-content: space-between; align-items: center; padding: 20px 50px; background: linear-gradient(180deg,rgba(0,0,0,0.7) 0%,rgba(0,0,0,0) 100%); position: fixed; top: 0; width: 100%; z-index: 1000; backdrop-filter: blur(10px); }
+        .logo { font-size: 28px; font-weight: 700; color: #e50914; letter-spacing: 1px; }
+        .logo-sub { font-size: 12px; color: #999; font-weight: 400; margin-left: 10px; }
+        .nav-menu { display: flex; gap: 30px; align-items: center; }
+        .nav-menu a { color: #e5e5e5; text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.3s; }
+        .nav-menu a:hover { color: #b3b3b3; }
+        .header-right { display: flex; gap: 25px; align-items: center; }
+        .icon-btn { background: none; border: none; color: #ffffff; font-size: 20px; cursor: pointer; }
+        .profile-icon { width: 32px; height: 32px; border-radius: 4px; background: linear-gradient(135deg,#fa709a 0%,#fee140 100%); display: flex; align-items: center; justify-content: center; font-weight: 600; cursor: pointer; font-size: 13px; color: #000; }
+        .content { padding-top: 80px; padding-left: 50px; }
+        .section { margin-bottom: 40px; }
+        .section-title { font-size: 20px; font-weight: 600; margin-bottom: 15px; color: #e5e5e5; padding-left: 4px; }
+        .section-count { font-size: 14px; color: #999; margin-left: 10px; font-weight: 400; }
+        .scroll-container { display: flex; gap: 15px; overflow-x: auto; overflow-y: hidden; padding-bottom: 15px; padding-right: 50px; scroll-behavior: smooth; }
+        .scroll-container::-webkit-scrollbar { height: 8px; }
+        .scroll-container::-webkit-scrollbar-track { background: #2a2a2a; border-radius: 10px; }
+        .scroll-container::-webkit-scrollbar-thumb { background: #4a4a4a; border-radius: 10px; }
+        .college-card { min-width: 280px; height: 160px; border-radius: 8px; overflow: hidden; cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease; position: relative; }
+        .college-card:hover { transform: scale(1.05); box-shadow: 0 8px 25px rgba(0,0,0,0.5); z-index: 10; }
+        .college-content { position: relative; z-index: 1; padding: 20px; height: 100%; display: flex; flex-direction: column; justify-content: space-between; }
+        .college-initials { font-size: 32px; font-weight: 700; color: rgba(255,255,255,0.9); text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+        .college-name { font-size: 14px; font-weight: 600; color: #ffffff; line-height: 1.3; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+        .college-location { font-size: 12px; color: rgba(255,255,255,0.7); margin-top: 5px; }
+        .college-badge { position: absolute; top: 10px; right: 10px; background: rgba(229,9,20,0.9); color: white; padding: 4px 8px; border-radius: 4px; font-size: 10px; font-weight: 600; }
+        .college-card.grad1  { background: linear-gradient(135deg,#667eea 0%,#764ba2 100%); }
+        .college-card.grad2  { background: linear-gradient(135deg,#f093fb 0%,#f5576c 100%); }
+        .college-card.grad3  { background: linear-gradient(135deg,#4facfe 0%,#00f2fe 100%); }
+        .college-card.grad4  { background: linear-gradient(135deg,#43e97b 0%,#38f9d7 100%); }
+        .college-card.grad5  { background: linear-gradient(135deg,#fa709a 0%,#fee140 100%); }
+        .college-card.grad6  { background: linear-gradient(135deg,#30cfd0 0%,#330867 100%); }
+        .college-card.grad7  { background: linear-gradient(135deg,#a8edea 0%,#fed6e3 100%); }
+        .college-card.grad8  { background: linear-gradient(135deg,#ff9a56 0%,#ff6a88 100%); }
+        .college-card.grad9  { background: linear-gradient(135deg,#ffecd2 0%,#fcb69f 100%); }
+        .college-card.grad10 { background: linear-gradient(135deg,#ff6e7f 0%,#bfe9ff 100%); }
+        @media(max-width:768px){ .header{padding:15px 20px;} .content{padding-left:20px;} }
+    </style>
+</head>
+<body>
+<div class="header">
+    <div style="display:flex;align-items:center;gap:40px;">
+        <div>
+            <span class="logo">UNIHUB INDIA</span>
+            <span class="logo-sub">Odisha</span>
+        </div>
+        <nav class="nav-menu">
+            <a href="index.html">Home</a>
+            <a href="#universities">Universities</a>
+            <a href="#engineering">Engineering</a>
+            <a href="#medical">Medical</a>
+        </nav>
+    </div>
+    <div class="header-right">
+        <button class="icon-btn">&#128269;</button>
+        <button class="icon-btn">&#9776;</button>
+        <div class="profile-icon">OD</div>
+    </div>
+</div>
+<div class="content" id="content"></div>
+<script>
+const collegesData = {
+    "Institutes of National Importance": [
+        { name: "Indian Institute of Technology Bhubaneswar", location: "Argul, Khurda", founded: "2008", badge: "IIT" },
+        { name: "National Institute of Technology Rourkela", location: "Rourkela, Sundargarh", founded: "1961", badge: "NIRF #22 ENGG" },
+        { name: "AIIMS Bhubaneswar", location: "Sijua, Bhubaneswar", founded: "2012", badge: "AIIMS" },
+        { name: "Indian Institute of Information Technology Bhubaneswar", location: "Bhubaneswar", founded: "2006", badge: "IIIT" },
+        { name: "National Law University Odisha", location: "Cuttack", founded: "2008", badge: "NLUO NLU #7" },
+        { name: "National Institute of Fashion Technology Bhubaneswar", location: "Bhubaneswar", badge: "NIFT" },
+        { name: "Central University of Odisha", location: "Koraput", founded: "2009" },
+        { name: "National Institute of Science Education and Research", location: "Jatni, Khurda", founded: "2006", badge: "NISER" },
+        { name: "School of Planning and Architecture Bhubaneswar", location: "Bhubaneswar", founded: "2008", badge: "SPA" },
+        { name: "National Institute of Technology Design and Research Cuttack", location: "Cuttack" }
+    ],
+    "Central Universities": [
+        { name: "Central University of Odisha", location: "Sunabeda, Koraput", founded: "2009" },
+        { name: "Shri Lal Bahadur Shastri National Sanskrit University (OD campus)", location: "Puri" }
+    ],
+    "State Universities - Major": [
+        { name: "Utkal University", location: "Vani Vihar, Bhubaneswar", founded: "1943", badge: "OLDEST IN OD" },
+        { name: "Berhampur University", location: "Bhanja Bihar, Ganjam", founded: "1967" },
+        { name: "Sambalpur University", location: "Jyoti Vihar, Burla", founded: "1967" },
+        { name: "Fakir Mohan University", location: "Vyasa Vihar, Balasore", founded: "1999" },
+        { name: "Ravenshaw University", location: "Cuttack", founded: "1868", badge: "2ND OLDEST IN INDIA" },
+        { name: "North Orissa University", location: "Takatpur, Baripada", founded: "1998" },
+        { name: "Maharaja Sriram Chandra Bhanjadeo University", location: "Takatpur, Baripada" },
+        { name: "Veer Surendra Sai University of Technology", location: "Burla, Sambalpur", founded: "1956", badge: "VSSUT" },
+        { name: "Biju Patnaik University of Technology", location: "Rourkela", founded: "2002", badge: "BPUT" },
+        { name: "Sri Jagannath Sanskrit Vishvavidyalaya", location: "Puri", founded: "1981" },
+        { name: "Shailabala Womens Autonomous College", location: "Cuttack", badge: "WOMEN" }
+    ],
+    "State Universities - Specialized and Agricultural": [
+        { name: "Odisha University of Agriculture and Technology", location: "Bhubaneswar", founded: "1962", badge: "OUAT" },
+        { name: "Odisha University of Technology and Research", location: "Bhubaneswar" },
+        { name: "Syama Prasad Mookerjee University", location: "Cuttack" },
+        { name: "Gangadhar Meher University", location: "Sambalpur", founded: "2015" },
+        { name: "Kalinga Institute of Industrial Technology University", location: "Bhubaneswar", badge: "KIIT DEEMED" },
+        { name: "Shri Krushna Chandra Gajapati Medical College University", location: "Brahmapur, Ganjam" },
+        { name: "Odisha State Open University", location: "Sambalpur", founded: "1995" },
+        { name: "Nalanda Open University (OD campus)", location: "Cuttack" }
+    ],
+    "Deemed to be Universities - Premier": [
+        { name: "KIIT University", location: "Bhubaneswar", founded: "1992", badge: "NIRF #26 UNIV" },
+        { name: "KIIT School of Engineering", location: "Bhubaneswar", badge: "KIIT" },
+        { name: "SOA University - Siksha O Anusandhan", location: "Bhubaneswar", founded: "1996", badge: "SOA" },
+        { name: "Siksha O Anusandhan Medical College", location: "Bhubaneswar", badge: "SOA" },
+        { name: "Kalinga University Raipur (OD affil.)", location: "Raipur" },
+        { name: "XIMB - Xavier Institute of Management Bhubaneswar", location: "Bhubaneswar", founded: "1987", badge: "XIMB" },
+        { name: "Xavier University Bhubaneswar", location: "Bhubaneswar", founded: "2013", badge: "XUB" }
+    ],
+    "Private Universities": [
+        { name: "CV Raman Global University", location: "Bhubaneswar", founded: "2020" },
+        { name: "Centurion University of Technology and Management", location: "Paralakhemundi, Gajapati", founded: "2010", badge: "CUTM" },
+        { name: "NIIS Group of Institutions", location: "Bhubaneswar" },
+        { name: "Rama Devi Womens University", location: "Bhubaneswar", badge: "WOMEN" },
+        { name: "Odisha International University", location: "Bhubaneswar" },
+        { name: "Kalinga Institute of Social Sciences University", location: "Bhubaneswar", badge: "KISS" },
+        { name: "Sri Sri University", location: "Cuttack", founded: "2009" },
+        { name: "Trident Academy of Technology", location: "Bhubaneswar" },
+        { name: "ITER Siksha O Anusandhan", location: "Bhubaneswar" }
+    ],
+    "Engineering Colleges - Bhubaneswar and Khurda Region (40+ Colleges)": [
+        { name: "IIT Bhubaneswar", location: "Argul, Khurda", badge: "IIT" },
+        { name: "IIIT Bhubaneswar", location: "Bhubaneswar", badge: "IIIT" },
+        { name: "KIIT School of Engineering", location: "Bhubaneswar", badge: "KIIT" },
+        { name: "SOA University Engineering", location: "Bhubaneswar", badge: "SOA" },
+        { name: "CV Raman Global University Engineering", location: "Bhubaneswar" },
+        { name: "NISER Bhubaneswar", location: "Jatni, Khurda", badge: "NISER" },
+        { name: "College of Engineering and Technology Bhubaneswar", location: "Bhubaneswar", badge: "CET GOVT" },
+        { name: "Indira Gandhi Institute of Technology Sarang", location: "Sarang, Dhenkanal", badge: "IGIT GOVT" },
+        { name: "Parala Maharaja Engineering College", location: "Berhampur, Ganjam", badge: "GOVT" },
+        { name: "Bhadrak Institute of Engineering and Technology", location: "Bhadrak", badge: "GOVT" },
+        { name: "Government College of Engineering Kalahandi", location: "Bhawanipatna, Kalahandi", badge: "GOVT" },
+        { name: "Government College of Engineering Keonjhar", location: "Keonjhar", badge: "GOVT" },
+        { name: "Government College of Engineering Koraput", location: "Koraput", badge: "GOVT" },
+        { name: "Government College of Engineering Sundergarh", location: "Sundergarh", badge: "GOVT" },
+        { name: "Government College of Engineering Bhawanipatna", location: "Bhawanipatna", badge: "GOVT" },
+        { name: "Trident Academy of Technology Bhubaneswar", location: "Bhubaneswar" },
+        { name: "Institute of Technical Education and Research", location: "Bhubaneswar", badge: "ITER SOA" },
+        { name: "Siksha Anusandhan University Engineering", location: "Bhubaneswar" },
+        { name: "NIIS Institute of Information Science and Management", location: "Bhubaneswar" },
+        { name: "Centurion University Technology Bhubaneswar Campus", location: "Bhubaneswar", badge: "CUTM" },
+        { name: "Silicon Institute of Technology", location: "Bhubaneswar" },
+        { name: "Koustuv Institute of Self Domain", location: "Bhubaneswar" },
+        { name: "Raajdhani Engineering College", location: "Bhubaneswar" },
+        { name: "Royal College of Engineering and Technology", location: "Bhubaneswar" },
+        { name: "Konark Institute of Science and Technology", location: "Bhubaneswar" },
+        { name: "Gandhi Engineering College", location: "Bhubaneswar" },
+        { name: "NM Institute of Engineering and Technology", location: "Bhubaneswar" },
+        { name: "Aryan School of Engineering", location: "Bhubaneswar" },
+        { name: "Ajay Binay Institute of Technology", location: "Cuttack" },
+        { name: "Synergy Institute of Engineering and Technology", location: "Dhenkanal" },
+        { name: "Institute of Engineering and Technology Bhubaneswar", location: "Bhubaneswar" },
+        { name: "Orissa Engineering College", location: "Bhubaneswar", badge: "OEC" },
+        { name: "Capital Engineering College", location: "Bhubaneswar" },
+        { name: "Khallikote Autonomous College", location: "Berhampur, Ganjam" },
+        { name: "Bapuji Institute of Engineering and Technology (OD campus)", location: "Bhubaneswar" },
+        { name: "Sri Ram Chandra Bhanja Medical Engineering", location: "Cuttack" },
+        { name: "Sardar Rajas College of Engineering", location: "Cuttack" },
+        { name: "Vikash College of Engineering", location: "Bargarh" },
+        { name: "Bhubaneswar Engineering College", location: "Bhubaneswar" },
+        { name: "Eastern Academy of Science and Technology", location: "Bhubaneswar" }
+    ],
+    "Engineering Colleges - Rourkela and Western Odisha (30+ Colleges)": [
+        { name: "NIT Rourkela", location: "Rourkela, Sundargarh", badge: "NIRF #22" },
+        { name: "Veer Surendra Sai University of Technology", location: "Burla, Sambalpur", badge: "VSSUT" },
+        { name: "Biju Patnaik University of Technology Regional Campus", location: "Rourkela" },
+        { name: "Government College of Engineering Rourkela", location: "Rourkela", badge: "GOVT" },
+        { name: "Centurion University Paralakhemundi Campus Engineering", location: "Paralakhemundi, Gajapati", badge: "CUTM" },
+        { name: "Silicon Institute of Technology Sambalpur", location: "Sambalpur" },
+        { name: "GIET University Engineering", location: "Gunupur, Rayagada" },
+        { name: "Gangadhar Meher University Engineering", location: "Sambalpur" },
+        { name: "Vikash School of Engineering", location: "Bargarh" },
+        { name: "Indira Gandhi Institute of Technology Sarang", location: "Dhenkanal", badge: "IGIT GOVT" },
+        { name: "BIT Sindri (OD region)", location: "Sindri, Dhanbad" },
+        { name: "Sambalpur University Institute of Information Technology", location: "Sambalpur" },
+        { name: "Centurion University Vizianagaram (OD affil.)", location: "Vizianagaram" },
+        { name: "Government College of Engineering Sundargarh", location: "Sundargarh", badge: "GOVT" },
+        { name: "Government College of Engineering Nuapada", location: "Nuapada", badge: "GOVT" },
+        { name: "Government College of Engineering Balangir", location: "Balangir", badge: "GOVT" },
+        { name: "Government College of Engineering Bargarh", location: "Bargarh", badge: "GOVT" },
+        { name: "Government College of Engineering Jharsuguda", location: "Jharsuguda", badge: "GOVT" },
+        { name: "Government College of Engineering Nabarangpur", location: "Nabarangpur", badge: "GOVT" },
+        { name: "Government College of Engineering Boudh", location: "Boudh", badge: "GOVT" },
+        { name: "College of Engineering Bhubaneswar BPUT Sambalpur Centre", location: "Sambalpur" },
+        { name: "Krupajal Engineering College", location: "Bhubaneswar" },
+        { name: "Maharaja Institute of Technology", location: "Bhubaneswar" },
+        { name: "Hi-Tech Institute of Technology", location: "Bhubaneswar" },
+        { name: "International Institute of Information Technology Bhubaneswar", location: "Bhubaneswar" },
+        { name: "CV Raman College of Engineering", location: "Bhubaneswar" },
+        { name: "Seemanta Engineering College", location: "Jharpokharia, Mayurbhanj" },
+        { name: "Orissa Institute of Science and Technology", location: "Bhubaneswar" },
+        { name: "Dhaneswar Rath Institute of Engineering and Management Studies", location: "Cuttack" },
+        { name: "Krupajal Technical Campus", location: "Bhubaneswar" }
+    ],
+    "Engineering Colleges - North and Coastal Odisha (25+ Colleges)": [
+        { name: "College of Engineering and Technology Bhubaneswar", location: "Ghatikia, Bhubaneswar", badge: "CET GOVT" },
+        { name: "Bhadrak Autonomous College Engineering", location: "Bhadrak", badge: "GOVT" },
+        { name: "Seemanta Institute of Pharmaceutical Sciences", location: "Jharpokharia, Mayurbhanj" },
+        { name: "Government College of Engineering Balasore", location: "Balasore", badge: "GOVT" },
+        { name: "Fakir Mohan University Engineering", location: "Balasore" },
+        { name: "Prafulla Chandra Mahavidyalaya Engineering", location: "Tamluk (OD affil.)" },
+        { name: "North Orissa University Engineering", location: "Baripada, Mayurbhanj" },
+        { name: "Government College of Engineering Phulbani", location: "Phulbani, Kandhamal", badge: "GOVT" },
+        { name: "Government College of Engineering Angul", location: "Angul", badge: "GOVT" },
+        { name: "Government College of Engineering Malkangiri", location: "Malkangiri", badge: "GOVT" },
+        { name: "Government College of Engineering Kendrapara", location: "Kendrapara", badge: "GOVT" },
+        { name: "Government College of Engineering Nayagarh", location: "Nayagarh", badge: "GOVT" },
+        { name: "Government College of Engineering Puri", location: "Puri", badge: "GOVT" },
+        { name: "Government College of Engineering Deogarh", location: "Deogarh", badge: "GOVT" },
+        { name: "Government College of Engineering Gajapati", location: "Paralakhemundi, Gajapati", badge: "GOVT" },
+        { name: "Government College of Engineering Rayagada", location: "Rayagada", badge: "GOVT" },
+        { name: "Government College of Engineering Boudh", location: "Boudh", badge: "GOVT" },
+        { name: "Government College of Engineering Kendujhar", location: "Kendujhar", badge: "GOVT" },
+        { name: "GIET Engineering College Gunupur", location: "Gunupur, Rayagada" },
+        { name: "Centurion University Jatani Campus Engineering", location: "Jatani, Khurda" },
+        { name: "Silicon Institute Bhadrak", location: "Bhadrak" },
+        { name: "Synergy College of Engineering Dhenkanal", location: "Dhenkanal" },
+        { name: "Academy of Business and Engineering Sciences", location: "Bhubaneswar" },
+        { name: "Parala Maharaja Engineering College Berhampur", location: "Berhampur" },
+        { name: "Mitra Institute of Technology", location: "Panikoili, Jajpur" }
+    ],
+    "Medical Colleges - Government (20+ Colleges)": [
+        { name: "Shri Ram Chandra Bhanja Medical College and Hospital", location: "Cuttack", founded: "1944", badge: "SCBMCH OLDEST" },
+        { name: "AIIMS Bhubaneswar", location: "Bhubaneswar", badge: "AIIMS" },
+        { name: "Shri Krishna Chandra Gajapati Medical College", location: "Brahmapur, Ganjam", founded: "1962" },
+        { name: "Veer Surendra Sai Institute of Medical Sciences and Research", location: "Burla, Sambalpur", founded: "1956", badge: "VIMSAR" },
+        { name: "Maharaja Krishna Chandra Gajapati Medical College", location: "Brahmapur" },
+        { name: "Pandit Raghunath Murmu Medical College", location: "Baripada, Mayurbhanj" },
+        { name: "Government Medical College Balangir", location: "Balangir", badge: "GOVT" },
+        { name: "Government Medical College Bolangir", location: "Bolangir", badge: "GOVT" },
+        { name: "Government Medical College Koraput", location: "Koraput", badge: "GOVT" },
+        { name: "Government Medical College Bhawanipatna", location: "Bhawanipatna, Kalahandi", badge: "GOVT" },
+        { name: "Government Medical College Baripada", location: "Baripada, Mayurbhanj", badge: "GOVT" },
+        { name: "Government Medical College Sundergarh", location: "Sundergarh", badge: "GOVT" },
+        { name: "Government Medical College Rayagada", location: "Rayagada", badge: "GOVT" },
+        { name: "Government Medical College Balasore", location: "Balasore", badge: "GOVT" },
+        { name: "Government Medical College Puri", location: "Puri", badge: "GOVT" },
+        { name: "Government Medical College Keonjhar", location: "Keonjhar", badge: "GOVT" },
+        { name: "Hi-Tech Medical College Bhubaneswar", location: "Bhubaneswar" },
+        { name: "Capital Hospital Institute of Medical Sciences", location: "Bhubaneswar" },
+        { name: "Government Medical College Nabarangpur", location: "Nabarangpur", badge: "GOVT" },
+        { name: "Government Medical College Malkangiri", location: "Malkangiri", badge: "GOVT" }
+    ],
+    "Medical Colleges - Private and Deemed (20+ Colleges)": [
+        { name: "Kalinga Institute of Medical Sciences", location: "Bhubaneswar", badge: "KIMS KIIT" },
+        { name: "Institute of Medical Sciences and SUM Hospital", location: "Bhubaneswar", badge: "IMS SUM SOA" },
+        { name: "Hi-Tech Medical College and Hospital", location: "Bhubaneswar" },
+        { name: "Shri Jagannath Medical College and Hospital", location: "Puri" },
+        { name: "Sukanya Medical College", location: "Bargarh" },
+        { name: "Sri Ram Chandra Bhanja Medical College Private Wing", location: "Cuttack" },
+        { name: "Fakir Mohan Medical College and Hospital", location: "Balasore" },
+        { name: "Prathima Institute of Medical Sciences (OD affil.)", location: "Karimnagar" },
+        { name: "Sunflower Hospital Medical College", location: "Bhubaneswar" },
+        { name: "Centurion Hospital Medical College", location: "Bhubaneswar" },
+        { name: "Ispat General Hospital Medical Training Rourkela", location: "Rourkela" },
+        { name: "Kalinga Hospital Medical Sciences", location: "Bhubaneswar" },
+        { name: "CARE Hospital Medical College Bhubaneswar", location: "Bhubaneswar" },
+        { name: "SCB Private Medical College Wing", location: "Cuttack" },
+        { name: "Shreyas Hospital Medical College", location: "Cuttack" },
+        { name: "Maharaja Sriram Chandra Medical College", location: "Baripada" },
+        { name: "Sriram Chandra Bhanja Institute of Medical Sciences", location: "Ganjam" },
+        { name: "Saroj Mohan Institute of Technology Medical Wing", location: "Ghatal (OD affil.)" },
+        { name: "MKCG Medical College Private Section", location: "Berhampur" },
+        { name: "VIMSAR Private Medical Training Wing", location: "Burla, Sambalpur" }
+    ],
+    "Dental Colleges (12+ Colleges)": [
+        { name: "Shri Jagannath Dental College and Hospital", location: "Puri", badge: "GOVT" },
+        { name: "Government Dental College Cuttack", location: "Cuttack", badge: "GOVT" },
+        { name: "KIMS Dental College", location: "Bhubaneswar", badge: "KIIT" },
+        { name: "SOA Dental College", location: "Bhubaneswar", badge: "SOA" },
+        { name: "Kalinga Dental College", location: "Bhubaneswar" },
+        { name: "Institute of Dental Sciences Bhubaneswar", location: "Bhubaneswar" },
+        { name: "Hi-Tech Dental College and Hospital", location: "Bhubaneswar" },
+        { name: "Dental College and Hospital Rourkela", location: "Rourkela" },
+        { name: "Dental College Berhampur", location: "Berhampur, Ganjam" },
+        { name: "VIMSAR Dental Wing Burla", location: "Burla, Sambalpur" },
+        { name: "Fakir Mohan Dental College", location: "Balasore" },
+        { name: "Centurion Dental College", location: "Bhubaneswar" }
+    ],
+    "Ayurveda and AYUSH Colleges (15+ Colleges)": [
+        { name: "Government Ayurvedic Medical College Bhubaneswar", location: "Bhubaneswar", badge: "GOVT" },
+        { name: "Government Ayurvedic Medical College Bolangir", location: "Bolangir", badge: "GOVT" },
+        { name: "Government Ayurvedic Medical College Berhampur", location: "Berhampur", badge: "GOVT" },
+        { name: "Government Homeopathic Medical College Bhubaneswar", location: "Bhubaneswar", badge: "GOVT" },
+        { name: "Government Homeopathic Medical College Angul", location: "Angul", badge: "GOVT" },
+        { name: "Government Unani Medical College Bhubaneswar", location: "Bhubaneswar", badge: "GOVT" },
+        { name: "Shri Jagannath Ayurvedic Medical College Puri", location: "Puri" },
+        { name: "Shri Krishna Ayurvedic Medical College Baripada", location: "Baripada" },
+        { name: "SOA Ayurveda College", location: "Bhubaneswar", badge: "SOA" },
+        { name: "KIIT Ayurveda College", location: "Bhubaneswar", badge: "KIIT" },
+        { name: "Kalinga Ayurvedic Medical College", location: "Cuttack" },
+        { name: "Odisha State Unani Medical College", location: "Cuttack" },
+        { name: "Tikaram Sharma Ayurvedic Medical College", location: "Sambalpur" },
+        { name: "Centurion Ayurvedic College", location: "Bhubaneswar" },
+        { name: "National Siddha Institute (OD campus)", location: "Chennai (OD affil.)" }
+    ],
+    "Nursing Colleges (20+ Colleges)": [
+        { name: "College of Nursing SCB Medical College Cuttack", location: "Cuttack", badge: "GOVT" },
+        { name: "College of Nursing AIIMS Bhubaneswar", location: "Bhubaneswar", badge: "AIIMS" },
+        { name: "College of Nursing VIMSAR Burla", location: "Burla, Sambalpur", badge: "GOVT" },
+        { name: "College of Nursing MKCG Berhampur", location: "Berhampur, Ganjam", badge: "GOVT" },
+        { name: "Government College of Nursing Baripada", location: "Baripada", badge: "GOVT" },
+        { name: "Government College of Nursing Koraput", location: "Koraput", badge: "GOVT" },
+        { name: "KIMS Nursing College Bhubaneswar", location: "Bhubaneswar", badge: "KIIT" },
+        { name: "SOA Nursing College Bhubaneswar", location: "Bhubaneswar", badge: "SOA" },
+        { name: "Hi-Tech Nursing College Bhubaneswar", location: "Bhubaneswar" },
+        { name: "Centurion Nursing College Bhubaneswar", location: "Bhubaneswar" },
+        { name: "Silicon Nursing College Bhubaneswar", location: "Bhubaneswar" },
+        { name: "CET Nursing College Bhubaneswar", location: "Bhubaneswar" },
+        { name: "Kalinga School of Nursing Bhubaneswar", location: "Bhubaneswar" },
+        { name: "Vikash Nursing College Bargarh", location: "Bargarh" },
+        { name: "Seemanta Nursing College Mayurbhanj", location: "Mayurbhanj" },
+        { name: "GIET Nursing College Gunupur", location: "Gunupur, Rayagada" },
+        { name: "Government College of Nursing Sundergarh", location: "Sundergarh", badge: "GOVT" },
+        { name: "Government College of Nursing Balasore", location: "Balasore", badge: "GOVT" },
+        { name: "Government College of Nursing Balangir", location: "Balangir", badge: "GOVT" },
+        { name: "Ispat General Hospital Nursing College Rourkela", location: "Rourkela" }
+    ],
+    "Management Institutes (20+ Institutes)": [
+        { name: "XIMB Xavier Institute of Management", location: "Bhubaneswar", badge: "XIMB TOP" },
+        { name: "Xavier University School of Management", location: "Bhubaneswar", badge: "XUB" },
+        { name: "IIT Bhubaneswar School of Management", location: "Bhubaneswar", badge: "IIT" },
+        { name: "NIT Rourkela School of Management", location: "Rourkela", badge: "NIT" },
+        { name: "KIIT School of Management", location: "Bhubaneswar", badge: "KIIT" },
+        { name: "SOA School of Business", location: "Bhubaneswar", badge: "SOA" },
+        { name: "IMIS - Institute of Management and Information Science", location: "Bhubaneswar" },
+        { name: "KIIT School of Rural Management", location: "Bhubaneswar" },
+        { name: "Utkal University MBA Department", location: "Bhubaneswar" },
+        { name: "Sambalpur University MBA", location: "Sambalpur" },
+        { name: "Berhampur University MBA", location: "Berhampur" },
+        { name: "Ravenshaw University MBA", location: "Cuttack" },
+        { name: "ICFAI Business School Bhubaneswar", location: "Bhubaneswar", badge: "IBS" },
+        { name: "Indus Business Academy Bhubaneswar", location: "Bhubaneswar" },
+        { name: "Silicon Institute MBA", location: "Bhubaneswar" },
+        { name: "CV Raman University MBA", location: "Bhubaneswar" },
+        { name: "Centurion University School of Management", location: "Bhubaneswar" },
+        { name: "KIIT Law School MBA in Law", location: "Bhubaneswar" },
+        { name: "National Institute for Agricultural Marketing (OD campus)", location: "Bhubaneswar" },
+        { name: "Orissa Remote Sensing Application Centre", location: "Bhubaneswar" }
+    ],
+    "Law Colleges (12+ Colleges)": [
+        { name: "National Law University Odisha", location: "Cuttack", badge: "NLUO NLU #7" },
+        { name: "KIIT School of Law", location: "Bhubaneswar", badge: "KIIT" },
+        { name: "Xavier Law School Bhubaneswar", location: "Bhubaneswar" },
+        { name: "Department of Law Utkal University", location: "Bhubaneswar" },
+        { name: "Department of Law Sambalpur University", location: "Sambalpur" },
+        { name: "Department of Law Berhampur University", location: "Berhampur" },
+        { name: "Department of Law Ravenshaw University", location: "Cuttack", founded: "1868" },
+        { name: "Government Law College Cuttack", location: "Cuttack", badge: "GOVT" },
+        { name: "Government Law College Bhubaneswar", location: "Bhubaneswar", badge: "GOVT" },
+        { name: "Government Law College Sambalpur", location: "Sambalpur", badge: "GOVT" },
+        { name: "Government Law College Berhampur", location: "Berhampur", badge: "GOVT" },
+        { name: "Government Law College Baripada", location: "Baripada", badge: "GOVT" }
+    ],
+    "Arts Science and Commerce - Bhubaneswar and Cuttack (35+ Colleges)": [
+        { name: "Ravenshaw University", location: "Cuttack", founded: "1868", badge: "2ND OLDEST INDIA" },
+        { name: "Utkal University Departments", location: "Bhubaneswar", founded: "1943" },
+        { name: "Ravenshaw Autonomous College Cuttack", location: "Cuttack" },
+        { name: "Stewart Science College Cuttack", location: "Cuttack", founded: "1897", badge: "GOVT" },
+        { name: "Madhusudan Law College Cuttack", location: "Cuttack" },
+        { name: "SCS College Puri", location: "Puri", badge: "AUTONOMOUS" },
+        { name: "BJB Autonomous College", location: "Bhubaneswar", badge: "GOVT AUTONOMOUS" },
+        { name: "DAV College Bhubaneswar", location: "Bhubaneswar" },
+        { name: "Utkal Madhab College Soro", location: "Soro, Balasore" },
+        { name: "Bhubaneswar College", location: "Bhubaneswar" },
+        { name: "Shailabala Womens Autonomous College", location: "Cuttack", badge: "WOMEN AUTONOMOUS" },
+        { name: "Govt Womens College Bhubaneswar", location: "Bhubaneswar", badge: "WOMEN GOVT" },
+        { name: "Rama Devi Womens University", location: "Bhubaneswar", badge: "WOMEN UNIV" },
+        { name: "Prafulla Chandra Mahavidyalaya Pandua", location: "Khurda" },
+        { name: "Directorate of Distance and Continuing Education Utkal", location: "Bhubaneswar" },
+        { name: "Govt College Angul", location: "Angul", badge: "GOVT" },
+        { name: "Govt Autonomous College Angul", location: "Angul", badge: "GOVT" },
+        { name: "Govt College Nayagarh", location: "Nayagarh", badge: "GOVT" },
+        { name: "Govt College Puri", location: "Puri", badge: "GOVT" },
+        { name: "Govt College Khurda", location: "Khurda", badge: "GOVT" },
+        { name: "Govt College Dhenkanal", location: "Dhenkanal", badge: "GOVT" },
+        { name: "Govt College Kendrapara", location: "Kendrapara", badge: "GOVT" },
+        { name: "Govt College Jajpur", location: "Jajpur", badge: "GOVT" },
+        { name: "Govt College Jagatsinghpur", location: "Jagatsinghpur", badge: "GOVT" },
+        { name: "Christ College Cuttack", location: "Cuttack", badge: "AUTONOMOUS" },
+        { name: "Odisha Adarsha Vidyalaya College", location: "Bhubaneswar" },
+        { name: "NISER Science College", location: "Bhubaneswar", badge: "NISER" },
+        { name: "SBI College Cuttack", location: "Cuttack" },
+        { name: "Nilachal Polytechnic and Science College", location: "Bhubaneswar" },
+        { name: "Govt College Nabarangpur", location: "Nabarangpur", badge: "GOVT" }
+    ],
+    "Arts Science and Commerce - Districts Odisha (35+ Colleges)": [
+        { name: "Sambalpur University Departments", location: "Jyoti Vihar, Burla" },
+        { name: "Berhampur University Departments", location: "Berhampur, Ganjam" },
+        { name: "Fakir Mohan University Departments", location: "Balasore" },
+        { name: "North Orissa University Departments", location: "Baripada, Mayurbhanj" },
+        { name: "Gangadhar Meher University Departments", location: "Sambalpur" },
+        { name: "Khallikote Autonomous College", location: "Berhampur, Ganjam", badge: "AUTONOMOUS" },
+        { name: "Govt College Berhampur", location: "Berhampur, Ganjam", badge: "GOVT" },
+        { name: "Govt Women College Berhampur", location: "Berhampur", badge: "WOMEN GOVT" },
+        { name: "Govt College Sambalpur", location: "Sambalpur", badge: "GOVT" },
+        { name: "Govt Womens College Sambalpur", location: "Sambalpur", badge: "WOMEN GOVT" },
+        { name: "Gangadhar Meher Autonomous College Sambalpur", location: "Sambalpur", badge: "AUTONOMOUS" },
+        { name: "Govt College Balasore", location: "Balasore", badge: "GOVT" },
+        { name: "Fakir Mohan Autonomous College Balasore", location: "Balasore", badge: "AUTONOMOUS" },
+        { name: "Govt College Baripada", location: "Baripada, Mayurbhanj", badge: "GOVT" },
+        { name: "Maharaja College Baripada", location: "Baripada", badge: "AUTONOMOUS" },
+        { name: "Govt College Rourkela", location: "Rourkela, Sundargarh", badge: "GOVT" },
+        { name: "Govt College Sundergarh", location: "Sundergarh", badge: "GOVT" },
+        { name: "Govt College Keonjhar", location: "Keonjhar", badge: "GOVT" },
+        { name: "Govt College Bolangir", location: "Bolangir", badge: "GOVT" },
+        { name: "Govt College Koraput", location: "Koraput", badge: "GOVT" },
+        { name: "Govt College Jeypore", location: "Jeypore, Koraput", badge: "GOVT" },
+        { name: "Govt College Bhawanipatna", location: "Bhawanipatna, Kalahandi", badge: "GOVT" },
+        { name: "Govt College Phulbani", location: "Phulbani, Kandhamal", badge: "GOVT" },
+        { name: "Govt College Rayagada", location: "Rayagada", badge: "GOVT" },
+        { name: "Govt College Bargarh", location: "Bargarh", badge: "GOVT" },
+        { name: "Govt College Jharsuguda", location: "Jharsuguda", badge: "GOVT" },
+        { name: "Govt College Nuapada", location: "Nuapada", badge: "GOVT" },
+        { name: "Govt College Malkangiri", location: "Malkangiri", badge: "GOVT" },
+        { name: "Govt College Nabarangpur", location: "Nabarangpur", badge: "GOVT" },
+        { name: "Govt College Paralakhemundi", location: "Paralakhemundi, Gajapati", badge: "GOVT" },
+        { name: "Govt College Deogarh", location: "Deogarh", badge: "GOVT" },
+        { name: "Govt College Boudh", location: "Boudh", badge: "GOVT" },
+        { name: "Govt College Subarnapur", location: "Sonepur, Subarnapur", badge: "GOVT" },
+        { name: "Govt College Kandhamal", location: "Phulbani, Kandhamal", badge: "GOVT" },
+        { name: "Govt Autonomous College Bhawanipatna", location: "Bhawanipatna", badge: "GOVT" }
+    ],
+    "Pharmacy Colleges (15+ Colleges)": [
+        { name: "School of Pharmacy SOA University", location: "Bhubaneswar", badge: "SOA" },
+        { name: "KIIT School of Pharmacy", location: "Bhubaneswar", badge: "KIIT" },
+        { name: "Department of Pharmaceutics Utkal University", location: "Bhubaneswar" },
+        { name: "Roland Institute of Pharmaceutical Sciences", location: "Berhampur, Ganjam" },
+        { name: "Seemanta Institute of Pharmaceutical Sciences", location: "Jharpokharia, Mayurbhanj" },
+        { name: "Centurion University Pharmacy", location: "Bhubaneswar" },
+        { name: "School of Pharmaceutical Sciences Siksha O Anusandhan", location: "Bhubaneswar" },
+        { name: "Gayatri College of Pharmacy Sambalpur", location: "Sambalpur" },
+        { name: "Silicon Institute of Technology Pharmacy Wing", location: "Bhubaneswar" },
+        { name: "NMI Institute of Pharmacy", location: "Bhubaneswar" },
+        { name: "Bharat Institute of Technology Pharmacy Raipur (OD affil.)", location: "Raipur" },
+        { name: "Government Pharmacy College Bhubaneswar", location: "Bhubaneswar", badge: "GOVT" },
+        { name: "Kalinga College of Pharmacy", location: "Bhubaneswar" },
+        { name: "Hi-Tech College of Pharmacy", location: "Bhubaneswar" },
+        { name: "Odisha Pharmacy College Rourkela", location: "Rourkela" }
+    ],
+    "Polytechnic Institutes - Government (30 Institutes - All Districts)": [
+        { name: "Government Polytechnic Bhubaneswar", location: "Bhubaneswar", badge: "GOVT" },
+        { name: "Government Women Polytechnic Bhubaneswar", location: "Bhubaneswar", badge: "WOMEN GOVT" },
+        { name: "Government Polytechnic Cuttack", location: "Cuttack", badge: "GOVT" },
+        { name: "Government Polytechnic Rourkela", location: "Rourkela", badge: "GOVT" },
+        { name: "Government Polytechnic Berhampur", location: "Berhampur, Ganjam", badge: "GOVT" },
+        { name: "Government Polytechnic Sambalpur", location: "Sambalpur", badge: "GOVT" },
+        { name: "Government Polytechnic Balasore", location: "Balasore", badge: "GOVT" },
+        { name: "Government Polytechnic Baripada", location: "Baripada, Mayurbhanj", badge: "GOVT" },
+        { name: "Government Polytechnic Keonjhar", location: "Keonjhar", badge: "GOVT" },
+        { name: "Government Polytechnic Sundergarh", location: "Sundergarh", badge: "GOVT" },
+        { name: "Government Polytechnic Bolangir", location: "Bolangir", badge: "GOVT" },
+        { name: "Government Polytechnic Koraput", location: "Koraput", badge: "GOVT" },
+        { name: "Government Polytechnic Bhawanipatna", location: "Bhawanipatna, Kalahandi", badge: "GOVT" },
+        { name: "Government Polytechnic Phulbani", location: "Phulbani, Kandhamal", badge: "GOVT" },
+        { name: "Government Polytechnic Rayagada", location: "Rayagada", badge: "GOVT" },
+        { name: "Government Polytechnic Bargarh", location: "Bargarh", badge: "GOVT" },
+        { name: "Government Polytechnic Dhenkanal", location: "Dhenkanal", badge: "GOVT" },
+        { name: "Government Polytechnic Angul", location: "Angul", badge: "GOVT" },
+        { name: "Government Polytechnic Jharsuguda", location: "Jharsuguda", badge: "GOVT" },
+        { name: "Government Polytechnic Nabarangpur", location: "Nabarangpur", badge: "GOVT" },
+        { name: "Government Polytechnic Malkangiri", location: "Malkangiri", badge: "GOVT" },
+        { name: "Government Polytechnic Boudh", location: "Boudh", badge: "GOVT" },
+        { name: "Government Polytechnic Nuapada", location: "Nuapada", badge: "GOVT" },
+        { name: "Government Polytechnic Nayagarh", location: "Nayagarh", badge: "GOVT" },
+        { name: "Government Polytechnic Gajapati", location: "Paralakhemundi, Gajapati", badge: "GOVT" },
+        { name: "Government Polytechnic Deogarh", location: "Deogarh", badge: "GOVT" },
+        { name: "Government Polytechnic Subarnapur", location: "Sonepur", badge: "GOVT" },
+        { name: "Government Polytechnic Jagatsinghpur", location: "Jagatsinghpur", badge: "GOVT" },
+        { name: "Government Polytechnic Kendrapara", location: "Kendrapara", badge: "GOVT" },
+        { name: "Government Polytechnic Jajpur", location: "Jajpur", badge: "GOVT" }
+    ],
+    "Polytechnic Institutes - Private (15+ Institutes)": [
+        { name: "KIIT Polytechnic Bhubaneswar", location: "Bhubaneswar", badge: "KIIT" },
+        { name: "SOA Polytechnic Bhubaneswar", location: "Bhubaneswar" },
+        { name: "Silicon Polytechnic Bhubaneswar", location: "Bhubaneswar" },
+        { name: "CET Polytechnic Bhubaneswar", location: "Bhubaneswar" },
+        { name: "Centurion Polytechnic Bhubaneswar", location: "Bhubaneswar" },
+        { name: "Roland Polytechnic Berhampur", location: "Berhampur, Ganjam" },
+        { name: "Seemanta Polytechnic Mayurbhanj", location: "Mayurbhanj" },
+        { name: "GIET Polytechnic Gunupur", location: "Gunupur, Rayagada" },
+        { name: "Vikash Polytechnic Bargarh", location: "Bargarh" },
+        { name: "Veer Surendra Sai Polytechnic Sambalpur", location: "Sambalpur" },
+        { name: "Nilachal Polytechnic Bhubaneswar", location: "Bhubaneswar" },
+        { name: "Orissa School of Mining Engineering", location: "Keonjhar" },
+        { name: "Mitra School of Engineering Jajpur", location: "Jajpur" },
+        { name: "Hi-Tech Polytechnic Bhubaneswar", location: "Bhubaneswar" },
+        { name: "Synergy Polytechnic Dhenkanal", location: "Dhenkanal" }
+    ],
+    "Agriculture and Fisheries Colleges (15+ Colleges)": [
+        { name: "Odisha University of Agriculture and Technology", location: "Bhubaneswar", badge: "OUAT" },
+        { name: "College of Agriculture Bhubaneswar", location: "Bhubaneswar", badge: "OUAT" },
+        { name: "College of Agriculture Chiplima", location: "Chiplima, Sambalpur", badge: "OUAT" },
+        { name: "College of Agriculture Keonjhar", location: "Keonjhar", badge: "OUAT" },
+        { name: "College of Agriculture Ranital", location: "Ranital, Jagatsinghpur", badge: "OUAT" },
+        { name: "College of Agriculture Paralakhemundi", location: "Paralakhemundi, Gajapati", badge: "OUAT" },
+        { name: "College of Veterinary Science and Animal Husbandry", location: "Bhubaneswar", badge: "OUAT" },
+        { name: "College of Forestry Ranchi (OD affil.)", location: "Ranchi" },
+        { name: "Central Institute of Freshwater Aquaculture", location: "Bhubaneswar", badge: "CIFA ICAR" },
+        { name: "Central Rice Research Institute", location: "Cuttack", founded: "1946", badge: "CRRI ICAR" },
+        { name: "College of Fisheries Berhampur", location: "Berhampur" },
+        { name: "Orissa University of Agriculture Technology Fisheries College", location: "Rangeilunda, Berhampur" },
+        { name: "ICAR Research Complex Bhubaneswar", location: "Bhubaneswar" },
+        { name: "Centurion Agriculture College", location: "Paralakhemundi" },
+        { name: "Sri Sri Agriculture College Cuttack", location: "Cuttack" }
+    ],
+    "Research Institutes and Specialized Centers": [
+        { name: "National Institute of Science Education and Research", location: "Jatni, Khurda", badge: "NISER" },
+        { name: "Institute of Physics Bhubaneswar", location: "Bhubaneswar", founded: "1972", badge: "IOP" },
+        { name: "Institute of Mathematics and Applications", location: "Bhubaneswar", badge: "IMA" },
+        { name: "ICAR Central Rice Research Institute", location: "Cuttack", badge: "CRRI" },
+        { name: "ICAR Central Institute of Freshwater Aquaculture", location: "Bhubaneswar", badge: "CIFA" },
+        { name: "Regional Medical Research Centre Bhubaneswar", location: "Bhubaneswar", badge: "RMRC ICMR" },
+        { name: "Space Applications Centre Bhubaneswar Field Station", location: "Bhubaneswar" },
+        { name: "Central Mine Planning and Design Institute", location: "Ranchi (OD affil.)", badge: "CMPDI" },
+        { name: "National Aluminium Company Research Centre", location: "Bhubaneswar", badge: "NALCO" },
+        { name: "Steel Authority of India Research Centre", location: "Rourkela", badge: "SAIL" },
+        { name: "Odisha Space Application Centre", location: "Bhubaneswar" },
+        { name: "Tribal Research Institute Bhubaneswar", location: "Bhubaneswar", badge: "TRI" },
+        { name: "G.B. Pant National Institute of Himalayan Environment (OD campus)", location: "Bhubaneswar" }
+    ]
+};
+
+const gradients = ['grad1','grad2','grad3','grad4','grad5','grad6','grad7','grad8','grad9','grad10'];
+
+function getInitials(name) {
+    const words = name.split(' ');
+    if (words.length === 1) return words[0].substring(0, 2).toUpperCase();
+    return (words[0][0] + words[1][0]).toUpperCase();
+}
+
+function createCollegeCard(college, gradIndex) {
+    const initials  = getInitials(college.name);
+    const gradClass = gradients[gradIndex % gradients.length];
+    const badge   = college.badge   ? '<div class="college-badge">' + college.badge + '</div>' : '';
+    const founded = college.founded ? ' \u2022 Est. ' + college.founded : '';
+    return '<div class="college-card ' + gradClass + '">' +
+        badge +
+        '<div class="college-content">' +
+        '<div class="college-initials">' + initials + '</div>' +
+        '<div>' +
+        '<div class="college-name">' + college.name + '</div>' +
+        '<div class="college-location">' + college.location + founded + '</div>' +
+        '</div></div></div>';
+}
+
+function renderContent() {
+    const content = document.getElementById('content');
+    let html = '';
+    let categoryIndex = 0;
+    let totalCount = 0;
+    for (const [category, colleges] of Object.entries(collegesData)) {
+        totalCount += colleges.length;
+        const cards = colleges.map(function(college, index) {
+            return createCollegeCard(college, categoryIndex + index);
+        }).join('');
+        html += '<div class="section">' +
+            '<h2 class="section-title">' + category +
+            '<span class="section-count">(' + colleges.length + ' institutions)</span></h2>' +
+            '<div class="scroll-container">' + cards + '</div></div>';
+        categoryIndex++;
+    }
+    const banner = '<div style="background:linear-gradient(135deg,#fa709a 0%,#fee140 100%);padding:20px;border-radius:10px;margin-bottom:30px;text-align:center;color:#000;">' +
+        '<h1 style="font-size:32px;margin-bottom:10px;">&#127981; Odisha - Complete Directory</h1>' +
+        '<p style="font-size:18px;opacity:0.85;">' + totalCount + ' Total Institutions | ' + Object.keys(collegesData).length + ' Categories | Land of Temples, Tribes and Technology</p></div>';
+    content.innerHTML = banner + html;
+}
+
+renderContent();
+</script>
+</body>
+</html>

@@ -1,0 +1,1195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refund Policy - UniHub India</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #1e293b;
+            --color-secondary: #475569;
+            --color-accent: #059669;
+            --color-accent-light: #d1fae5;
+            --color-bg: #ffffff;
+            --color-bg-secondary: #f8fafc;
+            --color-border: #e2e8f0;
+            --color-success: #059669;
+            --color-warning: #dc2626;
+            --font-serif: 'Crimson Text', Georgia, serif;
+            --font-sans: 'IBM Plex Sans', -apple-system, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background: var(--color-bg);
+            color: var(--color-secondary);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        .page-header {
+            background: linear-gradient(135deg, #047857 0%, #059669 100%);
+            color: white;
+            padding: 3rem 2rem 2rem;
+            border-bottom: 4px solid var(--color-accent);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .page-title {
+            font-family: var(--font-serif);
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .last-updated {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.6rem 1.5rem;
+            border: none;
+            border-radius: 6px;
+            font-family: var(--font-sans);
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--color-accent);
+        }
+
+        .btn-primary:hover {
+            background: #ecfdf5;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(5, 150, 105, 0.3);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 4rem;
+            position: relative;
+        }
+
+        .sidebar {
+            position: sticky;
+            top: 2rem;
+            height: fit-content;
+            max-height: calc(100vh - 4rem);
+            overflow-y: auto;
+            padding-right: 1rem;
+        }
+
+        .toc {
+            background: var(--color-bg-secondary);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid var(--color-border);
+        }
+
+        .toc-title {
+            font-family: var(--font-serif);
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid var(--color-accent);
+        }
+
+        .toc-list {
+            list-style: none;
+        }
+
+        .toc-item {
+            margin-bottom: 0.5rem;
+        }
+
+        .toc-link {
+            color: var(--color-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: block;
+            padding: 0.5rem 0.75rem;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+            border-left: 3px solid transparent;
+        }
+
+        .toc-link:hover {
+            background: white;
+            color: var(--color-accent);
+            border-left-color: var(--color-accent);
+            transform: translateX(4px);
+        }
+
+        .toc-link.active {
+            background: white;
+            color: var(--color-accent);
+            border-left-color: var(--color-accent);
+            font-weight: 500;
+        }
+
+        .main-content {
+            max-width: 900px;
+        }
+
+        .content-section {
+            margin-bottom: 3rem;
+            padding-bottom: 3rem;
+            border-bottom: 1px solid var(--color-border);
+            scroll-margin-top: 2rem;
+        }
+
+        .content-section:last-child {
+            border-bottom: none;
+        }
+
+        .section-title {
+            font-family: var(--font-serif);
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+            width: 4px;
+            height: 2rem;
+            background: var(--color-accent);
+            border-radius: 2px;
+        }
+
+        .subsection-title {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--color-primary);
+            margin: 2rem 0 1rem;
+        }
+
+        .sub-subsection-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--color-primary);
+            margin: 1.5rem 0 1rem;
+        }
+
+        .content-section p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .content-section ul, .content-section ol {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+
+        .content-section li {
+            margin-bottom: 0.75rem;
+            line-height: 1.8;
+        }
+
+        .highlight-box {
+            background: var(--color-accent-light);
+            border-left: 4px solid var(--color-accent);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+        }
+
+        .highlight-box strong {
+            color: var(--color-primary);
+        }
+
+        .warning-box {
+            background: #fef2f2;
+            border-left: 4px solid var(--color-warning);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+        }
+
+        .success-box {
+            background: #f0fdf4;
+            border-left: 4px solid var(--color-success);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+        }
+
+        .info-box {
+            background: #eff6ff;
+            border-left: 4px solid #3b82f6;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+        }
+
+        .contact-info {
+            background: var(--color-bg-secondary);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            border: 1px solid var(--color-border);
+        }
+
+        .related-policies {
+            background: linear-gradient(135deg, #047857 0%, #059669 100%);
+            color: white;
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+        }
+
+        .related-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .related-title {
+            font-family: var(--font-serif);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .policy-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .policy-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-decoration: none;
+            color: white;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .policy-card:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        .policy-card h3 {
+            font-family: var(--font-serif);
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .policy-card p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .support-section {
+            background: var(--color-bg-secondary);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .support-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .support-title {
+            font-family: var(--font-serif);
+            font-size: 2rem;
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+        }
+
+        .support-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        th {
+            background: var(--color-accent);
+            color: white;
+            font-weight: 600;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover td {
+            background: var(--color-bg-secondary);
+        }
+
+        .emoji-icon {
+            font-size: 1.5rem;
+            margin-right: 0.5rem;
+        }
+
+        @media (max-width: 968px) {
+            .container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .sidebar {
+                position: static;
+                max-height: none;
+            }
+
+            .page-title {
+                font-size: 2rem;
+            }
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--color-bg-secondary);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--color-border);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--color-secondary);
+        }
+    </style>
+</head>
+<body>
+    <header class="page-header">
+        <div class="header-content">
+            <h1 class="page-title">Refund Policy</h1>
+            <p class="last-updated">Last Updated: 1 April 2026 | Effective Date: 1 April 2026</p>
+            <div class="header-actions">
+                <button class="btn btn-primary" onclick="window.print()">📄 Print</button>
+                <button class="btn btn-secondary" onclick="downloadPDF()">⬇️ Download PDF</button>
+                <button class="btn btn-secondary" onclick="sharePolicy()">🔗 Share</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <aside class="sidebar">
+            <nav class="toc">
+                <h2 class="toc-title">Table of Contents</h2>
+                <ul class="toc-list">
+                    <li class="toc-item"><a href="#introduction" class="toc-link">1. Introduction</a></li>
+                    <li class="toc-item"><a href="#application-refunds" class="toc-link">2. Application Fee Refunds</a></li>
+                    <li class="toc-item"><a href="#admission-refunds" class="toc-link">3. Admission Fee Refunds</a></li>
+                    <li class="toc-item"><a href="#subscription-refunds" class="toc-link">4. Subscription Fee Refunds</a></li>
+                    <li class="toc-item"><a href="#other-fees" class="toc-link">5. Other Fees</a></li>
+                    <li class="toc-item"><a href="#refund-process" class="toc-link">6. Refund Process</a></li>
+                    <li class="toc-item"><a href="#failed-payments" class="toc-link">7. Failed Payments</a></li>
+                    <li class="toc-item"><a href="#chargebacks" class="toc-link">8. Chargebacks</a></li>
+                    <li class="toc-item"><a href="#amendments" class="toc-link">9. Policy Amendments</a></li>
+                    <li class="toc-item"><a href="#contact-info" class="toc-link">10. Contact Information</a></li>
+                    <li class="toc-item"><a href="#consumer-rights" class="toc-link">11. Consumer Rights</a></li>
+                    <li class="toc-item"><a href="#faqs" class="toc-link">12. Quick FAQs</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <section id="introduction" class="content-section">
+                <h2 class="section-title">1. Introduction</h2>
+                
+                <h3 class="subsection-title">1.1 Purpose</h3>
+                <p>This Refund Policy explains the terms and conditions under which UniHub India Private Limited ("UniHub," "we," "us," or "our") provides refunds for payments made on our Platform.</p>
+
+                <h3 class="subsection-title">1.2 Scope</h3>
+                <div class="highlight-box">
+                    <p><strong>This Policy applies to:</strong></p>
+                    <ul>
+                        <li>Application fees paid by Students</li>
+                        <li>Subscription fees paid by Colleges</li>
+                        <li>Any other fees charged by UniHub</li>
+                    </ul>
+                    
+                    <p style="margin-top: 1rem;"><strong>This Policy DOES NOT cover:</strong></p>
+                    <ul>
+                        <li>Admission fees paid directly to colleges (governed by college policies)</li>
+                        <li>Fees charged by third parties (payment gateway charges, bank fees)</li>
+                    </ul>
+                </div>
+
+                <h3 class="subsection-title">1.3 Acceptance</h3>
+                <p>By making a payment on the UniHub Platform, you accept the terms of this Refund Policy.</p>
+            </section>
+
+            <section id="application-refunds" class="content-section">
+                <h2 class="section-title">2. Application Fee Refunds (For Students)</h2>
+                
+                <h3 class="subsection-title">2.1 Fee Structure Recap</h3>
+                <div class="info-box">
+                    <ul>
+                        <li><strong>Base application fee:</strong> ₹299 (covers up to 5 college applications)</li>
+                        <li><strong>Additional colleges:</strong> ₹49 per college</li>
+                        <li><strong>Fees are inclusive of GST</strong></li>
+                    </ul>
+                </div>
+
+                <h3 class="subsection-title">2.2 Money-Back Guarantee (100% Refund)</h3>
+                <div class="success-box">
+                    <p><span class="emoji-icon">✅</span><strong>You are eligible for a FULL REFUND of application fees if:</strong></p>
+                    <p style="font-size: 1.1rem; margin: 1rem 0;"><strong>Condition: ALL colleges you applied to reject your application.</strong></p>
+                </div>
+
+                <p><strong>How It Works:</strong></p>
+                <ol>
+                    <li>You apply to 5 colleges (paid ₹299)</li>
+                    <li>All 5 colleges reject your application</li>
+                    <li>You receive a <strong>full refund of ₹299</strong> automatically</li>
+                </ol>
+
+                <p><strong>Refund Processing:</strong></p>
+                <ul>
+                    <li><strong>Automatic:</strong> No request needed</li>
+                    <li><strong>Timeline:</strong> Within 7 business days of final rejection</li>
+                    <li><strong>Method:</strong> Refunded to original payment method (UPI, card, bank account)</li>
+                </ul>
+
+                <div class="warning-box">
+                    <p><strong>Important Notes:</strong></p>
+                    <ul>
+                        <li>Refund applies ONLY if every single application is rejected</li>
+                        <li>If even ONE college accepts or shortlists you, NO refund is provided</li>
+                        <li>"Rejection" means college explicitly rejected; applications stuck in "Under Review" for >30 days count as "pending," not "rejected"</li>
+                    </ul>
+                </div>
+
+                <h3 class="subsection-title">2.3 Early Withdrawal Refund (Partial Refund)</h3>
+                <p>If you withdraw your application(s) <strong>before any college reviews them</strong>, you may receive a partial refund.</p>
+
+                <p><strong>Eligibility Criteria:</strong></p>
+                <ul>
+                    <li>Withdrawal request made <strong>within 24 hours</strong> of application submission</li>
+                    <li><strong>No college</strong> has opened or reviewed your application</li>
+                    <li>Application status is "Submitted" (not "Under Review" or beyond)</li>
+                </ul>
+
+                <div class="highlight-box">
+                    <p><strong>Refund Amount:</strong></p>
+                    <ul>
+                        <li><strong>80% of application fee</strong> (₹239 for base fee of ₹299)</li>
+                        <li><strong>20% processing fee</strong> retained by UniHub (covers payment gateway charges, platform costs)</li>
+                    </ul>
+                </div>
+
+                <p><strong>How to Request:</strong></p>
+                <ol>
+                    <li>Log in to your UniHub account</li>
+                    <li>Go to Dashboard > My Applications</li>
+                    <li>Select the application(s) to withdraw</li>
+                    <li>Click "Withdraw & Request Refund"</li>
+                    <li>Confirm withdrawal</li>
+                </ol>
+
+                <p><strong>Processing Timeline:</strong></p>
+                <ul>
+                    <li>Request reviewed within 2 business days</li>
+                    <li>Refund processed within 7-10 business days if approved</li>
+                    <li>Notification sent via email</li>
+                </ul>
+
+                <h3 class="subsection-title">2.4 Technical Error Refund (100% Refund)</h3>
+                <p>If a <strong>technical error on our Platform</strong> prevents your application from being submitted, you are eligible for a <strong>full refund</strong>.</p>
+
+                <p><strong>Examples of Technical Errors:</strong></p>
+                <ul>
+                    <li>Payment successful but application not submitted</li>
+                    <li>System crash during application submission</li>
+                    <li>Document upload failure despite successful payment</li>
+                </ul>
+
+                <p><strong>How to Request:</strong></p>
+                <ol>
+                    <li>Contact support immediately at support@unihub.in</li>
+                    <li>Include: Application ID, Payment transaction ID, Screenshot of error, Description of issue</li>
+                </ol>
+
+                <p><strong>Processing:</strong></p>
+                <ul>
+                    <li>Investigation within 48 hours</li>
+                    <li>If technical error confirmed: 100% refund within 5 business days</li>
+                    <li>If user error: No refund, guidance provided</li>
+                </ul>
+
+                <h3 class="subsection-title">2.5 Duplicate Payment Refund (100% Refund)</h3>
+                <div class="success-box">
+                    <p>If you are <strong>charged twice</strong> for the same application due to a system error, the duplicate charge will be <strong>fully refunded</strong>.</p>
+                    
+                    <p style="margin-top: 1rem;"><strong>Automatic Detection:</strong></p>
+                    <ul>
+                        <li>Our system automatically detects duplicate transactions</li>
+                        <li>Refund initiated automatically within 3 business days</li>
+                    </ul>
+                </div>
+
+                <h3 class="subsection-title">2.6 Non-Refundable Scenarios</h3>
+                <div class="warning-box">
+                    <p><strong>Application fees are NOT refundable in the following cases:</strong></p>
+                    
+                    <p>❌ <strong>Change of Mind</strong></p>
+                    <ul>
+                        <li>You decide not to pursue admissions</li>
+                        <li>You no longer want to apply to certain colleges</li>
+                        <li>You found a better alternative</li>
+                    </ul>
+
+                    <p>❌ <strong>Partial Acceptance/Rejection</strong></p>
+                    <ul>
+                        <li>At least one college accepted/shortlisted you</li>
+                        <li>Mixed results (some accepted, some rejected)</li>
+                    </ul>
+
+                    <p>❌ <strong>Application After Review Started</strong></p>
+                    <ul>
+                        <li>College has opened and reviewed your application</li>
+                        <li>Application status is "Under Review," "Shortlisted," or beyond</li>
+                    </ul>
+
+                    <p>❌ <strong>Offer Letter Received (Even if Declined)</strong></p>
+                    <ul>
+                        <li>You received an offer letter from any college</li>
+                        <li>You declined the offer (this still counts as "successful application facilitation")</li>
+                    </ul>
+
+                    <p>❌ <strong>Violation of Terms</strong></p>
+                    <ul>
+                        <li>Account suspended for policy violations</li>
+                        <li>Fraudulent activity detected</li>
+                        <li>Fake documents submitted</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="admission-refunds" class="content-section">
+                <h2 class="section-title">3. Admission Fee Refunds (Paid to Colleges)</h2>
+                
+                <h3 class="subsection-title">3.1 UniHub's Role</h3>
+                <div class="warning-box">
+                    <p><strong>Important:</strong> Admission fees are paid <strong>directly to colleges</strong>, not to UniHub. UniHub only facilitates the connection; we <strong>do not control college refund policies</strong>.</p>
+                </div>
+
+                <h3 class="subsection-title">3.2 College Refund Policies</h3>
+                <p>Each college has its own refund policy for admission fees. You must:</p>
+                <ul>
+                    <li>Review the college's refund policy before paying admission fees</li>
+                    <li>Contact the college directly for admission fee refunds</li>
+                    <li>Refer to your offer letter for refund terms</li>
+                </ul>
+
+                <h3 class="subsection-title">3.3 UniHub Assistance</h3>
+                <div class="info-box">
+                    <p>If you face issues with college refunds:</p>
+                    <ul>
+                        <li>We can <strong>mediate</strong> and contact the college on your behalf</li>
+                        <li>We can <strong>escalate</strong> disputes through our dispute resolution process</li>
+                        <li>We <strong>cannot</strong> force colleges to issue refunds beyond their stated policies</li>
+                    </ul>
+                    <p style="margin-top: 1rem;"><strong>Contact:</strong> disputes@unihub.in</p>
+                </div>
+            </section>
+
+            <section id="subscription-refunds" class="content-section">
+                <h2 class="section-title">4. Subscription Fee Refunds (For Colleges)</h2>
+                
+                <h3 class="subsection-title">4.1 Subscription Plans Recap</h3>
+                <ul>
+                    <li>Basic Plan: ₹5,000/month</li>
+                    <li>Standard Plan: ₹10,000/month</li>
+                    <li>Premium Plan: ₹20,000/month</li>
+                    <li>Enterprise Plan: Custom pricing</li>
+                </ul>
+
+                <h3 class="subsection-title">4.2 Refund Policy for Subscriptions</h3>
+                <div class="warning-box">
+                    <p><strong>General Rule:</strong> Subscription fees are <strong>non-refundable</strong> once the billing cycle begins.</p>
+                </div>
+
+                <p><strong>Exceptions (Pro-Rated Refund):</strong></p>
+
+                <p><strong>a) Service Downtime (>72 hours):</strong></p>
+                <ul>
+                    <li>If UniHub Platform is down for more than 72 consecutive hours due to our fault</li>
+                    <li>Refund calculation: (Days of downtime / 30) × Monthly subscription fee</li>
+                    <li>Example: 5 days downtime on ₹10,000 plan = (5/30) × 10,000 = ₹1,667 refund</li>
+                </ul>
+
+                <p><strong>b) Account Termination by UniHub (Wrongful):</strong></p>
+                <ul>
+                    <li>If we terminate your account incorrectly (and later reinstate it)</li>
+                    <li>Full refund of unused subscription period</li>
+                </ul>
+
+                <p><strong>c) Downgrade Within 7 Days:</strong></p>
+                <ul>
+                    <li>If you downgrade your plan within 7 days of upgrading</li>
+                    <li>Refund of the difference between plans (pro-rated)</li>
+                </ul>
+
+                <h3 class="subsection-title">4.3 Cancellation Policy</h3>
+                <p><strong>Mid-Cycle Cancellation:</strong></p>
+                <ul>
+                    <li>You can cancel your subscription anytime</li>
+                    <li>No refund for the current billing cycle</li>
+                    <li>Access continues until the end of the paid period</li>
+                    <li>Subscription will not auto-renew</li>
+                </ul>
+            </section>
+
+            <section id="other-fees" class="content-section">
+                <h2 class="section-title">5. Other Fees and Charges</h2>
+                
+                <h3 class="subsection-title">5.1 Featured Listing Fees (Colleges)</h3>
+                <p>If a college purchases featured listing or banner ads on UniHub:</p>
+                <ul>
+                    <li><strong>Refund:</strong> Pro-rated refund if service is not delivered</li>
+                    <li><strong>No refund:</strong> If listing was live for any portion of the purchased period</li>
+                </ul>
+
+                <h3 class="subsection-title">5.2 Counseling Services (If Offered)</h3>
+                <p>If UniHub offers premium counseling services to students:</p>
+                <ul>
+                    <li><strong>Refund:</strong> Full refund if service not delivered within 7 days</li>
+                    <li><strong>No refund:</strong> After first counseling session is conducted</li>
+                </ul>
+
+                <h3 class="subsection-title">5.3 Premium Document Verification (If Offered)</h3>
+                <p>If students opt for premium document verification service:</p>
+                <ul>
+                    <li><strong>Refund:</strong> Full refund if verification not completed within promised timeline</li>
+                    <li><strong>No refund:</strong> After verification is complete (even if result is negative)</li>
+                </ul>
+            </section>
+
+            <section id="refund-process" class="content-section">
+                <h2 class="section-title">6. Refund Process</h2>
+                
+                <h3 class="subsection-title">6.1 How Refunds Are Processed</h3>
+                
+                <div class="success-box">
+                    <p><strong>Automatic Refunds:</strong></p>
+                    <ul>
+                        <li>Money-Back Guarantee (all applications rejected)</li>
+                        <li>Duplicate payment detection</li>
+                        <li>Service downtime compensation</li>
+                    </ul>
+                    <p><strong>No action needed</strong> – refund processed automatically.</p>
+                </div>
+
+                <div class="info-box">
+                    <p><strong>Manual Refund Requests:</strong></p>
+                    <ul>
+                        <li>Early withdrawal</li>
+                        <li>Technical error refunds</li>
+                        <li>Subscription downgrades</li>
+                    </ul>
+                    <p><strong>Action needed</strong> – follow request process below.</p>
+                </div>
+
+                <h3 class="subsection-title">6.2 Refund Request Process</h3>
+                
+                <p><strong>Step 1: Submit Request</strong></p>
+                <div class="contact-info">
+                    <p><strong>Email:</strong> refunds@unihub.in</p>
+                    
+                    <p><strong>Include:</strong></p>
+                    <ul>
+                        <li>Your full name and registered email</li>
+                        <li>Application ID / Subscription ID / Transaction ID</li>
+                        <li>Reason for refund request</li>
+                        <li>Supporting documents (if applicable)</li>
+                    </ul>
+                </div>
+
+                <p><strong>Step 2: Review</strong></p>
+                <ul>
+                    <li>Our team reviews your request within 3 business days</li>
+                    <li>We may request additional information</li>
+                </ul>
+
+                <p><strong>Step 3: Decision</strong></p>
+                <ul>
+                    <li>You receive an email with refund decision (approved/rejected)</li>
+                    <li>If rejected, detailed reason is provided</li>
+                </ul>
+
+                <p><strong>Step 4: Processing</strong></p>
+                <ul>
+                    <li>If approved, refund is processed within 5-7 business days</li>
+                    <li>Refund is sent to original payment method</li>
+                </ul>
+
+                <p><strong>Step 5: Confirmation</strong></p>
+                <ul>
+                    <li>You receive refund confirmation email</li>
+                    <li>Check your bank/card statement for refund credit (may take additional 3-5 days)</li>
+                </ul>
+
+                <h3 class="subsection-title">6.3 Refund Timeline Summary</h3>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Refund Type</th>
+                            <th>Review Time</th>
+                            <th>Processing Time</th>
+                            <th>Total Time</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Money-Back Guarantee (Auto)</td>
+                            <td>N/A</td>
+                            <td>7 days</td>
+                            <td>7 days</td>
+                        </tr>
+                        <tr>
+                            <td>Early Withdrawal (Manual)</td>
+                            <td>2 days</td>
+                            <td>7-10 days</td>
+                            <td>9-12 days</td>
+                        </tr>
+                        <tr>
+                            <td>Technical Error (Manual)</td>
+                            <td>2 days</td>
+                            <td>5 days</td>
+                            <td>7 days</td>
+                        </tr>
+                        <tr>
+                            <td>Duplicate Payment (Auto)</td>
+                            <td>N/A</td>
+                            <td>3 days</td>
+                            <td>3 days</td>
+                        </tr>
+                        <tr>
+                            <td>Subscription Downgrade (Manual)</td>
+                            <td>2 days</td>
+                            <td>7 days</td>
+                            <td>9 days</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p style="font-size: 0.9rem; font-style: italic; margin-top: 1rem;">Note: Bank processing may add 3-5 days to the above timelines.</p>
+
+                <h3 class="subsection-title">6.4 Refund Methods</h3>
+                <p>Refunds are processed using the <strong>same method as the original payment</strong>:</p>
+                <ul>
+                    <li><strong>UPI:</strong> Refunded to linked bank account</li>
+                    <li><strong>Credit/Debit Card:</strong> Refunded to same card</li>
+                    <li><strong>Net Banking:</strong> Refunded to source bank account</li>
+                    <li><strong>Wallet (Paytm, etc.):</strong> Refunded to wallet</li>
+                </ul>
+
+                <div class="info-box">
+                    <p><strong>Exception:</strong> If the original payment method is no longer active (card expired, account closed), we will request alternate bank details via email.</p>
+                </div>
+            </section>
+
+            <section id="failed-payments" class="content-section">
+                <h2 class="section-title">7. Failed Payments (Not Refunds)</h2>
+                
+                <h3 class="subsection-title">7.1 Payment Failed vs. Refund</h3>
+                
+                <div class="info-box">
+                    <p><strong>Payment Failed:</strong></p>
+                    <ul>
+                        <li>Your payment attempt was not successful</li>
+                        <li>No money was deducted</li>
+                        <li>You can retry payment immediately</li>
+                    </ul>
+                </div>
+
+                <div class="highlight-box">
+                    <p><strong>Refund:</strong></p>
+                    <ul>
+                        <li>Payment was successful (money deducted)</li>
+                        <li>You are requesting the money back</li>
+                    </ul>
+                </div>
+
+                <h3 class="subsection-title">7.2 What Happens When Payment Fails</h3>
+                <p>If your payment fails:</p>
+                <ul>
+                    <li>You receive an error message</li>
+                    <li>Application is not submitted (remains in draft)</li>
+                    <li>No refund needed (you were not charged)</li>
+                </ul>
+
+                <h3 class="subsection-title">7.3 Money Deducted But Payment Failed</h3>
+                <div class="warning-box">
+                    <p>In rare cases, money may be deducted but the payment is marked as "failed."</p>
+                    
+                    <p><strong>What Happens:</strong></p>
+                    <ul>
+                        <li>This is usually a temporary authorization hold by your bank</li>
+                        <li>Money will be automatically refunded by your bank within 5-7 days</li>
+                        <li>UniHub does not receive this money</li>
+                        <li>You can retry payment immediately (you won't be charged twice)</li>
+                    </ul>
+                    
+                    <p style="margin-top: 1rem;"><strong>If Not Refunded After 7 Days:</strong></p>
+                    <ul>
+                        <li>Contact your bank first (they hold the funds, not us)</li>
+                        <li>Email us at payments@unihub.in with transaction details</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="chargebacks" class="content-section">
+                <h2 class="section-title">8. Chargebacks and Disputes</h2>
+                
+                <h3 class="subsection-title">8.1 Chargeback Definition</h3>
+                <p>A <strong>chargeback</strong> is when you dispute a transaction with your bank/card issuer, and they reverse the payment.</p>
+
+                <h3 class="subsection-title">8.2 Before Filing a Chargeback</h3>
+                <div class="warning-box">
+                    <p><strong>Please contact us first</strong> at refunds@unihub.in before initiating a chargeback with your bank.</p>
+                    
+                    <p><strong>Why?</strong></p>
+                    <ul>
+                        <li>We can often resolve issues faster than the bank</li>
+                        <li>Chargebacks incur penalties on us (unfair if the issue is resolvable)</li>
+                        <li>Your account may be suspended during chargeback investigation</li>
+                    </ul>
+                </div>
+
+                <h3 class="subsection-title">8.3 Chargeback Process</h3>
+                <p>If you file a chargeback:</p>
+                <ol>
+                    <li>Your bank notifies us of the dispute</li>
+                    <li>We investigate the transaction</li>
+                    <li>We respond to the bank with evidence</li>
+                    <li>Bank makes a decision (in your favor or ours)</li>
+                </ol>
+
+                <h3 class="subsection-title">8.4 Chargeback Consequences</h3>
+                <div class="warning-box">
+                    <p>If a chargeback is filed:</p>
+                    <ul>
+                        <li>Your UniHub account may be temporarily suspended</li>
+                        <li>If chargeback is found to be fraudulent, your account will be permanently banned</li>
+                        <li>We reserve the right to pursue legal action for fraudulent chargebacks</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="amendments" class="content-section">
+                <h2 class="section-title">9. Amendments to Refund Policy</h2>
+                
+                <h3 class="subsection-title">9.1 Right to Modify</h3>
+                <p>UniHub reserves the right to modify this Refund Policy at any time.</p>
+
+                <h3 class="subsection-title">9.2 Notice of Changes</h3>
+                <p>For material changes (e.g., reducing refund eligibility), we will:</p>
+                <ul>
+                    <li>Send email notification 30 days before the change takes effect</li>
+                    <li>Display a prominent notice on our Platform</li>
+                    <li>Update the "Last Updated" date at the top of this Policy</li>
+                </ul>
+
+                <h3 class="subsection-title">9.3 Acceptance</h3>
+                <p>Continued use of the Platform after changes take effect constitutes acceptance of the updated Refund Policy.</p>
+            </section>
+
+            <section id="contact-info" class="content-section">
+                <h2 class="section-title">10. Contact Information</h2>
+                
+                <h3 class="subsection-title">10.1 Refund Queries</h3>
+                <div class="contact-info">
+                    <p><strong>Email:</strong> refunds@unihub.in<br>
+                    <strong>Phone:</strong> +91-80-1234-5678 (Mon-Sat, 9 AM - 6 PM IST)<br>
+                    <strong>Live Chat:</strong> Available on our Platform (8 AM - 10 PM IST)</p>
+                </div>
+
+                <h3 class="subsection-title">10.2 Mailing Address</h3>
+                <div class="contact-info">
+                    <p>UniHub India Private Limited<br>
+                    Attn: Refunds Department<br>
+                    123, MG Road, Bangalore - 560001, Karnataka, India</p>
+                </div>
+
+                <h3 class="subsection-title">10.3 Grievance Officer</h3>
+                <div class="info-box">
+                    <p>For unresolved refund disputes:</p>
+                    <p><strong>Name:</strong> Ms. Priya Sharma<br>
+                    <strong>Email:</strong> grievance@unihub.in<br>
+                    <strong>Phone:</strong> +91-80-1234-5679</p>
+                    
+                    <p style="margin-top: 1rem;"><strong>Response Timeline:</strong></p>
+                    <ul>
+                        <li>Acknowledgment: Within 24 hours</li>
+                        <li>Resolution: Within 15 days</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="consumer-rights" class="content-section">
+                <h2 class="section-title">11. Consumer Rights (India)</h2>
+                
+                <h3 class="subsection-title">11.1 Consumer Protection Act, 2019</h3>
+                <p>You have rights under the <strong>Consumer Protection Act, 2019</strong>. If you believe your refund request was unfairly denied, you may:</p>
+
+                <p><strong>a) File a Consumer Complaint:</strong></p>
+                <ul>
+                    <li><strong>District Consumer Forum:</strong> For claims up to ₹1 crore</li>
+                    <li><strong>State Consumer Commission:</strong> For claims ₹1 crore to ₹10 crore</li>
+                    <li><strong>National Consumer Commission:</strong> For claims above ₹10 crore</li>
+                </ul>
+
+                <p><strong>b) Online Complaint:</strong></p>
+                <ul>
+                    <li>National Consumer Helpline: 1800-11-4000</li>
+                    <li>Online portal: https://consumerhelpline.gov.in</li>
+                </ul>
+
+                <h3 class="subsection-title">11.2 UniHub's Commitment</h3>
+                <div class="success-box">
+                    <p>We are committed to:</p>
+                    <ul>
+                        <li>Processing all eligible refunds promptly</li>
+                        <li>Providing transparent refund status updates</li>
+                        <li>Resolving disputes fairly and in good faith</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="faqs" class="content-section">
+                <h2 class="section-title">12. Quick FAQs</h2>
+                
+                <div class="highlight-box">
+                    <p><strong>Q1: Will I get a refund if I change my mind?</strong><br>
+                    <strong>A:</strong> No. Application fees are non-refundable if you simply change your mind.</p>
+                </div>
+
+                <div class="highlight-box">
+                    <p><strong>Q2: What if all colleges reject me?</strong><br>
+                    <strong>A:</strong> You get a 100% refund automatically within 7 business days (Money-Back Guarantee).</p>
+                </div>
+
+                <div class="highlight-box">
+                    <p><strong>Q3: Can I get a refund if I withdraw within 24 hours?</strong><br>
+                    <strong>A:</strong> Yes, 80% refund (if no college has reviewed your application yet).</p>
+                </div>
+
+                <div class="highlight-box">
+                    <p><strong>Q4: What if one college accepts and others reject?</strong><br>
+                    <strong>A:</strong> No refund. You received at least one admission opportunity.</p>
+                </div>
+
+                <div class="highlight-box">
+                    <p><strong>Q5: How long do refunds take?</strong><br>
+                    <strong>A:</strong> Typically 5-10 business days depending on refund type. Bank processing may add 3-5 days.</p>
+                </div>
+
+                <div class="highlight-box">
+                    <p><strong>Q6: Can I get a refund if payment failed?</strong><br>
+                    <strong>A:</strong> If payment failed, you were not charged. No refund needed. Just retry payment.</p>
+                </div>
+
+                <div class="highlight-box">
+                    <p><strong>Q7: Are subscription fees refundable?</strong><br>
+                    <strong>A:</strong> Generally no, except for service downtime >72 hours or plan downgrades within 7 days.</p>
+                </div>
+
+                <div class="highlight-box">
+                    <p><strong>Q8: What if I was charged twice?</strong><br>
+                    <strong>A:</strong> Duplicate charges are automatically refunded within 3 business days.</p>
+                </div>
+
+                <div class="highlight-box">
+                    <p><strong>Q9: Can I get a refund for admission fees paid to colleges?</strong><br>
+                    <strong>A:</strong> Admission fees are paid to colleges, not UniHub. Refunds are governed by college policies. Contact the college directly.</p>
+                </div>
+
+                <div class="highlight-box">
+                    <p><strong>Q10: What if my refund request is denied?</strong><br>
+                    <strong>A:</strong> You will receive a detailed reason. You can appeal by contacting our Grievance Officer or filing a consumer complaint.</p>
+                </div>
+
+                <div class="success-box" style="margin-top: 2rem;">
+                    <p style="font-size: 0.95rem;"><strong>ACKNOWLEDGMENT</strong></p>
+                    <p style="margin-top: 0.5rem;">BY MAKING A PAYMENT ON THE UNIHUB PLATFORM, YOU ACKNOWLEDGE THAT YOU HAVE READ, UNDERSTOOD, AND AGREE TO THIS REFUND POLICY.</p>
+                </div>
+
+                <p style="text-align: center; margin-top: 2rem; color: var(--color-secondary); font-size: 0.9rem;">
+                    <strong>Document Version:</strong> 1.0<br>
+                    <strong>Last Reviewed:</strong> 1 April 2026<br>
+                    <strong>Next Review Date:</strong> 1 April 2027
+                </p>
+            </section>
+        </main>
+    </div>
+
+    <div class="related-policies">
+        <div class="related-content">
+            <h2 class="related-title">Related Policies</h2>
+            <div class="policy-links">
+                <a href="terms.html" class="policy-card">
+                    <h3>📜 Terms & Conditions</h3>
+                    <p>Read our complete terms of service and user agreement</p>
+                </a>
+                <a href="privacy.html" class="policy-card">
+                    <h3>🔒 Privacy Policy</h3>
+                    <p>Learn how we protect your personal information</p>
+                </a>
+                <a href="#" class="policy-card">
+                    <h3>📋 College Agreement Terms</h3>
+                    <p>Terms for colleges partnering with UniHub</p>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="support-section">
+        <div class="support-content">
+            <h2 class="support-title">Need Help with a Refund?</h2>
+            <p>Our refund team is here to assist you with any questions or concerns about refunds.</p>
+            <div class="support-buttons">
+                <a href="mailto:refunds@unihub.in" class="btn btn-primary">📧 Email Refund Team</a>
+                <a href="#" class="btn btn-secondary">💬 Live Chat Support</a>
+                <a href="tel:+918012345678" class="btn btn-secondary">📞 Call Us</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.toc-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    document.querySelectorAll('.toc-link').forEach(l => l.classList.remove('active'));
+                    this.classList.add('active');
+                }
+            });
+        });
+
+        const sections = document.querySelectorAll('.content-section');
+        const navLinks = document.querySelectorAll('.toc-link');
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '-20% 0px -70% 0px',
+            threshold: 0
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${id}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => observer.observe(section));
+
+        function downloadPDF() {
+            alert('PDF download functionality would be implemented here. This would generate a PDF version of the Refund Policy.');
+        }
+
+        function sharePolicy() {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'UniHub Refund Policy',
+                    text: 'Check out UniHub\'s Refund Policy',
+                    url: window.location.href
+                }).catch(err => console.log('Error sharing:', err));
+            } else {
+                navigator.clipboard.writeText(window.location.href);
+                alert('Link copied to clipboard!');
+            }
+        }
+    </script>
+</body>
+</html>

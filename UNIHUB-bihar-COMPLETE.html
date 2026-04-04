@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNIHUB INDIA - Bihar Colleges (500+ Complete List)</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background-color: #141414; color: #ffffff; overflow-x: hidden; }
+        .header { display: flex; justify-content: space-between; align-items: center; padding: 20px 50px; background: linear-gradient(180deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%); position: fixed; top: 0; width: 100%; z-index: 1000; backdrop-filter: blur(10px); }
+        .logo { font-size: 28px; font-weight: 700; color: #e50914; letter-spacing: 1px; }
+        .logo-sub { font-size: 12px; color: #999; font-weight: 400; margin-left: 10px; }
+        .nav-menu { display: flex; gap: 30px; align-items: center; }
+        .nav-menu a { color: #e5e5e5; text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.3s; }
+        .nav-menu a:hover { color: #b3b3b3; }
+        .header-right { display: flex; gap: 25px; align-items: center; }
+        .icon-btn { background: none; border: none; color: #ffffff; font-size: 20px; cursor: pointer; }
+        .profile-icon { width: 32px; height: 32px; border-radius: 4px; background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); display: flex; align-items: center; justify-content: center; font-weight: 600; cursor: pointer; font-size: 13px; color: #000; }
+        .content { padding-top: 80px; padding-left: 50px; }
+        .section { margin-bottom: 40px; }
+        .section-title { font-size: 20px; font-weight: 600; margin-bottom: 15px; color: #e5e5e5; padding-left: 4px; }
+        .section-count { font-size: 14px; color: #999; margin-left: 10px; font-weight: 400; }
+        .scroll-container { display: flex; gap: 15px; overflow-x: auto; overflow-y: hidden; padding-bottom: 15px; padding-right: 50px; scroll-behavior: smooth; }
+        .scroll-container::-webkit-scrollbar { height: 8px; }
+        .scroll-container::-webkit-scrollbar-track { background: #2a2a2a; border-radius: 10px; }
+        .scroll-container::-webkit-scrollbar-thumb { background: #4a4a4a; border-radius: 10px; }
+        .college-card { min-width: 280px; height: 160px; border-radius: 8px; overflow: hidden; cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease; position: relative; }
+        .college-card:hover { transform: scale(1.05); box-shadow: 0 8px 25px rgba(0,0,0,0.5); z-index: 10; }
+        .college-content { position: relative; z-index: 1; padding: 20px; height: 100%; display: flex; flex-direction: column; justify-content: space-between; }
+        .college-initials { font-size: 32px; font-weight: 700; color: rgba(255,255,255,0.9); text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+        .college-name { font-size: 14px; font-weight: 600; color: #ffffff; line-height: 1.3; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+        .college-location { font-size: 12px; color: rgba(255,255,255,0.7); margin-top: 5px; }
+        .college-badge { position: absolute; top: 10px; right: 10px; background: rgba(229,9,20,0.9); color: white; padding: 4px 8px; border-radius: 4px; font-size: 10px; font-weight: 600; }
+        .college-card.grad1  { background: linear-gradient(135deg,#667eea 0%,#764ba2 100%); }
+        .college-card.grad2  { background: linear-gradient(135deg,#f093fb 0%,#f5576c 100%); }
+        .college-card.grad3  { background: linear-gradient(135deg,#4facfe 0%,#00f2fe 100%); }
+        .college-card.grad4  { background: linear-gradient(135deg,#43e97b 0%,#38f9d7 100%); }
+        .college-card.grad5  { background: linear-gradient(135deg,#fa709a 0%,#fee140 100%); }
+        .college-card.grad6  { background: linear-gradient(135deg,#30cfd0 0%,#330867 100%); }
+        .college-card.grad7  { background: linear-gradient(135deg,#a8edea 0%,#fed6e3 100%); }
+        .college-card.grad8  { background: linear-gradient(135deg,#ff9a56 0%,#ff6a88 100%); }
+        .college-card.grad9  { background: linear-gradient(135deg,#ffecd2 0%,#fcb69f 100%); }
+        .college-card.grad10 { background: linear-gradient(135deg,#ff6e7f 0%,#bfe9ff 100%); }
+        @media(max-width:768px){ .header{padding:15px 20px;} .content{padding-left:20px;} }
+    </style>
+</head>
+<body>
+<div class="header">
+    <div style="display:flex;align-items:center;gap:40px;">
+        <div>
+            <span class="logo">UNIHUB INDIA</span>
+            <span class="logo-sub">Bihar</span>
+        </div>
+        <nav class="nav-menu">
+            <a href="index.html">Home</a>
+            <a href="#universities">Universities</a>
+            <a href="#engineering">Engineering</a>
+            <a href="#medical">Medical</a>
+        </nav>
+    </div>
+    <div class="header-right">
+        <button class="icon-btn">🔍</button>
+        <button class="icon-btn">☰</button>
+        <div class="profile-icon">BR</div>
+    </div>
+</div>
+<div class="content" id="content"></div>
+<script>
+const collegesData = {
+    "Institutes of National Importance": [
+        { name: "Indian Institute of Technology Patna", location: "Bihta, Patna", founded: "2008", badge: "IIT" },
+        { name: "AIIMS Patna", location: "Phulwarisharif, Patna", founded: "2012", badge: "AIIMS" },
+        { name: "National Institute of Technology Patna", location: "Patna", founded: "1886", badge: "NIT" },
+        { name: "Indian Institute of Information Technology Bhagalpur", location: "Bhagalpur", founded: "2017", badge: "IIIT" },
+        { name: "Central Institute of Psychiatry", location: "Ranchi (Bihar border)", founded: "1918", badge: "CIP" },
+        { name: "National Institute of Fashion Technology Patna", location: "Patna", badge: "NIFT" },
+        { name: "Chandragupt Institute of Management Patna", location: "Patna", founded: "2008", badge: "CIMP" }
+    ],
+    "Central Universities": [
+        { name: "Nalanda University", location: "Rajgir, Nalanda", founded: "2010", badge: "REVIVED 2010" },
+        { name: "Central University of South Bihar", location: "Gaya", founded: "2009" }
+    ],
+    "State Universities - Major": [
+        { name: "Patna University", location: "Patna", founded: "1917", badge: "OLDEST IN EAST" },
+        { name: "Magadh University", location: "Bodh Gaya", founded: "1962" },
+        { name: "Veer Kunwar Singh University", location: "Ara, Bhojpur", founded: "1992" },
+        { name: "Lalit Narayan Mithila University", location: "Darbhanga", founded: "1972" },
+        { name: "Bhupendra Narayan Mandal University", location: "Madhepura", founded: "1992" },
+        { name: "Tilka Manjhi Bhagalpur University", location: "Bhagalpur", founded: "1960" },
+        { name: "Jai Prakash University", location: "Chapra", founded: "1990" },
+        { name: "Munger University", location: "Munger", founded: "2018" },
+        { name: "Purnea University", location: "Purnea", founded: "2018" },
+        { name: "Patliputra University", location: "Patna", founded: "2018" },
+        { name: "Babasaheb Bhimrao Ambedkar Bihar University", location: "Muzaffarpur", founded: "1960" },
+        { name: "Kameshwar Singh Darbhanga Sanskrit University", location: "Darbhanga", founded: "1961" }
+    ],
+    "State Universities - Regional and Specialized": [
+        { name: "Rajendra Agricultural University", location: "Pusa, Samastipur", founded: "1970" },
+        { name: "Bihar Agricultural University", location: "Sabour, Bhagalpur", founded: "2010" },
+        { name: "Bihar Animal Sciences University", location: "Patna", founded: "2017" },
+        { name: "Nalanda Open University", location: "Patna", founded: "1987" },
+        { name: "Bihar University of Health Sciences", location: "Patna", founded: "2021" },
+        { name: "Aryabhatt Knowledge University", location: "Patna", founded: "2009", badge: "AKU" },
+        { name: "Maulana Mazharul Haque Arabic and Persian University", location: "Patna", founded: "1998" },
+        { name: "Munger University", location: "Munger", founded: "2018" },
+        { name: "Saharsa University", location: "Saharsa", founded: "2018" }
+    ],
+    "Deemed to be Universities and Private Universities": [
+        { name: "Chandragupt Institute of Management Patna", location: "Patna", badge: "CIMP" },
+        { name: "Amity University Patna", location: "Patna" },
+        { name: "Sandip University", location: "Sijoul, Madhubani", founded: "2017" },
+        { name: "K.K. University", location: "Nalanda", founded: "2013" },
+        { name: "Amity University Bihar", location: "Patna" },
+        { name: "Patna Law College (Patna University)", location: "Patna", founded: "1887" },
+        { name: "Bihar Professional University", location: "Patna" },
+        { name: "Glocal University Bihar Campus", location: "Patna" },
+        { name: "Buddha Institute of Dental Sciences", location: "Patna" },
+        { name: "Sri Krishna Medical University", location: "Muzaffarpur" }
+    ],
+    "Engineering Colleges - Government and Premier": [
+        { name: "Indian Institute of Technology Patna", location: "Bihta, Patna", badge: "IIT" },
+        { name: "National Institute of Technology Patna", location: "Patna", founded: "1886", badge: "NIT" },
+        { name: "Bihar College of Engineering", location: "Patna", founded: "1900", badge: "OLDEST" },
+        { name: "Government Engineering College Bhojpur", location: "Ara, Bhojpur", badge: "GOVT" },
+        { name: "Government Engineering College Aurangabad", location: "Aurangabad", badge: "GOVT" },
+        { name: "Government Engineering College Banka", location: "Banka", badge: "GOVT" },
+        { name: "Government Engineering College Begusarai", location: "Begusarai", badge: "GOVT" },
+        { name: "Government Engineering College Bhagalpur", location: "Bhagalpur", badge: "GOVT" },
+        { name: "Government Engineering College Champaran", location: "Bettiah", badge: "GOVT" },
+        { name: "Government Engineering College Gaya", location: "Gaya", badge: "GOVT" },
+        { name: "Government Engineering College Gopalganj", location: "Gopalganj", badge: "GOVT" },
+        { name: "Government Engineering College Jamui", location: "Jamui", badge: "GOVT" },
+        { name: "Government Engineering College Jehanabad", location: "Jehanabad", badge: "GOVT" },
+        { name: "Government Engineering College Kaimur", location: "Bhabua", badge: "GOVT" },
+        { name: "Government Engineering College Khagaria", location: "Khagaria", badge: "GOVT" },
+        { name: "Government Engineering College Kishanganj", location: "Kishanganj", badge: "GOVT" },
+        { name: "Government Engineering College Lakhisarai", location: "Lakhisarai", badge: "GOVT" },
+        { name: "Government Engineering College Madhepura", location: "Madhepura", badge: "GOVT" },
+        { name: "Government Engineering College Madhubani", location: "Madhubani", badge: "GOVT" },
+        { name: "Government Engineering College Munger", location: "Munger", badge: "GOVT" },
+        { name: "Government Engineering College Muzaffarpur", location: "Muzaffarpur", badge: "GOVT" },
+        { name: "Government Engineering College Nalanda", location: "Nalanda", badge: "GOVT" },
+        { name: "Government Engineering College Nawada", location: "Nawada", badge: "GOVT" },
+        { name: "Government Engineering College Purnea", location: "Purnea", badge: "GOVT" },
+        { name: "Government Engineering College Rohtas", location: "Sasaram", badge: "GOVT" },
+        { name: "Government Engineering College Saharsa", location: "Saharsa", badge: "GOVT" },
+        { name: "Government Engineering College Samastipur", location: "Samastipur", badge: "GOVT" },
+        { name: "Government Engineering College Saran", location: "Chapra", badge: "GOVT" },
+        { name: "Government Engineering College Sheikhpura", location: "Sheikhpura", badge: "GOVT" },
+        { name: "Government Engineering College Sheohar", location: "Sheohar", badge: "GOVT" },
+        { name: "Government Engineering College Sitamarhi", location: "Sitamarhi", badge: "GOVT" },
+        { name: "Government Engineering College Siwan", location: "Siwan", badge: "GOVT" },
+        { name: "Government Engineering College Supaul", location: "Supaul", badge: "GOVT" },
+        { name: "Government Engineering College Vaishali", location: "Vaishali", badge: "GOVT" },
+        { name: "Government Engineering College West Champaran", location: "Bettiah", badge: "GOVT" },
+        { name: "Government Engineering College Darbhanga", location: "Darbhanga", badge: "GOVT" },
+        { name: "Government Engineering College Araria", location: "Araria", badge: "GOVT" },
+        { name: "Government Engineering College Katihara", location: "Katihar", badge: "GOVT" }
+    ],
+    "Engineering Colleges - Private (AKU Affiliated)": [
+        { name: "Maulana Azad College of Engineering and Technology", location: "Patna" },
+        { name: "Patna Institute of Technology", location: "Patna" },
+        { name: "MIT Muzaffarpur", location: "Muzaffarpur" },
+        { name: "Muzaffarpur Institute of Technology", location: "Muzaffarpur" },
+        { name: "Nalanda College of Engineering", location: "Chandi, Nalanda" },
+        { name: "Motihari College of Engineering", location: "Motihari, East Champaran" },
+        { name: "Darbhanga College of Engineering", location: "Darbhanga" },
+        { name: "Saharsa College of Engineering", location: "Saharsa" },
+        { name: "Supaul College of Engineering", location: "Supaul" },
+        { name: "Bhagalpur College of Engineering", location: "Bhagalpur" },
+        { name: "Gaya College of Engineering", location: "Gaya" },
+        { name: "Loknayak Jai Prakash Institute of Technology", location: "Chapra, Saran" },
+        { name: "Buddha Institute of Technology", location: "Gaya" },
+        { name: "Sitamarhi Institute of Technology", location: "Sitamarhi" },
+        { name: "Institute of Technology Banaras Hindu University Ara Campus", location: "Ara" },
+        { name: "Katihar Engineering College", location: "Katihar" },
+        { name: "Banka College of Engineering", location: "Banka" },
+        { name: "Shershah Engineering College", location: "Sasaram" },
+        { name: "Siwan Engineering and Technical Institute", location: "Siwan" },
+        { name: "Gopalganj Institute of Technology", location: "Gopalganj" },
+        { name: "RK University Bihar Campus", location: "Patna" },
+        { name: "IIIT Bhagalpur", location: "Bhagalpur", badge: "IIIT" },
+        { name: "National Institute of Electronics and IT Bihar", location: "Patna", badge: "NIELIT" },
+        { name: "Chandragupt Institute of Management Patna Engineering", location: "Patna" }
+    ],
+    "Medical Colleges - Government (20+ Colleges)": [
+        { name: "Patna Medical College and Hospital", location: "Patna", founded: "1925", badge: "PMCH" },
+        { name: "AIIMS Patna", location: "Phulwarisharif, Patna", badge: "AIIMS" },
+        { name: "Sri Krishna Medical College and Hospital", location: "Muzaffarpur", founded: "1970", badge: "SKMCH" },
+        { name: "Jawaharlal Nehru Medical College and Hospital", location: "Bhagalpur", founded: "1971" },
+        { name: "Anugrah Narayan Magadh Medical College", location: "Gaya", founded: "1969" },
+        { name: "Darbhanga Medical College and Hospital", location: "Darbhanga", founded: "1946" },
+        { name: "Nalanda Medical College and Hospital", location: "Patna", founded: "1980" },
+        { name: "Government Medical College Bettiah", location: "West Champaran", founded: "2018" },
+        { name: "Government Medical College Chhapra", location: "Saran", founded: "2018" },
+        { name: "Government Medical College Hajipur", location: "Vaishali", founded: "2018" },
+        { name: "Government Medical College Madhubani", location: "Madhubani", founded: "2019" },
+        { name: "Government Medical College Sitamarhi", location: "Sitamarhi", founded: "2019" },
+        { name: "Government Medical College Kishanganj", location: "Kishanganj", founded: "2019" },
+        { name: "Government Medical College Munger", location: "Munger", founded: "2020" },
+        { name: "Government Medical College Supaul", location: "Supaul", founded: "2020" },
+        { name: "Government Medical College Samastipur", location: "Samastipur", founded: "2020" },
+        { name: "Government Medical College Gopalganj", location: "Gopalganj", founded: "2020" },
+        { name: "Government Medical College Siwan", location: "Siwan", founded: "2021" },
+        { name: "Government Medical College Araria", location: "Araria", founded: "2021" },
+        { name: "Government Medical College Aurangabad", location: "Aurangabad", founded: "2021" },
+        { name: "Government Medical College Nawada", location: "Nawada", founded: "2021" },
+        { name: "Government Medical College Jamui", location: "Jamui", founded: "2022" }
+    ],
+    "Medical Colleges - Private (15+ Colleges)": [
+        { name: "Indira Gandhi Institute of Medical Sciences", location: "Patna", founded: "1983", badge: "IGIMS" },
+        { name: "Mata Gujri Memorial Medical College", location: "Kishanganj", founded: "2013" },
+        { name: "Lord Buddha Koshi Medical College", location: "Saharsa" },
+        { name: "Katihar Medical College", location: "Katihar", founded: "1970" },
+        { name: "Mahatma Gandhi Central Hospital Bihar", location: "Patna" },
+        { name: "Vardhman Institute of Medical Sciences", location: "Pawapuri, Nalanda" },
+        { name: "JLN Medical College Bhagalpur", location: "Bhagalpur" },
+        { name: "Muzaffarpur Medical College", location: "Muzaffarpur" },
+        { name: "Narayan Medical College and Hospital", location: "Jamuhar, Rohtas" },
+        { name: "Rohilkhand Medical College Bihar Campus", location: "Patna" },
+        { name: "MGM Medical College Kishanganj", location: "Kishanganj" },
+        { name: "Sri Sai Institute of Medical Sciences", location: "Darbhanga" },
+        { name: "National Medical College and Hospital", location: "Patna" },
+        { name: "Sahjanand Medical College", location: "Patna" },
+        { name: "Shri Ram Murti Institute of Medical Sciences Bihar", location: "Patna" }
+    ],
+    "Dental Colleges (10+ Colleges)": [
+        { name: "Patna Dental College and Hospital", location: "Patna", founded: "1956", badge: "GOVT" },
+        { name: "Buddha Institute of Dental Sciences and Hospital", location: "Patna" },
+        { name: "Dental College Muzaffarpur", location: "Muzaffarpur" },
+        { name: "Dental College Darbhanga", location: "Darbhanga" },
+        { name: "Mithila Minority Dental College", location: "Darbhanga" },
+        { name: "Saraswati Dental College", location: "Patna" },
+        { name: "Sri Krishna Dental College", location: "Muzaffarpur" },
+        { name: "Katihar Dental College", location: "Katihar" },
+        { name: "IGIMS Dental College", location: "Patna" },
+        { name: "Gaya College of Dentistry", location: "Gaya" }
+    ],
+    "Ayurveda and AYUSH Colleges (20+ Colleges)": [
+        { name: "Rajkiya Ayurvedic College and Hospital Patna", location: "Patna", badge: "GOVT" },
+        { name: "Rajkiya Ayurvedic College Muzaffarpur", location: "Muzaffarpur", badge: "GOVT" },
+        { name: "Rajkiya Ayurvedic College Darbhanga", location: "Darbhanga", badge: "GOVT" },
+        { name: "Rajkiya Ayurvedic College Bhagalpur", location: "Bhagalpur", badge: "GOVT" },
+        { name: "Rajkiya Ayurvedic College Gaya", location: "Gaya", badge: "GOVT" },
+        { name: "Rajkiya Ayurvedic College Chapra", location: "Chapra", badge: "GOVT" },
+        { name: "Rajkiya Unani Medical College Patna", location: "Patna", badge: "GOVT" },
+        { name: "Rajkiya Homeopathic Medical College Patna", location: "Patna", badge: "GOVT" },
+        { name: "Rajkiya Homeopathic Medical College Muzaffarpur", location: "Muzaffarpur", badge: "GOVT" },
+        { name: "Rajkiya Homeopathic Medical College Darbhanga", location: "Darbhanga", badge: "GOVT" },
+        { name: "Rajkiya Homeopathic Medical College Bhagalpur", location: "Bhagalpur", badge: "GOVT" },
+        { name: "Rajkiya Homeopathic Medical College Gaya", location: "Gaya", badge: "GOVT" },
+        { name: "Sri Sai Ayurvedic College Muzaffarpur", location: "Muzaffarpur" },
+        { name: "Buddha Ayurvedic College Bodh Gaya", location: "Bodh Gaya" },
+        { name: "Lord Buddha Ayurvedic College Patna", location: "Patna" },
+        { name: "Mahavir Ayurvedic College Darbhanga", location: "Darbhanga" },
+        { name: "Krishnamurti Ayurvedic College Motihari", location: "Motihari" },
+        { name: "Santosh Ayurvedic College Patna", location: "Patna" },
+        { name: "Shri Sai Homeopathic Medical College Patna", location: "Patna" },
+        { name: "National Ayurvedic Medical College Patna", location: "Patna" }
+    ],
+    "Nursing Colleges (20+ Colleges)": [
+        { name: "College of Nursing AIIMS Patna", location: "Patna", badge: "AIIMS" },
+        { name: "College of Nursing IGIMS Patna", location: "Patna", badge: "IGIMS" },
+        { name: "College of Nursing Patna Medical College", location: "Patna", badge: "PMCH" },
+        { name: "College of Nursing SKMCH Muzaffarpur", location: "Muzaffarpur" },
+        { name: "College of Nursing ANMCH Gaya", location: "Gaya" },
+        { name: "College of Nursing JLNMCH Bhagalpur", location: "Bhagalpur" },
+        { name: "College of Nursing DMCH Darbhanga", location: "Darbhanga" },
+        { name: "Katihar Nursing College", location: "Katihar" },
+        { name: "Narayan Nursing College Rohtas", location: "Rohtas" },
+        { name: "Nalanda Nursing College", location: "Patna" },
+        { name: "Patna Nursing College", location: "Patna" },
+        { name: "Lord Buddha Nursing College", location: "Patna" },
+        { name: "GNM College Bihar Sharif", location: "Nalanda" },
+        { name: "Muzaffarpur School of Nursing", location: "Muzaffarpur" },
+        { name: "MGM Nursing College Patna", location: "Patna" },
+        { name: "ANM Training Centre Patna", location: "Patna" },
+        { name: "Government Nursing College Gaya", location: "Gaya", badge: "GOVT" },
+        { name: "Government Nursing College Bhagalpur", location: "Bhagalpur", badge: "GOVT" },
+        { name: "SKMCH School of Nursing", location: "Muzaffarpur" },
+        { name: "Vinoba Bhave Nursing College Hazaribagh", location: "Hazaribagh (Bihar border)" }
+    ],
+    "Management Institutes (15+ Institutes)": [
+        { name: "Chandragupt Institute of Management Patna", location: "Patna", badge: "CIMP" },
+        { name: "IIM Bodh Gaya", location: "Bodh Gaya", badge: "IIM" },
+        { name: "IIT Patna School of Management", location: "Patna", badge: "IIT PATNA" },
+        { name: "Asian Institute of Management Patna", location: "Patna" },
+        { name: "Patna University Business School", location: "Patna" },
+        { name: "Xavier Institute of Social Services Ranchi", location: "Ranchi (Bihar border)" },
+        { name: "Magadh University MBA", location: "Bodh Gaya" },
+        { name: "Tilka Manjhi Bhagalpur University MBA", location: "Bhagalpur" },
+        { name: "Babasaheb Bhimrao Ambedkar Bihar University MBA", location: "Muzaffarpur" },
+        { name: "Aryabhatta Knowledge University MBA", location: "Patna", badge: "AKU" },
+        { name: "Nalanda Open University MBA", location: "Patna" },
+        { name: "RB Institute of Management Studies", location: "Patna" },
+        { name: "Institute of Technology and Management Patna", location: "Patna" },
+        { name: "Institute of Management Studies Bodh Gaya", location: "Bodh Gaya" },
+        { name: "Alliance Business School Bihar Campus", location: "Patna" }
+    ],
+    "Law Colleges (15+ Colleges)": [
+        { name: "Patna Law College", location: "Patna", founded: "1887", badge: "OLDEST IN EAST" },
+        { name: "Chanakya National Law University", location: "Patna", founded: "2006", badge: "CNLU" },
+        { name: "Law College Muzaffarpur", location: "Muzaffarpur" },
+        { name: "Law College Bhagalpur", location: "Bhagalpur" },
+        { name: "Law College Darbhanga", location: "Darbhanga" },
+        { name: "Law College Gaya", location: "Gaya" },
+        { name: "Law College Ara", location: "Ara, Bhojpur" },
+        { name: "Law College Chapra", location: "Chapra" },
+        { name: "Law College Munger", location: "Munger" },
+        { name: "Law College Purnea", location: "Purnea" },
+        { name: "Law College Samastipur", location: "Samastipur" },
+        { name: "Law College Sitamarhi", location: "Sitamarhi" },
+        { name: "Patna University Faculty of Law", location: "Patna", founded: "1917" },
+        { name: "Magadh University Law Faculty", location: "Bodh Gaya" },
+        { name: "Tilka Manjhi Bhagalpur University Law Faculty", location: "Bhagalpur" }
+    ],
+    "Arts Science and Commerce - Patna and Surrounding (35+ Colleges)": [
+        { name: "Patna College", location: "Patna", founded: "1863", badge: "OLDEST IN STATE" },
+        { name: "Patna Science College", location: "Patna", founded: "1927", badge: "AUTONOMOUS" },
+        { name: "Patna Womens College", location: "Patna", founded: "1940", badge: "WOMEN AUTONOMOUS" },
+        { name: "Magadh Mahila College", location: "Patna", badge: "WOMEN" },
+        { name: "BN College", location: "Patna", founded: "1937" },
+        { name: "Government Commerce College Patna", location: "Patna", badge: "GOVT" },
+        { name: "Patna University Colleges", location: "Patna", founded: "1917" },
+        { name: "College of Arts and Crafts Patna", location: "Patna", founded: "1905" },
+        { name: "JS College Chapra", location: "Chapra, Saran", founded: "1899" },
+        { name: "RN College Hajipur", location: "Hajipur, Vaishali" },
+        { name: "Government Womens College Patna", location: "Patna", badge: "WOMEN GOVT" },
+        { name: "Nalanda College Bihar Sharif", location: "Bihar Sharif, Nalanda", founded: "1948" },
+        { name: "Bihar National College Patna", location: "Patna" },
+        { name: "AN Sinha Institute of Social Studies", location: "Patna", founded: "1948", badge: "RESEARCH" },
+        { name: "Center for Economic Policy and Public Finance", location: "Patna" },
+        { name: "Patliputra University Colleges", location: "Patna", founded: "2018" },
+        { name: "Marwari College Bhagalpur", location: "Bhagalpur", founded: "1926" },
+        { name: "TNB College Bhagalpur", location: "Bhagalpur" },
+        { name: "SM College Bhagalpur", location: "Bhagalpur", founded: "1909" },
+        { name: "TMBU PG Colleges", location: "Bhagalpur" },
+        { name: "Gaya College Gaya", location: "Gaya", founded: "1944" },
+        { name: "Magadh University Colleges", location: "Bodh Gaya" },
+        { name: "Government Nalanda College Biharsharif", location: "Nalanda", badge: "GOVT" },
+        { name: "Central University of South Bihar Colleges", location: "Gaya" },
+        { name: "Nalanda University Colleges", location: "Rajgir" },
+        { name: "SS College Jehanabad", location: "Jehanabad" },
+        { name: "PMP College Nawada", location: "Nawada" },
+        { name: "Shershah College Sasaram", location: "Sasaram, Rohtas", founded: "1957" },
+        { name: "Rohtas College Sasaram", location: "Sasaram" },
+        { name: "JAP College Chapra", location: "Chapra" }
+    ],
+    "Arts Science and Commerce - Mithila and North Bihar (35+ Colleges)": [
+        { name: "Darbhanga College Darbhanga", location: "Darbhanga", founded: "1938" },
+        { name: "CM Science College Darbhanga", location: "Darbhanga", founded: "1960" },
+        { name: "ML Academy Darbhanga", location: "Darbhanga" },
+        { name: "Government Womens College Darbhanga", location: "Darbhanga", badge: "WOMEN GOVT" },
+        { name: "LNMU Colleges Darbhanga", location: "Darbhanga" },
+        { name: "LS College Muzaffarpur", location: "Muzaffarpur", founded: "1899" },
+        { name: "BRA Bihar University Colleges", location: "Muzaffarpur" },
+        { name: "Ramna Girls College Muzaffarpur", location: "Muzaffarpur", badge: "WOMEN" },
+        { name: "RDS College Muzaffarpur", location: "Muzaffarpur" },
+        { name: "Sitamarhi College Sitamarhi", location: "Sitamarhi" },
+        { name: "Dumraon Raj College Buxar", location: "Buxar" },
+        { name: "GD Patliputra College Patna", location: "Patna" },
+        { name: "Sitamarhi Mahila College", location: "Sitamarhi", badge: "WOMEN" },
+        { name: "Beltron College Patna", location: "Patna" },
+        { name: "DN College Motihari", location: "Motihari, East Champaran" },
+        { name: "JPN College Motihari", location: "Motihari" },
+        { name: "MB College Bettiah", location: "Bettiah, West Champaran" },
+        { name: "Maharana Pratap College Bettiah", location: "Bettiah" },
+        { name: "NR College Gopalganj", location: "Gopalganj" },
+        { name: "Siwan College Siwan", location: "Siwan", founded: "1952" },
+        { name: "ST College Dumraon", location: "Buxar" },
+        { name: "SS College Sasaram", location: "Sasaram" },
+        { name: "RP Sharma College Muzaffarpur", location: "Muzaffarpur" },
+        { name: "Sant Bhakta College Sitamarhi", location: "Sitamarhi" },
+        { name: "Kishanganj College Kishanganj", location: "Kishanganj" },
+        { name: "Araria College Araria", location: "Araria" },
+        { name: "Purnea College Purnea", location: "Purnea", founded: "1941" },
+        { name: "Katihar College Katihar", location: "Katihar" },
+        { name: "Intermediate College Katihar", location: "Katihar" },
+        { name: "Saharsa College Saharsa", location: "Saharsa", founded: "1947" },
+        { name: "Madhusudan Bajla College Supaul", location: "Supaul" },
+        { name: "Mandar College Bhagalpur", location: "Bhagalpur" },
+        { name: "Tilka Manjhi College Bhagalpur", location: "Bhagalpur" },
+        { name: "SNS College Bhagalpur", location: "Bhagalpur" },
+        { name: "Banka College Banka", location: "Banka" }
+    ],
+    "Women Colleges (20+ Colleges)": [
+        { name: "Patna Womens College", location: "Patna", founded: "1940", badge: "AUTONOMOUS" },
+        { name: "Magadh Mahila College Patna", location: "Patna" },
+        { name: "Government Womens College Patna", location: "Patna", badge: "GOVT" },
+        { name: "Government Womens College Darbhanga", location: "Darbhanga", badge: "GOVT" },
+        { name: "Government Womens College Muzaffarpur", location: "Muzaffarpur", badge: "GOVT" },
+        { name: "Government Womens College Bhagalpur", location: "Bhagalpur", badge: "GOVT" },
+        { name: "Government Womens College Gaya", location: "Gaya", badge: "GOVT" },
+        { name: "Government Womens College Chapra", location: "Chapra", badge: "GOVT" },
+        { name: "Government Womens College Motihari", location: "Motihari", badge: "GOVT" },
+        { name: "Government Womens College Sasaram", location: "Sasaram", badge: "GOVT" },
+        { name: "Government Womens College Bettiah", location: "Bettiah", badge: "GOVT" },
+        { name: "Government Womens College Purnea", location: "Purnea", badge: "GOVT" },
+        { name: "Government Womens College Sitamarhi", location: "Sitamarhi", badge: "GOVT" },
+        { name: "Government Womens College Siwan", location: "Siwan", badge: "GOVT" },
+        { name: "Government Womens College Hajipur", location: "Hajipur", badge: "GOVT" },
+        { name: "Government Womens College Katihar", location: "Katihar", badge: "GOVT" },
+        { name: "Ramna Girls College Muzaffarpur", location: "Muzaffarpur" },
+        { name: "Sitamarhi Mahila College", location: "Sitamarhi" },
+        { name: "DN Girls College Patna", location: "Patna" },
+        { name: "Kankerbagh Mahila College Patna", location: "Patna" }
+    ],
+    "Pharmacy Colleges (15+ Colleges)": [
+        { name: "Pharmacy Institute NIT Patna", location: "Patna", badge: "NIT" },
+        { name: "Patna College of Pharmacy", location: "Patna" },
+        { name: "Indira Gandhi Institute of Medical Sciences Pharmacy", location: "Patna" },
+        { name: "Lord Buddha College of Pharmacy", location: "Patna" },
+        { name: "BN Mandal University Pharmacy", location: "Madhepura" },
+        { name: "Aryabhatta Knowledge University Pharmacy", location: "Patna" },
+        { name: "Nalanda Institute of Pharmaceutical Sciences", location: "Nalanda" },
+        { name: "Muzaffarpur College of Pharmacy", location: "Muzaffarpur" },
+        { name: "Bhagalpur College of Pharmacy", location: "Bhagalpur" },
+        { name: "Gaya College of Pharmacy", location: "Gaya" },
+        { name: "Darbhanga Pharmacy College", location: "Darbhanga" },
+        { name: "Siwan College of Pharmacy", location: "Siwan" },
+        { name: "GD Pharmacy College Patna", location: "Patna" },
+        { name: "Katihar Pharmacy College", location: "Katihar" },
+        { name: "Sunrise Pharmacy College Patna", location: "Patna" }
+    ],
+    "Polytechnic Institutes - Government (38 Institutes)": [
+        { name: "Government Polytechnic Patna", location: "Patna", badge: "GOVT" },
+        { name: "Government Womens Polytechnic Patna", location: "Patna", badge: "WOMEN GOVT" },
+        { name: "Government Polytechnic Muzaffarpur", location: "Muzaffarpur", badge: "GOVT" },
+        { name: "Government Polytechnic Bhagalpur", location: "Bhagalpur", badge: "GOVT" },
+        { name: "Government Polytechnic Gaya", location: "Gaya", badge: "GOVT" },
+        { name: "Government Polytechnic Darbhanga", location: "Darbhanga", badge: "GOVT" },
+        { name: "Government Polytechnic Chapra", location: "Chapra, Saran", badge: "GOVT" },
+        { name: "Government Polytechnic Motihari", location: "Motihari, East Champaran", badge: "GOVT" },
+        { name: "Government Polytechnic Bettiah", location: "Bettiah, West Champaran", badge: "GOVT" },
+        { name: "Government Polytechnic Sasaram", location: "Sasaram, Rohtas", badge: "GOVT" },
+        { name: "Government Polytechnic Ara", location: "Ara, Bhojpur", badge: "GOVT" },
+        { name: "Government Polytechnic Munger", location: "Munger", badge: "GOVT" },
+        { name: "Government Polytechnic Hajipur", location: "Hajipur, Vaishali", badge: "GOVT" },
+        { name: "Government Polytechnic Samastipur", location: "Samastipur", badge: "GOVT" },
+        { name: "Government Polytechnic Siwan", location: "Siwan", badge: "GOVT" },
+        { name: "Government Polytechnic Purnea", location: "Purnea", badge: "GOVT" },
+        { name: "Government Polytechnic Katihar", location: "Katihar", badge: "GOVT" },
+        { name: "Government Polytechnic Saharsa", location: "Saharsa", badge: "GOVT" },
+        { name: "Government Polytechnic Supaul", location: "Supaul", badge: "GOVT" },
+        { name: "Government Polytechnic Araria", location: "Araria", badge: "GOVT" },
+        { name: "Government Polytechnic Kishanganj", location: "Kishanganj", badge: "GOVT" },
+        { name: "Government Polytechnic Sitamarhi", location: "Sitamarhi", badge: "GOVT" },
+        { name: "Government Polytechnic Madhubani", location: "Madhubani", badge: "GOVT" },
+        { name: "Government Polytechnic Nawada", location: "Nawada", badge: "GOVT" },
+        { name: "Government Polytechnic Nalanda", location: "Bihar Sharif, Nalanda", badge: "GOVT" },
+        { name: "Government Polytechnic Aurangabad", location: "Aurangabad", badge: "GOVT" },
+        { name: "Government Polytechnic Jehanabad", location: "Jehanabad", badge: "GOVT" },
+        { name: "Government Polytechnic Lakhisarai", location: "Lakhisarai", badge: "GOVT" },
+        { name: "Government Polytechnic Begusarai", location: "Begusarai", badge: "GOVT" },
+        { name: "Government Polytechnic Khagaria", location: "Khagaria", badge: "GOVT" },
+        { name: "Government Polytechnic Sheikhpura", location: "Sheikhpura", badge: "GOVT" },
+        { name: "Government Polytechnic Sheohar", location: "Sheohar", badge: "GOVT" },
+        { name: "Government Polytechnic Gopalganj", location: "Gopalganj", badge: "GOVT" },
+        { name: "Government Polytechnic Madhepura", location: "Madhepura", badge: "GOVT" },
+        { name: "Government Polytechnic Jamui", location: "Jamui", badge: "GOVT" },
+        { name: "Government Polytechnic Banka", location: "Banka", badge: "GOVT" },
+        { name: "Government Polytechnic Buxar", location: "Buxar", badge: "GOVT" },
+        { name: "Government Polytechnic Kaimur", location: "Bhabua, Kaimur", badge: "GOVT" }
+    ],
+    "Polytechnic Institutes - Private (15+ Institutes)": [
+        { name: "Maulana Azad Polytechnic Patna", location: "Patna" },
+        { name: "Patna Polytechnic College", location: "Patna" },
+        { name: "Buddhist Polytechnic College", location: "Patna" },
+        { name: "Nalanda Polytechnic Patna", location: "Patna" },
+        { name: "Muzaffarpur Polytechnic College", location: "Muzaffarpur" },
+        { name: "North Bihar Polytechnic Muzaffarpur", location: "Muzaffarpur" },
+        { name: "Bhagalpur Polytechnic College", location: "Bhagalpur" },
+        { name: "Gaya Polytechnic College", location: "Gaya" },
+        { name: "Darbhanga Polytechnic", location: "Darbhanga" },
+        { name: "Katihar Polytechnic", location: "Katihar" },
+        { name: "Motihari Polytechnic", location: "Motihari" },
+        { name: "Chapra Polytechnic", location: "Chapra" },
+        { name: "IIT Patna Polytechnic Wing", location: "Patna" },
+        { name: "Ara Polytechnic", location: "Ara" },
+        { name: "IIIT Bhagalpur Polytechnic Wing", location: "Bhagalpur" }
+    ],
+    "Teacher Training and Education Colleges (20+ Colleges)": [
+        { name: "State Council of Educational Research and Training Bihar", location: "Patna", badge: "SCERT" },
+        { name: "Regional Institute of Education Patna", location: "Patna", badge: "NCERT" },
+        { name: "District Institute of Education and Training", location: "All 38 Districts", badge: "DIET" },
+        { name: "Patna Teachers Training College", location: "Patna", badge: "GOVT" },
+        { name: "Muzaffarpur Teachers Training College", location: "Muzaffarpur", badge: "GOVT" },
+        { name: "Darbhanga Teachers Training College", location: "Darbhanga", badge: "GOVT" },
+        { name: "Bhagalpur Teachers Training College", location: "Bhagalpur", badge: "GOVT" },
+        { name: "Gaya Teachers Training College", location: "Gaya", badge: "GOVT" },
+        { name: "Chapra Teachers Training College", location: "Chapra", badge: "GOVT" },
+        { name: "Bodh Gaya Teachers Training College", location: "Bodh Gaya" },
+        { name: "Veer Kunwar Singh University BEd College", location: "Ara" },
+        { name: "Patna University BEd College", location: "Patna" },
+        { name: "Magadh University BEd College", location: "Bodh Gaya" },
+        { name: "LNMU BEd College", location: "Darbhanga" },
+        { name: "Aryabhatta Knowledge University BEd", location: "Patna" },
+        { name: "Nalanda Open University BEd", location: "Patna" },
+        { name: "TMBU BEd College", location: "Bhagalpur" },
+        { name: "Rajendra University BEd College", location: "Muzaffarpur" },
+        { name: "Central University of South Bihar BEd", location: "Gaya" },
+        { name: "Private BEd Colleges", location: "Multiple Districts", badge: "200+ TOTAL" }
+    ],
+    "Industrial Training Institutes and Skill Development (25+ Centers)": [
+        { name: "Government ITI Patna", location: "Patna", badge: "GOVT" },
+        { name: "Government ITI Muzaffarpur", location: "Muzaffarpur", badge: "GOVT" },
+        { name: "Government ITI Bhagalpur", location: "Bhagalpur", badge: "GOVT" },
+        { name: "Government ITI Gaya", location: "Gaya", badge: "GOVT" },
+        { name: "Government ITI Darbhanga", location: "Darbhanga", badge: "GOVT" },
+        { name: "Government ITI Chapra", location: "Chapra", badge: "GOVT" },
+        { name: "Government ITI Motihari", location: "Motihari", badge: "GOVT" },
+        { name: "Government ITI Sasaram", location: "Sasaram", badge: "GOVT" },
+        { name: "Government ITI Munger", location: "Munger", badge: "GOVT" },
+        { name: "Government ITI Hajipur", location: "Hajipur", badge: "GOVT" },
+        { name: "Government ITI Purnea", location: "Purnea", badge: "GOVT" },
+        { name: "Government ITI Ara", location: "Ara", badge: "GOVT" },
+        { name: "Government ITI Siwan", location: "Siwan", badge: "GOVT" },
+        { name: "Government ITI Katihar", location: "Katihar", badge: "GOVT" },
+        { name: "Government ITI Begusarai", location: "Begusarai", badge: "GOVT" },
+        { name: "Government ITI Samastipur", location: "Samastipur", badge: "GOVT" },
+        { name: "Government ITI Nawada", location: "Nawada", badge: "GOVT" },
+        { name: "Government ITI Nalanda", location: "Nalanda", badge: "GOVT" },
+        { name: "Government ITI Aurangabad", location: "Aurangabad", badge: "GOVT" },
+        { name: "NIELIT Patna", location: "Patna", badge: "NIELIT" },
+        { name: "Bihar Skill Development Mission Centers", location: "State-wide", badge: "BSDM" },
+        { name: "Pradhan Mantri Kaushal Vikas Yojana Centers Bihar", location: "Multiple Districts", badge: "PMKVY" },
+        { name: "RSETI - Rural Self Employment Training Institutes", location: "All 38 Districts" },
+        { name: "National Skill Development Corporation Bihar", location: "Patna", badge: "NSDC" },
+        { name: "Bihar State Education Finance Corporation", location: "Patna" }
+    ],
+    "Research Institutes and Specialized Centers": [
+        { name: "AN Sinha Institute of Social Studies", location: "Patna", founded: "1948", badge: "RESEARCH" },
+        { name: "Patna Museum", location: "Patna", founded: "1917" },
+        { name: "Archaeological Survey of India Patna Circle", location: "Patna", badge: "ASI" },
+        { name: "ICAR Research Complex for Eastern Region", location: "Patna", badge: "ICAR" },
+        { name: "ICAR Seed Storage and Research Centre", location: "Patna" },
+        { name: "Rajendra Agricultural University Research Stations", location: "Multiple Locations" },
+        { name: "Bihar Agricultural University Research Centres", location: "Bhagalpur" },
+        { name: "National Research Centre for Litchi", location: "Muzaffarpur", badge: "NCRL" },
+        { name: "National Research Centre for Makhana", location: "Darbhanga", badge: "NRCM" },
+        { name: "Nalanda International University Research Wing", location: "Rajgir" },
+        { name: "Bodh Gaya International Buddhist Research Centre", location: "Bodh Gaya" },
+        { name: "K.P. Jayaswal Research Institute", location: "Patna", founded: "1950" }
+    ]
+};
+
+const gradients = ['grad1','grad2','grad3','grad4','grad5','grad6','grad7','grad8','grad9','grad10'];
+
+function getInitials(name) {
+    const words = name.split(' ');
+    if (words.length === 1) return words[0].substring(0, 2).toUpperCase();
+    return (words[0][0] + words[1][0]).toUpperCase();
+}
+
+function createCollegeCard(college, gradIndex) {
+    const initials  = getInitials(college.name);
+    const gradClass = gradients[gradIndex % gradients.length];
+    const badge   = college.badge   ? `<div class="college-badge">${college.badge}</div>` : '';
+    const founded = college.founded ? ` • Est. ${college.founded}` : '';
+    return `
+        <div class="college-card ${gradClass}">
+            ${badge}
+            <div class="college-content">
+                <div class="college-initials">${initials}</div>
+                <div>
+                    <div class="college-name">${college.name}</div>
+                    <div class="college-location">${college.location}${founded}</div>
+                </div>
+            </div>
+        </div>`;
+}
+
+function renderContent() {
+    const content = document.getElementById('content');
+    let html = '';
+    let categoryIndex = 0;
+    let totalCount = 0;
+    for (const [category, colleges] of Object.entries(collegesData)) {
+        totalCount += colleges.length;
+        html += `
+            <div class="section">
+                <h2 class="section-title">${category}<span class="section-count">(${colleges.length} institutions)</span></h2>
+                <div class="scroll-container">
+                    ${colleges.map((college, index) => createCollegeCard(college, categoryIndex + index)).join('')}
+                </div>
+            </div>`;
+        categoryIndex++;
+    }
+    const banner = `<div style="background:linear-gradient(135deg,#43e97b 0%,#38f9d7 100%);padding:20px;border-radius:10px;margin-bottom:30px;text-align:center;color:#000;">
+        <h1 style="font-size:32px;margin-bottom:10px;">🏛️ Bihar - Complete Directory</h1>
+        <p style="font-size:18px;opacity:0.85;">${totalCount} Total Institutions | ${Object.keys(collegesData).length} Categories | Land of Ancient Nalanda &amp; Vikramashila</p>
+    </div>`;
+    content.innerHTML = banner + html;
+}
+
+renderContent();
+</script>
+</body>
+</html>

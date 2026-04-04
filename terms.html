@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms & Conditions - UniHub India</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #1e293b;
+            --color-secondary: #475569;
+            --color-accent: #d97706;
+            --color-accent-light: #fef3c7;
+            --color-bg: #ffffff;
+            --color-bg-secondary: #f8fafc;
+            --color-border: #e2e8f0;
+            --color-success: #059669;
+            --color-warning: #dc2626;
+            --font-serif: 'Crimson Text', Georgia, serif;
+            --font-sans: 'IBM Plex Sans', -apple-system, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background: var(--color-bg);
+            color: var(--color-secondary);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        .page-header {
+            background: linear-gradient(135deg, var(--color-primary) 0%, #334155 100%);
+            color: white;
+            padding: 3rem 2rem 2rem;
+            border-bottom: 4px solid var(--color-accent);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .page-title {
+            font-family: var(--font-serif);
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .last-updated {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.6rem 1.5rem;
+            border: none;
+            border-radius: 6px;
+            font-family: var(--font-sans);
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: var(--color-accent);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #b45309;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(217, 119, 6, 0.3);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 4rem;
+            position: relative;
+        }
+
+        .sidebar {
+            position: sticky;
+            top: 2rem;
+            height: fit-content;
+            max-height: calc(100vh - 4rem);
+            overflow-y: auto;
+            padding-right: 1rem;
+        }
+
+        .toc {
+            background: var(--color-bg-secondary);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid var(--color-border);
+        }
+
+        .toc-title {
+            font-family: var(--font-serif);
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid var(--color-accent);
+        }
+
+        .toc-list {
+            list-style: none;
+        }
+
+        .toc-item {
+            margin-bottom: 0.5rem;
+        }
+
+        .toc-link {
+            color: var(--color-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: block;
+            padding: 0.5rem 0.75rem;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+            border-left: 3px solid transparent;
+        }
+
+        .toc-link:hover {
+            background: white;
+            color: var(--color-accent);
+            border-left-color: var(--color-accent);
+            transform: translateX(4px);
+        }
+
+        .toc-link.active {
+            background: white;
+            color: var(--color-accent);
+            border-left-color: var(--color-accent);
+            font-weight: 500;
+        }
+
+        .toc-subitem {
+            margin-left: 1rem;
+            font-size: 0.85rem;
+        }
+
+        .main-content {
+            max-width: 900px;
+        }
+
+        .content-section {
+            margin-bottom: 3rem;
+            padding-bottom: 3rem;
+            border-bottom: 1px solid var(--color-border);
+            scroll-margin-top: 2rem;
+        }
+
+        .content-section:last-child {
+            border-bottom: none;
+        }
+
+        .section-title {
+            font-family: var(--font-serif);
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+            width: 4px;
+            height: 2rem;
+            background: var(--color-accent);
+            border-radius: 2px;
+        }
+
+        .subsection-title {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--color-primary);
+            margin: 2rem 0 1rem;
+        }
+
+        .sub-subsection-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--color-primary);
+            margin: 1.5rem 0 1rem;
+        }
+
+        .content-section p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .content-section ul, .content-section ol {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+
+        .content-section li {
+            margin-bottom: 0.75rem;
+            line-height: 1.8;
+        }
+
+        .highlight-box {
+            background: var(--color-accent-light);
+            border-left: 4px solid var(--color-accent);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+        }
+
+        .highlight-box strong {
+            color: var(--color-primary);
+        }
+
+        .warning-box {
+            background: #fef2f2;
+            border-left: 4px solid var(--color-warning);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+        }
+
+        .success-box {
+            background: #f0fdf4;
+            border-left: 4px solid var(--color-success);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+        }
+
+        .definition-term {
+            font-weight: 600;
+            color: var(--color-primary);
+        }
+
+        .contact-info {
+            background: var(--color-bg-secondary);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            border: 1px solid var(--color-border);
+        }
+
+        .related-policies {
+            background: var(--color-primary);
+            color: white;
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+        }
+
+        .related-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .related-title {
+            font-family: var(--font-serif);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .policy-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .policy-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-decoration: none;
+            color: white;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .policy-card:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        .policy-card h3 {
+            font-family: var(--font-serif);
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .policy-card p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .support-section {
+            background: var(--color-bg-secondary);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .support-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .support-title {
+            font-family: var(--font-serif);
+            font-size: 2rem;
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+        }
+
+        .support-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 968px) {
+            .container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .sidebar {
+                position: static;
+                max-height: none;
+            }
+
+            .page-title {
+                font-size: 2rem;
+            }
+        }
+
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--color-bg-secondary);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--color-border);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--color-secondary);
+        }
+    </style>
+</head>
+<body>
+    <header class="page-header">
+        <div class="header-content">
+            <h1 class="page-title">Terms & Conditions</h1>
+            <p class="last-updated">Last Updated: 1 April 2026 | Effective Date: 1 April 2026</p>
+            <div class="header-actions">
+                <button class="btn btn-primary" onclick="window.print()">📄 Print</button>
+                <button class="btn btn-secondary" onclick="downloadPDF()">⬇️ Download PDF</button>
+                <button class="btn btn-secondary" onclick="sharePolicy()">🔗 Share</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <aside class="sidebar">
+            <nav class="toc">
+                <h2 class="toc-title">Table of Contents</h2>
+                <ul class="toc-list">
+                    <li class="toc-item"><a href="#introduction" class="toc-link">1. Introduction</a></li>
+                    <li class="toc-item"><a href="#definitions" class="toc-link">2. Definitions</a></li>
+                    <li class="toc-item"><a href="#services" class="toc-link">3. Services Provided</a></li>
+                    <li class="toc-item"><a href="#registration" class="toc-link">4. User Registration</a></li>
+                    <li class="toc-item"><a href="#fees" class="toc-link">5. Fees and Payments</a></li>
+                    <li class="toc-item"><a href="#obligations" class="toc-link">6. User Obligations</a></li>
+                    <li class="toc-item"><a href="#prohibited" class="toc-link">7. Prohibited Activities</a></li>
+                    <li class="toc-item"><a href="#ip-rights" class="toc-link">8. Intellectual Property</a></li>
+                    <li class="toc-item"><a href="#privacy" class="toc-link">9. Privacy & Data</a></li>
+                    <li class="toc-item"><a href="#disclaimers" class="toc-link">10. Disclaimers</a></li>
+                    <li class="toc-item"><a href="#indemnification" class="toc-link">11. Indemnification</a></li>
+                    <li class="toc-item"><a href="#disputes" class="toc-link">12. Dispute Resolution</a></li>
+                    <li class="toc-item"><a href="#termination" class="toc-link">13. Termination</a></li>
+                    <li class="toc-item"><a href="#miscellaneous" class="toc-link">14. Miscellaneous</a></li>
+                    <li class="toc-item"><a href="#contact" class="toc-link">15. Contact Information</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <section id="introduction" class="content-section">
+                <h2 class="section-title">1. Introduction and Acceptance</h2>
+                
+                <h3 class="subsection-title">1.1 About UniHub</h3>
+                <p>Welcome to UniHub (referred to as "UniHub," "we," "us," or "our"). UniHub is India's first centralized college admission platform, operated by <strong>UniHub India Private Limited</strong>, a company incorporated under the Companies Act, 2013, with its registered office at 123, MG Road, Bangalore - 560001, Karnataka, India.</p>
+
+                <h3 class="subsection-title">1.2 Acceptance of Terms</h3>
+                <div class="highlight-box">
+                    <p><strong>Important:</strong> By accessing or using the UniHub platform (website, mobile application, or any related services), you agree to be bound by these Terms & Conditions ("Terms"). If you do not agree to these Terms, please do not use our platform.</p>
+                </div>
+
+                <h3 class="subsection-title">1.3 Who Can Use UniHub</h3>
+                <ul>
+                    <li><strong>Students:</strong> Individuals aged 16 years or above seeking college admissions in India</li>
+                    <li><strong>Parents/Guardians:</strong> Acting on behalf of students under 18 years</li>
+                    <li><strong>Colleges:</strong> Accredited educational institutions in India</li>
+                    <li><strong>Other Users:</strong> As specifically authorized by UniHub</li>
+                </ul>
+
+                <div class="warning-box">
+                    <p><strong>Minors (under 18 years):</strong> Must use UniHub under parental/guardian supervision and consent.</p>
+                </div>
+
+                <h3 class="subsection-title">1.4 Amendments to Terms</h3>
+                <p>We reserve the right to modify these Terms at any time. Changes will be effective upon posting on our platform with an updated "Last Updated" date. Continued use of UniHub after such changes constitutes acceptance of the modified Terms.</p>
+            </section>
+
+            <section id="definitions" class="content-section">
+                <h2 class="section-title">2. Definitions</h2>
+                <p>For the purpose of these Terms:</p>
+                <ul>
+                    <li><span class="definition-term">"Platform"</span> means the UniHub website (unihub.in), mobile application, and all related services</li>
+                    <li><span class="definition-term">"User"</span> means any person accessing or using the Platform, including Students and Colleges</li>
+                    <li><span class="definition-term">"Student"</span> means an individual using the Platform to search for colleges and apply for admissions</li>
+                    <li><span class="definition-term">"College"</span> means an educational institution registered on the Platform to receive applications</li>
+                    <li><span class="definition-term">"Application"</span> means a student's application to a college through the Platform</li>
+                    <li><span class="definition-term">"Services"</span> means all features, tools, and services provided by UniHub</li>
+                    <li><span class="definition-term">"Content"</span> means text, images, videos, data, and other materials available on the Platform</li>
+                    <li><span class="definition-term">"Fees"</span> means all charges payable for using the Platform, including application fees, subscription fees, and other charges</li>
+                </ul>
+            </section>
+
+            <section id="services" class="content-section">
+                <h2 class="section-title">3. Services Provided</h2>
+                
+                <h3 class="subsection-title">3.1 For Students</h3>
+                <p>UniHub provides the following services to Students:</p>
+                <ul>
+                    <li><strong>College Discovery:</strong> Search, filter, and compare colleges based on various criteria</li>
+                    <li><strong>Application Management:</strong> Apply to multiple colleges through a single platform</li>
+                    <li><strong>Document Management:</strong> Upload and manage application documents</li>
+                    <li><strong>Application Tracking:</strong> Real-time tracking of application status</li>
+                    <li><strong>Offer Management:</strong> Receive, compare, and accept/decline offer letters</li>
+                    <li><strong>Payment Processing:</strong> Secure payment gateway for application fees</li>
+                    <li><strong>Support Services:</strong> Customer support via chat, email, and phone</li>
+                </ul>
+
+                <h3 class="subsection-title">3.2 For Colleges</h3>
+                <p>UniHub provides the following services to Colleges:</p>
+                <ul>
+                    <li><strong>College Profile Management:</strong> Create and manage institutional profiles</li>
+                    <li><strong>Course Management:</strong> List courses, fees, and eligibility criteria</li>
+                    <li><strong>Application Management:</strong> Receive and review student applications</li>
+                    <li><strong>Communication Tools:</strong> Email, SMS, and in-platform messaging to applicants</li>
+                    <li><strong>Offer Letter Generation:</strong> Create and send offer letters to students</li>
+                    <li><strong>Analytics & Reporting:</strong> Application metrics and conversion analytics</li>
+                    <li><strong>Subscription Plans:</strong> Access to premium features based on subscription tier</li>
+                </ul>
+
+                <h3 class="subsection-title">3.3 Intermediary Status</h3>
+                <div class="highlight-box">
+                    <p>UniHub acts as an <strong>intermediary platform</strong> connecting Students and Colleges. We:</p>
+                    <ul>
+                        <li><strong>DO NOT</strong> make admission decisions (Colleges decide independently)</li>
+                        <li><strong>DO NOT</strong> guarantee admission to any college</li>
+                        <li><strong>DO NOT</strong> alter or modify application data submitted by Students</li>
+                        <li><strong>DO NOT</strong> take responsibility for College admission policies or decisions</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="registration" class="content-section">
+                <h2 class="section-title">4. User Registration and Accounts</h2>
+                
+                <h3 class="subsection-title">4.1 Account Creation</h3>
+                <p>To use certain features of the Platform, you must:</p>
+                <ol>
+                    <li>Create an account by providing accurate information</li>
+                    <li>Verify your email address and/or phone number</li>
+                    <li>Create a secure password</li>
+                    <li>Maintain the confidentiality of your login credentials</li>
+                </ol>
+
+                <h3 class="subsection-title">4.2 Account Information Accuracy</h3>
+                <p>You represent and warrant that:</p>
+                <ul>
+                    <li>All information provided during registration is accurate and complete</li>
+                    <li>You will update your information promptly if it changes</li>
+                    <li>You are legally capable of entering into binding contracts</li>
+                </ul>
+
+                <h3 class="subsection-title">4.3 Account Security</h3>
+                <div class="warning-box">
+                    <p>You are responsible for:</p>
+                    <ul>
+                        <li>All activities that occur under your account</li>
+                        <li>Maintaining the security of your password</li>
+                        <li>Notifying us immediately of any unauthorized access</li>
+                    </ul>
+                    <p><strong>We are NOT liable</strong> for any loss or damage arising from unauthorized use of your account.</p>
+                </div>
+
+                <h3 class="subsection-title">4.4 Account Termination</h3>
+                <p>We reserve the right to suspend or terminate your account if:</p>
+                <ul>
+                    <li>You violate these Terms</li>
+                    <li>You provide false or misleading information</li>
+                    <li>Your account is used for fraudulent activities</li>
+                    <li>You engage in prohibited activities (see Section 7)</li>
+                </ul>
+            </section>
+
+            <section id="fees" class="content-section">
+                <h2 class="section-title">5. Fees and Payments</h2>
+                
+                <h3 class="subsection-title">5.1 Application Fees (Students)</h3>
+                
+                <h4 class="sub-subsection-title">Fee Structure:</h4>
+                <div class="highlight-box">
+                    <ul>
+                        <li>Base application fee: <strong>₹299</strong> (covers up to 5 college applications)</li>
+                        <li>Each additional college: <strong>₹49</strong> per application</li>
+                        <li>All fees are <strong>inclusive of GST</strong> at applicable rates</li>
+                    </ul>
+                </div>
+
+                <h4 class="sub-subsection-title">Payment Terms:</h4>
+                <ol>
+                    <li>Payment must be completed before application submission</li>
+                    <li>We accept: UPI, Credit/Debit Cards, Net Banking, Digital Wallets</li>
+                    <li>Payment processing is handled by authorized payment gateway partners</li>
+                    <li>Transaction fees (if any) are borne by the Student</li>
+                </ol>
+
+                <h3 class="subsection-title">5.2 Subscription Fees (Colleges)</h3>
+                
+                <h4 class="sub-subsection-title">Subscription Plans:</h4>
+                <ul>
+                    <li>Basic Plan: ₹5,000/month</li>
+                    <li>Standard Plan: ₹10,000/month</li>
+                    <li>Premium Plan: ₹20,000/month</li>
+                    <li>Enterprise Plan: Custom pricing</li>
+                </ul>
+
+                <h4 class="sub-subsection-title">Billing Terms:</h4>
+                <ol>
+                    <li>Fees are billed monthly/annually based on selected plan</li>
+                    <li>Payment must be made in advance</li>
+                    <li>Auto-renewal applies unless cancelled before renewal date</li>
+                    <li>Subscription fees are <strong>non-refundable</strong> (except as specified in Refund Policy)</li>
+                </ol>
+
+                <h3 class="subsection-title">5.3 Platform Commission</h3>
+                <p>For successful admissions facilitated through UniHub:</p>
+                <ul>
+                    <li>UniHub may charge colleges a <strong>success fee</strong> or <strong>commission</strong> as per separate agreement</li>
+                    <li>This fee is <strong>not charged to Students</strong></li>
+                </ul>
+
+                <h3 class="subsection-title">5.4 Fee Changes</h3>
+                <p>We reserve the right to change fees with <strong>30 days' notice</strong>. Continued use after fee changes constitutes acceptance.</p>
+
+                <h3 class="subsection-title">5.5 Taxes</h3>
+                <p>All fees are subject to applicable taxes including GST. Tax invoices will be provided as per Indian tax regulations.</p>
+            </section>
+
+            <section id="obligations" class="content-section">
+                <h2 class="section-title">6. User Obligations and Conduct</h2>
+                
+                <h3 class="subsection-title">6.1 Student Obligations</h3>
+                <p>As a Student, you agree to:</p>
+                <ul>
+                    <li>Provide <strong>accurate and truthful</strong> information in all applications</li>
+                    <li>Upload <strong>genuine, unaltered documents</strong></li>
+                    <li>Not misrepresent your academic qualifications or exam scores</li>
+                    <li>Respond promptly to college requests for additional information</li>
+                    <li>Comply with admission timelines and deadlines</li>
+                    <li>Accept or decline offer letters within specified timeframes</li>
+                    <li>Pay admission fees to colleges directly (not through UniHub, unless specified)</li>
+                </ul>
+
+                <h3 class="subsection-title">6.2 College Obligations</h3>
+                <p>As a College, you agree to:</p>
+                <ul>
+                    <li>Provide <strong>accurate information</strong> about courses, fees, and eligibility</li>
+                    <li>Update course details and seat availability in real-time</li>
+                    <li>Review applications within <strong>reasonable timeframes</strong> (recommended: 5 business days)</li>
+                    <li>Communicate clearly with applicants</li>
+                    <li>Honor offer letters issued through the Platform</li>
+                    <li>Not discriminate based on caste, religion, gender, or disability (except reservations as per law)</li>
+                    <li>Comply with AICTE, UGC, and other regulatory requirements</li>
+                </ul>
+
+                <h3 class="subsection-title">6.3 Verification of Information</h3>
+                <div class="warning-box">
+                    <p>UniHub <strong>does not verify</strong> the accuracy of:</p>
+                    <ul>
+                        <li>Student-submitted academic records (Colleges must verify)</li>
+                        <li>College-provided course information (Students must verify)</li>
+                    </ul>
+                    <p>However, we may perform <strong>basic checks</strong> for authenticity and flag suspicious content.</p>
+                </div>
+            </section>
+
+            <section id="prohibited" class="content-section">
+                <h2 class="section-title">7. Prohibited Activities</h2>
+                
+                <div class="warning-box">
+                    <p><strong>Users MUST NOT:</strong></p>
+                </div>
+
+                <h3 class="subsection-title">7.1 Fraudulent Activities</h3>
+                <ul>
+                    <li>Submit fake or forged documents</li>
+                    <li>Misrepresent qualifications or eligibility</li>
+                    <li>Use another person's identity</li>
+                    <li>Create multiple accounts to circumvent platform rules</li>
+                </ul>
+
+                <h3 class="subsection-title">7.2 System Abuse</h3>
+                <ul>
+                    <li>Attempt to hack, disrupt, or compromise platform security</li>
+                    <li>Use automated bots or scripts to scrape data</li>
+                    <li>Reverse engineer or decompile our software</li>
+                    <li>Overload our servers with excessive requests</li>
+                </ul>
+
+                <h3 class="subsection-title">7.3 Illegal Content</h3>
+                <ul>
+                    <li>Upload defamatory, obscene, or illegal content</li>
+                    <li>Violate intellectual property rights</li>
+                    <li>Share malware, viruses, or harmful code</li>
+                </ul>
+
+                <h3 class="subsection-title">7.4 Unfair Practices (Colleges)</h3>
+                <ul>
+                    <li>Charge fees higher than declared on the Platform</li>
+                    <li>Change admission criteria after accepting applications</li>
+                    <li>Demand additional payments outside the Platform without disclosure</li>
+                </ul>
+
+                <h3 class="subsection-title">7.5 Consequences</h3>
+                <div class="warning-box">
+                    <p>Violation may result in:</p>
+                    <ul>
+                        <li>Immediate account suspension or termination</li>
+                        <li>Forfeiture of paid fees</li>
+                        <li>Legal action under applicable laws</li>
+                        <li>Reporting to law enforcement authorities</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="ip-rights" class="content-section">
+                <h2 class="section-title">8. Intellectual Property Rights</h2>
+                
+                <h3 class="subsection-title">8.1 UniHub Ownership</h3>
+                <p>All content on the Platform, including but not limited to:</p>
+                <ul>
+                    <li>Logo, trademarks, and brand names</li>
+                    <li>Software, source code, and algorithms</li>
+                    <li>Design, layout, and user interface</li>
+                    <li>Text, graphics, and multimedia content</li>
+                </ul>
+                <p>...is the <strong>exclusive property</strong> of UniHub India Private Limited and protected under:</p>
+                <ul>
+                    <li>Copyright Act, 1957</li>
+                    <li>Trade Marks Act, 1999</li>
+                    <li>Information Technology Act, 2000</li>
+                </ul>
+
+                <h3 class="subsection-title">8.2 Limited License</h3>
+                <p>We grant you a <strong>non-exclusive, non-transferable, revocable license</strong> to:</p>
+                <ul>
+                    <li>Access and use the Platform for personal/institutional purposes</li>
+                    <li>View and print content for your own use</li>
+                </ul>
+
+                <div class="warning-box">
+                    <p>You <strong>may NOT</strong>:</p>
+                    <ul>
+                        <li>Reproduce, modify, or distribute our content without written permission</li>
+                        <li>Use our trademarks or branding without authorization</li>
+                        <li>Create derivative works based on our Platform</li>
+                    </ul>
+                </div>
+
+                <h3 class="subsection-title">8.3 User-Generated Content</h3>
+                <p>By uploading content (documents, reviews, testimonials) to the Platform, you grant UniHub a <strong>worldwide, royalty-free, perpetual license</strong> to:</p>
+                <ul>
+                    <li>Use, reproduce, and display your content</li>
+                    <li>Modify content for formatting or technical purposes</li>
+                    <li>Remove content that violates these Terms</li>
+                </ul>
+                <p>You retain ownership of your content.</p>
+
+                <h3 class="subsection-title">8.4 Copyright Infringement</h3>
+                <div class="contact-info">
+                    <p>If you believe your copyright has been infringed, contact us at:</p>
+                    <p><strong>Email:</strong> legal@unihub.in<br>
+                    <strong>Subject:</strong> Copyright Infringement Notice</p>
+                </div>
+            </section>
+
+            <section id="privacy" class="content-section">
+                <h2 class="section-title">9. Privacy and Data Protection</h2>
+                
+                <h3 class="subsection-title">9.1 Privacy Policy</h3>
+                <p>Your use of the Platform is also governed by our <strong>Privacy Policy</strong>, which is incorporated into these Terms by reference. Please review our Privacy Policy to understand how we collect, use, and protect your data.</p>
+
+                <h3 class="subsection-title">9.2 Data Accuracy</h3>
+                <p>You are responsible for ensuring the accuracy of data you provide. UniHub is not liable for decisions made based on inaccurate user-provided data.</p>
+
+                <h3 class="subsection-title">9.3 Data Sharing</h3>
+                <div class="highlight-box">
+                    <p>By using the Platform:</p>
+                    <ul>
+                        <li><strong>Students</strong> consent to sharing application data with Colleges they apply to</li>
+                        <li><strong>Colleges</strong> consent to displaying institutional information to Students</li>
+                    </ul>
+                    <p>See our Privacy Policy for complete details on data sharing.</p>
+                </div>
+            </section>
+
+            <section id="disclaimers" class="content-section">
+                <h2 class="section-title">10. Disclaimers and Limitations of Liability</h2>
+                
+                <h3 class="subsection-title">10.1 "As Is" Service</h3>
+                <div class="warning-box">
+                    <p>The Platform is provided <strong>"AS IS"</strong> and <strong>"AS AVAILABLE"</strong> without warranties of any kind, either express or implied, including but not limited to:</p>
+                    <ul>
+                        <li>Merchantability</li>
+                        <li>Fitness for a particular purpose</li>
+                        <li>Non-infringement</li>
+                        <li>Accuracy or reliability</li>
+                    </ul>
+                </div>
+
+                <h3 class="subsection-title">10.2 No Guarantee of Admission</h3>
+                <p>UniHub <strong>DOES NOT GUARANTEE</strong>:</p>
+                <ul>
+                    <li>Admission to any college</li>
+                    <li>Acceptance of applications by colleges</li>
+                    <li>Availability of seats in any course</li>
+                    <li>Specific outcomes from using the Platform</li>
+                </ul>
+
+                <h3 class="subsection-title">10.3 Third-Party Services</h3>
+                <p>The Platform may integrate with third-party services (payment gateways, email providers, etc.). We are <strong>not responsible</strong> for:</p>
+                <ul>
+                    <li>Availability or performance of third-party services</li>
+                    <li>Actions or omissions of third parties</li>
+                    <li>Content or privacy practices of third parties</li>
+                </ul>
+
+                <h3 class="subsection-title">10.4 Limitation of Liability</h3>
+                <div class="warning-box">
+                    <p>To the <strong>maximum extent permitted by law</strong>, UniHub and its directors, employees, and partners shall <strong>NOT be liable</strong> for:</p>
+                    
+                    <p><strong>a) Indirect, incidental, special, or consequential damages, including:</strong></p>
+                    <ul>
+                        <li>Lost profits or revenue</li>
+                        <li>Loss of data or business opportunity</li>
+                        <li>Emotional distress</li>
+                    </ul>
+                    
+                    <p><strong>b) Direct damages</strong> exceeding the amount you paid to UniHub in the <strong>12 months preceding the claim</strong></p>
+                    
+                    <p><strong>c) Damages arising from:</strong></p>
+                    <ul>
+                        <li>College admission decisions</li>
+                        <li>Application rejections</li>
+                        <li>Errors in college-provided information</li>
+                        <li>Payment gateway failures</li>
+                        <li>System downtime or technical issues</li>
+                    </ul>
+                </div>
+
+                <h3 class="subsection-title">10.5 Force Majeure</h3>
+                <p>We are not liable for failures or delays caused by circumstances beyond our reasonable control, including:</p>
+                <ul>
+                    <li>Natural disasters, pandemics</li>
+                    <li>Government actions, laws, or regulations</li>
+                    <li>Internet or telecommunications failures</li>
+                    <li>Cyberattacks or security breaches</li>
+                </ul>
+            </section>
+
+            <section id="indemnification" class="content-section">
+                <h2 class="section-title">11. Indemnification</h2>
+                
+                <div class="highlight-box">
+                    <p>You agree to <strong>indemnify, defend, and hold harmless</strong> UniHub India Private Limited, its affiliates, officers, directors, employees, and agents from any claims, damages, losses, liabilities, and expenses (including legal fees) arising from:</p>
+                    <ul>
+                        <li>Your violation of these Terms</li>
+                        <li>Your violation of any law or third-party rights</li>
+                        <li>Content you upload to the Platform</li>
+                        <li>Your use or misuse of the Platform</li>
+                        <li>Disputes with other users (Students or Colleges)</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="disputes" class="content-section">
+                <h2 class="section-title">12. Dispute Resolution</h2>
+                
+                <h3 class="subsection-title">12.1 Informal Resolution</h3>
+                <p>Before initiating formal proceedings, parties agree to attempt <strong>good-faith negotiation</strong> for <strong>30 days</strong>.</p>
+                
+                <div class="contact-info">
+                    <p>Contact us at:</p>
+                    <p><strong>Email:</strong> disputes@unihub.in<br>
+                    <strong>Phone:</strong> +91-80-1234-5678</p>
+                </div>
+
+                <h3 class="subsection-title">12.2 Arbitration</h3>
+                <p>If informal resolution fails, disputes shall be resolved through <strong>binding arbitration</strong> under the Arbitration and Conciliation Act, 1996.</p>
+
+                <h4 class="sub-subsection-title">Arbitration Terms:</h4>
+                <ul>
+                    <li><strong>Seat of Arbitration:</strong> Bangalore, Karnataka, India</li>
+                    <li><strong>Language:</strong> English</li>
+                    <li><strong>Number of Arbitrators:</strong> 1 (mutually appointed, or appointed by Bangalore Arbitration Centre)</li>
+                    <li><strong>Governing Law:</strong> Indian law</li>
+                    <li><strong>Arbitrator's Decision:</strong> Final and binding</li>
+                </ul>
+
+                <h3 class="subsection-title">12.3 Exclusions from Arbitration</h3>
+                <p>The following may be brought in court:</p>
+                <ul>
+                    <li>Claims for injunctive relief</li>
+                    <li>Intellectual property disputes</li>
+                    <li>Small claims (under ₹10,00,000)</li>
+                </ul>
+
+                <h3 class="subsection-title">12.4 Jurisdiction</h3>
+                <p>Courts in <strong>Bangalore, Karnataka, India</strong> shall have exclusive jurisdiction over matters not subject to arbitration.</p>
+            </section>
+
+            <section id="termination" class="content-section">
+                <h2 class="section-title">13. Termination</h2>
+                
+                <h3 class="subsection-title">13.1 Termination by User</h3>
+                <p>You may terminate your account at any time by:</p>
+                <ul>
+                    <li>Deleting your account through dashboard settings, or</li>
+                    <li>Contacting support@unihub.in</li>
+                </ul>
+
+                <h4 class="sub-subsection-title">Effect of Termination:</h4>
+                <ul>
+                    <li>Access to the Platform will cease immediately</li>
+                    <li>Your data will be retained as per our Privacy Policy</li>
+                    <li>Outstanding fees remain payable</li>
+                    <li>No refund for unused services (except as per Refund Policy)</li>
+                </ul>
+
+                <h3 class="subsection-title">13.2 Termination by UniHub</h3>
+                <p>We may suspend or terminate your account <strong>immediately and without notice</strong> if:</p>
+                <ul>
+                    <li>You violate these Terms</li>
+                    <li>You engage in fraudulent activities</li>
+                    <li>Your account is inactive for 24 months</li>
+                    <li>Required by law or regulatory authorities</li>
+                </ul>
+
+                <h3 class="subsection-title">13.3 Survival</h3>
+                <p>The following sections survive termination:</p>
+                <ul>
+                    <li>Intellectual Property Rights</li>
+                    <li>Indemnification</li>
+                    <li>Limitation of Liability</li>
+                    <li>Dispute Resolution</li>
+                </ul>
+            </section>
+
+            <section id="miscellaneous" class="content-section">
+                <h2 class="section-title">14. Miscellaneous Provisions</h2>
+                
+                <h3 class="subsection-title">14.1 Entire Agreement</h3>
+                <p>These Terms, along with our Privacy Policy and Refund Policy, constitute the <strong>entire agreement</strong> between you and UniHub.</p>
+
+                <h3 class="subsection-title">14.2 Severability</h3>
+                <p>If any provision of these Terms is found invalid or unenforceable, the remaining provisions shall remain in full force and effect.</p>
+
+                <h3 class="subsection-title">14.3 Waiver</h3>
+                <p>Failure to enforce any provision does not constitute a waiver of that provision or any other provision.</p>
+
+                <h3 class="subsection-title">14.4 Assignment</h3>
+                <p>You may <strong>not assign</strong> your rights under these Terms without our written consent. UniHub may assign its rights to any affiliate or successor entity.</p>
+
+                <h3 class="subsection-title">14.5 Governing Law</h3>
+                <p>These Terms are governed by the <strong>laws of India</strong>, without regard to conflict of law principles.</p>
+
+                <h3 class="subsection-title">14.6 Language</h3>
+                <p>These Terms are drafted in English. Any translation is for convenience only. In case of conflict, the English version prevails.</p>
+            </section>
+
+            <section id="contact" class="content-section">
+                <h2 class="section-title">15. Contact Information</h2>
+                
+                <div class="contact-info">
+                    <p>For questions about these Terms, contact us:</p>
+                    
+                    <p><strong>UniHub India Private Limited</strong><br>
+                    Registered Office: 123, MG Road, Bangalore - 560001, Karnataka, India</p>
+                    
+                    <p><strong>Email:</strong> legal@unihub.in<br>
+                    <strong>Phone:</strong> +91-80-1234-5678<br>
+                    <strong>Website:</strong> <a href="https://www.unihub.in/terms" style="color: var(--color-accent);">https://www.unihub.in/terms</a></p>
+                    
+                    <hr style="margin: 1.5rem 0; border: none; border-top: 1px solid var(--color-border);">
+                    
+                    <p><strong>Grievance Officer:</strong><br>
+                    Name: Priya Sharma<br>
+                    Email: grievance@unihub.in<br>
+                    Phone: +91-80-1234-5679<br>
+                    Response Time: Within 24 hours (acknowledgment), 15 days (resolution)</p>
+                </div>
+
+                <div class="success-box" style="margin-top: 2rem;">
+                    <p style="font-size: 0.95rem;"><strong>ACKNOWLEDGMENT</strong></p>
+                    <p style="margin-top: 0.5rem;">BY CLICKING "I ACCEPT" OR BY ACCESSING OR USING THE PLATFORM, YOU ACKNOWLEDGE THAT YOU HAVE READ, UNDERSTOOD, AND AGREE TO BE BOUND BY THESE TERMS & CONDITIONS.</p>
+                </div>
+
+                <p style="text-align: center; margin-top: 2rem; color: var(--color-secondary); font-size: 0.9rem;">
+                    <strong>Document Version:</strong> 1.0<br>
+                    <strong>Last Reviewed:</strong> 1 April 2026<br>
+                    <strong>Next Review Date:</strong> 1 April 2027
+                </p>
+            </section>
+        </main>
+    </div>
+
+    <div class="related-policies">
+        <div class="related-content">
+            <h2 class="related-title">Related Policies</h2>
+            <div class="policy-links">
+                <a href="privacy.html" class="policy-card">
+                    <h3>🔒 Privacy Policy</h3>
+                    <p>Learn how we collect, use, and protect your personal information</p>
+                </a>
+                <a href="refund-policy.html" class="policy-card">
+                    <h3>💰 Refund Policy</h3>
+                    <p>Understand our refund eligibility and process</p>
+                </a>
+                <a href="#" class="policy-card">
+                    <h3>📋 College Agreement Terms</h3>
+                    <p>Terms for colleges partnering with UniHub</p>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="support-section">
+        <div class="support-content">
+            <h2 class="support-title">Questions About This Policy?</h2>
+            <p>Our legal team is here to help clarify any questions you may have about our Terms & Conditions.</p>
+            <div class="support-buttons">
+                <a href="mailto:legal@unihub.in" class="btn btn-primary">📧 Email Legal Team</a>
+                <a href="#" class="btn btn-secondary">💬 Contact Support</a>
+                <a href="#" class="btn btn-secondary">❓ View FAQs</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Smooth scrolling for TOC links
+        document.querySelectorAll('.toc-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    
+                    // Update active link
+                    document.querySelectorAll('.toc-link').forEach(l => l.classList.remove('active'));
+                    this.classList.add('active');
+                }
+            });
+        });
+
+        // Intersection Observer for active section highlighting
+        const sections = document.querySelectorAll('.content-section');
+        const navLinks = document.querySelectorAll('.toc-link');
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '-20% 0px -70% 0px',
+            threshold: 0
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${id}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => observer.observe(section));
+
+        // Download PDF function
+        function downloadPDF() {
+            alert('PDF download functionality would be implemented here. This would generate a PDF version of the Terms & Conditions.');
+        }
+
+        // Share function
+        function sharePolicy() {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'UniHub Terms & Conditions',
+                    text: 'Check out UniHub\'s Terms & Conditions',
+                    url: window.location.href
+                }).catch(err => console.log('Error sharing:', err));
+            } else {
+                // Fallback - copy to clipboard
+                navigator.clipboard.writeText(window.location.href);
+                alert('Link copied to clipboard!');
+            }
+        }
+    </script>
+</body>
+</html>

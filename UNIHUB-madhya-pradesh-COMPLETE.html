@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNIHUB INDIA - Madhya Pradesh Colleges (500+ Complete List)</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background-color: #141414; color: #ffffff; overflow-x: hidden; }
+        .header { display: flex; justify-content: space-between; align-items: center; padding: 20px 50px; background: linear-gradient(180deg,rgba(0,0,0,0.7) 0%,rgba(0,0,0,0) 100%); position: fixed; top: 0; width: 100%; z-index: 1000; backdrop-filter: blur(10px); }
+        .logo { font-size: 28px; font-weight: 700; color: #e50914; letter-spacing: 1px; }
+        .logo-sub { font-size: 12px; color: #999; font-weight: 400; margin-left: 10px; }
+        .nav-menu { display: flex; gap: 30px; align-items: center; }
+        .nav-menu a { color: #e5e5e5; text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.3s; }
+        .nav-menu a:hover { color: #b3b3b3; }
+        .header-right { display: flex; gap: 25px; align-items: center; }
+        .icon-btn { background: none; border: none; color: #ffffff; font-size: 20px; cursor: pointer; }
+        .profile-icon { width: 32px; height: 32px; border-radius: 4px; background: linear-gradient(135deg,#ff9a56 0%,#ff6a88 100%); display: flex; align-items: center; justify-content: center; font-weight: 600; cursor: pointer; font-size: 13px; }
+        .content { padding-top: 80px; padding-left: 50px; }
+        .section { margin-bottom: 40px; }
+        .section-title { font-size: 20px; font-weight: 600; margin-bottom: 15px; color: #e5e5e5; padding-left: 4px; }
+        .section-count { font-size: 14px; color: #999; margin-left: 10px; font-weight: 400; }
+        .scroll-container { display: flex; gap: 15px; overflow-x: auto; overflow-y: hidden; padding-bottom: 15px; padding-right: 50px; scroll-behavior: smooth; }
+        .scroll-container::-webkit-scrollbar { height: 8px; }
+        .scroll-container::-webkit-scrollbar-track { background: #2a2a2a; border-radius: 10px; }
+        .scroll-container::-webkit-scrollbar-thumb { background: #4a4a4a; border-radius: 10px; }
+        .college-card { min-width: 280px; height: 160px; border-radius: 8px; overflow: hidden; cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease; position: relative; }
+        .college-card:hover { transform: scale(1.05); box-shadow: 0 8px 25px rgba(0,0,0,0.5); z-index: 10; }
+        .college-content { position: relative; z-index: 1; padding: 20px; height: 100%; display: flex; flex-direction: column; justify-content: space-between; }
+        .college-initials { font-size: 32px; font-weight: 700; color: rgba(255,255,255,0.9); text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+        .college-name { font-size: 14px; font-weight: 600; color: #ffffff; line-height: 1.3; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+        .college-location { font-size: 12px; color: rgba(255,255,255,0.7); margin-top: 5px; }
+        .college-badge { position: absolute; top: 10px; right: 10px; background: rgba(229,9,20,0.9); color: white; padding: 4px 8px; border-radius: 4px; font-size: 10px; font-weight: 600; }
+        .college-card.grad1  { background: linear-gradient(135deg,#667eea 0%,#764ba2 100%); }
+        .college-card.grad2  { background: linear-gradient(135deg,#f093fb 0%,#f5576c 100%); }
+        .college-card.grad3  { background: linear-gradient(135deg,#4facfe 0%,#00f2fe 100%); }
+        .college-card.grad4  { background: linear-gradient(135deg,#43e97b 0%,#38f9d7 100%); }
+        .college-card.grad5  { background: linear-gradient(135deg,#fa709a 0%,#fee140 100%); }
+        .college-card.grad6  { background: linear-gradient(135deg,#30cfd0 0%,#330867 100%); }
+        .college-card.grad7  { background: linear-gradient(135deg,#a8edea 0%,#fed6e3 100%); }
+        .college-card.grad8  { background: linear-gradient(135deg,#ff9a56 0%,#ff6a88 100%); }
+        .college-card.grad9  { background: linear-gradient(135deg,#ffecd2 0%,#fcb69f 100%); }
+        .college-card.grad10 { background: linear-gradient(135deg,#ff6e7f 0%,#bfe9ff 100%); }
+        @media(max-width:768px){ .header{padding:15px 20px;} .content{padding-left:20px;} }
+    </style>
+</head>
+<body>
+<div class="header">
+    <div style="display:flex;align-items:center;gap:40px;">
+        <div>
+            <span class="logo">UNIHUB INDIA</span>
+            <span class="logo-sub">Madhya Pradesh</span>
+        </div>
+        <nav class="nav-menu">
+            <a href="index.html">Home</a>
+            <a href="#universities">Universities</a>
+            <a href="#engineering">Engineering</a>
+            <a href="#medical">Medical</a>
+        </nav>
+    </div>
+    <div class="header-right">
+        <button class="icon-btn">&#128269;</button>
+        <button class="icon-btn">&#9776;</button>
+        <div class="profile-icon">MP</div>
+    </div>
+</div>
+<div class="content" id="content"></div>
+<script>
+const collegesData = {
+    "Institutes of National Importance": [
+        { name: "Indian Institute of Technology Indore", location: "Simrol, Indore", founded: "2009", badge: "IIT" },
+        { name: "Indian Institute of Management Indore", location: "Rau-Pithampur Road, Indore", founded: "1996", badge: "NIRF #7 MGMT" },
+        { name: "AIIMS Bhopal", location: "Saket Nagar, Bhopal", founded: "2012", badge: "AIIMS" },
+        { name: "AIIMS Gwalior", location: "Gwalior", founded: "2022", badge: "AIIMS" },
+        { name: "Maulana Azad National Institute of Technology", location: "Bhopal", founded: "1960", badge: "MANIT" },
+        { name: "Indian Institute of Information Technology Design and Manufacturing Jabalpur", location: "Jabalpur", founded: "2005", badge: "IIITDM" },
+        { name: "National Institute of Fashion Technology Bhopal", location: "Bhopal", badge: "NIFT" },
+        { name: "Atal Bihari Vajpayee Indian Institute of Information Technology and Management", location: "Gwalior", founded: "1997", badge: "ABV-IIITM" },
+        { name: "National Law Institute University", location: "Bhopal", founded: "1997", badge: "NLIU NLU #6" },
+        { name: "Indian Institute of Science Education and Research Bhopal", location: "Bhopal", founded: "2008", badge: "IISER" },
+        { name: "Indian Forest Research Institute", location: "Dehradun (MP affil.)" }
+    ],
+    "Central Universities": [
+        { name: "Barkatullah University", location: "Bhopal", founded: "1970" },
+        { name: "Indira Gandhi National Tribal University", location: "Amarkantak, Anuppur", founded: "2007", badge: "IGNTU" }
+    ],
+    "State Universities - Major": [
+        { name: "Devi Ahilya Vishwavidyalaya", location: "Indore", founded: "1964", badge: "DAVV" },
+        { name: "Vikram University", location: "Ujjain", founded: "1957" },
+        { name: "Jiwaji University", location: "Gwalior", founded: "1964" },
+        { name: "Rani Durgavati Vishwavidyalaya", location: "Jabalpur", founded: "1957" },
+        { name: "Awadhesh Pratap Singh University", location: "Rewa", founded: "1968" },
+        { name: "Dr. Hari Singh Gour University", location: "Sagar", founded: "1946", badge: "CENTRAL UNIV" },
+        { name: "Barkatullah University", location: "Bhopal", founded: "1970" },
+        { name: "Rajiv Gandhi Proudyogiki Vishwavidyalaya", location: "Bhopal", founded: "1998", badge: "RGPV" },
+        { name: "Madhya Pradesh Medical Science University", location: "Jabalpur", founded: "2011" },
+        { name: "Nanaji Deshmukh Veterinary Science University", location: "Jabalpur", founded: "2009" }
+    ],
+    "State Universities - Regional": [
+        { name: "Mahatma Gandhi Chitrakoot Gramodaya Vishwavidyalaya", location: "Chitrakoot, Satna", founded: "1991" },
+        { name: "Makhanlal Chaturvedi National University of Journalism and Communication", location: "Bhopal", founded: "1990", badge: "MCU" },
+        { name: "Rajmata Vijayaraje Scindia Krishi Vishwavidyalaya", location: "Gwalior", founded: "2008" },
+        { name: "Jawaharlal Nehru Agricultural University", location: "Jabalpur", founded: "1964" },
+        { name: "Nanaji Deshmukh Pashu Chikitsa Vigyan Vishwavidyalaya", location: "Jabalpur", founded: "2009" },
+        { name: "Madhya Pradesh Bhoj Open University", location: "Bhopal", founded: "1991" },
+        { name: "Shri Lal Bahadur Shastri Rashtriya Sanskrit Vidyapeetha", location: "New Delhi (MP affil.)" },
+        { name: "Pandit Sundarlal Sharma Open University", location: "Chhattisgarh (MP origin)" },
+        { name: "Indira Gandhi Rashtriya Manav Sangrahalaya", location: "Bhopal", badge: "MUSEUM-INST" }
+    ],
+    "Deemed to be Universities": [
+        { name: "Symbiosis University of Applied Sciences", location: "Indore", founded: "2019" },
+        { name: "Prestige Institute of Management and Research", location: "Indore" },
+        { name: "Acropolis Institute of Management Studies and Research", location: "Indore" },
+        { name: "Sri Satya Sai University of Technology and Medical Sciences", location: "Sehore" },
+        { name: "Sage University Indore", location: "Indore", founded: "2017" },
+        { name: "People University", location: "Bhopal", founded: "2014" },
+        { name: "Mandsaur University", location: "Mandsaur", founded: "2015" },
+        { name: "Avantika University", location: "Ujjain", founded: "2013" },
+        { name: "ITM University Gwalior", location: "Gwalior", founded: "2011" },
+        { name: "RKDF University Bhopal", location: "Bhopal", founded: "2012" }
+    ],
+    "Private Universities": [
+        { name: "LNB University Bhopal", location: "Bhopal" },
+        { name: "Truba Institute Group Bhopal", location: "Bhopal" },
+        { name: "Oriental University Indore", location: "Indore", founded: "2010" },
+        { name: "Malwanchal University", location: "Indore", founded: "2013" },
+        { name: "Medi-Caps University", location: "Indore", founded: "2016" },
+        { name: "IPS Academy", location: "Indore" },
+        { name: "Shri Vaishnav Vidyapeeth Vishwavidyalaya", location: "Indore", founded: "2015" },
+        { name: "Career Point University", location: "Kota (MP campus)" },
+        { name: "Rabindranath Tagore University", location: "Bhopal", founded: "2015" },
+        { name: "Amity University Gwalior", location: "Gwalior" },
+        { name: "Jain Vishva Bharati University MP Campus", location: "Indore" },
+        { name: "Sanchi University of Buddhist Indic Studies", location: "Raisen", founded: "2012" },
+        { name: "Swami Vivekananda University Sagar", location: "Sagar" }
+    ],
+    "Engineering Colleges - Bhopal Region (40+ Colleges)": [
+        { name: "Maulana Azad National Institute of Technology", location: "Bhopal", badge: "MANIT" },
+        { name: "AIIMS Bhopal Engineering Block", location: "Bhopal", badge: "AIIMS" },
+        { name: "IISER Bhopal Engineering Sciences", location: "Bhopal", badge: "IISER" },
+        { name: "Sagar Institute of Research and Technology", location: "Bhopal", badge: "SIRT" },
+        { name: "Lakshmi Narain College of Technology", location: "Bhopal" },
+        { name: "Radharaman Institute of Technology and Science", location: "Bhopal" },
+        { name: "Truba Institute of Engineering and Information Technology", location: "Bhopal" },
+        { name: "Oriental College of Technology", location: "Bhopal" },
+        { name: "Rabindranath Tagore University Engineering", location: "Bhopal" },
+        { name: "RKDF Institute of Science and Technology", location: "Bhopal" },
+        { name: "Sushila Devi Bansal College of Technology", location: "Indore" },
+        { name: "People Institute of Management and Research", location: "Bhopal" },
+        { name: "Swami Vivekananda College of Engineering", location: "Indore" },
+        { name: "AISECT Group of Universities", location: "Bhopal" },
+        { name: "Sage Institute of Technology", location: "Indore" },
+        { name: "Shri Vaishnav Institute of Technology and Science", location: "Indore" },
+        { name: "Government Engineering College Bhopal", location: "Bhopal", badge: "GOVT" },
+        { name: "Government Engineering College Raisen", location: "Raisen", badge: "GOVT" },
+        { name: "Government Engineering College Sehore", location: "Sehore", badge: "GOVT" },
+        { name: "Government Engineering College Vidisha", location: "Vidisha", badge: "GOVT" },
+        { name: "Government Engineering College Rajgarh", location: "Rajgarh", badge: "GOVT" },
+        { name: "Government Engineering College Betul", location: "Betul", badge: "GOVT" },
+        { name: "Government Engineering College Hoshangabad", location: "Hoshangabad", badge: "GOVT" },
+        { name: "Government Engineering College Harda", location: "Harda", badge: "GOVT" },
+        { name: "Bansal Institute of Research and Technology", location: "Bhopal" },
+        { name: "Bhagwan Parshuram College of Engineering", location: "Bhopal" },
+        { name: "Jawahar Lal Nehru Engineering College", location: "Bhopal" },
+        { name: "Institute of Engineering and Science IPS Academy", location: "Indore" },
+        { name: "Malwa Institute of Technology", location: "Indore" },
+        { name: "Medicaps Institute of Technology and Management", location: "Indore" },
+        { name: "Acropolis Institute of Technology and Research", location: "Indore" },
+        { name: "Chameli Devi Group of Institutions", location: "Indore" },
+        { name: "Devi Ahilya University College of Engineering", location: "Indore" },
+        { name: "International Institute of Professional Studies", location: "Indore" },
+        { name: "Indore Institute of Science and Technology", location: "Indore" },
+        { name: "Christian Eminent College Indore", location: "Indore" },
+        { name: "Pioneer Institute of Professional Studies", location: "Indore" },
+        { name: "Shri Ram Institute of Technology", location: "Jabalpur" },
+        { name: "Hitkarini College of Engineering and Technology", location: "Jabalpur" },
+        { name: "Gyan Ganga College of Technology", location: "Jabalpur" }
+    ],
+    "Engineering Colleges - Indore Region (35+ Colleges)": [
+        { name: "IIT Indore", location: "Simrol, Indore", badge: "IIT" },
+        { name: "IIM Indore School of Management", location: "Indore", badge: "IIM" },
+        { name: "Shri Govindram Seksaria Institute of Technology and Science", location: "Indore", founded: "1952", badge: "SGSITS GOVT AIDED" },
+        { name: "Institute of Engineering and Technology Devi Ahilya", location: "Indore" },
+        { name: "Medi-Caps University Engineering", location: "Indore" },
+        { name: "Malwanchal University Engineering", location: "Indore" },
+        { name: "Oriental University Engineering", location: "Indore" },
+        { name: "Symbiosis University Engineering Indore", location: "Indore" },
+        { name: "Shri Vaishnav Vidyapeeth Engineering", location: "Indore" },
+        { name: "Avantika University Engineering", location: "Ujjain" },
+        { name: "ITM University Engineering Gwalior", location: "Gwalior" },
+        { name: "Prestige Institute of Engineering Management and Research", location: "Indore" },
+        { name: "Vindhya Institute of Technology and Science", location: "Satna" },
+        { name: "Government Engineering College Ujjain", location: "Ujjain", badge: "GOVT" },
+        { name: "Government Engineering College Mandsaur", location: "Mandsaur", badge: "GOVT" },
+        { name: "Government Engineering College Indore", location: "Indore", badge: "GOVT" },
+        { name: "Government Engineering College Khargone", location: "Khargone", badge: "GOVT" },
+        { name: "Government Engineering College Dhar", location: "Dhar", badge: "GOVT" },
+        { name: "Government Engineering College Barwani", location: "Barwani", badge: "GOVT" },
+        { name: "Government Engineering College Alirajpur", location: "Alirajpur", badge: "GOVT" },
+        { name: "Government Engineering College Khandwa", location: "Khandwa", badge: "GOVT" },
+        { name: "Government Engineering College Burhanpur", location: "Burhanpur", badge: "GOVT" },
+        { name: "Government Engineering College Ratlam", location: "Ratlam", badge: "GOVT" },
+        { name: "Government Engineering College Neemuch", location: "Neemuch", badge: "GOVT" },
+        { name: "Government Engineering College Shajapur", location: "Shajapur", badge: "GOVT" },
+        { name: "Government Engineering College Dewas", location: "Dewas", badge: "GOVT" },
+        { name: "Technocrats Institute of Technology Excellence", location: "Bhopal" },
+        { name: "Rewa Engineering College", location: "Rewa" },
+        { name: "Vindhya College of Engineering and Technology", location: "Indore" },
+        { name: "Wisdom Institute of Engineering and Technology", location: "Bhopal" },
+        { name: "Mahakal Institute of Technology", location: "Ujjain" },
+        { name: "Sri Aurobindo Institute of Technology", location: "Indore" },
+        { name: "International College of Engineering and Management", location: "Indore" },
+        { name: "Jabalpur Engineering College", location: "Jabalpur", founded: "1947", badge: "GOVT AIDED" },
+        { name: "Hitkarini College of Engineering", location: "Jabalpur" }
+    ],
+    "Engineering Colleges - Gwalior, Jabalpur, Rewa Regions (30+ Colleges)": [
+        { name: "ABV-IIITM Gwalior", location: "Gwalior", badge: "IIITM" },
+        { name: "IIITDM Jabalpur", location: "Jabalpur", badge: "IIITDM" },
+        { name: "Jiwaji University College of Engineering", location: "Gwalior" },
+        { name: "ITM University College of Engineering Gwalior", location: "Gwalior" },
+        { name: "Amity University Engineering Gwalior", location: "Gwalior" },
+        { name: "Madhav Institute of Technology and Science", location: "Gwalior", badge: "MITS" },
+        { name: "Rustamji Institute of Technology", location: "Gwalior", badge: "BSF COLLEGE" },
+        { name: "Maharana Pratap College of Technology", location: "Gwalior" },
+        { name: "Government Engineering College Gwalior", location: "Gwalior", badge: "GOVT" },
+        { name: "Government Engineering College Shivpuri", location: "Shivpuri", badge: "GOVT" },
+        { name: "Government Engineering College Morena", location: "Morena", badge: "GOVT" },
+        { name: "Government Engineering College Bhind", location: "Bhind", badge: "GOVT" },
+        { name: "Government Engineering College Guna", location: "Guna", badge: "GOVT" },
+        { name: "Government Engineering College Datia", location: "Datia", badge: "GOVT" },
+        { name: "Government Engineering College Ashoknagar", location: "Ashoknagar", badge: "GOVT" },
+        { name: "Government Engineering College Jabalpur", location: "Jabalpur", badge: "GOVT" },
+        { name: "Government Engineering College Katni", location: "Katni", badge: "GOVT" },
+        { name: "Government Engineering College Damoh", location: "Damoh", badge: "GOVT" },
+        { name: "Government Engineering College Sagar", location: "Sagar", badge: "GOVT" },
+        { name: "Government Engineering College Panna", location: "Panna", badge: "GOVT" },
+        { name: "Government Engineering College Tikamgarh", location: "Tikamgarh", badge: "GOVT" },
+        { name: "Government Engineering College Chhatarpur", location: "Chhatarpur", badge: "GOVT" },
+        { name: "Government Engineering College Rewa", location: "Rewa", badge: "GOVT" },
+        { name: "Government Engineering College Satna", location: "Satna", badge: "GOVT" },
+        { name: "Government Engineering College Sidhi", location: "Sidhi", badge: "GOVT" },
+        { name: "Government Engineering College Singrauli", location: "Singrauli", badge: "GOVT" },
+        { name: "Government Engineering College Shahdol", location: "Shahdol", badge: "GOVT" },
+        { name: "Government Engineering College Anuppur", location: "Anuppur", badge: "GOVT" },
+        { name: "Government Engineering College Umaria", location: "Umaria", badge: "GOVT" },
+        { name: "Government Engineering College Dindori", location: "Dindori", badge: "GOVT" }
+    ],
+    "Medical Colleges - Government (18+ Colleges)": [
+        { name: "Gandhi Medical College Bhopal", location: "Bhopal", founded: "1955", badge: "GOVT PREMIER" },
+        { name: "AIIMS Bhopal", location: "Bhopal", badge: "AIIMS" },
+        { name: "AIIMS Gwalior", location: "Gwalior", badge: "AIIMS" },
+        { name: "MGM Medical College Indore", location: "Indore", founded: "1948", badge: "GOVT" },
+        { name: "GR Medical College Gwalior", location: "Gwalior", founded: "1946", badge: "GOVT" },
+        { name: "Netaji Subhash Chandra Bose Medical College", location: "Jabalpur", founded: "1955", badge: "GOVT" },
+        { name: "Bundelkhand Medical College", location: "Sagar", founded: "1971", badge: "GOVT" },
+        { name: "Shyam Shah Medical College", location: "Rewa", founded: "1963", badge: "GOVT" },
+        { name: "Government Medical College Datia", location: "Datia" },
+        { name: "Government Medical College Shivpuri", location: "Shivpuri" },
+        { name: "Government Medical College Damoh", location: "Damoh" },
+        { name: "Government Medical College Khandwa", location: "Khandwa" },
+        { name: "Government Medical College Ratlam", location: "Ratlam" },
+        { name: "Government Medical College Chhindwara", location: "Chhindwara" },
+        { name: "Government Medical College Shahdol", location: "Shahdol" },
+        { name: "Government Medical College Vidisha", location: "Vidisha" },
+        { name: "Government Medical College Chhatarpur", location: "Chhatarpur" },
+        { name: "Government Medical College Mandsaur", location: "Mandsaur" }
+    ],
+    "Medical Colleges - Private (20+ Colleges)": [
+        { name: "L.N. Medical College and J.K. Hospital", location: "Bhopal" },
+        { name: "Chirayu Medical College and Hospital", location: "Bhopal" },
+        { name: "People College of Medical Sciences", location: "Bhopal" },
+        { name: "R.K.D.F. Medical College and Research Centre", location: "Bhopal" },
+        { name: "Index Medical College Hospital and Research Centre", location: "Indore" },
+        { name: "Sri Aurobindo Medical College", location: "Indore" },
+        { name: "Aurobindo Medical College", location: "Indore" },
+        { name: "Bombay Hospital Institute of Medical Sciences", location: "Indore" },
+        { name: "CHL Apollo Hospital College", location: "Indore" },
+        { name: "Rama Medical College Hospital and Research Centre", location: "Kanpur (MP affil.)" },
+        { name: "Pacific Medical College Udaipur (MP affiliated)", location: "Udaipur" },
+        { name: "Amaltas Institute of Medical Sciences", location: "Dewas" },
+        { name: "Vindhya Institute of Medical Sciences", location: "Satna" },
+        { name: "Madhya Pradesh Institute of Medical Sciences", location: "Bhopal" },
+        { name: "NSCB Autonomous Medical College", location: "Jabalpur" },
+        { name: "Hitkarini Dental College and Hospital", location: "Jabalpur" },
+        { name: "GS Medical College and Hospital", location: "Hapur (MP affil.)" },
+        { name: "Teerthankar Mahaveer Medical College MP Campus", location: "Moradabad (MP)" },
+        { name: "Mata Gujri Memorial Medical College Kishanganj", location: "Kishanganj" },
+        { name: "College of Medical Sciences Chitrakoot", location: "Chitrakoot" }
+    ],
+    "Dental Colleges (15+ Colleges)": [
+        { name: "Government College of Dentistry Indore", location: "Indore", badge: "GOVT" },
+        { name: "Peoples Dental Academy Bhopal", location: "Bhopal" },
+        { name: "College of Dental Sciences and Research Centre Ahmedabad (MP campus)", location: "Bhopal" },
+        { name: "Hitkarini Dental College Jabalpur", location: "Jabalpur" },
+        { name: "Rishiraj College of Dental Sciences Bhopal", location: "Bhopal" },
+        { name: "Mansarovar Dental College Bhopal", location: "Bhopal" },
+        { name: "Index College of Dental Sciences Indore", location: "Indore" },
+        { name: "Sri Aurobindo College of Dentistry Indore", location: "Indore" },
+        { name: "RKDF Dental College Bhopal", location: "Bhopal" },
+        { name: "Karuna Shantiniketan Dental College", location: "Bhopal" },
+        { name: "Truba Dental College and Research Centre Bhopal", location: "Bhopal" },
+        { name: "Swami Vivekanand Dental College Indore", location: "Indore" },
+        { name: "Chirayu Dental College Bhopal", location: "Bhopal" },
+        { name: "RKDF Dental College Bhopal", location: "Bhopal" },
+        { name: "Saraswati Dental College Lucknow (MP affil.)", location: "Indore" }
+    ],
+    "Ayurveda and AYUSH Colleges (20+ Colleges)": [
+        { name: "Government Ayurvedic College Bhopal", location: "Bhopal", badge: "GOVT" },
+        { name: "Government Ayurvedic College Gwalior", location: "Gwalior", badge: "GOVT" },
+        { name: "Government Ayurvedic College Jabalpur", location: "Jabalpur", badge: "GOVT" },
+        { name: "Government Ayurvedic College Ujjain", location: "Ujjain", badge: "GOVT" },
+        { name: "Government Ayurvedic College Rewa", location: "Rewa", badge: "GOVT" },
+        { name: "Government Homeopathic Medical College Bhopal", location: "Bhopal", badge: "GOVT" },
+        { name: "Government Homeopathic Medical College Gwalior", location: "Gwalior", badge: "GOVT" },
+        { name: "Government Unani Medical College Bhopal", location: "Bhopal", badge: "GOVT" },
+        { name: "Sri Satya Sai Institute of Ayurvedic Research", location: "Sehore" },
+        { name: "Mandsaur College of Ayurveda", location: "Mandsaur" },
+        { name: "Vindhya Ayurvedic College Satna", location: "Satna" },
+        { name: "Rewa Ayurvedic College", location: "Rewa" },
+        { name: "Sagar Ayurvedic College", location: "Sagar" },
+        { name: "Chhatarpur Ayurvedic College", location: "Chhatarpur" },
+        { name: "RKDF Ayurveda College Bhopal", location: "Bhopal" },
+        { name: "Shri Kalyan Ayurvedic Medical College Bhopal", location: "Bhopal" },
+        { name: "Ujjain Unani College", location: "Ujjain" },
+        { name: "Sri Ayurveda Mahavidyalaya Nagpur (MP affil.)", location: "Indore" },
+        { name: "Shri Ram Ayurvedic College Indore", location: "Indore" },
+        { name: "Dhanvantari Ayurveda College Jabalpur", location: "Jabalpur" }
+    ],
+    "Nursing Colleges (20+ Colleges)": [
+        { name: "College of Nursing AIIMS Bhopal", location: "Bhopal", badge: "AIIMS" },
+        { name: "College of Nursing Gandhi Medical College", location: "Bhopal", badge: "GOVT" },
+        { name: "College of Nursing MGM Medical College Indore", location: "Indore", badge: "GOVT" },
+        { name: "College of Nursing GR Medical College Gwalior", location: "Gwalior", badge: "GOVT" },
+        { name: "College of Nursing NSCB Jabalpur", location: "Jabalpur", badge: "GOVT" },
+        { name: "Peoples College of Nursing Bhopal", location: "Bhopal" },
+        { name: "Chirayu College of Nursing Bhopal", location: "Bhopal" },
+        { name: "Index College of Nursing Indore", location: "Indore" },
+        { name: "Sri Aurobindo College of Nursing Indore", location: "Indore" },
+        { name: "LN Medical College of Nursing Bhopal", location: "Bhopal" },
+        { name: "Radharaman College of Nursing Bhopal", location: "Bhopal" },
+        { name: "RKDF College of Nursing Bhopal", location: "Bhopal" },
+        { name: "Bansal College of Nursing Bhopal", location: "Bhopal" },
+        { name: "Vindhya Institute of Nursing Satna", location: "Satna" },
+        { name: "Shyam Shah Medical College Nursing Rewa", location: "Rewa" },
+        { name: "Government College of Nursing Jabalpur", location: "Jabalpur", badge: "GOVT" },
+        { name: "Government College of Nursing Gwalior", location: "Gwalior", badge: "GOVT" },
+        { name: "Government College of Nursing Ujjain", location: "Ujjain", badge: "GOVT" },
+        { name: "Government College of Nursing Rewa", location: "Rewa", badge: "GOVT" },
+        { name: "Government College of Nursing Sagar", location: "Sagar", badge: "GOVT" }
+    ],
+    "Management Institutes (20+ Institutes)": [
+        { name: "Indian Institute of Management Indore", location: "Indore", badge: "NIRF #7" },
+        { name: "ABV-IIITM Gwalior School of Management", location: "Gwalior", badge: "IIITM" },
+        { name: "IIT Indore School of Management", location: "Indore", badge: "IIT" },
+        { name: "Devi Ahilya Vishwavidyalaya MBA", location: "Indore" },
+        { name: "Jiwaji University MBA", location: "Gwalior" },
+        { name: "Barkatullah University MBA", location: "Bhopal" },
+        { name: "Makhanlal Chaturvedi University Media Management", location: "Bhopal", badge: "MCU" },
+        { name: "Prestige Institute of Management Gwalior", location: "Gwalior" },
+        { name: "Prestige Institute of Management and Research Indore", location: "Indore" },
+        { name: "Symbiosis University of Applied Sciences MBA Indore", location: "Indore" },
+        { name: "Sage University MBA Indore", location: "Indore" },
+        { name: "Shri Vaishnav Institute of Management Indore", location: "Indore" },
+        { name: "Acropolis Institute of Management Studies Indore", location: "Indore" },
+        { name: "Pioneer Institute of Management Indore", location: "Indore" },
+        { name: "IPS Academy IBMR Indore", location: "Indore" },
+        { name: "Medicaps School of Business Indore", location: "Indore" },
+        { name: "RKDF Management Institute Bhopal", location: "Bhopal" },
+        { name: "People Institute of Management Studies Bhopal", location: "Bhopal" },
+        { name: "Indian Institute of Forest Management", location: "Bhopal", badge: "IIFM" },
+        { name: "Lal Bahadur Shastri Institute of Management Delhi (MP campus)", location: "Bhopal" }
+    ],
+    "Law Colleges (15+ Colleges)": [
+        { name: "National Law Institute University Bhopal", location: "Bhopal", badge: "NLIU NLU #6" },
+        { name: "School of Law Devi Ahilya University", location: "Indore" },
+        { name: "School of Law Jiwaji University", location: "Gwalior" },
+        { name: "Faculty of Law Barkatullah University", location: "Bhopal" },
+        { name: "Faculty of Law Rani Durgavati University", location: "Jabalpur" },
+        { name: "Faculty of Law Awadhesh Pratap Singh University", location: "Rewa" },
+        { name: "Faculty of Law Dr. Hari Singh Gour University", location: "Sagar" },
+        { name: "Faculty of Law Vikram University", location: "Ujjain" },
+        { name: "Government Law College Bhopal", location: "Bhopal", badge: "GOVT" },
+        { name: "Government Law College Indore", location: "Indore", badge: "GOVT" },
+        { name: "Government Law College Gwalior", location: "Gwalior", badge: "GOVT" },
+        { name: "Government Law College Jabalpur", location: "Jabalpur", badge: "GOVT" },
+        { name: "Government Law College Ujjain", location: "Ujjain", badge: "GOVT" },
+        { name: "Government Law College Rewa", location: "Rewa", badge: "GOVT" },
+        { name: "Government Law College Sagar", location: "Sagar", badge: "GOVT" }
+    ],
+    "Arts Science and Commerce - Bhopal and Indore (40+ Colleges)": [
+        { name: "Government Motilal Vigyan Mahavidyalaya", location: "Bhopal", founded: "1956", badge: "GOVT PREMIER" },
+        { name: "Government Maharani Laxmi Bai Girls College", location: "Bhopal", badge: "WOMEN GOVT" },
+        { name: "Government Hamidiya Arts and Commerce College", location: "Bhopal", badge: "GOVT" },
+        { name: "Government New Science College Bhopal", location: "Bhopal", badge: "GOVT" },
+        { name: "Government Girls College Bhopal", location: "Bhopal", badge: "WOMEN GOVT" },
+        { name: "Barkatullah University Teaching Departments", location: "Bhopal" },
+        { name: "People College of Science and Technology", location: "Bhopal" },
+        { name: "Sagar Institute of Research Technology and Science", location: "Bhopal" },
+        { name: "Lakshmi Narain College of Technology Arts", location: "Bhopal" },
+        { name: "RKDF College of Science Bhopal", location: "Bhopal" },
+        { name: "Christian College Bhopal", location: "Bhopal", founded: "1955" },
+        { name: "Carmel Convent College Bhopal", location: "Bhopal", badge: "WOMEN" },
+        { name: "St. Joseph Degree College Bhopal", location: "Bhopal" },
+        { name: "Government Holkar Science College Indore", location: "Indore", founded: "1891", badge: "AUTONOMOUS GOVT" },
+        { name: "Government Arts and Commerce College Indore", location: "Indore", badge: "GOVT" },
+        { name: "Government Girls Degree College Indore", location: "Indore", badge: "WOMEN GOVT" },
+        { name: "Devi Ahilya Vishwavidyalaya Teaching Departments", location: "Indore" },
+        { name: "St. Raphael College of Excellence Indore", location: "Indore", badge: "WOMEN" },
+        { name: "Indore Christian College", location: "Indore" },
+        { name: "Symbiosis Arts and Commerce Indore", location: "Indore" },
+        { name: "Malwanchal Arts and Commerce College", location: "Indore" },
+        { name: "IPS Academy Arts and Commerce", location: "Indore" },
+        { name: "Prestige College of Arts Science and Commerce", location: "Indore" },
+        { name: "Medicaps College of Arts and Commerce", location: "Indore" },
+        { name: "Shri Vaishnav Institute of Science", location: "Indore" },
+        { name: "Medi-Caps Arts College", location: "Indore" },
+        { name: "Seva Sadan Girls College Bhopal", location: "Bhopal", badge: "WOMEN" },
+        { name: "Nutan College Bhopal", location: "Bhopal" },
+        { name: "Government Polytechnic College Science Wing", location: "Bhopal" },
+        { name: "Sagar Institute of Technology Arts", location: "Bhopal" },
+        { name: "SAGE College of Arts Science Commerce", location: "Indore" },
+        { name: "Janki Devi Bajaj Government Girls College Bhopal", location: "Bhopal", badge: "WOMEN GOVT" },
+        { name: "Saifia College of Science and Education Bhopal", location: "Bhopal" },
+        { name: "Shri Ramkrishna Institute of Computer Education", location: "Indore" },
+        { name: "Oriental College of Arts and Commerce", location: "Bhopal" }
+    ],
+    "Arts Science and Commerce - Districts (40+ Colleges)": [
+        { name: "Maharaja College Gwalior", location: "Gwalior", founded: "1897", badge: "GOVT AUTONOMOUS" },
+        { name: "Kamla Raja Girls Degree College Gwalior", location: "Gwalior", badge: "WOMEN GOVT" },
+        { name: "Government Madhav College Ujjain", location: "Ujjain", founded: "1897", badge: "GOVT AUTONOMOUS" },
+        { name: "Government Vikram College Ujjain", location: "Ujjain", badge: "GOVT" },
+        { name: "Jiwaji University Teaching Departments", location: "Gwalior" },
+        { name: "ITM University Arts Gwalior", location: "Gwalior" },
+        { name: "Amity University Arts Gwalior", location: "Gwalior" },
+        { name: "Government Autonomous College Jabalpur", location: "Jabalpur", badge: "GOVT" },
+        { name: "Government Mahakosha Arts and Commerce College", location: "Jabalpur", badge: "GOVT" },
+        { name: "St. Aloysius Autonomous College Jabalpur", location: "Jabalpur", badge: "AUTONOMOUS" },
+        { name: "Rani Durgavati University Teaching Departments", location: "Jabalpur" },
+        { name: "Government PG College Rewa", location: "Rewa", badge: "GOVT" },
+        { name: "Shyam Shah Girls College Rewa", location: "Rewa", badge: "WOMEN GOVT" },
+        { name: "Awadhesh Pratap Singh University Colleges", location: "Rewa" },
+        { name: "Government PG College Sagar", location: "Sagar", badge: "GOVT" },
+        { name: "Government Girls College Sagar", location: "Sagar", badge: "WOMEN GOVT" },
+        { name: "Dr. Hari Singh Gour University Teaching Departments", location: "Sagar" },
+        { name: "Government PG College Satna", location: "Satna", badge: "GOVT" },
+        { name: "Government Degree College Damoh", location: "Damoh", badge: "GOVT" },
+        { name: "Government Degree College Panna", location: "Panna", badge: "GOVT" },
+        { name: "Government Degree College Tikamgarh", location: "Tikamgarh", badge: "GOVT" },
+        { name: "Government Degree College Chhatarpur", location: "Chhatarpur", badge: "GOVT" },
+        { name: "Government Degree College Katni", location: "Katni", badge: "GOVT" },
+        { name: "Government Degree College Chhindwara", location: "Chhindwara", badge: "GOVT" },
+        { name: "Government Degree College Seoni", location: "Seoni", badge: "GOVT" },
+        { name: "Government Degree College Balaghat", location: "Balaghat", badge: "GOVT" },
+        { name: "Government Degree College Mandla", location: "Mandla", badge: "GOVT" },
+        { name: "Government Degree College Narsinghpur", location: "Narsinghpur", badge: "GOVT" },
+        { name: "Government Degree College Hoshangabad", location: "Hoshangabad", badge: "GOVT" },
+        { name: "Government Degree College Harda", location: "Harda", badge: "GOVT" },
+        { name: "Government Degree College Raisen", location: "Raisen", badge: "GOVT" },
+        { name: "Government Degree College Sehore", location: "Sehore", badge: "GOVT" },
+        { name: "Government Degree College Betul", location: "Betul", badge: "GOVT" },
+        { name: "Government Degree College Khandwa", location: "Khandwa", badge: "GOVT" },
+        { name: "Government Degree College Khargone", location: "Khargone", badge: "GOVT" },
+        { name: "Government Degree College Burhanpur", location: "Burhanpur", badge: "GOVT" },
+        { name: "Government Degree College Dhar", location: "Dhar", badge: "GOVT" },
+        { name: "Government Degree College Ratlam", location: "Ratlam", badge: "GOVT" },
+        { name: "Government Degree College Mandsaur", location: "Mandsaur", badge: "GOVT" },
+        { name: "Government Degree College Neemuch", location: "Neemuch", badge: "GOVT" }
+    ],
+    "Women Colleges (15+ Colleges)": [
+        { name: "Government Maharani Laxmi Bai Girls PG College Bhopal", location: "Bhopal", badge: "GOVT" },
+        { name: "Government Girls College Bhopal", location: "Bhopal", badge: "GOVT" },
+        { name: "Kamla Raja Girls Degree College Gwalior", location: "Gwalior", badge: "GOVT" },
+        { name: "Shyam Shah Girls College Rewa", location: "Rewa", badge: "GOVT" },
+        { name: "Government Girls College Sagar", location: "Sagar", badge: "GOVT" },
+        { name: "Government Girls Degree College Indore", location: "Indore", badge: "GOVT" },
+        { name: "Janki Devi Bajaj Girls College Bhopal", location: "Bhopal", badge: "GOVT" },
+        { name: "Government Maharani Girls College Jabalpur", location: "Jabalpur", badge: "GOVT" },
+        { name: "Government Girls College Ujjain", location: "Ujjain", badge: "GOVT" },
+        { name: "Carmel Convent College Bhopal", location: "Bhopal", badge: "CONVENT WOMEN" },
+        { name: "St. Raphael College Indore", location: "Indore", badge: "CONVENT WOMEN" },
+        { name: "Seva Sadan Girls College Bhopal", location: "Bhopal" },
+        { name: "Sukhi Devi Girls College Rewa", location: "Rewa" },
+        { name: "Government Girls College Vidisha", location: "Vidisha", badge: "GOVT" },
+        { name: "Government Girls College Satna", location: "Satna", badge: "GOVT" }
+    ],
+    "Pharmacy Colleges (20+ Colleges)": [
+        { name: "Pharmacy Department Devi Ahilya University", location: "Indore" },
+        { name: "RKDF College of Pharmacy Bhopal", location: "Bhopal" },
+        { name: "Peoples College of Pharmacy Bhopal", location: "Bhopal" },
+        { name: "Radharaman College of Pharmacy Bhopal", location: "Bhopal" },
+        { name: "Truba College of Pharmacy Bhopal", location: "Bhopal" },
+        { name: "Oriental College of Pharmacy Bhopal", location: "Bhopal" },
+        { name: "Lakshmi Narain College of Pharmacy Bhopal", location: "Bhopal" },
+        { name: "Acropolis Institute of Pharmaceutical Education and Research Indore", location: "Indore" },
+        { name: "Sri Aurobindo College of Pharmacy Indore", location: "Indore" },
+        { name: "Index Institute of Pharmaceutical Sciences Indore", location: "Indore" },
+        { name: "Medicaps College of Pharmacy Indore", location: "Indore" },
+        { name: "Malwanchal Institute of Pharmaceutical Sciences Indore", location: "Indore" },
+        { name: "Sage College of Pharmacy Indore", location: "Indore" },
+        { name: "Institute of Pharmacy Nirma University MP Campus", location: "Indore" },
+        { name: "Government Pharmacy College Bhopal", location: "Bhopal", badge: "GOVT" },
+        { name: "Government Pharmacy College Indore", location: "Indore", badge: "GOVT" },
+        { name: "Government Pharmacy College Gwalior", location: "Gwalior", badge: "GOVT" },
+        { name: "Government Pharmacy College Jabalpur", location: "Jabalpur", badge: "GOVT" },
+        { name: "Hitkarini College of Pharmacy Jabalpur", location: "Jabalpur" },
+        { name: "Vindhya Institute of Pharmacy Satna", location: "Satna" }
+    ],
+    "Polytechnic Institutes - Government (52 Institutes - All Districts)": [
+        { name: "Government Polytechnic Bhopal", location: "Bhopal", badge: "GOVT" },
+        { name: "Government Women Polytechnic Bhopal", location: "Bhopal", badge: "WOMEN GOVT" },
+        { name: "Government Polytechnic Indore", location: "Indore", badge: "GOVT" },
+        { name: "Government Polytechnic Gwalior", location: "Gwalior", badge: "GOVT" },
+        { name: "Government Polytechnic Jabalpur", location: "Jabalpur", badge: "GOVT" },
+        { name: "Government Polytechnic Ujjain", location: "Ujjain", badge: "GOVT" },
+        { name: "Government Polytechnic Rewa", location: "Rewa", badge: "GOVT" },
+        { name: "Government Polytechnic Sagar", location: "Sagar", badge: "GOVT" },
+        { name: "Government Polytechnic Satna", location: "Satna", badge: "GOVT" },
+        { name: "Government Polytechnic Damoh", location: "Damoh", badge: "GOVT" },
+        { name: "Government Polytechnic Panna", location: "Panna", badge: "GOVT" },
+        { name: "Government Polytechnic Tikamgarh", location: "Tikamgarh", badge: "GOVT" },
+        { name: "Government Polytechnic Chhatarpur", location: "Chhatarpur", badge: "GOVT" },
+        { name: "Government Polytechnic Chhindwara", location: "Chhindwara", badge: "GOVT" },
+        { name: "Government Polytechnic Seoni", location: "Seoni", badge: "GOVT" },
+        { name: "Government Polytechnic Balaghat", location: "Balaghat", badge: "GOVT" },
+        { name: "Government Polytechnic Mandla", location: "Mandla", badge: "GOVT" },
+        { name: "Government Polytechnic Dindori", location: "Dindori", badge: "GOVT" },
+        { name: "Government Polytechnic Katni", location: "Katni", badge: "GOVT" },
+        { name: "Government Polytechnic Narsinghpur", location: "Narsinghpur", badge: "GOVT" },
+        { name: "Government Polytechnic Shahdol", location: "Shahdol", badge: "GOVT" },
+        { name: "Government Polytechnic Anuppur", location: "Anuppur", badge: "GOVT" },
+        { name: "Government Polytechnic Umaria", location: "Umaria", badge: "GOVT" },
+        { name: "Government Polytechnic Sidhi", location: "Sidhi", badge: "GOVT" },
+        { name: "Government Polytechnic Singrauli", location: "Singrauli", badge: "GOVT" },
+        { name: "Government Polytechnic Shivpuri", location: "Shivpuri", badge: "GOVT" },
+        { name: "Government Polytechnic Morena", location: "Morena", badge: "GOVT" },
+        { name: "Government Polytechnic Bhind", location: "Bhind", badge: "GOVT" },
+        { name: "Government Polytechnic Datia", location: "Datia", badge: "GOVT" },
+        { name: "Government Polytechnic Guna", location: "Guna", badge: "GOVT" },
+        { name: "Government Polytechnic Ashoknagar", location: "Ashoknagar", badge: "GOVT" },
+        { name: "Government Polytechnic Vidisha", location: "Vidisha", badge: "GOVT" },
+        { name: "Government Polytechnic Raisen", location: "Raisen", badge: "GOVT" },
+        { name: "Government Polytechnic Sehore", location: "Sehore", badge: "GOVT" },
+        { name: "Government Polytechnic Rajgarh", location: "Rajgarh", badge: "GOVT" },
+        { name: "Government Polytechnic Betul", location: "Betul", badge: "GOVT" },
+        { name: "Government Polytechnic Hoshangabad", location: "Hoshangabad", badge: "GOVT" },
+        { name: "Government Polytechnic Harda", location: "Harda", badge: "GOVT" },
+        { name: "Government Polytechnic Khandwa", location: "Khandwa", badge: "GOVT" },
+        { name: "Government Polytechnic Khargone", location: "Khargone", badge: "GOVT" },
+        { name: "Government Polytechnic Burhanpur", location: "Burhanpur", badge: "GOVT" },
+        { name: "Government Polytechnic Dhar", location: "Dhar", badge: "GOVT" },
+        { name: "Government Polytechnic Alirajpur", location: "Alirajpur", badge: "GOVT" },
+        { name: "Government Polytechnic Barwani", location: "Barwani", badge: "GOVT" },
+        { name: "Government Polytechnic Ratlam", location: "Ratlam", badge: "GOVT" },
+        { name: "Government Polytechnic Mandsaur", location: "Mandsaur", badge: "GOVT" },
+        { name: "Government Polytechnic Neemuch", location: "Neemuch", badge: "GOVT" },
+        { name: "Government Polytechnic Shajapur", location: "Shajapur", badge: "GOVT" },
+        { name: "Government Polytechnic Dewas", location: "Dewas", badge: "GOVT" },
+        { name: "Government Polytechnic Agar Malwa", location: "Agar Malwa", badge: "GOVT" },
+        { name: "Government Polytechnic Niwari", location: "Niwari", badge: "GOVT" },
+        { name: "Government Polytechnic Mauganj", location: "Mauganj", badge: "GOVT" }
+    ],
+    "Polytechnic Institutes - Private (15+ Institutes)": [
+        { name: "RKDF Polytechnic Bhopal", location: "Bhopal" },
+        { name: "Truba Polytechnic Bhopal", location: "Bhopal" },
+        { name: "Oriental Polytechnic Bhopal", location: "Bhopal" },
+        { name: "Peoples Polytechnic Bhopal", location: "Bhopal" },
+        { name: "Radharaman Polytechnic Bhopal", location: "Bhopal" },
+        { name: "Acropolis Polytechnic Indore", location: "Indore" },
+        { name: "IPS Academy Polytechnic Indore", location: "Indore" },
+        { name: "Medicaps Polytechnic Indore", location: "Indore" },
+        { name: "SGSITS Polytechnic Indore", location: "Indore" },
+        { name: "Shri Vaishnav Polytechnic Indore", location: "Indore" },
+        { name: "Madhav Institute of Technology Polytechnic Gwalior", location: "Gwalior" },
+        { name: "Hitkarini Polytechnic Jabalpur", location: "Jabalpur" },
+        { name: "Gyan Ganga Polytechnic Jabalpur", location: "Jabalpur" },
+        { name: "Vindhya Polytechnic Satna", location: "Satna" },
+        { name: "Rewa Polytechnic College", location: "Rewa" }
+    ],
+    "Agriculture Colleges (15+ Colleges)": [
+        { name: "Jawaharlal Nehru Agricultural University", location: "Jabalpur", founded: "1964", badge: "JNAU" },
+        { name: "Rajmata Vijayaraje Scindia Krishi Vishwavidyalaya", location: "Gwalior", badge: "RVSKVV" },
+        { name: "College of Agriculture Indore", location: "Indore", badge: "JNAU" },
+        { name: "College of Agriculture Gwalior", location: "Gwalior", badge: "RVSKVV" },
+        { name: "College of Agriculture Bhopal", location: "Bhopal", badge: "JNAU" },
+        { name: "College of Agriculture Jabalpur", location: "Jabalpur", badge: "JNAU" },
+        { name: "College of Agriculture Rewa", location: "Rewa", badge: "JNAU" },
+        { name: "College of Agriculture Sagar", location: "Sagar", badge: "JNAU" },
+        { name: "College of Agriculture Tikamgarh", location: "Tikamgarh", badge: "RVSKVV" },
+        { name: "College of Agriculture Morena", location: "Morena", badge: "RVSKVV" },
+        { name: "College of Agriculture Chhindwara", location: "Chhindwara" },
+        { name: "College of Agriculture Shajapur", location: "Shajapur" },
+        { name: "College of Agriculture Khandwa", location: "Khandwa" },
+        { name: "College of Agriculture Khargone", location: "Khargone" },
+        { name: "College of Agriculture Satna", location: "Satna" }
+    ],
+    "Research Institutes and Specialized Centers": [
+        { name: "Indian Institute of Forest Management", location: "Bhopal", founded: "1982", badge: "IIFM" },
+        { name: "Centre for Advanced Research in Tribal Development", location: "Amarkantak", badge: "IGNTU" },
+        { name: "CSIR - Advanced Materials and Processes Research Institute", location: "Bhopal", badge: "AMPRI" },
+        { name: "National Centre for Human Settlements and Environment", location: "Bhopal" },
+        { name: "Tropical Forest Research Institute", location: "Jabalpur", badge: "TFRI" },
+        { name: "Regional Medical Research Centre", location: "Bhopal" },
+        { name: "National Institute of Technical Teachers Training and Research Bhopal", location: "Bhopal", badge: "NITTTR" },
+        { name: "Geological Survey of India Bhopal", location: "Bhopal" },
+        { name: "Madhya Pradesh Council of Science and Technology", location: "Bhopal" },
+        { name: "ICAR Research Stations Madhya Pradesh", location: "Multiple Districts" },
+        { name: "Central Road Research Institute Bhopal Field Station", location: "Bhopal" },
+        { name: "National Institute for Agricultural Marketing", location: "Jaipur (MP campus)" }
+    ]
+};
+
+const gradients = ['grad1','grad2','grad3','grad4','grad5','grad6','grad7','grad8','grad9','grad10'];
+
+function getInitials(name) {
+    const words = name.split(' ');
+    if (words.length === 1) return words[0].substring(0, 2).toUpperCase();
+    return (words[0][0] + words[1][0]).toUpperCase();
+}
+
+function createCollegeCard(college, gradIndex) {
+    const initials  = getInitials(college.name);
+    const gradClass = gradients[gradIndex % gradients.length];
+    const badge   = college.badge   ? '<div class="college-badge">' + college.badge + '</div>' : '';
+    const founded = college.founded ? ' \u2022 Est. ' + college.founded : '';
+    return '<div class="college-card ' + gradClass + '">' +
+        badge +
+        '<div class="college-content">' +
+        '<div class="college-initials">' + initials + '</div>' +
+        '<div>' +
+        '<div class="college-name">' + college.name + '</div>' +
+        '<div class="college-location">' + college.location + founded + '</div>' +
+        '</div></div></div>';
+}
+
+function renderContent() {
+    const content = document.getElementById('content');
+    let html = '';
+    let categoryIndex = 0;
+    let totalCount = 0;
+    for (const [category, colleges] of Object.entries(collegesData)) {
+        totalCount += colleges.length;
+        const cards = colleges.map(function(college, index) {
+            return createCollegeCard(college, categoryIndex + index);
+        }).join('');
+        html += '<div class="section">' +
+            '<h2 class="section-title">' + category +
+            '<span class="section-count">(' + colleges.length + ' institutions)</span></h2>' +
+            '<div class="scroll-container">' + cards + '</div></div>';
+        categoryIndex++;
+    }
+    const banner = '<div style="background:linear-gradient(135deg,#ff9a56 0%,#ff6a88 100%);padding:20px;border-radius:10px;margin-bottom:30px;text-align:center;">' +
+        '<h1 style="font-size:32px;margin-bottom:10px;">&#127956; Madhya Pradesh - Complete Directory</h1>' +
+        '<p style="font-size:18px;opacity:0.9;">' + totalCount + ' Total Institutions | ' + Object.keys(collegesData).length + ' Categories | Heart of India</p></div>';
+    content.innerHTML = banner + html;
+}
+
+renderContent();
+</script>
+</body>
+</html>

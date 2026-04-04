@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - UNIHUB INDIA</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
+            background: linear-gradient(135deg, #141414 0%, #1a1a1a 100%);
+            color: #ffffff; 
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        /* Background Animation */
+        .bg-animation {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+        }
+        .bg-circle {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(229,9,20,0.1) 0%, transparent 70%);
+            animation: float 20s infinite ease-in-out;
+        }
+        .bg-circle:nth-child(1) { width: 300px; height: 300px; top: 10%; left: 10%; animation-delay: 0s; }
+        .bg-circle:nth-child(2) { width: 200px; height: 200px; top: 60%; right: 15%; animation-delay: 4s; }
+        .bg-circle:nth-child(3) { width: 150px; height: 150px; bottom: 20%; left: 20%; animation-delay: 8s; }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) scale(1); }
+            50% { transform: translateY(-30px) scale(1.1); }
+        }
+        
+        /* Logo */
+        .logo {
+            position: absolute;
+            top: 30px;
+            left: 50px;
+            font-size: 28px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #e50914 0%, #f40612 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            z-index: 10;
+        }
+        
+        /* Container */
+        .signup-container {
+            background: rgba(0,0,0,0.75);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 50px 60px;
+            width: 500px;
+            max-width: 95%;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+            border: 1px solid rgba(255,255,255,0.1);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .signup-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .signup-header h1 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #ffffff 0%, #e5e5e5 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .signup-header p {
+            font-size: 14px;
+            color: #b3b3b3;
+        }
+        
+        /* Form */
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 8px;
+            color: #e5e5e5;
+        }
+        
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 14px 16px;
+            background: rgba(255,255,255,0.05);
+            border: 2px solid rgba(255,255,255,0.1);
+            border-radius: 8px;
+            color: #ffffff;
+            font-size: 15px;
+            transition: all 0.3s;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #e50914;
+            background: rgba(255,255,255,0.08);
+        }
+        
+        .form-group input::placeholder {
+            color: #808080;
+        }
+        
+        .form-group select {
+            cursor: pointer;
+        }
+        
+        .form-group select option {
+            background: #1a1a1a;
+            color: #ffffff;
+        }
+        
+        /* Password Strength */
+        .password-strength {
+            margin-top: 8px;
+            height: 4px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+        
+        .password-strength-bar {
+            height: 100%;
+            width: 0%;
+            transition: all 0.3s;
+        }
+        
+        .strength-weak { width: 33%; background: #e50914; }
+        .strength-medium { width: 66%; background: #ffa500; }
+        .strength-strong { width: 100%; background: #00ff00; }
+        
+        /* Terms */
+        .terms-group {
+            margin: 25px 0;
+            display: flex;
+            align-items: start;
+            gap: 10px;
+        }
+        
+        .terms-group input[type="checkbox"] {
+            margin-top: 2px;
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+        
+        .terms-group label {
+            font-size: 13px;
+            color: #b3b3b3;
+            line-height: 1.5;
+        }
+        
+        .terms-group a {
+            color: #e50914;
+            text-decoration: none;
+        }
+        
+        .terms-group a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Button */
+        .signup-btn {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #e50914 0%, #f40612 100%);
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-bottom: 20px;
+        }
+        
+        .signup-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(229,9,20,0.4);
+        }
+        
+        .signup-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        /* Login Link */
+        .login-link {
+            text-align: center;
+            font-size: 14px;
+            color: #b3b3b3;
+        }
+        
+        .login-link a {
+            color: #e50914;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .login-link a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Responsive */
+        @media(max-width:768px){
+            .logo { left: 20px; font-size: 24px; }
+            .signup-container { 
+                padding: 40px 30px; 
+            }
+            .form-row { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">UNIHUB INDIA</div>
+    
+    <div class="bg-animation">
+        <div class="bg-circle"></div>
+        <div class="bg-circle"></div>
+        <div class="bg-circle"></div>
+    </div>
+    
+    <div class="signup-container">
+        <div class="signup-header">
+            <h1>Create Account</h1>
+            <p>Start tracking your college applications today</p>
+        </div>
+        
+        <form id="signupForm">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="firstName">First Name</label>
+                    <input type="text" id="firstName" placeholder="John" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" id="lastName" placeholder="Doe" required>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" placeholder="your.email@example.com" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" placeholder="+91 98765 43210" required>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="state">State</label>
+                    <select id="state" required>
+                        <option value="">Select State</option>
+                        <option value="west-bengal">West Bengal</option>
+                        <option value="tamil-nadu">Tamil Nadu</option>
+                        <option value="madhya-pradesh">Madhya Pradesh</option>
+                        <option value="gujarat">Gujarat</option>
+                        <option value="andhra-pradesh">Andhra Pradesh</option>
+                        <option value="uttar-pradesh">Uttar Pradesh</option>
+                        <option value="telangana">Telangana</option>
+                        <option value="karnataka">Karnataka</option>
+                        <option value="maharashtra">Maharashtra</option>
+                        <option value="rajasthan">Rajasthan</option>
+                        <option value="bihar">Bihar</option>
+                        <option value="kerala">Kerala</option>
+                        <option value="odisha">Odisha</option>
+                        <option value="punjab">Punjab</option>
+                        <option value="haryana">Haryana</option>
+                        <option value="jharkhand">Jharkhand</option>
+                        <option value="assam">Assam</option>
+                        <option value="chhattisgarh">Chhattisgarh</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="category">Interested In</label>
+                    <select id="category" required>
+                        <option value="">Select Category</option>
+                        <option value="engineering">Engineering</option>
+                        <option value="medical">Medical</option>
+                        <option value="management">Management</option>
+                        <option value="law">Law</option>
+                        <option value="arts">Arts & Science</option>
+                        <option value="pharmacy">Pharmacy</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Create a strong password" required>
+                <div class="password-strength">
+                    <div class="password-strength-bar" id="strengthBar"></div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" id="confirmPassword" placeholder="Re-enter your password" required>
+            </div>
+            
+            <div class="terms-group">
+                <input type="checkbox" id="terms" required>
+                <label for="terms">
+                    I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+                </label>
+            </div>
+            
+            <button type="submit" class="signup-btn">Create Account</button>
+        </form>
+        
+        <div class="login-link">
+            Already have an account? <a href="UNIHUB-login.html">Login</a>
+        </div>
+    </div>
+    
+    <script>
+        // Password strength checker
+        document.getElementById('password').addEventListener('input', function(e) {
+            const password = e.target.value;
+            const strengthBar = document.getElementById('strengthBar');
+            
+            let strength = 0;
+            if(password.length >= 8) strength++;
+            if(/[a-z]/.test(password) && /[A-Z]/.test(password)) strength++;
+            if(/[0-9]/.test(password)) strength++;
+            if(/[^a-zA-Z0-9]/.test(password)) strength++;
+            
+            strengthBar.className = 'password-strength-bar';
+            if(strength <= 2) strengthBar.classList.add('strength-weak');
+            else if(strength === 3) strengthBar.classList.add('strength-medium');
+            else strengthBar.classList.add('strength-strong');
+        });
+        
+        // Form submission
+        document.getElementById('signupForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            
+            if(password !== confirmPassword) {
+                alert('Passwords do not match!');
+                return;
+            }
+            
+            // Collect form data
+            const userData = {
+                firstName: document.getElementById('firstName').value,
+                lastName: document.getElementById('lastName').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                state: document.getElementById('state').value,
+                category: document.getElementById('category').value,
+                registeredDate: new Date().toISOString(),
+                applications: []
+            };
+            
+            // Store user data
+            localStorage.setItem('unihub_user', JSON.stringify(userData));
+            
+            // Redirect to dashboard
+            window.location.href = 'UNIHUB-dashboard.html';
+        });
+    </script>
+</body>
+</html>

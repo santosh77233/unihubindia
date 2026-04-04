@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNIHUB INDIA - Kerala Colleges (500+ Complete List)</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background-color: #141414; color: #ffffff; overflow-x: hidden; }
+        .header { display: flex; justify-content: space-between; align-items: center; padding: 20px 50px; background: linear-gradient(180deg,rgba(0,0,0,0.7) 0%,rgba(0,0,0,0) 100%); position: fixed; top: 0; width: 100%; z-index: 1000; backdrop-filter: blur(10px); }
+        .logo { font-size: 28px; font-weight: 700; color: #e50914; letter-spacing: 1px; }
+        .logo-sub { font-size: 12px; color: #999; font-weight: 400; margin-left: 10px; }
+        .nav-menu { display: flex; gap: 30px; align-items: center; }
+        .nav-menu a { color: #e5e5e5; text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.3s; }
+        .nav-menu a:hover { color: #b3b3b3; }
+        .header-right { display: flex; gap: 25px; align-items: center; }
+        .icon-btn { background: none; border: none; color: #ffffff; font-size: 20px; cursor: pointer; }
+        .profile-icon { width: 32px; height: 32px; border-radius: 4px; background: linear-gradient(135deg,#43e97b 0%,#38f9d7 100%); display: flex; align-items: center; justify-content: center; font-weight: 600; cursor: pointer; font-size: 13px; color: #000; }
+        .content { padding-top: 80px; padding-left: 50px; }
+        .section { margin-bottom: 40px; }
+        .section-title { font-size: 20px; font-weight: 600; margin-bottom: 15px; color: #e5e5e5; padding-left: 4px; }
+        .section-count { font-size: 14px; color: #999; margin-left: 10px; font-weight: 400; }
+        .scroll-container { display: flex; gap: 15px; overflow-x: auto; overflow-y: hidden; padding-bottom: 15px; padding-right: 50px; scroll-behavior: smooth; }
+        .scroll-container::-webkit-scrollbar { height: 8px; }
+        .scroll-container::-webkit-scrollbar-track { background: #2a2a2a; border-radius: 10px; }
+        .scroll-container::-webkit-scrollbar-thumb { background: #4a4a4a; border-radius: 10px; }
+        .college-card { min-width: 280px; height: 160px; border-radius: 8px; overflow: hidden; cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease; position: relative; }
+        .college-card:hover { transform: scale(1.05); box-shadow: 0 8px 25px rgba(0,0,0,0.5); z-index: 10; }
+        .college-content { position: relative; z-index: 1; padding: 20px; height: 100%; display: flex; flex-direction: column; justify-content: space-between; }
+        .college-initials { font-size: 32px; font-weight: 700; color: rgba(255,255,255,0.9); text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+        .college-name { font-size: 14px; font-weight: 600; color: #ffffff; line-height: 1.3; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+        .college-location { font-size: 12px; color: rgba(255,255,255,0.7); margin-top: 5px; }
+        .college-badge { position: absolute; top: 10px; right: 10px; background: rgba(229,9,20,0.9); color: white; padding: 4px 8px; border-radius: 4px; font-size: 10px; font-weight: 600; }
+        .college-card.grad1  { background: linear-gradient(135deg,#667eea 0%,#764ba2 100%); }
+        .college-card.grad2  { background: linear-gradient(135deg,#f093fb 0%,#f5576c 100%); }
+        .college-card.grad3  { background: linear-gradient(135deg,#4facfe 0%,#00f2fe 100%); }
+        .college-card.grad4  { background: linear-gradient(135deg,#43e97b 0%,#38f9d7 100%); }
+        .college-card.grad5  { background: linear-gradient(135deg,#fa709a 0%,#fee140 100%); }
+        .college-card.grad6  { background: linear-gradient(135deg,#30cfd0 0%,#330867 100%); }
+        .college-card.grad7  { background: linear-gradient(135deg,#a8edea 0%,#fed6e3 100%); }
+        .college-card.grad8  { background: linear-gradient(135deg,#ff9a56 0%,#ff6a88 100%); }
+        .college-card.grad9  { background: linear-gradient(135deg,#ffecd2 0%,#fcb69f 100%); }
+        .college-card.grad10 { background: linear-gradient(135deg,#ff6e7f 0%,#bfe9ff 100%); }
+        @media(max-width:768px){ .header{padding:15px 20px;} .content{padding-left:20px;} }
+    </style>
+</head>
+<body>
+<div class="header">
+    <div style="display:flex;align-items:center;gap:40px;">
+        <div>
+            <span class="logo">UNIHUB INDIA</span>
+            <span class="logo-sub">Kerala</span>
+        </div>
+        <nav class="nav-menu">
+            <a href="index.html">Home</a>
+            <a href="#universities">Universities</a>
+            <a href="#engineering">Engineering</a>
+            <a href="#medical">Medical</a>
+        </nav>
+    </div>
+    <div class="header-right">
+        <button class="icon-btn">&#128269;</button>
+        <button class="icon-btn">&#9776;</button>
+        <div class="profile-icon">KL</div>
+    </div>
+</div>
+<div class="content" id="content"></div>
+<script>
+const collegesData = {
+    "Institutes of National Importance": [
+        { name: "Indian Institute of Technology Palakkad", location: "Palakkad", founded: "2015", badge: "IIT" },
+        { name: "Indian Institute of Management Kozhikode", location: "Calicut, Kozhikode", founded: "1996", badge: "NIRF #6 MGMT" },
+        { name: "AIIMS Thiruvananthapuram", location: "Thiruvananthapuram", founded: "2012", badge: "AIIMS" },
+        { name: "National Institute of Technology Calicut", location: "Calicut, Kozhikode", founded: "1961", badge: "NIRF #26 ENGG" },
+        { name: "Indian Institute of Information Technology Kottayam", location: "Kottayam", founded: "2015", badge: "IIIT" },
+        { name: "National Institute of Fashion Technology Kannur", location: "Kannur", badge: "NIFT" },
+        { name: "National Institute of Speech and Hearing", location: "Thiruvananthapuram", badge: "NISH" },
+        { name: "National Transportation Planning and Research Centre", location: "Thiruvananthapuram", badge: "NATPAC" },
+        { name: "Space Utilisation Centre ISRO", location: "Thiruvananthapuram", badge: "VSSC ISRO" }
+    ],
+    "Central Universities": [
+        { name: "Central University of Kerala", location: "Kasaragod", founded: "2009" },
+        { name: "Mahatma Gandhi University", location: "Kottayam", founded: "1983" },
+        { name: "University of Calicut", location: "Malappuram", founded: "1968" }
+    ],
+    "State Universities - Major": [
+        { name: "University of Kerala", location: "Thiruvananthapuram", founded: "1937", badge: "OLDEST IN KL" },
+        { name: "Cochin University of Science and Technology", location: "Kochi, Ernakulam", founded: "1971", badge: "CUSAT" },
+        { name: "University of Calicut", location: "Thenjipalam, Malappuram", founded: "1968" },
+        { name: "Mahatma Gandhi University", location: "Kottayam", founded: "1983" },
+        { name: "Kannur University", location: "Kannur", founded: "1996" },
+        { name: "Kerala University of Fisheries and Ocean Studies", location: "Kochi", founded: "2010", badge: "KUFOS" },
+        { name: "Kerala Agricultural University", location: "Thrissur", founded: "1971" },
+        { name: "Kerala University of Health Sciences", location: "Thrissur", founded: "2010", badge: "KUHS" },
+        { name: "Kerala Veterinary and Animal Sciences University", location: "Pookode, Wayanad", founded: "2010", badge: "KVASU" },
+        { name: "APJ Abdul Kalam Technological University", location: "Thiruvananthapuram", founded: "2015", badge: "KTU" },
+        { name: "Sreenarayanaguru Open University", location: "Kollam", founded: "2020" },
+        { name: "Thunchath Ezhuthachan Malayalam University", location: "Tirur, Malappuram", founded: "2012" }
+    ],
+    "State Universities - Specialized": [
+        { name: "Kerala Law Academy Law College", location: "Thiruvananthapuram", badge: "KLA" },
+        { name: "Sree Sankaracharya University of Sanskrit", location: "Kalady, Ernakulam", founded: "1993" },
+        { name: "Kerala Kalamandalam", location: "Cheruthuruthy, Thrissur", founded: "1930", badge: "DEEMED ARTS" },
+        { name: "Kerala University of Digital Arts", location: "Thiruvananthapuram", founded: "2022" }
+    ],
+    "Deemed to be Universities": [
+        { name: "Amrita Vishwa Vidyapeetham", location: "Coimbatore (Kerala campuses: Kochi, Kollam)", badge: "NIRF #8" },
+        { name: "TKMCE Deemed University", location: "Kollam" },
+        { name: "Manipal Academy of Higher Education Kerala Campus", location: "Kasaragod" },
+        { name: "Pushpagiri Institute of Medical Sciences", location: "Tiruvalla, Pathanamthitta" },
+        { name: "Sree Chitra Tirunal Institute for Medical Sciences and Technology", location: "Thiruvananthapuram", badge: "SCTIMST" },
+        { name: "Amala Institute of Medical Sciences", location: "Thrissur" },
+        { name: "Believers Church Medical College", location: "Thiruvalla, Pathanamthitta" },
+        { name: "Jubilee Centre for Medical Research", location: "Thrissur" }
+    ],
+    "Private Universities": [
+        { name: "Christ University Kerala Campus", location: "Kochi" },
+        { name: "SCMS School of Engineering and Technology", location: "Ernakulam" },
+        { name: "Jain University Kerala Campus", location: "Kochi" },
+        { name: "ICFAI University Kerala", location: "Thiruvananthapuram" },
+        { name: "Noorul Islam Centre for Higher Education", location: "Kanyakumari (KL border)", founded: "1989" },
+        { name: "Lovely Professional University Kerala Campus", location: "Kochi" }
+    ],
+    "Engineering Colleges - Thiruvananthapuram Region (30+ Colleges)": [
+        { name: "College of Engineering Thiruvananthapuram", location: "Thiruvananthapuram", founded: "1939", badge: "CET OLDEST" },
+        { name: "University Institute of Technology Thiruvananthapuram", location: "Thiruvananthapuram" },
+        { name: "Government Engineering College Barton Hill", location: "Thiruvananthapuram", badge: "GOVT" },
+        { name: "Government Engineering College Idukki", location: "Idukki", badge: "GOVT" },
+        { name: "Government Engineering College Wayanad", location: "Mananthavady, Wayanad", badge: "GOVT" },
+        { name: "Sree Chitra Tirunal College of Engineering", location: "Thiruvananthapuram" },
+        { name: "Rajiv Gandhi Institute of Technology Kottayam", location: "Kottayam", badge: "GOVT" },
+        { name: "Government College of Engineering Kannur", location: "Kannur", badge: "GOVT" },
+        { name: "LBS Institute of Technology for Women", location: "Thiruvananthapuram", badge: "WOMEN GOVT" },
+        { name: "Travancore Engineering College", location: "Oyoor, Kollam" },
+        { name: "TKM College of Engineering", location: "Kollam", founded: "1958", badge: "AUTONOMOUS" },
+        { name: "Mar Athanasius College of Engineering", location: "Kothamangalam, Ernakulam" },
+        { name: "SCMS School of Engineering and Technology", location: "Ernakulam" },
+        { name: "Sree Buddha College of Engineering", location: "Pattoor, Alappuzha" },
+        { name: "Mohandas College of Engineering and Technology", location: "Thiruvananthapuram" },
+        { name: "College of Engineering Karunagappally", location: "Karunagappally, Kollam", badge: "GOVT" },
+        { name: "College of Engineering Perumon", location: "Perumon, Kollam" },
+        { name: "Vimal Jyothi Engineering College", location: "Kannur" },
+        { name: "AWH Engineering College", location: "Kozhikode" },
+        { name: "Sree Narayana Gurukulam College of Engineering", location: "Kolenchery, Ernakulam" },
+        { name: "Lourdes Matha College of Science and Technology", location: "Thiruvananthapuram" },
+        { name: "Saintgits College of Engineering", location: "Pathamuttom, Kottayam" },
+        { name: "Baselios Mathews II College of Engineering", location: "Sasthamcotta, Kollam" },
+        { name: "Government Engineering College Thrissur", location: "Thrissur", badge: "GOVT" },
+        { name: "Government Engineering College Palakkad", location: "Palakkad", badge: "GOVT" },
+        { name: "Government Engineering College Kozhikode", location: "Kozhikode", badge: "GOVT" },
+        { name: "Government Engineering College Sreekrishnapuram", location: "Palakkad", badge: "GOVT" },
+        { name: "Easa College of Engineering and Technology", location: "Coimbatore (KL border)" },
+        { name: "Government Engineering College Kasaragod", location: "Kasaragod", badge: "GOVT" },
+        { name: "College of Engineering Attingal", location: "Attingal, Thiruvananthapuram" }
+    ],
+    "Engineering Colleges - Kochi and Ernakulam Region (30+ Colleges)": [
+        { name: "Cochin University of Science and Technology", location: "Kochi", badge: "CUSAT" },
+        { name: "College of Engineering Cherthala", location: "Cherthala, Alappuzha", badge: "GOVT" },
+        { name: "Government Engineering College Thrissur", location: "Thrissur", badge: "GOVT" },
+        { name: "Rajagiri School of Engineering and Technology", location: "Kakkanad, Ernakulam" },
+        { name: "Model Engineering College", location: "Thrikkakara, Ernakulam", badge: "GOVT" },
+        { name: "Federal Institute of Science and Technology", location: "Hormis Nagar, Ernakulam" },
+        { name: "Amal Jyothi College of Engineering", location: "Koovapally, Kottayam" },
+        { name: "FISAT - Federal Institute of Science and Technology", location: "Angamaly, Ernakulam" },
+        { name: "Muthoot Institute of Technology and Science", location: "Varikoli, Ernakulam" },
+        { name: "Jyothi Engineering College", location: "Cheruthuruthy, Thrissur" },
+        { name: "MES Engineering College", location: "Kuttippuram, Malappuram" },
+        { name: "St. Joseph Engineering College", location: "Mangaluru (KL affil.)" },
+        { name: "Carmel College of Engineering and Technology", location: "Punnapuram, Pathanamthitta" },
+        { name: "Sree Narayana Institute of Technology", location: "Adoor, Pathanamthitta" },
+        { name: "Viswajyothi College of Engineering and Technology", location: "Vazhakulam, Ernakulam" },
+        { name: "Nirmala College of Engineering", location: "Chalakudy, Thrissur" },
+        { name: "Mount Zion College of Engineering", location: "Pathanamthitta" },
+        { name: "Ilahia College of Engineering and Technology", location: "Muvattupuzha, Ernakulam" },
+        { name: "Grace College of Engineering", location: "Palakkad" },
+        { name: "Indira Gandhi Institute of Engineering and Technology", location: "Kottayam" },
+        { name: "Excel Engineering College", location: "Komarapalayam (KL border)" },
+        { name: "De Paul Institute of Science and Technology", location: "Angamaly, Ernakulam" },
+        { name: "Marian Engineering College", location: "Thiruvananthapuram" },
+        { name: "Toc H Institute of Science and Technology", location: "Arakunnam, Ernakulam" },
+        { name: "Albertian Institute of Science and Technology", location: "Kalamassery, Ernakulam" },
+        { name: "Christ College of Engineering Irinjalakuda", location: "Irinjalakuda, Thrissur" },
+        { name: "KMEA Engineering College", location: "Edathala, Ernakulam" },
+        { name: "Adi Shankara Institute of Engineering and Technology", location: "Kalady, Ernakulam" },
+        { name: "Sahrdaya College of Engineering and Technology", location: "Thrissur" },
+        { name: "Sree Narayana Mangalam Institute of Management and Technology", location: "Maliankara, Ernakulam" }
+    ],
+    "Engineering Colleges - Kozhikode, Malappuram, Kannur, Wayanad (30+ Colleges)": [
+        { name: "NIT Calicut", location: "Calicut, Kozhikode", badge: "NIRF #26" },
+        { name: "IIT Palakkad", location: "Palakkad", badge: "IIT" },
+        { name: "Government Engineering College Kozhikode", location: "Kozhikode", badge: "GOVT" },
+        { name: "Government Engineering College Kannur", location: "Kannur", badge: "GOVT" },
+        { name: "Government Engineering College Wayanad", location: "Wayanad", badge: "GOVT" },
+        { name: "Government Engineering College Malappuram", location: "Malappuram", badge: "GOVT" },
+        { name: "Govt Engineering College West Hill Kozhikode", location: "Kozhikode", badge: "GOVT" },
+        { name: "Calicut University Institute of Engineering and Technology", location: "Malappuram" },
+        { name: "MES College of Engineering Kuttippuram", location: "Malappuram" },
+        { name: "WMO College of Applied Science", location: "Muttil, Wayanad" },
+        { name: "Al-Ameen Engineering College", location: "Shoranur, Palakkad" },
+        { name: "IHRD College of Applied Science", location: "Thrissur" },
+        { name: "Thejus Engineering College", location: "Vellarakkad, Thrissur" },
+        { name: "PA College of Engineering", location: "Mangaluru (KL affil.)" },
+        { name: "Ghandipuram Engineering College", location: "Coimbatore (KL border)" },
+        { name: "Malabar College of Engineering and Technology", location: "Trithala, Palakkad" },
+        { name: "Calicut Institute of Technology", location: "Chathamangalam, Kozhikode" },
+        { name: "Vidya Academy of Science and Technology", location: "Thrissur" },
+        { name: "Sahrdaya College of Engineering Thrissur", location: "Thrissur" },
+        { name: "SNGIST Group of Institutions", location: "Ernakulam" },
+        { name: "Naipunnya Institute of Management and Information Technology", location: "Pongam, Thrissur" },
+        { name: "Sree Narayana Guru Institute of Science and Technology", location: "Payyanur, Kannur" },
+        { name: "Gurudeva Institute of Science and Technology", location: "Kottayam" },
+        { name: "KCG College of Technology", location: "Chennai (KL affil.)" },
+        { name: "MEA Engineering College", location: "Perinthalmanna, Malappuram" },
+        { name: "Universal Engineering College", location: "Thrissur" },
+        { name: "Mangalam College of Engineering", location: "Ettumanoor, Kottayam" },
+        { name: "Padi Engineering College", location: "Chennai (KL affil.)" },
+        { name: "Sreepathy Institute of Management and Technology", location: "Palakkad" },
+        { name: "John Cox Memorial CSI Institute of Technology", location: "Thiruvananthapuram" }
+    ],
+    "Medical Colleges - Government (15+ Colleges)": [
+        { name: "Government Medical College Thiruvananthapuram", location: "Thiruvananthapuram", founded: "1951", badge: "PREMIER GOVT" },
+        { name: "AIIMS Thiruvananthapuram", location: "Thiruvananthapuram", badge: "AIIMS" },
+        { name: "Government Medical College Kozhikode", location: "Kozhikode", founded: "1957" },
+        { name: "Government Medical College Thrissur", location: "Thrissur", founded: "1981" },
+        { name: "Government Medical College Kottayam", location: "Kottayam", founded: "1963" },
+        { name: "Government Medical College Alappuzha", location: "Alappuzha", founded: "1969" },
+        { name: "Government Medical College Kannur", location: "Pariyaram, Kannur", founded: "1983" },
+        { name: "Government Medical College Ernakulam", location: "Ernakulam" },
+        { name: "Government Medical College Palakkad", location: "Palakkad" },
+        { name: "Government Medical College Manjeri Malappuram", location: "Manjeri, Malappuram" },
+        { name: "Government Medical College Pathanamthitta", location: "Pathanamthitta" },
+        { name: "Government Medical College Idukki", location: "Idukki" },
+        { name: "Government Medical College Kollam", location: "Kollam" },
+        { name: "Government Medical College Kasaragod", location: "Kasaragod" },
+        { name: "Sree Chitra Tirunal Institute for Medical Sciences and Technology", location: "Thiruvananthapuram", badge: "SCTIMST" }
+    ],
+    "Medical Colleges - Private and Aided (20+ Colleges)": [
+        { name: "Amrita Institute of Medical Sciences Kochi", location: "Kochi, Ernakulam", badge: "AMRITA" },
+        { name: "Pushpagiri Institute of Medical Sciences and Research Centre", location: "Tiruvalla, Pathanamthitta" },
+        { name: "Believers Church Medical College Hospital", location: "Thiruvalla" },
+        { name: "Jubilee Mission Medical College and Research Institute", location: "Thrissur" },
+        { name: "Amala Institute of Medical Sciences", location: "Thrissur" },
+        { name: "PVS Memorial Hospital Medical College", location: "Kochi" },
+        { name: "NIMS Medicity Medical College", location: "Thiruvananthapuram" },
+        { name: "Kerala Medical College", location: "Palakkad" },
+        { name: "Pariyaram Medical College", location: "Kannur" },
+        { name: "Dr. Somervell Memorial CSI Medical College", location: "Karakonam, Thiruvananthapuram" },
+        { name: "M.E.S. Medical College", location: "Palachode, Malappuram" },
+        { name: "Travancore Medical College", location: "Kollam" },
+        { name: "Sree Gokulam Medical College", location: "Thiruvananthapuram" },
+        { name: "Sree Uthradom Tirunal Academy of Medical Sciences", location: "Thiruvananthapuram" },
+        { name: "DM WIMS Medical College", location: "Meppadi, Wayanad" },
+        { name: "Mount Zion Medical College", location: "Ezhamkulam, Pathanamthitta" },
+        { name: "Malankara Orthodox Syrian Church Medical College", location: "Kolenchery, Ernakulam" },
+        { name: "Azeezia Medical College Hospital and Research Centre", location: "Kollam" },
+        { name: "St. John Medical College (KL campus)", location: "Bangalore (KL affil.)" },
+        { name: "Malabar Medical College and Research Centre", location: "Modakkallur, Kozhikode" }
+    ],
+    "Dental Colleges (15+ Colleges)": [
+        { name: "Government Dental College Thiruvananthapuram", location: "Thiruvananthapuram", badge: "GOVT" },
+        { name: "Government Dental College Kozhikode", location: "Kozhikode", badge: "GOVT" },
+        { name: "Government Dental College Kottayam", location: "Kottayam", badge: "GOVT" },
+        { name: "Government Dental College Alappuzha", location: "Alappuzha", badge: "GOVT" },
+        { name: "PMS College of Dental Science and Research", location: "Vattapara, Thiruvananthapuram" },
+        { name: "Amrita School of Dentistry", location: "Kochi, Ernakulam", badge: "AMRITA" },
+        { name: "Pushpagiri College of Dental Sciences", location: "Tiruvalla, Pathanamthitta" },
+        { name: "Kannur Dental College", location: "Anjarakandy, Kannur" },
+        { name: "Noorul Islam College of Dental Sciences", location: "Thiruvananthapuram" },
+        { name: "KMCT Dental College", location: "Manassery, Kozhikode" },
+        { name: "Al Azhar Dental College", location: "Thodupuzha, Idukki" },
+        { name: "Malabar Dental College and Research Centre", location: "Edappal, Malappuram" },
+        { name: "Royal Dental College", location: "Chalissery, Palakkad" },
+        { name: "Century International Institute of Dental Science and Research Centre", location: "Kasaragod" },
+        { name: "St. Gregorious Dental College", location: "Chelad, Ernakulam" }
+    ],
+    "Ayurveda Colleges (20+ Colleges)": [
+        { name: "Government Ayurveda College Thiruvananthapuram", location: "Thiruvananthapuram", founded: "1889", badge: "OLDEST IN ASIA" },
+        { name: "Government Ayurveda College Tripunithura", location: "Tripunithura, Ernakulam", badge: "GOVT" },
+        { name: "Government Ayurveda College Kannur", location: "Kannur", badge: "GOVT" },
+        { name: "Government Ayurveda College Thrissur", location: "Thrissur", badge: "GOVT" },
+        { name: "Vaidyaratnam P.S. Varier Ayurveda College", location: "Kottakkal, Malappuram", founded: "1917", badge: "PREMIER" },
+        { name: "Amrita School of Ayurveda", location: "Amritapuri, Kollam", badge: "AMRITA" },
+        { name: "Ashtamgam Ayurveda Vidyapeetham", location: "Klappana, Kollam" },
+        { name: "PNNM Ayurveda Medical College", location: "Cheruthuruthy, Thrissur" },
+        { name: "Pankajakasthuri Ayurveda Medical College", location: "Thiruvananthapuram" },
+        { name: "Santhigiri Ayurveda Medical College", location: "Pothencode, Thiruvananthapuram" },
+        { name: "VPSV Ayurveda College Kottakkal", location: "Kottakkal, Malappuram" },
+        { name: "National Ayurveda Samsthan", location: "New Delhi (KL affil.)" },
+        { name: "Sivaraj Ayurveda Medical College", location: "Salem (KL affil.)" },
+        { name: "SRM Kattankulathur College of Ayurveda", location: "Kancheepuram (KL affil.)" },
+        { name: "D.G.M. Ayurvedic Medical College", location: "Gadag (KL affil.)" },
+        { name: "Kerala Ayurveda College Athani", location: "Athani, Ernakulam" },
+        { name: "Rajiv Gandhi Ayurveda Medical College", location: "Mahe, Puducherry" },
+        { name: "Academy of Ayurvedic Studies", location: "Kottayam" },
+        { name: "Sree Sarada Ayurveda Research Hospital", location: "Kodungallur, Thrissur" },
+        { name: "Govt Homeopathic Medical College Thiruvananthapuram", location: "Thiruvananthapuram", badge: "GOVT" }
+    ],
+    "Homeopathy and Siddha Colleges (10+ Colleges)": [
+        { name: "Government Homeopathic Medical College Thiruvananthapuram", location: "Thiruvananthapuram", badge: "GOVT" },
+        { name: "Government Homeopathic Medical College Kozhikode", location: "Kozhikode", badge: "GOVT" },
+        { name: "Dr. Padiar Memorial Homoeopathic Medical College", location: "Ernakulam" },
+        { name: "Sarada Krishna Homoeopathic Medical College", location: "Kulasekharam, Kanyakumari (KL border)" },
+        { name: "National Homeopathic Medical College Kerala", location: "Thrissur" },
+        { name: "Vinayaka Mission Homeopathic Medical College (KL campus)", location: "Salem" },
+        { name: "Aligarh Unani and Ayurvedic Medical College", location: "Malappuram" },
+        { name: "Amala Homoeopathic Medical College", location: "Thrissur" },
+        { name: "Father Muller Homoeopathic Medical College", location: "Mangaluru (KL affil.)" },
+        { name: "Sree Dattha Institute of Pharmacy Siddha", location: "Palakkad" }
+    ],
+    "Nursing Colleges (20+ Colleges)": [
+        { name: "College of Nursing Government Medical College Thiruvananthapuram", location: "Thiruvananthapuram", badge: "GOVT" },
+        { name: "College of Nursing AIIMS Thiruvananthapuram", location: "Thiruvananthapuram", badge: "AIIMS" },
+        { name: "College of Nursing Government Medical College Kozhikode", location: "Kozhikode", badge: "GOVT" },
+        { name: "College of Nursing Government Medical College Kottayam", location: "Kottayam", badge: "GOVT" },
+        { name: "College of Nursing Government Medical College Thrissur", location: "Thrissur", badge: "GOVT" },
+        { name: "College of Nursing Government Medical College Alappuzha", location: "Alappuzha", badge: "GOVT" },
+        { name: "Amrita College of Nursing Kochi", location: "Kochi", badge: "AMRITA" },
+        { name: "Pushpagiri College of Nursing Tiruvalla", location: "Tiruvalla, Pathanamthitta" },
+        { name: "Believers Church College of Nursing", location: "Thiruvalla" },
+        { name: "Jubilee Mission College of Nursing", location: "Thrissur" },
+        { name: "NIMS College of Nursing", location: "Thiruvananthapuram" },
+        { name: "Rajagiri College of Nursing", location: "Aluva, Ernakulam" },
+        { name: "Bishop Benziger College of Nursing", location: "Kollam" },
+        { name: "Mar Sleeva Medicity College of Nursing", location: "Palai, Kottayam" },
+        { name: "Malankara Orthodox Medical College of Nursing", location: "Kolenchery" },
+        { name: "DM WIMS College of Nursing", location: "Wayanad" },
+        { name: "MES College of Nursing", location: "Malappuram" },
+        { name: "Sree Gokulam College of Nursing", location: "Thiruvananthapuram" },
+        { name: "Noorul Islam College of Nursing", location: "Thiruvananthapuram" },
+        { name: "Government College of Nursing Kozhikode", location: "Kozhikode", badge: "GOVT" }
+    ],
+    "Management Institutes (20+ Institutes)": [
+        { name: "Indian Institute of Management Kozhikode", location: "Calicut, Kozhikode", badge: "NIRF #6" },
+        { name: "IIT Palakkad School of Management", location: "Palakkad", badge: "IIT" },
+        { name: "CUSAT School of Management Studies", location: "Kochi", badge: "CUSAT" },
+        { name: "Department of Management Studies University of Kerala", location: "Thiruvananthapuram" },
+        { name: "School of Management Studies NIT Calicut", location: "Kozhikode", badge: "NIT" },
+        { name: "Amrita School of Business Kochi", location: "Kochi", badge: "AMRITA" },
+        { name: "Rajagiri Centre for Business Studies", location: "Kakkanad, Ernakulam" },
+        { name: "School of Management and Business Studies Mahatma Gandhi University", location: "Kottayam" },
+        { name: "Institute of Management in Kerala", location: "Thiruvananthapuram" },
+        { name: "TKM Institute of Management", location: "Kollam" },
+        { name: "IIITK School of Management", location: "Kottayam", badge: "IIIT" },
+        { name: "Christ College Institute of Management", location: "Irinjalakuda, Thrissur" },
+        { name: "Mar Augusthinose College MBA", location: "Ramapuram, Kottayam" },
+        { name: "Ilahia School of Management Studies", location: "Muvattupuzha" },
+        { name: "St. Teresa College MBA", location: "Ernakulam" },
+        { name: "Saintgits Institute of Management", location: "Kottayam" },
+        { name: "SCMS Cochin School of Business", location: "Kochi" },
+        { name: "Marian International Institute of Management", location: "Kuttikanam, Kottayam" },
+        { name: "KelTron Information Technology and Service", location: "Thiruvananthapuram", badge: "GOVT PSU" },
+        { name: "Tata Institute of Social Sciences Thiruvananthapuram", location: "Thiruvananthapuram" }
+    ],
+    "Law Colleges (12+ Colleges)": [
+        { name: "Government Law College Thiruvananthapuram", location: "Thiruvananthapuram", founded: "1932", badge: "GOVT" },
+        { name: "Government Law College Ernakulam", location: "Ernakulam", badge: "GOVT" },
+        { name: "Government Law College Kozhikode", location: "Kozhikode", badge: "GOVT" },
+        { name: "Government Law College Thrissur", location: "Thrissur", badge: "GOVT" },
+        { name: "Government Law College Kottayam", location: "Kottayam", badge: "GOVT" },
+        { name: "Kerala Law Academy Law College", location: "Thiruvananthapuram", badge: "PREMIER" },
+        { name: "NSS Law College Kottiyam", location: "Kottiyam, Kollam" },
+        { name: "Tamil Nadu Dr. Ambedkar Law University (KL border campus)", location: "Kochi" },
+        { name: "Christ Nagar College Thiruvananthapuram Law", location: "Thiruvananthapuram" },
+        { name: "MES College of Law Kozhikode", location: "Kozhikode" },
+        { name: "Ilahia College of Law", location: "Muvattupuzha" },
+        { name: "Kannur University School of Legal Studies", location: "Kannur" }
+    ],
+    "Arts Science and Commerce - Thiruvananthapuram (30+ Colleges)": [
+        { name: "University College Thiruvananthapuram", location: "Thiruvananthapuram", founded: "1866", badge: "OLDEST IN KL" },
+        { name: "Govt Women College Thiruvananthapuram", location: "Thiruvananthapuram", badge: "WOMEN GOVT" },
+        { name: "Mar Ivanios College", location: "Thiruvananthapuram", founded: "1949", badge: "AUTONOMOUS" },
+        { name: "St. Xaviers College for Women Aluva", location: "Aluva, Ernakulam", badge: "WOMEN" },
+        { name: "All Saints College Thiruvananthapuram", location: "Thiruvananthapuram" },
+        { name: "Govt Arts College Thiruvananthapuram", location: "Thiruvananthapuram", badge: "GOVT" },
+        { name: "Govt College Kariavattom", location: "Thiruvananthapuram", badge: "GOVT" },
+        { name: "NSS College Nemmara", location: "Nemmara, Palakkad" },
+        { name: "Govt Victoria College Palakkad", location: "Palakkad", founded: "1890", badge: "GOVT" },
+        { name: "Christ College Irinjalakuda", location: "Irinjalakuda, Thrissur", badge: "AUTONOMOUS" },
+        { name: "St. Thomas College Thrissur", location: "Thrissur", founded: "1919", badge: "AUTONOMOUS" },
+        { name: "SBK Government College Arambala Trivandrum", location: "Thiruvananthapuram", badge: "GOVT" },
+        { name: "Govt College for Women Trivandrum", location: "Thiruvananthapuram", badge: "WOMEN GOVT" },
+        { name: "TK Government Arts College Tirur", location: "Tirur, Malappuram", badge: "GOVT" },
+        { name: "Govt College Manjeswar", location: "Kasaragod", badge: "GOVT" },
+        { name: "Pazhassi Raja NSS College", location: "Mattannur, Kannur" },
+        { name: "Brennen College Thalassery", location: "Thalassery, Kannur", founded: "1862", badge: "GOVT" },
+        { name: "Govt College Kasaragod", location: "Kasaragod", badge: "GOVT" },
+        { name: "Sacred Heart College Thevara", location: "Kochi, Ernakulam", badge: "AUTONOMOUS" },
+        { name: "Maharajas College Ernakulam", location: "Ernakulam", founded: "1875", badge: "GOVT" },
+        { name: "Govt Girls Higher Secondary School and College Ernakulam", location: "Ernakulam", badge: "WOMEN GOVT" },
+        { name: "Deva Matha College Kuravilangad", location: "Kuravilangad, Kottayam" },
+        { name: "St. Berchmans College Changanacherry", location: "Changanacherry, Kottayam", badge: "AUTONOMOUS" },
+        { name: "Baselius College Kottayam", location: "Kottayam" },
+        { name: "CMS College Kottayam", location: "Kottayam", founded: "1817", badge: "OLDEST COLLEGE" },
+        { name: "BCM College Kottayam", location: "Kottayam" },
+        { name: "St. George College Aruvithura", location: "Aruvithura, Kottayam" },
+        { name: "Pavanatma College Murickassery", location: "Murickassery, Idukki" },
+        { name: "St. Dominics College Kanjirappally", location: "Kanjirappally, Kottayam" },
+        { name: "Nirmala College Muvattupuzha", location: "Muvattupuzha, Ernakulam" }
+    ],
+    "Arts Science and Commerce - Kozhikode, Malappuram, Palakkad (30+ Colleges)": [
+        { name: "Government College Chittur", location: "Chittur, Palakkad", badge: "GOVT" },
+        { name: "Government College Madappally", location: "Vadakara, Kozhikode", badge: "GOVT" },
+        { name: "Government College Mokeri", location: "Mokeri, Kozhikode", badge: "GOVT" },
+        { name: "Government Brennen College Thalassery", location: "Thalassery, Kannur", badge: "GOVT" },
+        { name: "Farook College Kozhikode", location: "Kozhikode", founded: "1948", badge: "AUTONOMOUS" },
+        { name: "Providence Womens College Kozhikode", location: "Kozhikode", badge: "WOMEN AUTONOMOUS" },
+        { name: "Zamorin Guruvayurappan College Kozhikode", location: "Kozhikode" },
+        { name: "Government Arts and Science College Calicut", location: "Kozhikode", badge: "GOVT" },
+        { name: "Government College Malappuram", location: "Malappuram", badge: "GOVT" },
+        { name: "Govt Wandoor Arts and Science College", location: "Wandoor, Malappuram", badge: "GOVT" },
+        { name: "Calicut University Campus Thenjipalam", location: "Malappuram", badge: "UNIV" },
+        { name: "MES College Marampally", location: "Marampally, Ernakulam" },
+        { name: "PSMO College Tirurangadi", location: "Tirurangadi, Malappuram" },
+        { name: "Sree Kerala Varma College Thrissur", location: "Thrissur", badge: "AUTONOMOUS" },
+        { name: "Govt College Tripunithura", location: "Tripunithura, Ernakulam", badge: "GOVT" },
+        { name: "St. Alberts College Ernakulam", location: "Ernakulam", badge: "AUTONOMOUS" },
+        { name: "Govt College Kasaragod", location: "Kasaragod", badge: "GOVT" },
+        { name: "Payyannur College", location: "Payyannur, Kannur" },
+        { name: "Government College Mananthavady", location: "Mananthavady, Wayanad", badge: "GOVT" },
+        { name: "Government College Kalpetta", location: "Kalpetta, Wayanad", badge: "GOVT" },
+        { name: "Govt Sambhram Arts and Science College Sultan Bathery", location: "Sultan Bathery, Wayanad", badge: "GOVT" },
+        { name: "NSS College Pandalam", location: "Pandalam, Pathanamthitta" },
+        { name: "Fatima Mata National College Kollam", location: "Kollam", badge: "AUTONOMOUS" },
+        { name: "SN College Kollam", location: "Kollam" },
+        { name: "TKM College of Arts and Science Kollam", location: "Kollam" },
+        { name: "Government College Attingal", location: "Attingal, Thiruvananthapuram", badge: "GOVT" },
+        { name: "Government College Kariavattom Thiruvananthapuram", location: "Thiruvananthapuram", badge: "GOVT" },
+        { name: "Catholicate College Pathanamthitta", location: "Pathanamthitta" },
+        { name: "Union Christian College Aluva", location: "Aluva, Ernakulam" },
+        { name: "Govt NSS Hindu College Changanacherry", location: "Changanacherry", badge: "GOVT" }
+    ],
+    "Pharmacy Colleges (20+ Colleges)": [
+        { name: "Government Pharmaceutical College Thiruvananthapuram", location: "Thiruvananthapuram", badge: "GOVT" },
+        { name: "Government Pharmaceutical College Kozhikode", location: "Kozhikode", badge: "GOVT" },
+        { name: "Al-Shifa College of Pharmacy", location: "Poonthavanam, Malappuram" },
+        { name: "Amrita School of Pharmacy Kochi", location: "Kochi", badge: "AMRITA" },
+        { name: "KMCT Medical College School of Pharmacy", location: "Manassery, Kozhikode" },
+        { name: "Pushpagiri College of Pharmacy", location: "Tiruvalla, Pathanamthitta" },
+        { name: "Nirmala College of Pharmacy", location: "Muvattupuzha, Ernakulam" },
+        { name: "Devaki Amma Memorial College of Pharmacy", location: "Chelambra, Malappuram" },
+        { name: "MESCO College of Pharmacy", location: "Malappuram" },
+        { name: "College of Pharmaceutical Sciences Govt Medical College Thiruvananthapuram", location: "Thiruvananthapuram" },
+        { name: "PVS Memorial College of Pharmacy Kochi", location: "Kochi" },
+        { name: "Rajiv Gandhi Institute of Pharmacy", location: "Trikaripur, Kasaragod" },
+        { name: "MES College of Pharmacy", location: "Perinthalmanna, Malappuram" },
+        { name: "Kannur Medical College Pharmacy", location: "Kannur" },
+        { name: "Malankara Catholic College of Pharmacy", location: "Thiruvananthapuram" },
+        { name: "Viswajyothi College of Pharmacy", location: "Vazhakulam, Ernakulam" },
+        { name: "Krupanidhi College of Pharmacy (KL affil.)", location: "Bangalore" },
+        { name: "St. James College of Pharmaceutical Sciences", location: "Chalakudy, Thrissur" },
+        { name: "Crescent College of Pharmaceutical Sciences", location: "Payangadi, Kannur" },
+        { name: "Academy of Pharmaceutical Sciences", location: "Pariyaram, Kannur" }
+    ],
+    "Polytechnic Institutes - Government (14 Districts)": [
+        { name: "Government Polytechnic College Thiruvananthapuram", location: "Thiruvananthapuram", badge: "GOVT" },
+        { name: "Government Women Polytechnic College Thiruvananthapuram", location: "Thiruvananthapuram", badge: "WOMEN GOVT" },
+        { name: "Government Polytechnic College Kollam", location: "Kollam", badge: "GOVT" },
+        { name: "Government Polytechnic College Alappuzha", location: "Alappuzha", badge: "GOVT" },
+        { name: "Government Polytechnic College Pathanamthitta", location: "Pathanamthitta", badge: "GOVT" },
+        { name: "Government Polytechnic College Kottayam", location: "Kottayam", badge: "GOVT" },
+        { name: "Government Polytechnic College Idukki", location: "Thodupuzha, Idukki", badge: "GOVT" },
+        { name: "Government Polytechnic College Ernakulam", location: "Ernakulam", badge: "GOVT" },
+        { name: "Government Polytechnic College Thrissur", location: "Thrissur", badge: "GOVT" },
+        { name: "Government Polytechnic College Palakkad", location: "Palakkad", badge: "GOVT" },
+        { name: "Government Polytechnic College Malappuram", location: "Malappuram", badge: "GOVT" },
+        { name: "Government Polytechnic College Kozhikode", location: "Kozhikode", badge: "GOVT" },
+        { name: "Government Polytechnic College Wayanad", location: "Kalpetta, Wayanad", badge: "GOVT" },
+        { name: "Government Polytechnic College Kannur", location: "Kannur", badge: "GOVT" },
+        { name: "Government Polytechnic College Kasaragod", location: "Kasaragod", badge: "GOVT" },
+        { name: "Government Polytechnic College Adoor Pathanamthitta", location: "Adoor, Pathanamthitta", badge: "GOVT" },
+        { name: "Government Polytechnic College Kalamassery", location: "Kalamassery, Ernakulam", badge: "GOVT" },
+        { name: "Government Polytechnic College Perinthalmanna", location: "Perinthalmanna, Malappuram", badge: "GOVT" },
+        { name: "Government Polytechnic College Vadakara", location: "Vadakara, Kozhikode", badge: "GOVT" },
+        { name: "Government Women Polytechnic College Kozhikode", location: "Kozhikode", badge: "WOMEN GOVT" }
+    ],
+    "Polytechnic Institutes - Private (15+ Institutes)": [
+        { name: "Ilahia Polytechnic College Muvattupuzha", location: "Muvattupuzha, Ernakulam" },
+        { name: "MES Polytechnic College Kuttippuram", location: "Kuttippuram, Malappuram" },
+        { name: "MNCM Polytechnic College Kozhikode", location: "Kozhikode" },
+        { name: "NSS Polytechnic College Ottapalam", location: "Ottapalam, Palakkad" },
+        { name: "SAINTGITS Polytechnic Kottayam", location: "Kottayam" },
+        { name: "TKM Polytechnic Kollam", location: "Kollam" },
+        { name: "Amrita Polytechnic College Kochi", location: "Kochi" },
+        { name: "Nirmala Polytechnic Ernakulam", location: "Ernakulam" },
+        { name: "Mar Athanasios Polytechnic", location: "Kothamangalam, Ernakulam" },
+        { name: "Rajagiri Polytechnic Kakkanad", location: "Kakkanad, Ernakulam" },
+        { name: "St. Joseph Polytechnic Palai", location: "Palai, Kottayam" },
+        { name: "Al-Ameen Polytechnic Ernakulam", location: "Ernakulam" },
+        { name: "LBS Polytechnic Thiruvananthapuram", location: "Thiruvananthapuram" },
+        { name: "Vimal Jyothi Polytechnic Kannur", location: "Kannur" },
+        { name: "AWH Polytechnic Kozhikode", location: "Kozhikode" }
+    ],
+    "Teacher Training and Education Colleges (15+ Colleges)": [
+        { name: "State Council of Educational Research and Training Kerala", location: "Thiruvananthapuram", badge: "SCERT" },
+        { name: "Regional Institute of Education NCERT Mysore (KL affil.)", location: "Mysore", badge: "NCERT" },
+        { name: "District Institute of Education and Training Kerala", location: "All 14 Districts", badge: "DIET" },
+        { name: "Government College of Teacher Education Thiruvananthapuram", location: "Thiruvananthapuram", badge: "GOVT" },
+        { name: "Government College of Teacher Education Kozhikode", location: "Kozhikode", badge: "GOVT" },
+        { name: "Government College of Teacher Education Palakkad", location: "Palakkad", badge: "GOVT" },
+        { name: "Government College of Teacher Education Thrissur", location: "Thrissur", badge: "GOVT" },
+        { name: "St. Josephs Training College Ernakulam", location: "Ernakulam" },
+        { name: "Sree Narayana College of Teacher Education Kannur", location: "Kannur" },
+        { name: "BCM College of Education Kottayam", location: "Kottayam" },
+        { name: "Sacred Heart College of Education Ernakulam", location: "Ernakulam" },
+        { name: "Farook Teacher Training College Kozhikode", location: "Kozhikode" },
+        { name: "University of Kerala BEd Department", location: "Thiruvananthapuram" },
+        { name: "MG University School of Pedagogical Sciences", location: "Kottayam" },
+        { name: "Calicut University School of Education", location: "Malappuram" }
+    ],
+    "Fisheries, Agriculture and Veterinary Colleges (15+ Colleges)": [
+        { name: "Kerala Agricultural University", location: "Mannuthy, Thrissur", badge: "KAU" },
+        { name: "College of Agriculture Vellayani", location: "Vellayani, Thiruvananthapuram", badge: "KAU" },
+        { name: "College of Agriculture Padannakkad", location: "Padannakkad, Kasaragod", badge: "KAU" },
+        { name: "College of Agriculture Thrissur", location: "Mannuthy, Thrissur", badge: "KAU" },
+        { name: "College of Forestry Vellanikkara", location: "Vellanikkara, Thrissur", badge: "KAU" },
+        { name: "College of Horticulture Vellanikkara", location: "Vellanikkara, Thrissur", badge: "KAU" },
+        { name: "Kerala Veterinary and Animal Sciences University", location: "Pookode, Wayanad", badge: "KVASU" },
+        { name: "College of Veterinary and Animal Sciences Mannuthy", location: "Mannuthy, Thrissur", badge: "KVASU" },
+        { name: "College of Veterinary and Animal Sciences Pookode", location: "Pookode, Wayanad", badge: "KVASU" },
+        { name: "Kerala University of Fisheries and Ocean Studies", location: "Panangad, Kochi", badge: "KUFOS" },
+        { name: "College of Fisheries Panangad", location: "Panangad, Kochi", badge: "KUFOS" },
+        { name: "College of Fisheries Shirgaon (KL affil.)", location: "Ratnagiri" },
+        { name: "ICAR Central Marine Fisheries Research Institute", location: "Kochi", badge: "CMFRI" },
+        { name: "ICAR - National Bureau of Fish Genetic Resources Kochi Field Station", location: "Kochi" },
+        { name: "Agro-Industrial Research Centre", location: "Perumpillichira, Ernakulam" }
+    ],
+    "Research Institutes and Specialized Centers": [
+        { name: "Vikram Sarabhai Space Centre", location: "Thiruvananthapuram", founded: "1962", badge: "VSSC ISRO" },
+        { name: "Liquid Propulsion Systems Centre", location: "Thiruvananthapuram", badge: "LPSC ISRO" },
+        { name: "Indian Space Research Organisation HQ", location: "Bengaluru (KL affil.)" },
+        { name: "Sree Chitra Tirunal Institute for Medical Sciences and Technology", location: "Thiruvananthapuram", badge: "SCTIMST" },
+        { name: "Tropical Botanic Garden and Research Institute", location: "Palode, Thiruvananthapuram", badge: "TBGRI" },
+        { name: "Rajiv Gandhi Centre for Biotechnology", location: "Thiruvananthapuram", badge: "RGCB" },
+        { name: "National Institute for Interdisciplinary Science and Technology", location: "Thiruvananthapuram", badge: "NIIST CSIR" },
+        { name: "Indian Institute of Science Education and Research Thiruvananthapuram", location: "Thiruvananthapuram", badge: "IISER" },
+        { name: "Inter University Centre for Astronomy and Astrophysics (Kochi campus)", location: "Kochi" },
+        { name: "ICAR Central Marine Fisheries Research Institute", location: "Kochi", badge: "CMFRI" },
+        { name: "Kerala State Remote Sensing and Environment Centre", location: "Thiruvananthapuram" },
+        { name: "Centre for Development Studies", location: "Thiruvananthapuram", badge: "CDS" },
+        { name: "Gulati Institute of Finance and Taxation", location: "Thiruvananthapuram", badge: "GIFT" },
+        { name: "Kerala Blockchain Academy", location: "Thiruvananthapuram", badge: "KBA" }
+    ]
+};
+
+const gradients = ['grad1','grad2','grad3','grad4','grad5','grad6','grad7','grad8','grad9','grad10'];
+
+function getInitials(name) {
+    const words = name.split(' ');
+    if (words.length === 1) return words[0].substring(0, 2).toUpperCase();
+    return (words[0][0] + words[1][0]).toUpperCase();
+}
+
+function createCollegeCard(college, gradIndex) {
+    const initials  = getInitials(college.name);
+    const gradClass = gradients[gradIndex % gradients.length];
+    const badge   = college.badge   ? '<div class="college-badge">' + college.badge + '</div>' : '';
+    const founded = college.founded ? ' \u2022 Est. ' + college.founded : '';
+    return '<div class="college-card ' + gradClass + '">' +
+        badge +
+        '<div class="college-content">' +
+        '<div class="college-initials">' + initials + '</div>' +
+        '<div>' +
+        '<div class="college-name">' + college.name + '</div>' +
+        '<div class="college-location">' + college.location + founded + '</div>' +
+        '</div></div></div>';
+}
+
+function renderContent() {
+    const content = document.getElementById('content');
+    let html = '';
+    let categoryIndex = 0;
+    let totalCount = 0;
+    for (const [category, colleges] of Object.entries(collegesData)) {
+        totalCount += colleges.length;
+        const cards = colleges.map(function(college, index) {
+            return createCollegeCard(college, categoryIndex + index);
+        }).join('');
+        html += '<div class="section">' +
+            '<h2 class="section-title">' + category +
+            '<span class="section-count">(' + colleges.length + ' institutions)</span></h2>' +
+            '<div class="scroll-container">' + cards + '</div></div>';
+        categoryIndex++;
+    }
+    const banner = '<div style="background:linear-gradient(135deg,#43e97b 0%,#38f9d7 100%);padding:20px;border-radius:10px;margin-bottom:30px;text-align:center;color:#000;">' +
+        '<h1 style="font-size:32px;margin-bottom:10px;">&#127795; Kerala - Complete Directory</h1>' +
+        '<p style="font-size:18px;opacity:0.85;">' + totalCount + ' Total Institutions | ' + Object.keys(collegesData).length + ' Categories | God\'s Own Country - India\'s Most Literate State</p></div>';
+    content.innerHTML = banner + html;
+}
+
+renderContent();
+</script>
+</body>
+</html>

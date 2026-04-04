@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNIHUB INDIA - Gujarat Colleges (500+ Complete List)</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background-color: #141414; color: #ffffff; overflow-x: hidden; }
+        .header { display: flex; justify-content: space-between; align-items: center; padding: 20px 50px; background: linear-gradient(180deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%); position: fixed; top: 0; width: 100%; z-index: 1000; backdrop-filter: blur(10px); }
+        .logo { font-size: 28px; font-weight: 700; color: #e50914; letter-spacing: 1px; }
+        .logo-sub { font-size: 12px; color: #999; font-weight: 400; margin-left: 10px; }
+        .nav-menu { display: flex; gap: 30px; align-items: center; }
+        .nav-menu a { color: #e5e5e5; text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.3s; }
+        .nav-menu a:hover { color: #b3b3b3; }
+        .header-right { display: flex; gap: 25px; align-items: center; }
+        .icon-btn { background: none; border: none; color: #ffffff; font-size: 20px; cursor: pointer; }
+        .profile-icon { width: 32px; height: 32px; border-radius: 4px; background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); display: flex; align-items: center; justify-content: center; font-weight: 600; cursor: pointer; font-size: 13px; }
+        .content { padding-top: 80px; padding-left: 50px; }
+        .section { margin-bottom: 40px; }
+        .section-title { font-size: 20px; font-weight: 600; margin-bottom: 15px; color: #e5e5e5; padding-left: 4px; }
+        .section-count { font-size: 14px; color: #999; margin-left: 10px; font-weight: 400; }
+        .scroll-container { display: flex; gap: 15px; overflow-x: auto; overflow-y: hidden; padding-bottom: 15px; padding-right: 50px; scroll-behavior: smooth; }
+        .scroll-container::-webkit-scrollbar { height: 8px; }
+        .scroll-container::-webkit-scrollbar-track { background: #2a2a2a; border-radius: 10px; }
+        .scroll-container::-webkit-scrollbar-thumb { background: #4a4a4a; border-radius: 10px; }
+        .college-card { min-width: 280px; height: 160px; border-radius: 8px; overflow: hidden; cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease; position: relative; }
+        .college-card:hover { transform: scale(1.05); box-shadow: 0 8px 25px rgba(0,0,0,0.5); z-index: 10; }
+        .college-content { position: relative; z-index: 1; padding: 20px; height: 100%; display: flex; flex-direction: column; justify-content: space-between; }
+        .college-initials { font-size: 32px; font-weight: 700; color: rgba(255,255,255,0.9); text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+        .college-name { font-size: 14px; font-weight: 600; color: #ffffff; line-height: 1.3; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+        .college-location { font-size: 12px; color: rgba(255,255,255,0.7); margin-top: 5px; }
+        .college-badge { position: absolute; top: 10px; right: 10px; background: rgba(229,9,20,0.9); color: white; padding: 4px 8px; border-radius: 4px; font-size: 10px; font-weight: 600; }
+        .college-card.grad1  { background: linear-gradient(135deg,#667eea 0%,#764ba2 100%); }
+        .college-card.grad2  { background: linear-gradient(135deg,#f093fb 0%,#f5576c 100%); }
+        .college-card.grad3  { background: linear-gradient(135deg,#4facfe 0%,#00f2fe 100%); }
+        .college-card.grad4  { background: linear-gradient(135deg,#43e97b 0%,#38f9d7 100%); }
+        .college-card.grad5  { background: linear-gradient(135deg,#fa709a 0%,#fee140 100%); }
+        .college-card.grad6  { background: linear-gradient(135deg,#30cfd0 0%,#330867 100%); }
+        .college-card.grad7  { background: linear-gradient(135deg,#a8edea 0%,#fed6e3 100%); }
+        .college-card.grad8  { background: linear-gradient(135deg,#ff9a56 0%,#ff6a88 100%); }
+        .college-card.grad9  { background: linear-gradient(135deg,#ffecd2 0%,#fcb69f 100%); }
+        .college-card.grad10 { background: linear-gradient(135deg,#ff6e7f 0%,#bfe9ff 100%); }
+        @media(max-width:768px){ .header{padding:15px 20px;} .content{padding-left:20px;} }
+    </style>
+</head>
+<body>
+<div class="header">
+    <div style="display:flex;align-items:center;gap:40px;">
+        <div>
+            <span class="logo">UNIHUB INDIA</span>
+            <span class="logo-sub">Gujarat</span>
+        </div>
+        <nav class="nav-menu">
+            <a href="index.html">Home</a>
+            <a href="#universities">Universities</a>
+            <a href="#engineering">Engineering</a>
+            <a href="#medical">Medical</a>
+        </nav>
+    </div>
+    <div class="header-right">
+        <button class="icon-btn">🔍</button>
+        <button class="icon-btn">☰</button>
+        <div class="profile-icon">GJ</div>
+    </div>
+</div>
+<div class="content" id="content"></div>
+<script>
+const collegesData = {
+    "Institutes of National Importance": [
+        { name: "Indian Institute of Technology Gandhinagar", location: "Gandhinagar", founded: "2008", badge: "IIT" },
+        { name: "Indian Institute of Management Ahmedabad", location: "Ahmedabad", founded: "1961", badge: "NIRF #1 MGMT" },
+        { name: "AIIMS Rajkot", location: "Rajkot", founded: "2021", badge: "AIIMS" },
+        { name: "National Institute of Design", location: "Ahmedabad", founded: "1961", badge: "NID" },
+        { name: "National Institute of Fashion Technology Gandhinagar", location: "Gandhinagar", badge: "NIFT" },
+        { name: "Sardar Vallabhbhai National Institute of Technology", location: "Surat", founded: "1961", badge: "SVNIT" },
+        { name: "Indian Institute of Information Technology Vadodara", location: "Gandhinagar", founded: "2013", badge: "IIIT" },
+        { name: "Indian Institute of Information Technology Surat", location: "Surat", founded: "2017", badge: "IIIT" },
+        { name: "Pandit Deendayal Energy University", location: "Gandhinagar", founded: "2007", badge: "PDEU" },
+        { name: "National Law University Gandhinagar", location: "Gandhinagar", founded: "2003", badge: "GNLU" },
+        { name: "Rashtriya Raksha University", location: "Lavad, Gandhinagar", founded: "2020", badge: "RRU" }
+    ],
+    "Central Universities": [
+        { name: "Central University of Gujarat", location: "Gandhinagar", founded: "2009" },
+        { name: "Gujarat National Law University", location: "Gandhinagar", badge: "GNLU" }
+    ],
+    "State Universities - Major": [
+        { name: "Gujarat University", location: "Ahmedabad", founded: "1949", badge: "LARGEST IN GJ" },
+        { name: "Saurashtra University", location: "Rajkot", founded: "1967" },
+        { name: "Veer Narmad South Gujarat University", location: "Surat", founded: "1967" },
+        { name: "Sardar Patel University", location: "Vallabh Vidyanagar, Anand", founded: "1955" },
+        { name: "Hemchandracharya North Gujarat University", location: "Patan", founded: "1986" },
+        { name: "Maharaja Krishnakumarsinhji Bhavnagar University", location: "Bhavnagar", founded: "1978" },
+        { name: "Dr. Babasaheb Ambedkar Open University", location: "Ahmedabad", founded: "1994" },
+        { name: "Gujarat Technological University", location: "Ahmedabad", founded: "2007", badge: "GTU 500+ COLLEGES" },
+        { name: "Gujarat Ayurved University", location: "Jamnagar", founded: "1967" },
+        { name: "Kamdhenu University", location: "Gandhinagar", founded: "2009" },
+        { name: "Anand Agricultural University", location: "Anand", founded: "2004" },
+        { name: "Junagadh Agricultural University", location: "Junagadh", founded: "2004" },
+        { name: "Navsari Agricultural University", location: "Navsari", founded: "2004" },
+        { name: "Sardarkrushinagar Dantiwada Agricultural University", location: "Banaskantha", founded: "2004" }
+    ],
+    "Technical University": [
+        { name: "Gujarat Technological University", location: "Ahmedabad", founded: "2007", badge: "GTU" },
+        { name: "Gujarat Technology University Chandkheda Campus", location: "Gandhinagar" }
+    ],
+    "Medical Universities": [
+        { name: "Gujarat University of Transplantation Sciences", location: "Ahmedabad" },
+        { name: "Sumandeep Vidyapeeth", location: "Vadodara", badge: "DEEMED" }
+    ],
+    "Law Universities": [
+        { name: "Gujarat National Law University", location: "Gandhinagar", founded: "2003", badge: "GNLU" }
+    ],
+    "Open University": [
+        { name: "Dr. Babasaheb Ambedkar Open University", location: "Ahmedabad", founded: "1994" }
+    ],
+    "Deemed to be Universities - Premier": [
+        { name: "Dhirubhai Ambani Institute of Information and Communication Technology", location: "Gandhinagar", founded: "2001", badge: "DA-IICT" },
+        { name: "Nirma University", location: "Ahmedabad", founded: "1995", badge: "NIRF #51" },
+        { name: "CEPT University", location: "Ahmedabad", founded: "1962", badge: "PLANNING" },
+        { name: "Sumandeep Vidyapeeth", location: "Piparia, Vadodara", founded: "2007" },
+        { name: "Parul University", location: "Vadodara", founded: "2009" },
+        { name: "RK University", location: "Rajkot", founded: "2007" },
+        { name: "Marwadi University", location: "Rajkot", founded: "2016" },
+        { name: "Indrashil University", location: "Kadi, Mehsana", founded: "2017" },
+        { name: "Shri Lal Bahadur Shastri National Sanskrit University", location: "New Delhi (GJ affil.)" },
+        { name: "Charotar University of Science and Technology", location: "Anand", badge: "CHARUSAT" },
+        { name: "Ganpat University", location: "Mehsana", founded: "2005" }
+    ],
+    "Private Universities": [
+        { name: "Ahmedabad University", location: "Ahmedabad", founded: "2009" },
+        { name: "PDPU Pandit Deendayal Energy University", location: "Gandhinagar", badge: "PDEU" },
+        { name: "Adani University", location: "Ahmedabad", founded: "2022" },
+        { name: "Silver Oak University", location: "Ahmedabad", founded: "2019" },
+        { name: "Uka Tarsadia University", location: "Bardoli, Surat", founded: "2011" },
+        { name: "Navrachana University", location: "Vadodara", founded: "2009" },
+        { name: "Kadi Sarva Vishwavidyalaya", location: "Gandhinagar", founded: "2007" },
+        { name: "C.U. Shah University", location: "Surendranagar", founded: "2010" },
+        { name: "Shri Govind Guru University", location: "Godhra, Panchmahal", founded: "2015" },
+        { name: "Krantiguru Shyamji Krishna Verma Kachchh University", location: "Bhuj", founded: "2003" },
+        { name: "GSFC University", location: "Vadodara", founded: "2016" },
+        { name: "Auro University", location: "Surat", founded: "2011" },
+        { name: "P.P. Savani University", location: "Surat", founded: "2018" }
+    ],
+    "Engineering Colleges - Ahmedabad and Gandhinagar Region (50+ Colleges)": [
+        { name: "IIT Gandhinagar", location: "Gandhinagar", badge: "IIT" },
+        { name: "Nirma Institute of Technology", location: "Ahmedabad", badge: "NIRMA" },
+        { name: "LD College of Engineering", location: "Ahmedabad", founded: "1948", badge: "LDCE GOVT" },
+        { name: "Government Engineering College Gandhinagar", location: "Gandhinagar", badge: "GOVT" },
+        { name: "Government Engineering College Modasa", location: "Modasa, Aravalli", badge: "GOVT" },
+        { name: "DA-IICT Gandhinagar", location: "Gandhinagar", badge: "DA-IICT" },
+        { name: "Ahmedabad Institute of Technology", location: "Ahmedabad" },
+        { name: "Silver Oak College of Engineering and Technology", location: "Ahmedabad" },
+        { name: "Indus Institute of Technology and Engineering", location: "Ahmedabad" },
+        { name: "Saffrony Institute of Technology", location: "Mehsana" },
+        { name: "SAL Institute of Technology and Engineering Research", location: "Ahmedabad" },
+        { name: "SAL Engineering and Technical Institute", location: "Ahmedabad" },
+        { name: "Parul Institute of Engineering and Technology", location: "Vadodara" },
+        { name: "SIGMA Institute of Engineering", location: "Vadodara" },
+        { name: "Government Engineering College Bharuch", location: "Bharuch", badge: "GOVT" },
+        { name: "Government Engineering College Patan", location: "Patan", badge: "GOVT" },
+        { name: "Government Engineering College Palanpur", location: "Palanpur, Banaskantha", badge: "GOVT" },
+        { name: "Government Engineering College Bhavnagar", location: "Bhavnagar", badge: "GOVT" },
+        { name: "Vishwakarma Government Engineering College", location: "Chandkheda, Ahmedabad", badge: "GOVT" },
+        { name: "L.D.R.P. Institute of Technology and Research", location: "Gandhinagar" },
+        { name: "GIDC Rajju Shroff Rofel Institute of Management Studies", location: "Vapi" },
+        { name: "A.D. Patel Institute of Technology", location: "Anand" },
+        { name: "Shankersinh Vaghela Bapu Institute of Technology", location: "Gandhinagar" },
+        { name: "S.S. Agrawal Institute of Engineering and Technology", location: "Navsari" },
+        { name: "Shri S.V. Patel College of Computer Science and Business Management", location: "Kadi, Mehsana" },
+        { name: "Sankalchand Patel College of Engineering", location: "Visnagar, Mehsana" },
+        { name: "ADIT - A.D. Patel Institute of Technology", location: "New Vallabh Vidyanagar, Anand" },
+        { name: "G.H. Patel College of Engineering and Technology", location: "Vallabh Vidyanagar, Anand" },
+        { name: "Birla Vishvakarma Mahavidyalaya Engineering College", location: "Vallabh Vidyanagar", founded: "1948" },
+        { name: "Government Engineering College Valsad", location: "Valsad", badge: "GOVT" },
+        { name: "Government Engineering College Rajkot", location: "Rajkot", badge: "GOVT" },
+        { name: "Government Engineering College Dahod", location: "Dahod", badge: "GOVT" },
+        { name: "Government Engineering College Godhra", location: "Godhra", badge: "GOVT" },
+        { name: "Government Engineering College Amreli", location: "Amreli", badge: "GOVT" },
+        { name: "Government Engineering College Morbi", location: "Morbi", badge: "GOVT" },
+        { name: "Government Engineering College Bhuj", location: "Bhuj, Kutch", badge: "GOVT" },
+        { name: "Government Engineering College Porbandar", location: "Porbandar", badge: "GOVT" },
+        { name: "Government Engineering College Junagadh", location: "Junagadh", badge: "GOVT" },
+        { name: "Government Engineering College Vadodara", location: "Vadodara", badge: "GOVT" },
+        { name: "Government Engineering College Surat", location: "Surat", badge: "GOVT" },
+        { name: "Tatva Institute of Technological Studies", location: "Modasa" },
+        { name: "Parul Institute of Engineering Technology", location: "Limda, Vadodara" },
+        { name: "IITE - Indian Institute of Teachers Education", location: "Gandhinagar" },
+        { name: "Omega Institute of Management and Technology", location: "Junagadh" },
+        { name: "V.V.P. Engineering College", location: "Rajkot" },
+        { name: "Atmiya University", location: "Rajkot" },
+        { name: "Shantilal Shah Engineering College", location: "Bhavnagar" },
+        { name: "Shri Swami Atmanand Saraswati Institute of Technology", location: "Surat" },
+        { name: "Noble Engineering College", location: "Junagadh" },
+        { name: "ISTAR - Institute of Science and Technology for Advanced Research", location: "Anand" }
+    ],
+    "Engineering Colleges - Surat, Baroda and South Gujarat (40+ Colleges)": [
+        { name: "Sardar Vallabhbhai National Institute of Technology", location: "Surat", badge: "SVNIT" },
+        { name: "Veer Narmad South Gujarat University", location: "Surat", badge: "VNSGU" },
+        { name: "S.V. National Institute of Technology", location: "Surat", badge: "SVNIT" },
+        { name: "Government Engineering College Valsad", location: "Valsad", badge: "GOVT" },
+        { name: "Navrachana University Engineering", location: "Vadodara" },
+        { name: "GSFC University Engineering", location: "Vadodara" },
+        { name: "P.P. Savani University Engineering", location: "Surat" },
+        { name: "Auro University Engineering", location: "Surat" },
+        { name: "Uka Tarsadia University Engineering", location: "Surat" },
+        { name: "SEMCOM Engineering and Technology", location: "Vallabh Vidyanagar" },
+        { name: "Babaria Institute of Technology", location: "Vadodara" },
+        { name: "Vadodara Institute of Engineering", location: "Vadodara" },
+        { name: "Parul Institute of Technology", location: "Vadodara" },
+        { name: "Patel College of Science and Technology", location: "Bhopal (GJ ext.)" },
+        { name: "P.D. Patel Institute of Applied Sciences", location: "Anand" },
+        { name: "Shree Swami Atmanand Saraswati Institute of Technology", location: "Surat" },
+        { name: "VGEC - Vishwakarma Government Engineering College", location: "Ahmedabad", badge: "GOVT" },
+        { name: "VECTO - Vadodara Engineering College", location: "Vadodara" },
+        { name: "Kalol Institute of Technology and Research Centre", location: "Kalol, Gandhinagar" },
+        { name: "Merchant Engineering College", location: "Basna, Mehsana" },
+        { name: "Pacific School of Engineering Surat", location: "Surat" },
+        { name: "Darshan Institute of Engineering and Technology", location: "Rajkot" },
+        { name: "Shri Sadvidhya Mandal Institute of Technology", location: "Bharuch" },
+        { name: "Government Engineering College Navsari", location: "Navsari", badge: "GOVT" },
+        { name: "Government Engineering College Anand", location: "Anand", badge: "GOVT" },
+        { name: "Charotar University of Science and Technology Engineering", location: "Anand" },
+        { name: "Shri K.J. Polytechnic College", location: "Bharuch" },
+        { name: "KJ Institute of Engineering and Technology", location: "Savli, Vadodara" },
+        { name: "IITRAM - Institute of Infrastructure Technology Research and Management", location: "Ahmedabad", badge: "IITRAM GOVT" },
+        { name: "C.U. Shah College of Engineering and Technology", location: "Wadhwan, Surendranagar" }
+    ],
+    "Engineering Colleges - Saurashtra and Kutch Region (30+ Colleges)": [
+        { name: "Marwadi University Engineering", location: "Rajkot" },
+        { name: "RK University Engineering", location: "Rajkot" },
+        { name: "Atmiya University Engineering", location: "Rajkot" },
+        { name: "VVP Engineering College Rajkot", location: "Rajkot" },
+        { name: "Shri Labhubhai Trivedi Institute of Engineering and Technology", location: "Rajkot" },
+        { name: "Shree Dhanvantary College of Engineering", location: "Rajkot" },
+        { name: "Anil Nanda Institute of Engineering", location: "Rajkot" },
+        { name: "Gardi Vidyapith Engineering College", location: "Rajkot" },
+        { name: "Shri Swami Atmanand Saraswati Institute of Technology Rajkot", location: "Rajkot" },
+        { name: "C.K. Pithawala College of Engineering and Technology", location: "Surat" },
+        { name: "Krantiguru Shyamji Krishna Verma Kachchh University Engineering", location: "Bhuj" },
+        { name: "Government Engineering College Bhuj", location: "Bhuj, Kutch", badge: "GOVT" },
+        { name: "C.U. Shah University Engineering", location: "Surendranagar" },
+        { name: "Pacific Institute of Technology Rajkot", location: "Rajkot" },
+        { name: "Shri Sarvajanik College of Engineering and Technology", location: "Surat", badge: "GOVT AIDED" },
+        { name: "Shantilal Shah Engineering College Bhavnagar", location: "Bhavnagar" },
+        { name: "Government Engineering College Junagadh", location: "Junagadh", badge: "GOVT" },
+        { name: "Government Engineering College Porbandar", location: "Porbandar", badge: "GOVT" },
+        { name: "Noble Group of Institutions Junagadh", location: "Junagadh" },
+        { name: "Govt Engineering College Amreli", location: "Amreli", badge: "GOVT" },
+        { name: "Universal College of Engineering Gandhinagar", location: "Gandhinagar" },
+        { name: "Smt. S.R. Patel Engineering College", location: "Unjha, Mehsana" },
+        { name: "MBIT - M.B.I.T. Engineering College", location: "New Vallabh Vidyanagar" },
+        { name: "Smt. Bhikhibai Khodidas Sheth Engineering College", location: "Ahmedabad" },
+        { name: "Shri J.J. Khaitan Technical Institute", location: "Ahmedabad" },
+        { name: "G.E.C. Bhavnagar", location: "Bhavnagar", badge: "GOVT" },
+        { name: "Bharati Vidyapeeth College of Engineering Pune (GJ campus)", location: "Surat" },
+        { name: "BVM Engineering College", location: "Vallabh Vidyanagar, Anand", badge: "GOVT AIDED" },
+        { name: "Shroff S.R. Rotary Institute of Chemical Technology", location: "Bharuch" }
+    ],
+    "Medical Colleges - Government (18+ Colleges)": [
+        { name: "B.J. Medical College Ahmedabad", location: "Ahmedabad", founded: "1946", badge: "OLDEST IN GJ" },
+        { name: "AIIMS Rajkot", location: "Rajkot", badge: "AIIMS" },
+        { name: "Government Medical College Baroda", location: "Vadodara", founded: "1949" },
+        { name: "Government Medical College Surat", location: "Surat", founded: "1960" },
+        { name: "Government Medical College Rajkot", location: "Rajkot", founded: "1971" },
+        { name: "Government Medical College Bhavnagar", location: "Bhavnagar", founded: "1977" },
+        { name: "Government Medical College Jamnagar", location: "Jamnagar", founded: "1961" },
+        { name: "Government Medical College Junagadh", location: "Junagadh", founded: "1990" },
+        { name: "Government Medical College Gandhinagar", location: "Gandhinagar" },
+        { name: "Government Medical College Bharuch", location: "Bharuch" },
+        { name: "Government Medical College Patan", location: "Patan" },
+        { name: "Government Medical College Surendranagar", location: "Surendranagar" },
+        { name: "Government Medical College Bhuj Kutch", location: "Bhuj" },
+        { name: "Government Medical College Amreli", location: "Amreli" },
+        { name: "Government Medical College Himmatnagar", location: "Himmatnagar, Sabarkantha" },
+        { name: "Government Medical College Godhara", location: "Godhra, Panchmahal" },
+        { name: "Government Medical College Navsari", location: "Navsari" },
+        { name: "Government Medical College Dahod", location: "Dahod" }
+    ],
+    "Medical Colleges - Private and Deemed (20+ Colleges)": [
+        { name: "NHL Municipal Medical College", location: "Ahmedabad", founded: "1963" },
+        { name: "AMC MET Medical College", location: "Ahmedabad" },
+        { name: "GCS Medical College Ahmedabad", location: "Ahmedabad" },
+        { name: "Nootan Medical College", location: "Visnagar, Mehsana" },
+        { name: "GMERS Medical College Gandhinagar", location: "Gandhinagar" },
+        { name: "GMERS Medical College Sola Ahmedabad", location: "Ahmedabad", badge: "GMERS" },
+        { name: "GMERS Medical College Dharpur Patan", location: "Patan", badge: "GMERS" },
+        { name: "GMERS Medical College Navsari", location: "Navsari", badge: "GMERS" },
+        { name: "GMERS Medical College Vadnagar", location: "Vadnagar, Mehsana", badge: "GMERS" },
+        { name: "GMERS Medical College Valsad", location: "Valsad", badge: "GMERS" },
+        { name: "GMERS Medical College Junagadh", location: "Junagadh", badge: "GMERS" },
+        { name: "GMERS Medical College Morbi", location: "Morbi", badge: "GMERS" },
+        { name: "GMERS Medical College Kutch", location: "Bhuj", badge: "GMERS" },
+        { name: "Sumandeep Medical College", location: "Vadodara" },
+        { name: "Parul Institute of Medical Sciences and Research", location: "Vadodara" },
+        { name: "SBKS Medical Institute and Research Centre", location: "Vadodara" },
+        { name: "Pramukhswami Medical College", location: "Karamsad, Anand", founded: "1985" },
+        { name: "HM Patel Institute of Medical Sciences", location: "Karamsad, Anand" },
+        { name: "BAPS Medical College Rajkot", location: "Rajkot" },
+        { name: "P.D.U. Government Medical College Rajkot", location: "Rajkot", badge: "GOVT" }
+    ],
+    "Dental Colleges (15+ Colleges)": [
+        { name: "Government Dental College and Hospital Ahmedabad", location: "Ahmedabad", badge: "GOVT" },
+        { name: "Government Dental College and Hospital Vadodara", location: "Vadodara", badge: "GOVT" },
+        { name: "Government Dental College and Hospital Rajkot", location: "Rajkot", badge: "GOVT" },
+        { name: "College of Dental Sciences and Research", location: "Ahmedabad" },
+        { name: "K.M. Shah Dental College", location: "Vadodara" },
+        { name: "Nootan Dental College and Research Centre", location: "Visnagar" },
+        { name: "School of Dental Sciences Ahmedabad", location: "Ahmedabad" },
+        { name: "AMC Dental College", location: "Ahmedabad" },
+        { name: "Karnavati School of Dentistry", location: "Gandhinagar" },
+        { name: "Pacific Dental College Rajkot", location: "Rajkot" },
+        { name: "Manubhai Patel Dental College", location: "Vadodara" },
+        { name: "V.S.P.M.s Dental College Nagpur (GJ affil.)", location: "Nagpur" },
+        { name: "SMBT Institute of Dental Sciences Gujarat", location: "Gandhinagar" },
+        { name: "Goenka Research Institute of Dental Science", location: "Gandhinagar" },
+        { name: "Annex Dental College", location: "Ahmedabad" }
+    ],
+    "Ayurveda and AYUSH Colleges (25+ Colleges)": [
+        { name: "Gujarat Ayurved University", location: "Jamnagar", founded: "1967", badge: "PREMIER" },
+        { name: "Institute for Post Graduate Teaching and Research in Ayurveda", location: "Jamnagar", badge: "IPGT AND RA" },
+        { name: "Shri Gulabkunverba Ayurved Mahavidyalaya", location: "Jamnagar", badge: "GOVT" },
+        { name: "Government Ayurvedic College Junagadh", location: "Junagadh", badge: "GOVT" },
+        { name: "Government Ayurvedic College Ahmedabad", location: "Ahmedabad", badge: "GOVT" },
+        { name: "Government Ayurvedic College Vadodara", location: "Vadodara", badge: "GOVT" },
+        { name: "Government Ayurvedic College Surat", location: "Surat", badge: "GOVT" },
+        { name: "Government Ayurvedic College Himatnagar", location: "Himmatnagar", badge: "GOVT" },
+        { name: "Government Homeopathic Medical College Gandhinagar", location: "Gandhinagar", badge: "GOVT" },
+        { name: "Government Homeopathic Medical College Rajkot", location: "Rajkot", badge: "GOVT" },
+        { name: "Parul Institute of Ayurveda", location: "Vadodara" },
+        { name: "Sumandeep Ayurveda Medical College", location: "Vadodara" },
+        { name: "Dr. Jivraj Mehta Institute of Ayurvedic Medical Sciences", location: "Ahmedabad" },
+        { name: "R.R. Sheth Government Science College Ayurveda", location: "Rajkot" },
+        { name: "Shri Swaminarayan Ayurvedic College", location: "Kalol, Gandhinagar" },
+        { name: "Jas Ayurvedic Medical College", location: "Surat" },
+        { name: "A.M. Shaikh Homeopathic Medical College", location: "Chandkheda" },
+        { name: "Surat Homeopathic Medical College", location: "Surat" },
+        { name: "Rajkot Homeopathic Medical College", location: "Rajkot" },
+        { name: "Bhavnagar Ayurveda College", location: "Bhavnagar" },
+        { name: "Shri K.M. Shah Ayurvedic College", location: "Surendranagar" },
+        { name: "Charotar Ayurveda Mahavidyalaya", location: "Anand" },
+        { name: "Visnagar Ayurveda College", location: "Visnagar, Mehsana" },
+        { name: "Smt. C.H.M. Homeopathic Medical College", location: "Bhavnagar" },
+        { name: "National Institute of Naturopathy", location: "Pune (GJ affil.)" }
+    ],
+    "Nursing Colleges (20+ Colleges)": [
+        { name: "College of Nursing B.J. Medical College", location: "Ahmedabad", badge: "GOVT" },
+        { name: "College of Nursing AIIMS Rajkot", location: "Rajkot", badge: "AIIMS" },
+        { name: "College of Nursing Vadodara Medical College", location: "Vadodara", badge: "GOVT" },
+        { name: "College of Nursing Surat Medical College", location: "Surat", badge: "GOVT" },
+        { name: "College of Nursing Rajkot Medical College", location: "Rajkot", badge: "GOVT" },
+        { name: "GMERS College of Nursing Gandhinagar", location: "Gandhinagar" },
+        { name: "Sumandeep College of Nursing", location: "Vadodara" },
+        { name: "Parul College of Nursing", location: "Vadodara" },
+        { name: "Pramukhswami College of Nursing", location: "Karamsad, Anand" },
+        { name: "Sardar Patel University College of Nursing", location: "Anand" },
+        { name: "Charotar University College of Nursing", location: "Anand" },
+        { name: "RK University College of Nursing", location: "Rajkot" },
+        { name: "Marwadi University College of Nursing", location: "Rajkot" },
+        { name: "Nirma University College of Nursing", location: "Ahmedabad" },
+        { name: "Saurashtra University Nursing College", location: "Rajkot" },
+        { name: "VNSGU College of Nursing", location: "Surat" },
+        { name: "Gujarat University College of Nursing", location: "Ahmedabad" },
+        { name: "Noble Nursing College Junagadh", location: "Junagadh" },
+        { name: "Shree Swami Atmanand Nursing College", location: "Surat" },
+        { name: "Government Nursing College Bhavnagar", location: "Bhavnagar", badge: "GOVT" }
+    ],
+    "Management Institutes (25+ Institutes)": [
+        { name: "Indian Institute of Management Ahmedabad", location: "Ahmedabad", badge: "NIRF #1 MGMT" },
+        { name: "Nirma Institute of Management", location: "Ahmedabad", badge: "NIRMA" },
+        { name: "Mudra Institute of Communications Ahmedabad", location: "Ahmedabad", badge: "MICA" },
+        { name: "CEPT University School of Planning", location: "Ahmedabad", badge: "CEPT" },
+        { name: "Entrepreneurship Development Institute of India", location: "Ahmedabad", badge: "EDII" },
+        { name: "Ahmedabad University School of Business", location: "Ahmedabad" },
+        { name: "Gujarat University Business School", location: "Ahmedabad" },
+        { name: "Indus Business Academy Ahmedabad", location: "Ahmedabad" },
+        { name: "KJ School of Business Management", location: "Ahmedabad" },
+        { name: "New Horizon Institute of Management Studies", location: "Ahmedabad" },
+        { name: "Saurashtra University MBA Department", location: "Rajkot" },
+        { name: "Maharaja Krishnakumarsinhji Bhavnagar University MBA", location: "Bhavnagar" },
+        { name: "VNSGU MBA Department", location: "Surat" },
+        { name: "Sardar Patel University MBA", location: "Vallabh Vidyanagar" },
+        { name: "Nirma University BBA and MBA", location: "Ahmedabad" },
+        { name: "Parul University School of Business", location: "Vadodara" },
+        { name: "RK University School of Business", location: "Rajkot" },
+        { name: "Marwadi University School of Management", location: "Rajkot" },
+        { name: "Charotar University School of Management", location: "Anand" },
+        { name: "SEMCOM College of Management", location: "Vallabh Vidyanagar" },
+        { name: "GLS Institute of Business Administration", location: "Ahmedabad" },
+        { name: "Silver Oak Group of Institutes Management", location: "Ahmedabad" },
+        { name: "ICFAI Business School Ahmedabad", location: "Ahmedabad" },
+        { name: "S.K. Patel Institute of Management and Computer Studies", location: "Gandhinagar" },
+        { name: "Indus Institute of Management", location: "Ahmedabad" }
+    ],
+    "Law Colleges (15+ Colleges)": [
+        { name: "Gujarat National Law University", location: "Gandhinagar", badge: "GNLU" },
+        { name: "LL.D. Arts and Law College", location: "Ahmedabad", founded: "1946", badge: "GOVT" },
+        { name: "Sardar Patel Law College", location: "Anand", badge: "GOVT" },
+        { name: "Government Law College Vadodara", location: "Vadodara", badge: "GOVT" },
+        { name: "Government Law College Surat", location: "Surat", badge: "GOVT" },
+        { name: "Government Law College Rajkot", location: "Rajkot", badge: "GOVT" },
+        { name: "Government Law College Bhavnagar", location: "Bhavnagar", badge: "GOVT" },
+        { name: "Government Law College Jamnagar", location: "Jamnagar", badge: "GOVT" },
+        { name: "Nirma University Law School", location: "Ahmedabad" },
+        { name: "Parul University Law School", location: "Vadodara" },
+        { name: "RK University Law College", location: "Rajkot" },
+        { name: "K.S.K.V. Kachchh University Law Faculty", location: "Bhuj" },
+        { name: "Hemchandracharya North Gujarat University Law Faculty", location: "Patan" },
+        { name: "Ahmedabad University School of Law", location: "Ahmedabad" },
+        { name: "Charotar University Law School", location: "Anand" }
+    ],
+    "Arts Science and Commerce - Ahmedabad (40+ Colleges)": [
+        { name: "Gujarat College", location: "Ahmedabad", founded: "1879", badge: "OLDEST" },
+        { name: "Sheth C.N. Vidyavihar Arts and Commerce College", location: "Ahmedabad", founded: "1924" },
+        { name: "H.L. College of Commerce", location: "Ahmedabad", founded: "1936", badge: "AUTONOMOUS" },
+        { name: "St. Xavier College Ahmedabad", location: "Ahmedabad", badge: "AUTONOMOUS" },
+        { name: "SIES College of Arts Science and Commerce", location: "Ahmedabad" },
+        { name: "Sardar Patel College of Arts and Commerce", location: "Ahmedabad" },
+        { name: "Shri J.D. Gabani Commerce College", location: "Surat" },
+        { name: "GLS Commerce College", location: "Ahmedabad" },
+        { name: "GLS Law College", location: "Ahmedabad" },
+        { name: "L.A. Shah Law College", location: "Ahmedabad" },
+        { name: "B.D. Arts College", location: "Ahmedabad" },
+        { name: "L.D. Arts College", location: "Ahmedabad", founded: "1964", badge: "GOVT" },
+        { name: "H.K. Arts College", location: "Ahmedabad" },
+        { name: "N.V. Arts College", location: "Ahmedabad" },
+        { name: "Shree H.N.S.B. Ltd Science College", location: "Ahmedabad" },
+        { name: "Shri J.M. Patel Arts Commerce and Science College", location: "Ahmedabad" },
+        { name: "P.T.V. Arts and Commerce College", location: "Ahmedabad" },
+        { name: "Navgujarat College", location: "Ahmedabad" },
+        { name: "K.S.K.V. Kachchh Science College", location: "Bhuj" },
+        { name: "Sir P.T. Sarvajanik College of Science", location: "Surat" },
+        { name: "Veer Narmad South Gujarat University Colleges", location: "Surat" },
+        { name: "Bhavnagar University Science College", location: "Bhavnagar" },
+        { name: "Government Arts College Bhavnagar", location: "Bhavnagar", badge: "GOVT" },
+        { name: "M.J. Kundaliya Arts and Commerce College", location: "Rajkot" },
+        { name: "Saurashtra University PG Departments", location: "Rajkot" },
+        { name: "Shri Ramakrishna Paramhansa College of Science Commerce and Arts", location: "Rajkot" },
+        { name: "J.M. Patel Commerce College", location: "Bhavnagar" },
+        { name: "Swami Sahajanand College of Commerce", location: "Ahmedabad" },
+        { name: "R.A. College Saurashtra", location: "Rajkot" },
+        { name: "M.P. Shah Arts and Science College", location: "Surendranagar" },
+        { name: "R.R. Sheth Science College", location: "Rajkot" },
+        { name: "Lokbharti Rural Institute", location: "Sanosra, Bhavnagar" },
+        { name: "Anand Arts College", location: "Anand" },
+        { name: "Sardar Patel University Arts College", location: "Vallabh Vidyanagar" },
+        { name: "N.V. Patel College of Pure and Applied Sciences", location: "Vallabh Vidyanagar" },
+        { name: "V.P. and R.P.T.P. Science College", location: "Vallabh Vidyanagar" },
+        { name: "C.P. Patel and F.H. Shah Commerce College", location: "Anand" },
+        { name: "Shri M.P. Shah Science College", location: "Surendranagar" },
+        { name: "Government Science College Gandhinagar", location: "Gandhinagar", badge: "GOVT" },
+        { name: "Ahmedabad University Liberal Arts", location: "Ahmedabad" }
+    ],
+    "Arts Science and Commerce - Districts (35+ Colleges)": [
+        { name: "M.T.B. Arts College", location: "Surat", founded: "1949" },
+        { name: "R.A. College of Science Commerce and Arts", location: "Surat" },
+        { name: "Sir P.T. Sarvajanik College Surat", location: "Surat", badge: "AUTONOMOUS" },
+        { name: "Veer Narmad South Gujarat University Departments", location: "Surat" },
+        { name: "Bhagwan Mahavir College of Arts Science and Commerce", location: "Surat" },
+        { name: "V.N.S.G.U. Affiliated Colleges", location: "South Gujarat (100+ colleges)" },
+        { name: "Shri K.M. Shah Commerce College", location: "Vadodara" },
+        { name: "M.S. University Commerce College", location: "Vadodara" },
+        { name: "Government Commerce College Vadodara", location: "Vadodara", badge: "GOVT" },
+        { name: "M.S. University Science Colleges", location: "Vadodara" },
+        { name: "M.S. University Arts College", location: "Vadodara", founded: "1881" },
+        { name: "Hemchandracharya North Gujarat University Colleges", location: "Patan" },
+        { name: "Arts Commerce College Mehsana", location: "Mehsana" },
+        { name: "Shri S.P.B. Patel Commerce College", location: "Mehsana" },
+        { name: "S.V. S.B. Science College", location: "Mahesana" },
+        { name: "Government Arts Commerce College Palanpur", location: "Palanpur", badge: "GOVT" },
+        { name: "Government Science College Palanpur", location: "Palanpur", badge: "GOVT" },
+        { name: "Arts Commerce College Visnagar", location: "Visnagar" },
+        { name: "Government Commerce College Jamnagar", location: "Jamnagar", badge: "GOVT" },
+        { name: "M.D. Science College Porbandar", location: "Porbandar" },
+        { name: "Government Arts and Commerce College Porbandar", location: "Porbandar", badge: "GOVT" },
+        { name: "Arts Commerce and Science College Junagadh", location: "Junagadh" },
+        { name: "Z.V.M. Uni Commerce College", location: "Junagadh" },
+        { name: "Tulsi Arts Commerce College", location: "Anand" },
+        { name: "Hemchand Arts College", location: "Palanpur" },
+        { name: "R.J.H. Government Science College", location: "Rajkot", badge: "GOVT" },
+        { name: "Government Arts Commerce College Rajkot", location: "Rajkot", badge: "GOVT" },
+        { name: "Bahauddin Arts and Science College", location: "Junagadh" },
+        { name: "Bahauddin Commerce College", location: "Junagadh" },
+        { name: "Amreli Arts and Commerce College", location: "Amreli" },
+        { name: "Shri K.K. Shastri Government Commerce College", location: "Mahuva, Bhavnagar", badge: "GOVT" },
+        { name: "Botad Arts Commerce College", location: "Botad" },
+        { name: "Government Arts College Morbi", location: "Morbi", badge: "GOVT" },
+        { name: "K.S.K.V. Kachchh University Colleges", location: "Bhuj" },
+        { name: "Government Arts Commerce College Kutch", location: "Bhuj", badge: "GOVT" }
+    ],
+    "Pharmacy Colleges (25+ Colleges)": [
+        { name: "L.M. College of Pharmacy", location: "Ahmedabad", badge: "AUTONOMOUS" },
+        { name: "Pharmacy Department Gujarat University", location: "Ahmedabad" },
+        { name: "Shree Dhanvantary Pharmacy College", location: "Rajkot" },
+        { name: "Nirma University Pharmacy", location: "Ahmedabad" },
+        { name: "Indukaka Ipcowala College of Pharmacy", location: "New Vallabh Vidyanagar" },
+        { name: "S.K. Patel College of Pharmaceutical Education and Research", location: "Ganpat Vidyanagar, Mehsana" },
+        { name: "Parul Institute of Pharmacy and Research", location: "Vadodara" },
+        { name: "Sumandeep Vidyapeeth Pharmacy", location: "Vadodara" },
+        { name: "Hemchandracharya North Gujarat University Pharmacy", location: "Patan" },
+        { name: "Saurashtra University Pharmacy", location: "Rajkot" },
+        { name: "VNSGU Pharmacy College", location: "Surat" },
+        { name: "Pacific School of Pharmacy Surat", location: "Surat" },
+        { name: "Shree Swami Atmanand Saraswati Institute of Pharmaceutical Sciences", location: "Surat" },
+        { name: "C.U. Shah College of Pharmaceutical Education and Research", location: "Surendranagar" },
+        { name: "Ganpat University Pharmacy", location: "Mehsana" },
+        { name: "Shri K.M. Shah College of Pharmaceutical Education and Research", location: "Vadodara" },
+        { name: "Shree Bhagwati College of Pharmacy", location: "Gandhinagar" },
+        { name: "B.K. Mody Government Pharmacy College", location: "Rajkot", badge: "GOVT" },
+        { name: "Government Pharmacy College Ahmedabad", location: "Ahmedabad", badge: "GOVT" },
+        { name: "Government Pharmacy College Vadodara", location: "Vadodara", badge: "GOVT" },
+        { name: "Atmiya University Pharmacy", location: "Rajkot" },
+        { name: "A.R. College of Pharmacy and G.H. Patel Institute", location: "Vallabh Vidyanagar" },
+        { name: "P. K. Technical Campus Pharmacy", location: "Surendranagar" },
+        { name: "Noble Pharmacy College", location: "Junagadh" },
+        { name: "Shree H.N. Shukla College of Pharmaceutical Sciences", location: "Rajkot" }
+    ],
+    "Polytechnic Institutes - Government (33+ Institutes)": [
+        { name: "Government Polytechnic Ahmedabad", location: "Ahmedabad", badge: "GOVT" },
+        { name: "Government Women Polytechnic Ahmedabad", location: "Ahmedabad", badge: "WOMEN GOVT" },
+        { name: "Government Polytechnic Vadodara", location: "Vadodara", badge: "GOVT" },
+        { name: "Government Polytechnic Surat", location: "Surat", badge: "GOVT" },
+        { name: "Government Polytechnic Rajkot", location: "Rajkot", badge: "GOVT" },
+        { name: "Government Polytechnic Gandhinagar", location: "Gandhinagar", badge: "GOVT" },
+        { name: "Government Polytechnic Jamnagar", location: "Jamnagar", badge: "GOVT" },
+        { name: "Government Polytechnic Bhavnagar", location: "Bhavnagar", badge: "GOVT" },
+        { name: "Government Polytechnic Junagadh", location: "Junagadh", badge: "GOVT" },
+        { name: "Government Polytechnic Mehsana", location: "Mehsana", badge: "GOVT" },
+        { name: "Government Polytechnic Palanpur", location: "Palanpur", badge: "GOVT" },
+        { name: "Government Polytechnic Bharuch", location: "Bharuch", badge: "GOVT" },
+        { name: "Government Polytechnic Anand", location: "Anand", badge: "GOVT" },
+        { name: "Government Polytechnic Surendranagar", location: "Surendranagar", badge: "GOVT" },
+        { name: "Government Polytechnic Amreli", location: "Amreli", badge: "GOVT" },
+        { name: "Government Polytechnic Porbandar", location: "Porbandar", badge: "GOVT" },
+        { name: "Government Polytechnic Bhuj Kutch", location: "Bhuj", badge: "GOVT" },
+        { name: "Government Polytechnic Godhra", location: "Godhra", badge: "GOVT" },
+        { name: "Government Polytechnic Dahod", location: "Dahod", badge: "GOVT" },
+        { name: "Government Polytechnic Navsari", location: "Navsari", badge: "GOVT" },
+        { name: "Government Polytechnic Valsad", location: "Valsad", badge: "GOVT" },
+        { name: "Government Polytechnic Morbi", location: "Morbi", badge: "GOVT" },
+        { name: "Government Polytechnic Himmatnagar", location: "Himmatnagar", badge: "GOVT" },
+        { name: "Government Polytechnic Modasa", location: "Modasa", badge: "GOVT" },
+        { name: "Government Polytechnic Patan", location: "Patan", badge: "GOVT" },
+        { name: "Government Polytechnic Nadiad", location: "Nadiad, Kheda", badge: "GOVT" },
+        { name: "Government Polytechnic Botad", location: "Botad", badge: "GOVT" },
+        { name: "Government Polytechnic Chhota Udaipur", location: "Chhota Udaipur", badge: "GOVT" },
+        { name: "Government Polytechnic Narmada", location: "Rajpipla, Narmada", badge: "GOVT" },
+        { name: "Government Polytechnic Tapi", location: "Vyara, Tapi", badge: "GOVT" },
+        { name: "Government Polytechnic Aravalli", location: "Modasa", badge: "GOVT" },
+        { name: "Government Polytechnic Mahisagar", location: "Lunawada", badge: "GOVT" },
+        { name: "Government Polytechnic Gir Somnath", location: "Veraval", badge: "GOVT" }
+    ],
+    "Polytechnic Institutes - Private (20+ Institutes)": [
+        { name: "Shri S.V.M. Inst. of Technology Bharuch", location: "Bharuch" },
+        { name: "L.D. College of Engineering Polytechnic", location: "Ahmedabad" },
+        { name: "Nirma University Polytechnic", location: "Ahmedabad" },
+        { name: "Anand Institute of Information Science", location: "Anand" },
+        { name: "R.C. Technical Institute Surat", location: "Surat" },
+        { name: "Silver Oak Polytechnic", location: "Ahmedabad" },
+        { name: "Noble Group Polytechnic", location: "Junagadh" },
+        { name: "Parul Polytechnic Institute", location: "Vadodara" },
+        { name: "Sardar Patel Polytechnic", location: "Vallabh Vidyanagar" },
+        { name: "Atmiya Polytechnic", location: "Rajkot" },
+        { name: "Marwadi Group Polytechnic", location: "Rajkot" },
+        { name: "RK Polytechnic Rajkot", location: "Rajkot" },
+        { name: "C.K. Pithawala College Polytechnic", location: "Surat" },
+        { name: "VVP Engineering College Polytechnic", location: "Rajkot" },
+        { name: "Sankalchand Patel Polytechnic", location: "Visnagar" },
+        { name: "Shree H.N.S.B. Ltd Polytechnic", location: "Ahmedabad" },
+        { name: "Merchant Polytechnic", location: "Basna, Mehsana" },
+        { name: "ISTAR Polytechnic", location: "Anand" },
+        { name: "BVM Engineering College Polytechnic", location: "Vallabh Vidyanagar" },
+        { name: "Charotar University Polytechnic", location: "Anand" }
+    ],
+    "Research Institutes and Specialized Centers": [
+        { name: "Physical Research Laboratory", location: "Ahmedabad", founded: "1947", badge: "PRL ISRO" },
+        { name: "Indian Space Research Organisation - SAC", location: "Ahmedabad", badge: "ISRO SAC" },
+        { name: "National Institute of Design", location: "Ahmedabad", founded: "1961", badge: "NID" },
+        { name: "CEPT University School of Planning and Architecture", location: "Ahmedabad", badge: "CEPT" },
+        { name: "Mudra Institute of Communications", location: "Ahmedabad", badge: "MICA" },
+        { name: "Entrepreneurship Development Institute of India", location: "Ahmedabad", badge: "EDII" },
+        { name: "CSIR National Chemical Laboratory Gujarat Centre", location: "Anand" },
+        { name: "Central Salt and Marine Chemicals Research Institute", location: "Bhavnagar", badge: "CSMCRI" },
+        { name: "Sardar Patel Renewable Energy Research Institute", location: "Anand", badge: "SPRERI" },
+        { name: "Gujarat Biotechnology Research Centre", location: "Gandhinagar", badge: "GBRC" },
+        { name: "Gujarat Institute of Desert Ecology", location: "Bhuj", badge: "GUIDE" },
+        { name: "National Institute of Occupational Health", location: "Ahmedabad", badge: "NIOH" },
+        { name: "Vikram Sarabhai Space Centre Ground Station", location: "Ahmedabad" },
+        { name: "Geological Survey of India Vadodara", location: "Vadodara" }
+    ]
+};
+
+const gradients = ['grad1','grad2','grad3','grad4','grad5','grad6','grad7','grad8','grad9','grad10'];
+
+function getInitials(name) {
+    const words = name.split(' ');
+    if (words.length === 1) return words[0].substring(0, 2).toUpperCase();
+    return (words[0][0] + words[1][0]).toUpperCase();
+}
+
+function createCollegeCard(college, gradIndex) {
+    const initials  = getInitials(college.name);
+    const gradClass = gradients[gradIndex % gradients.length];
+    const badge   = college.badge   ? `<div class="college-badge">${college.badge}</div>` : '';
+    const founded = college.founded ? ` • Est. ${college.founded}` : '';
+    return `
+        <div class="college-card ${gradClass}">
+            ${badge}
+            <div class="college-content">
+                <div class="college-initials">${initials}</div>
+                <div>
+                    <div class="college-name">${college.name}</div>
+                    <div class="college-location">${college.location}${founded}</div>
+                </div>
+            </div>
+        </div>`;
+}
+
+function renderContent() {
+    const content = document.getElementById('content');
+    let html = '';
+    let categoryIndex = 0;
+    let totalCount = 0;
+    for (const [category, colleges] of Object.entries(collegesData)) {
+        totalCount += colleges.length;
+        html += `
+            <div class="section">
+                <h2 class="section-title">${category}<span class="section-count">(${colleges.length} institutions)</span></h2>
+                <div class="scroll-container">
+                    ${colleges.map((college, index) => createCollegeCard(college, categoryIndex + index)).join('')}
+                </div>
+            </div>`;
+        categoryIndex++;
+    }
+    const banner = `<div style="background:linear-gradient(135deg,#f093fb 0%,#f5576c 100%);padding:20px;border-radius:10px;margin-bottom:30px;text-align:center;">
+        <h1 style="font-size:32px;margin-bottom:10px;">💊 Gujarat - Complete Directory</h1>
+        <p style="font-size:18px;opacity:0.9;">${totalCount} Total Institutions | ${Object.keys(collegesData).length} Categories | India's Pharma and Trade Capital</p>
+    </div>`;
+    content.innerHTML = banner + html;
+}
+
+renderContent();
+</script>
+</body>
+</html>

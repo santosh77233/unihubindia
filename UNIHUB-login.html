@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - UNIHUB INDIA</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
+            background: linear-gradient(135deg, #141414 0%, #1a1a1a 100%);
+            color: #ffffff; 
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Background Animation */
+        .bg-animation {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+        }
+        .bg-circle {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(229,9,20,0.1) 0%, transparent 70%);
+            animation: float 20s infinite ease-in-out;
+        }
+        .bg-circle:nth-child(1) { width: 300px; height: 300px; top: 10%; left: 10%; animation-delay: 0s; }
+        .bg-circle:nth-child(2) { width: 200px; height: 200px; top: 60%; right: 15%; animation-delay: 4s; }
+        .bg-circle:nth-child(3) { width: 150px; height: 150px; bottom: 20%; left: 20%; animation-delay: 8s; }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) scale(1); }
+            50% { transform: translateY(-30px) scale(1.1); }
+        }
+        
+        /* Logo */
+        .logo {
+            position: absolute;
+            top: 30px;
+            left: 50px;
+            font-size: 28px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #e50914 0%, #f40612 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            z-index: 10;
+        }
+        
+        /* Container */
+        .login-container {
+            background: rgba(0,0,0,0.75);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 50px 60px;
+            width: 450px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+            border: 1px solid rgba(255,255,255,0.1);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .login-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .login-header h1 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #ffffff 0%, #e5e5e5 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .login-header p {
+            font-size: 14px;
+            color: #b3b3b3;
+        }
+        
+        /* Form */
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 8px;
+            color: #e5e5e5;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 14px 16px;
+            background: rgba(255,255,255,0.05);
+            border: 2px solid rgba(255,255,255,0.1);
+            border-radius: 8px;
+            color: #ffffff;
+            font-size: 15px;
+            transition: all 0.3s;
+        }
+        
+        .form-group input:focus {
+            outline: none;
+            border-color: #e50914;
+            background: rgba(255,255,255,0.08);
+        }
+        
+        .form-group input::placeholder {
+            color: #808080;
+        }
+        
+        /* Remember & Forgot */
+        .form-options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .checkbox-group input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+        
+        .checkbox-group label {
+            font-size: 14px;
+            color: #b3b3b3;
+            cursor: pointer;
+        }
+        
+        .forgot-link {
+            font-size: 14px;
+            color: #e50914;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .forgot-link:hover {
+            color: #f40612;
+        }
+        
+        /* Buttons */
+        .login-btn {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #e50914 0%, #f40612 100%);
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-bottom: 20px;
+        }
+        
+        .login-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(229,9,20,0.4);
+        }
+        
+        .login-btn:active {
+            transform: translateY(0);
+        }
+        
+        /* Divider */
+        .divider {
+            display: flex;
+            align-items: center;
+            margin: 30px 0;
+        }
+        
+        .divider::before,
+        .divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: rgba(255,255,255,0.1);
+        }
+        
+        .divider span {
+            padding: 0 15px;
+            font-size: 13px;
+            color: #808080;
+        }
+        
+        /* Social Login */
+        .social-login {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+        
+        .social-btn {
+            padding: 12px;
+            background: rgba(255,255,255,0.05);
+            border: 2px solid rgba(255,255,255,0.1);
+            border-radius: 8px;
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        
+        .social-btn:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: rgba(255,255,255,0.2);
+        }
+        
+        /* Signup Link */
+        .signup-link {
+            text-align: center;
+            font-size: 14px;
+            color: #b3b3b3;
+        }
+        
+        .signup-link a {
+            color: #e50914;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .signup-link a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Responsive */
+        @media(max-width:768px){
+            .logo { left: 20px; font-size: 24px; }
+            .login-container { 
+                width: 90%; 
+                padding: 40px 30px; 
+                margin: 20px;
+            }
+            .social-login { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">UNIHUB INDIA</div>
+    
+    <div class="bg-animation">
+        <div class="bg-circle"></div>
+        <div class="bg-circle"></div>
+        <div class="bg-circle"></div>
+    </div>
+    
+    <div class="login-container">
+        <div class="login-header">
+            <h1>Welcome Back</h1>
+            <p>Login to track your college applications</p>
+        </div>
+        
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" placeholder="your.email@example.com" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter your password" required>
+            </div>
+            
+            <div class="form-options">
+                <div class="checkbox-group">
+                    <input type="checkbox" id="remember">
+                    <label for="remember">Remember me</label>
+                </div>
+                <a href="#" class="forgot-link">Forgot Password?</a>
+            </div>
+            
+            <button type="submit" class="login-btn">Login</button>
+        </form>
+        
+        <div class="divider">
+            <span>or continue with</span>
+        </div>
+        
+        <div class="social-login">
+            <button class="social-btn">
+                <span>📧</span> Google
+            </button>
+            <button class="social-btn">
+                <span>📱</span> Phone
+            </button>
+        </div>
+        
+        <div class="signup-link">
+            Don't have an account? <a href="UNIHUB-signup.html">Sign up</a>
+        </div>
+    </div>
+    
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            
+            // Simple validation (in production, this would call an API)
+            if(email && password) {
+                // Store session (simplified)
+                localStorage.setItem('unihub_user', JSON.stringify({
+                    email: email,
+                    name: email.split('@')[0],
+                    loginTime: new Date().toISOString()
+                }));
+                
+                // Redirect to dashboard
+                window.location.href = 'UNIHUB-dashboard.html';
+            }
+        });
+    </script>
+</body>
+</html>

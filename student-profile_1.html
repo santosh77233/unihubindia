@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profile - UniHub India</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #1a3a52 0%, #2c5f7f 50%, #1a3a52 100%);
+            min-height: 100vh;
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -10%;
+            width: 500px;
+            height: 500px;
+            background: rgba(44, 95, 127, 0.3);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            color: white;
+        }
+
+        .logo {
+            font-size: 2.5em;
+            font-weight: 300;
+            letter-spacing: 8px;
+            margin-bottom: 5px;
+            color: #a8c5d9;
+        }
+
+        .subtitle {
+            font-size: 0.9em;
+            color: #8ba9bd;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        .tagline {
+            font-size: 0.85em;
+            color: #7a9bb0;
+            margin-top: 5px;
+            font-style: italic;
+        }
+
+        .profile-container {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .profile-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .profile-title {
+            font-size: 1.8em;
+            color: #1a3a52;
+            font-weight: 600;
+        }
+
+        .completion-indicator {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .completion-bar {
+            width: 150px;
+            height: 8px;
+            background: #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .completion-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #4a7c9d, #5a9dc4);
+            width: 0%;
+            transition: width 0.5s ease;
+        }
+
+        .completion-text {
+            font-size: 0.9em;
+            color: #4a7c9d;
+            font-weight: 600;
+        }
+
+        .autosave-indicator {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85em;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .autosave-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #4caf50;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .section {
+            margin-bottom: 35px;
+        }
+
+        .section-title {
+            font-size: 1.3em;
+            color: #1a3a52;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+        }
+
+        .section-icon {
+            width: 24px;
+            height: 24px;
+            background: linear-gradient(135deg, #4a7c9d, #5a9dc4);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.7em;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        label {
+            font-size: 0.9em;
+            color: #333;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        label .required {
+            color: #e74c3c;
+            margin-left: 3px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="date"],
+        input[type="number"],
+        select,
+        textarea {
+            padding: 12px 15px;
+            border: 1.5px solid #d0d0d0;
+            border-radius: 6px;
+            font-size: 0.95em;
+            transition: all 0.3s ease;
+            font-family: inherit;
+            background: white;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="date"]:focus,
+        input[type="number"]:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #4a7c9d;
+            box-shadow: 0 0 0 3px rgba(74, 124, 157, 0.1);
+        }
+
+        input.valid {
+            border-color: #4caf50;
+        }
+
+        input.invalid {
+            border-color: #e74c3c;
+        }
+
+        .error-message {
+            font-size: 0.8em;
+            color: #e74c3c;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .radio-group,
+        .checkbox-group {
+            display: flex;
+            gap: 20px;
+            margin-top: 8px;
+        }
+
+        .radio-option,
+        .checkbox-option {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+
+        .file-upload {
+            border: 2px dashed #4a7c9d;
+            border-radius: 8px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            background: #f8f9fa;
+        }
+
+        .file-upload:hover {
+            background: #e8f4f8;
+            border-color: #5a9dc4;
+        }
+
+        .file-upload-icon {
+            font-size: 2.5em;
+            color: #4a7c9d;
+            margin-bottom: 10px;
+        }
+
+        .file-upload-text {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .file-upload input[type="file"] {
+            display: none;
+        }
+
+        .uploaded-files {
+            margin-top: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .uploaded-file {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 15px;
+            background: #f0f0f0;
+            border-radius: 6px;
+            font-size: 0.9em;
+        }
+
+        .file-name {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #333;
+        }
+
+        .remove-file {
+            color: #e74c3c;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .exam-entry {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .add-exam-btn {
+            background: transparent;
+            border: 2px dashed #4a7c9d;
+            color: #4a7c9d;
+            padding: 12px 25px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.95em;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .add-exam-btn:hover {
+            background: #e8f4f8;
+            border-style: solid;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: flex-end;
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 2px solid #e0e0e0;
+        }
+
+        .btn {
+            padding: 14px 35px;
+            border: none;
+            border-radius: 6px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #4a7c9d, #5a9dc4);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(74, 124, 157, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #4a7c9d;
+            border: 2px solid #4a7c9d;
+        }
+
+        .btn-secondary:hover {
+            background: #f0f0f0;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #8ba9bd;
+            font-size: 0.85em;
+        }
+
+        @media (max-width: 768px) {
+            .profile-container {
+                padding: 25px;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-header {
+                flex-direction: column;
+                gap: 15px;
+                align-items: flex-start;
+            }
+
+            .completion-indicator {
+                width: 100%;
+                justify-content: space-between;
+            }
+
+            .completion-bar {
+                flex: 1;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+
+        .success-message {
+            background: #d4edda;
+            color: #155724;
+            padding: 12px 20px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            display: none;
+            border: 1px solid #c3e6cb;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">UNIHUB</div>
+            <div class="subtitle">INDIA</div>
+            <div class="tagline">Centralized College Admission Platform</div>
+        </div>
+
+        <div class="profile-container">
+            <div class="profile-header">
+                <h1 class="profile-title">Student Profile</h1>
+                <div>
+                    <div class="completion-indicator">
+                        <div class="completion-bar">
+                            <div class="completion-fill" id="completionBar"></div>
+                        </div>
+                        <span class="completion-text" id="completionText">0% Complete</span>
+                    </div>
+                    <div class="autosave-indicator">
+                        <div class="autosave-dot"></div>
+                        <span>Auto-saving...</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="success-message" id="successMessage">
+                ✓ Profile saved successfully!
+            </div>
+
+            <form id="studentProfileForm">
+                <!-- Personal Details Section -->
+                <div class="section">
+                    <h2 class="section-title">
+                        <span class="section-icon">👤</span>
+                        Personal Details
+                    </h2>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Full Name <span class="required">*</span></label>
+                            <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+                            <span class="error-message">This field is required</span>
+                        </div>
+                        <div class="form-group">
+                            <label>Date of Birth <span class="required">*</span></label>
+                            <input type="date" id="dob" name="dob" required>
+                            <span class="error-message">This field is required</span>
+                        </div>
+                        <div class="form-group">
+                            <label>Gender <span class="required">*</span></label>
+                            <select id="gender" name="gender" required>
+                                <option value="">Select Gender</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Other</option>
+                                <option value="prefer-not-to-say">Prefer not to say</option>
+                            </select>
+                            <span class="error-message">Please select your gender</span>
+                        </div>
+                        <div class="form-group">
+                            <label>Category <span class="required">*</span></label>
+                            <select id="category" name="category" required>
+                                <option value="">Select Category</option>
+                                <option value="general">General</option>
+                                <option value="obc">OBC</option>
+                                <option value="sc">SC</option>
+                                <option value="st">ST</option>
+                                <option value="ews">EWS</option>
+                            </select>
+                            <span class="error-message">Please select your category</span>
+                        </div>
+                        <div class="form-group">
+                            <label>Domicile State <span class="required">*</span></label>
+                            <select id="domicileState" name="domicileState" required>
+                                <option value="">Select State</option>
+                                <option value="west-bengal">West Bengal</option>
+                                <option value="delhi">Delhi</option>
+                                <option value="maharashtra">Maharashtra</option>
+                                <option value="karnataka">Karnataka</option>
+                                <option value="tamil-nadu">Tamil Nadu</option>
+                                <option value="uttar-pradesh">Uttar Pradesh</option>
+                                <option value="rajasthan">Rajasthan</option>
+                                <option value="gujarat">Gujarat</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <span class="error-message">Please select your domicile state</span>
+                        </div>
+                        <div class="form-group">
+                            <label>Email Address <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                            <span class="error-message">Please enter a valid email</span>
+                        </div>
+                        <div class="form-group">
+                            <label>Phone Number <span class="required">*</span></label>
+                            <input type="text" id="phone" name="phone" placeholder="+91 XXXXX XXXXX" required>
+                            <span class="error-message">Please enter a valid phone number</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Academic Details Section -->
+                <div class="section">
+                    <h2 class="section-title">
+                        <span class="section-icon">📚</span>
+                        Academic Details
+                    </h2>
+                    
+                    <!-- 10th Standard -->
+                    <h3 style="color: #4a7c9d; margin-bottom: 15px; font-size: 1.1em;">10th Standard</h3>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Board <span class="required">*</span></label>
+                            <select id="board10" name="board10" required>
+                                <option value="">Select Board</option>
+                                <option value="cbse">CBSE</option>
+                                <option value="icse">ICSE</option>
+                                <option value="state">State Board</option>
+                                <option value="igcse">IGCSE</option>
+                                <option value="ib">IB</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Year of Passing <span class="required">*</span></label>
+                            <input type="number" id="year10" name="year10" placeholder="2020" min="1990" max="2030" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Percentage / CGPA <span class="required">*</span></label>
+                            <input type="number" id="percentage10" name="percentage10" placeholder="85.5" step="0.01" min="0" max="100" required>
+                        </div>
+                    </div>
+
+                    <!-- 12th Standard -->
+                    <h3 style="color: #4a7c9d; margin: 25px 0 15px; font-size: 1.1em;">12th Standard</h3>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Board <span class="required">*</span></label>
+                            <select id="board12" name="board12" required>
+                                <option value="">Select Board</option>
+                                <option value="cbse">CBSE</option>
+                                <option value="icse">ICSE</option>
+                                <option value="state">State Board</option>
+                                <option value="igcse">IGCSE</option>
+                                <option value="ib">IB</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Stream <span class="required">*</span></label>
+                            <select id="stream12" name="stream12" required>
+                                <option value="">Select Stream</option>
+                                <option value="science-pcm">Science (PCM)</option>
+                                <option value="science-pcb">Science (PCB)</option>
+                                <option value="commerce">Commerce</option>
+                                <option value="arts">Arts/Humanities</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Year of Passing <span class="required">*</span></label>
+                            <input type="number" id="year12" name="year12" placeholder="2022" min="1990" max="2030" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Percentage / CGPA <span class="required">*</span></label>
+                            <input type="number" id="percentage12" name="percentage12" placeholder="88.5" step="0.01" min="0" max="100" required>
+                        </div>
+                    </div>
+
+                    <!-- Graduation (Optional) -->
+                    <h3 style="color: #4a7c9d; margin: 25px 0 15px; font-size: 1.1em;">Graduation (If Applicable)</h3>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Degree</label>
+                            <input type="text" id="graduationDegree" name="graduationDegree" placeholder="B.Tech, B.Sc., B.Com, etc.">
+                        </div>
+                        <div class="form-group">
+                            <label>University</label>
+                            <input type="text" id="graduationUniversity" name="graduationUniversity" placeholder="University Name">
+                        </div>
+                        <div class="form-group">
+                            <label>Year of Passing</label>
+                            <input type="number" id="graduationYear" name="graduationYear" placeholder="2024" min="1990" max="2030">
+                        </div>
+                        <div class="form-group">
+                            <label>Percentage / CGPA</label>
+                            <input type="number" id="graduationPercentage" name="graduationPercentage" placeholder="75.0" step="0.01" min="0" max="100">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Entrance Exams Section -->
+                <div class="section">
+                    <h2 class="section-title">
+                        <span class="section-icon">📝</span>
+                        Entrance Exams
+                    </h2>
+                    
+                    <div id="examsContainer">
+                        <div class="exam-entry">
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label>Exam Name <span class="required">*</span></label>
+                                    <select class="exam-name" name="examName[]" required>
+                                        <option value="">Select Exam</option>
+                                        <option value="jee-main">JEE Main</option>
+                                        <option value="jee-advanced">JEE Advanced</option>
+                                        <option value="neet">NEET</option>
+                                        <option value="cuet">CUET</option>
+                                        <option value="wbjee">WBJEE</option>
+                                        <option value="bitsat">BITSAT</option>
+                                        <option value="viteee">VITEEE</option>
+                                        <option value="mht-cet">MHT CET</option>
+                                        <option value="comedk">COMEDK</option>
+                                        <option value="cat">CAT</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Rank / Percentile <span class="required">*</span></label>
+                                    <input type="text" class="exam-score" name="examScore[]" placeholder="e.g., AIR 1234 or 98.5 percentile" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Attempt Year <span class="required">*</span></label>
+                                    <input type="number" class="exam-year" name="examYear[]" placeholder="2024" min="2015" max="2030" required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button type="button" class="add-exam-btn" id="addExamBtn">+ Add Another Exam</button>
+                </div>
+
+                <!-- Documents Upload Section -->
+                <div class="section">
+                    <h2 class="section-title">
+                        <span class="section-icon">📄</span>
+                        Documents Upload
+                    </h2>
+                    
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>10th Mark Sheet <span class="required">*</span></label>
+                            <div class="file-upload" onclick="document.getElementById('marksheet10').click()">
+                                <div class="file-upload-icon">📎</div>
+                                <div class="file-upload-text">Click to upload or drag and drop<br><small>PDF, JPG, PNG (Max 5MB)</small></div>
+                                <input type="file" id="marksheet10" name="marksheet10" accept=".pdf,.jpg,.jpeg,.png">
+                            </div>
+                            <div class="uploaded-files" id="files-marksheet10"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>12th Mark Sheet <span class="required">*</span></label>
+                            <div class="file-upload" onclick="document.getElementById('marksheet12').click()">
+                                <div class="file-upload-icon">📎</div>
+                                <div class="file-upload-text">Click to upload or drag and drop<br><small>PDF, JPG, PNG (Max 5MB)</small></div>
+                                <input type="file" id="marksheet12" name="marksheet12" accept=".pdf,.jpg,.jpeg,.png">
+                            </div>
+                            <div class="uploaded-files" id="files-marksheet12"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>ID Proof (Aadhar/PAN/Passport) <span class="required">*</span></label>
+                            <div class="file-upload" onclick="document.getElementById('idProof').click()">
+                                <div class="file-upload-icon">📎</div>
+                                <div class="file-upload-text">Click to upload or drag and drop<br><small>PDF, JPG, PNG (Max 5MB)</small></div>
+                                <input type="file" id="idProof" name="idProof" accept=".pdf,.jpg,.jpeg,.png">
+                            </div>
+                            <div class="uploaded-files" id="files-idProof"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Entrance Exam Scorecard(s)</label>
+                            <div class="file-upload" onclick="document.getElementById('scorecards').click()">
+                                <div class="file-upload-icon">📎</div>
+                                <div class="file-upload-text">Click to upload or drag and drop<br><small>PDF, JPG, PNG (Max 5MB each)</small></div>
+                                <input type="file" id="scorecards" name="scorecards" accept=".pdf,.jpg,.jpeg,.png" multiple>
+                            </div>
+                            <div class="uploaded-files" id="files-scorecards"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="action-buttons">
+                    <button type="button" class="btn btn-secondary">Save as Draft</button>
+                    <button type="submit" class="btn btn-primary">Complete Profile</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="footer">
+            © 2024 UniHub India - All Rights Reserved
+        </div>
+    </div>
+
+    <script>
+        // Form validation and auto-save functionality
+        const form = document.getElementById('studentProfileForm');
+        const completionBar = document.getElementById('completionBar');
+        const completionText = document.getElementById('completionText');
+        const successMessage = document.getElementById('successMessage');
+        let autoSaveTimeout;
+
+        // Calculate completion percentage
+        function updateCompletion() {
+            const allInputs = form.querySelectorAll('input[required], select[required]');
+            let filledInputs = 0;
+
+            allInputs.forEach(input => {
+                if (input.type === 'file') {
+                    if (input.files.length > 0) filledInputs++;
+                } else if (input.value.trim() !== '') {
+                    filledInputs++;
+                }
+            });
+
+            const percentage = Math.round((filledInputs / allInputs.length) * 100);
+            completionBar.style.width = percentage + '%';
+            completionText.textContent = percentage + '% Complete';
+        }
+
+        // Auto-save functionality
+        function autoSave() {
+            clearTimeout(autoSaveTimeout);
+            autoSaveTimeout = setTimeout(() => {
+                // Simulate saving to localStorage
+                const formData = new FormData(form);
+                const data = {};
+                formData.forEach((value, key) => {
+                    data[key] = value;
+                });
+                localStorage.setItem('studentProfile', JSON.stringify(data));
+                
+                // Show success message briefly
+                successMessage.style.display = 'block';
+                setTimeout(() => {
+                    successMessage.style.display = 'none';
+                }, 2000);
+            }, 1000);
+        }
+
+        // Add input validation
+        const inputs = form.querySelectorAll('input[required], select[required]');
+        inputs.forEach(input => {
+            input.addEventListener('blur', function() {
+                if (this.value.trim() === '') {
+                    this.classList.add('invalid');
+                    this.classList.remove('valid');
+                } else {
+                    this.classList.add('valid');
+                    this.classList.remove('invalid');
+                }
+            });
+
+            input.addEventListener('input', function() {
+                updateCompletion();
+                autoSave();
+            });
+
+            input.addEventListener('change', function() {
+                updateCompletion();
+                autoSave();
+            });
+        });
+
+        // Add exam entry functionality
+        let examCount = 1;
+        document.getElementById('addExamBtn').addEventListener('click', function() {
+            examCount++;
+            const examEntry = document.createElement('div');
+            examEntry.className = 'exam-entry';
+            examEntry.innerHTML = `
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Exam Name</label>
+                        <select class="exam-name" name="examName[]">
+                            <option value="">Select Exam</option>
+                            <option value="jee-main">JEE Main</option>
+                            <option value="jee-advanced">JEE Advanced</option>
+                            <option value="neet">NEET</option>
+                            <option value="cuet">CUET</option>
+                            <option value="wbjee">WBJEE</option>
+                            <option value="bitsat">BITSAT</option>
+                            <option value="viteee">VITEEE</option>
+                            <option value="mht-cet">MHT CET</option>
+                            <option value="comedk">COMEDK</option>
+                            <option value="cat">CAT</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Rank / Percentile</label>
+                        <input type="text" class="exam-score" name="examScore[]" placeholder="e.g., AIR 1234 or 98.5 percentile">
+                    </div>
+                    <div class="form-group">
+                        <label>Attempt Year</label>
+                        <input type="number" class="exam-year" name="examYear[]" placeholder="2024" min="2015" max="2030">
+                    </div>
+                </div>
+            `;
+            document.getElementById('examsContainer').appendChild(examEntry);
+        });
+
+        // File upload handling
+        const fileInputs = document.querySelectorAll('input[type="file"]');
+        fileInputs.forEach(input => {
+            input.addEventListener('change', function() {
+                const containerId = 'files-' + this.id;
+                const container = document.getElementById(containerId);
+                container.innerHTML = '';
+                
+                Array.from(this.files).forEach((file, index) => {
+                    const fileDiv = document.createElement('div');
+                    fileDiv.className = 'uploaded-file';
+                    fileDiv.innerHTML = `
+                        <span class="file-name">
+                            📄 ${file.name} (${(file.size / 1024).toFixed(1)} KB)
+                        </span>
+                        <span class="remove-file" onclick="removeFile('${this.id}', ${index})">✕ Remove</span>
+                    `;
+                    container.appendChild(fileDiv);
+                });
+                
+                updateCompletion();
+                autoSave();
+            });
+        });
+
+        // Remove file function
+        function removeFile(inputId, index) {
+            const input = document.getElementById(inputId);
+            const dt = new DataTransfer();
+            const files = Array.from(input.files);
+            files.splice(index, 1);
+            files.forEach(file => dt.items.add(file));
+            input.files = dt.files;
+            input.dispatchEvent(new Event('change'));
+        }
+
+        // Form submission
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Validate all required fields
+            let isValid = true;
+            const requiredInputs = form.querySelectorAll('input[required], select[required]');
+            
+            requiredInputs.forEach(input => {
+                if (input.type === 'file') {
+                    if (input.files.length === 0) {
+                        isValid = false;
+                        input.parentElement.style.borderColor = '#e74c3c';
+                    }
+                } else if (input.value.trim() === '') {
+                    isValid = false;
+                    input.classList.add('invalid');
+                }
+            });
+
+            if (isValid) {
+                successMessage.textContent = '✓ Profile completed successfully! Redirecting...';
+                successMessage.style.display = 'block';
+                
+                // Simulate form submission
+                setTimeout(() => {
+                    alert('Profile submitted successfully! Your data will be used for AI matching and eligibility checks.');
+                    // Here you would typically send the data to your backend
+                }, 1500);
+            } else {
+                alert('Please fill in all required fields and upload all required documents.');
+            }
+        });
+
+        // Load saved data on page load
+        window.addEventListener('load', function() {
+            const savedData = localStorage.getItem('studentProfile');
+            if (savedData) {
+                const data = JSON.parse(savedData);
+                Object.keys(data).forEach(key => {
+                    const input = form.elements[key];
+                    if (input && input.type !== 'file') {
+                        input.value = data[key];
+                    }
+                });
+            }
+            updateCompletion();
+        });
+
+        // Initial completion check
+        updateCompletion();
+    </script>
+</body>
+</html>
