@@ -1,0 +1,1218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNIHUB INDIA - Your Gateway to College Admissions | 10,343+ Institutions Across 28 States</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
+            background-color: #141414; 
+            color: #ffffff; 
+            overflow-x: hidden; 
+        }
+        
+        /* Disclaimer Modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            backdrop-filter: blur(8px);
+        }
+        .modal-content {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            border: 2px solid #e50914;
+            border-radius: 16px;
+            max-width: 650px;
+            width: 90%;
+            padding: 40px;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(229, 9, 20, 0.4);
+            animation: slideUp 0.4s ease;
+        }
+        @keyframes slideUp {
+            from { transform: translateY(80px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .modal-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(229,9,20,0.3);
+        }
+        .modal-icon {
+            font-size: 50px;
+        }
+        .modal-title {
+            font-size: 30px;
+            font-weight: 700;
+            color: #ffffff;
+        }
+        .modal-body {
+            color: #e5e5e5;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+        .modal-body p {
+            margin-bottom: 15px;
+            font-size: 15px;
+        }
+        .modal-body strong {
+            color: #e50914;
+            font-weight: 600;
+        }
+        .modal-list {
+            list-style: none;
+            padding-left: 0;
+            margin: 20px 0;
+        }
+        .modal-list li {
+            padding: 12px 0 12px 35px;
+            position: relative;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+        .modal-list li:before {
+            content: "⚠️";
+            position: absolute;
+            left: 0;
+            font-size: 18px;
+        }
+        .modal-note {
+            margin-top: 20px;
+            padding: 18px;
+            background: rgba(229,9,20,0.1);
+            border-left: 4px solid #e50914;
+            border-radius: 6px;
+        }
+        .modal-footer {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 25px;
+        }
+        .modal-btn {
+            padding: 14px 35px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+            background: linear-gradient(135deg, #e50914 0%, #f40612 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(229,9,20,0.3);
+        }
+        .modal-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(229,9,20,0.5);
+        }
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(255,255,255,0.1);
+            border: none;
+            color: #999;
+            font-size: 24px;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+        .modal-close:hover {
+            background: rgba(229,9,20,0.2);
+            color: #e50914;
+        }
+        
+        /* Header */
+        .header { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 20px 50px; 
+            background: linear-gradient(180deg,rgba(0,0,0,0.9) 0%,rgba(0,0,0,0) 100%); 
+            position: fixed; 
+            top: 0; 
+            width: 100%; 
+            z-index: 1000; 
+            backdrop-filter: blur(10px);
+            transition: background 0.3s;
+        }
+        .header.scrolled { background: rgba(20,20,20,0.95); }
+        .logo { 
+            font-size: 32px; 
+            font-weight: 700; 
+            background: linear-gradient(135deg, #e50914 0%, #f40612 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 2px; 
+        }
+        .nav-menu { display: flex; gap: 30px; align-items: center; }
+        .nav-menu a { 
+            color: #e5e5e5; 
+            text-decoration: none; 
+            font-size: 14px; 
+            font-weight: 500; 
+            transition: color 0.3s; 
+        }
+        .nav-menu a:hover { color: #e50914; }
+        .search-icon { 
+            background: none; 
+            border: none; 
+            color: #ffffff; 
+            font-size: 20px; 
+            cursor: pointer; 
+            transition: transform 0.3s;
+        }
+        .search-icon:hover { transform: scale(1.1); }
+        
+        /* Hero Section */
+        .hero {
+            padding: 140px 50px 80px;
+            background: linear-gradient(135deg, rgba(229,9,20,0.15) 0%, rgba(0,0,0,0.8) 100%);
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 56px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #ffffff 0%, #e5e5e5 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero p {
+            font-size: 20px;
+            color: #b3b3b3;
+            margin-bottom: 40px;
+        }
+        .hero-cta {
+            display: inline-block;
+            background: linear-gradient(135deg, #e50914 0%, #f40612 100%);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(229,9,20,0.4);
+        }
+        .hero-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(229,9,20,0.6);
+        }
+        
+        /* Stats Section */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 50px;
+        }
+        .stat-card {
+            background: linear-gradient(135deg, rgba(229,9,20,0.1) 0%, rgba(0,0,0,0.5) 100%);
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid rgba(229,9,20,0.2);
+            transition: transform 0.3s, border-color 0.3s;
+        }
+        .stat-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(229,9,20,0.5);
+        }
+        .stat-number {
+            font-size: 48px;
+            font-weight: 700;
+            color: #e50914;
+            margin-bottom: 10px;
+        }
+        .stat-label {
+            font-size: 16px;
+            color: #b3b3b3;
+        }
+        
+        /* Pricing Section */
+        .pricing-section {
+            background: linear-gradient(135deg, rgba(67,232,123,0.1) 0%, rgba(56,249,215,0.05) 100%);
+            padding: 80px 50px;
+            margin: 60px 0;
+            border-top: 2px solid rgba(67,232,123,0.3);
+            border-bottom: 2px solid rgba(67,232,123,0.3);
+        }
+        .pricing-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .pricing-title {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #ffffff 0%, #e5e5e5 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .pricing-subtitle {
+            font-size: 18px;
+            color: #b3b3b3;
+            margin-bottom: 50px;
+        }
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .pricing-card {
+            background: rgba(255,255,255,0.05);
+            border: 2px solid rgba(67,232,123,0.3);
+            border-radius: 12px;
+            padding: 40px 30px;
+            transition: all 0.3s;
+        }
+        .pricing-card:hover {
+            background: rgba(67,232,123,0.1);
+            border-color: rgba(67,232,123,0.6);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(67,232,123,0.3);
+        }
+        .pricing-icon {
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+        .pricing-label {
+            font-size: 20px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 15px;
+        }
+        .pricing-amount {
+            font-size: 48px;
+            font-weight: 700;
+            color: #43e97b;
+            margin-bottom: 10px;
+        }
+        .pricing-info {
+            font-size: 14px;
+            color: #b3b3b3;
+            line-height: 1.8;
+            margin-top: 20px;
+        }
+        .pricing-note {
+            background: rgba(67,232,123,0.1);
+            border-left: 4px solid #43e97b;
+            padding: 20px;
+            border-radius: 6px;
+            margin-top: 30px;
+            text-align: left;
+        }
+        .pricing-note strong {
+            color: #43e97b;
+        }
+        
+        /* Admission CTA Section */
+        .admission-section {
+            background: linear-gradient(135deg, rgba(229,9,20,0.15) 0%, rgba(229,9,20,0.05) 100%);
+            padding: 80px 50px;
+            margin: 60px 0;
+            border-top: 2px solid rgba(229,9,20,0.3);
+            border-bottom: 2px solid rgba(229,9,20,0.3);
+        }
+        .admission-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .admission-title {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #ffffff 0%, #e5e5e5 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .admission-subtitle {
+            font-size: 18px;
+            color: #b3b3b3;
+            margin-bottom: 50px;
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .contact-card {
+            background: rgba(255,255,255,0.05);
+            border: 2px solid rgba(229,9,20,0.3);
+            border-radius: 12px;
+            padding: 30px;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        .contact-card:hover {
+            background: rgba(229,9,20,0.1);
+            border-color: rgba(229,9,20,0.6);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(229,9,20,0.3);
+        }
+        .contact-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+        .contact-label {
+            font-size: 16px;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+        .contact-info {
+            font-size: 18px;
+            color: #e50914;
+            font-weight: 600;
+            word-break: break-all;
+        }
+        .contact-card a {
+            color: #e50914;
+            text-decoration: none;
+        }
+        .contact-card a:hover {
+            color: #f40612;
+        }
+        
+        /* Search Bar */
+        .search-container {
+            max-width: 800px;
+            margin: 0 auto 60px;
+            padding: 0 50px;
+        }
+        .search-bar {
+            display: flex;
+            align-items: center;
+            background: rgba(255,255,255,0.1);
+            border-radius: 8px;
+            padding: 15px 20px;
+            border: 2px solid transparent;
+            transition: all 0.3s;
+        }
+        .search-bar:focus-within {
+            background: rgba(255,255,255,0.15);
+            border-color: #e50914;
+        }
+        .search-bar input {
+            flex: 1;
+            background: none;
+            border: none;
+            color: #ffffff;
+            font-size: 16px;
+            outline: none;
+        }
+        .search-bar input::placeholder {
+            color: #808080;
+        }
+        .search-btn {
+            background: #e50914;
+            border: none;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .search-btn:hover {
+            background: #f40612;
+        }
+        
+        /* Section Title */
+        .section-title {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            padding: 0 50px;
+        }
+        
+        /* States Grid */
+        .states-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 25px;
+            padding: 0 50px 60px;
+        }
+        .state-card {
+            background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%);
+            border-radius: 12px;
+            padding: 30px;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+        .state-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #e50914 0%, #f40612 100%);
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+        .state-card:hover::before {
+            transform: scaleX(1);
+        }
+        .state-card:hover {
+            transform: translateY(-8px);
+            background: linear-gradient(135deg, rgba(229,9,20,0.1) 0%, rgba(255,255,255,0.05) 100%);
+            border-color: rgba(229,9,20,0.3);
+            box-shadow: 0 10px 40px rgba(229,9,20,0.2);
+        }
+        .state-rank {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(229,9,20,0.9);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .state-name {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #ffffff;
+        }
+        .state-count {
+            font-size: 36px;
+            font-weight: 700;
+            color: #e50914;
+            margin-bottom: 8px;
+        }
+        .state-label {
+            font-size: 14px;
+            color: #b3b3b3;
+            margin-bottom: 15px;
+        }
+        .state-highlights {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+        }
+        .highlight-badge {
+            background: rgba(229,9,20,0.2);
+            color: #ffffff;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+        
+        /* Top Institutions */
+        .top-institutions {
+            background: rgba(255,255,255,0.03);
+            padding: 60px 50px;
+            margin: 40px 0;
+        }
+        .institutions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .institution-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 8px;
+            padding: 20px;
+            border-left: 4px solid #e50914;
+            transition: all 0.3s;
+        }
+        .institution-card:hover {
+            background: rgba(255,255,255,0.08);
+            transform: translateX(5px);
+        }
+        .inst-name {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #ffffff;
+        }
+        .inst-location {
+            font-size: 13px;
+            color: #b3b3b3;
+            margin-bottom: 10px;
+        }
+        .inst-badge {
+            display: inline-block;
+            background: rgba(229,9,20,0.9);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+        
+        /* Footer */
+        .footer {
+            background: rgba(0,0,0,0.8);
+            padding: 60px 50px 30px;
+            margin-top: 60px;
+        }
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .footer-section h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #e50914;
+        }
+        .footer-section p, .footer-section a {
+            font-size: 14px;
+            color: #b3b3b3;
+            line-height: 1.8;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .footer-section a:hover {
+            color: #ffffff;
+        }
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #808080;
+            font-size: 14px;
+        }
+        
+        /* Responsive */
+        
+        /* Admission Categories Showcase */
+        .categories-showcase {
+            background: linear-gradient(135deg, rgba(67,232,123,0.05) 0%, rgba(56,249,215,0.02) 100%);
+            padding: 4rem 0;
+            margin: 4rem 0;
+            border-top: 1px solid rgba(67,232,123,0.2);
+            border-bottom: 1px solid rgba(67,232,123,0.2);
+            overflow: hidden;
+        }
+
+        .categories-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .categories-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .categories-subtitle {
+            font-size: 1.1rem;
+            color: #b3b3b3;
+        }
+
+        .categories-marquee {
+            overflow: hidden;
+            position: relative;
+            background: rgba(0,0,0,0.3);
+            padding: 2rem 0;
+        }
+
+        .categories-marquee::before,
+        .categories-marquee::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            width: 150px;
+            height: 100%;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .categories-marquee::before {
+            left: 0;
+            background: linear-gradient(90deg, rgba(20,20,20,1) 0%, rgba(20,20,20,0) 100%);
+        }
+
+        .categories-marquee::after {
+            right: 0;
+            background: linear-gradient(90deg, rgba(20,20,20,0) 0%, rgba(20,20,20,1) 100%);
+        }
+
+        .categories-track {
+            display: inline-flex;
+            gap: 1rem;
+            animation: marqueeScroll 40s linear infinite;
+            white-space: nowrap;
+        }
+
+        .categories-track:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes marqueeScroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .category-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: linear-gradient(135deg, rgba(67,232,123,0.1) 0%, rgba(56,249,215,0.1) 100%);
+            border: 1px solid rgba(67,232,123,0.3);
+            border-radius: 50px;
+            color: #ffffff;
+            font-size: 0.95rem;
+            font-weight: 500;
+            white-space: nowrap;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .category-badge:hover {
+            background: linear-gradient(135deg, rgba(67,232,123,0.2) 0%, rgba(56,249,215,0.2) 100%);
+            border-color: rgba(67,232,123,0.6);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(67,232,123,0.2);
+        }
+
+        @media(max-width:768px){ 
+            .header { padding: 15px 20px; }
+            .logo { font-size: 24px; }
+            .hero { padding: 100px 20px 40px; }
+            .hero h1 { font-size: 36px; }
+            .hero p { font-size: 16px; }
+            .admission-section, .pricing-section { padding: 60px 20px; }
+            .admission-title, .pricing-title { font-size: 32px; }
+            .stats, .search-container, .section-title, .states-grid, .top-institutions { padding-left: 20px; padding-right: 20px; }
+            .stats { grid-template-columns: repeat(2, 1fr); gap: 15px; }
+            .state-card { padding: 20px; }
+            .nav-menu { display: none; }
+            .contact-grid, .pricing-grid { grid-template-columns: 1fr; }
+            .modal-content { padding: 30px 20px; }
+            .modal-title { font-size: 24px; }
+            .modal-body p, .modal-list li { font-size: 14px; }
+            .categories-title { font-size: 2rem; }
+            .categories-subtitle { font-size: 1rem; }
+            .category-badge { font-size: 0.85rem; padding: 0.6rem 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Disclaimer Modal -->
+    <div class="modal-overlay" id="disclaimerModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <div class="modal-header">
+                <div class="modal-icon">⚠️</div>
+                <h2 class="modal-title">Important Notice</h2>
+            </div>
+            <div class="modal-body">
+                <p><strong>UNIHUB INDIA is currently in the development phase.</strong></p>
+                <p>Please read the following important disclaimers carefully:</p>
+                
+                <ul class="modal-list">
+                    <li>The data and information displayed on this platform may be <strong>incomplete or incorrect</strong> as we are still in development.</li>
+                    
+                    <li>We <strong>DO NOT guarantee admission</strong> to any college or institution listed on this platform.</li>
+                    
+                    <li>Browsing and searching colleges on UNIHUB INDIA is <strong>100% FREE</strong>. You only pay when submitting applications.</li>
+                    
+                    <li>All information is provided for <strong>reference purposes only</strong>. Please verify details directly with respective institutions.</li>
+                </ul>
+                
+                <div class="modal-note">
+                    <p style="margin: 0;"><strong>Note:</strong> By continuing to use this platform, you acknowledge that you have read and understood this disclaimer.</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="modal-btn" onclick="closeModal()">I Understand & Continue</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <div class="header" id="header">
+        <div class="logo">UNIHUB INDIA</div>
+        <nav class="nav-menu">
+            <a href="#states">Browse States</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#admission">Get Admission</a>
+            <a href="#institutions">Top Colleges</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <button class="search-icon" onclick="document.getElementById('searchInput').focus()">🔍</button>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>Your Gateway to College Admissions</h1>
+        <p>Browse 10,343+ Institutions Across 28 States & UTs | Free to Search | Pay Only When You Apply</p>
+        <a href="#admission" class="hero-cta">Get Admission Now</a>
+    </div>
+
+    <!-- Stats Section -->
+    <div class="stats">
+        <div class="stat-card">
+            <div class="stat-number">28</div>
+            <div class="stat-label">States & UTs Covered</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">10,343</div>
+            <div class="stat-label">Colleges Available</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Free to Browse</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">24/7</div>
+            <div class="stat-label">Admission Support</div>
+        </div>
+    </div>
+
+    <!-- Pricing Section -->
+    <div class="pricing-section" id="pricing">
+        <div class="pricing-content">
+            <h2 class="pricing-title">💰 Simple & Transparent Pricing</h2>
+            <p class="pricing-subtitle">Browse colleges for FREE. Pay only when you decide to apply.</p>
+            
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-icon">🆓</div>
+                    <div class="pricing-label">Free Browsing</div>
+                    <div class="pricing-amount">₹0</div>
+                    <div class="pricing-info">
+                        • Search all colleges<br>
+                        • Compare institutions<br>
+                        • Save favorites<br>
+                        • View complete details<br>
+                        • No hidden charges
+                    </div>
+                </div>
+                
+                <div class="pricing-card">
+                    <div class="pricing-icon">📝</div>
+                    <div class="pricing-label">Application Package</div>
+                    <div class="pricing-amount">₹299</div>
+                    <div class="pricing-info">
+                        • Apply to up to 5 colleges<br>
+                        • Platform processing fee<br>
+                        • Application tracking<br>
+                        • Email & WhatsApp support<br>
+                        • Includes GST
+                    </div>
+                </div>
+                
+                <div class="pricing-card">
+                    <div class="pricing-icon">➕</div>
+                    <div class="pricing-label">Additional College</div>
+                    <div class="pricing-amount">₹49</div>
+                    <div class="pricing-info">
+                        • Each college beyond 5<br>
+                        • Same features as package<br>
+                        • Apply to unlimited colleges<br>
+                        • All-inclusive pricing<br>
+                        • GST included
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pricing-note">
+                <p><strong>💡 How It Works:</strong> Creating an account and browsing colleges on UniHub is completely free. There is no charge to search, compare colleges, or save your favorites. You only pay when you decide to submit applications. The application fee is ₹299 for up to 5 colleges, with each additional college costing ₹49. This includes the platform fee, college application processing, and GST.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Admission Categories Showcase -->
+    <div class="categories-showcase">
+        <div class="categories-content">
+            <h2 class="categories-title">🎓 Admission Categories We Cover</h2>
+            <p class="categories-subtitle">Comprehensive coverage across all major educational streams</p>
+        </div>
+        
+        <div class="categories-marquee">
+            <div class="categories-track">
+                <!-- First set of categories -->
+                <div class="category-badge">🔧 Engineering</div>
+                <div class="category-badge">⚕️ Medical (MBBS/BDS)</div>
+                <div class="category-badge">💼 Management (MBA/BBA)</div>
+                <div class="category-badge">⚖️ Law (LLB/BA LLB)</div>
+                <div class="category-badge">🎨 Arts & Humanities</div>
+                <div class="category-badge">🔬 Science (BSc/MSc)</div>
+                <div class="category-badge">💰 Commerce (BCom/MCom)</div>
+                <div class="category-badge">💊 Pharmacy (B.Pharm/D.Pharm)</div>
+                <div class="category-badge">🌿 Agriculture & Allied</div>
+                <div class="category-badge">🏥 Nursing & Allied Health</div>
+                <div class="category-badge">🏗️ Architecture & Planning</div>
+                <div class="category-badge">👨‍🏫 Education (B.Ed/M.Ed)</div>
+                <div class="category-badge">💻 Computer Applications (BCA/MCA)</div>
+                <div class="category-badge">🏨 Hotel Management</div>
+                <div class="category-badge">📊 Chartered Accountancy</div>
+                <div class="category-badge">🎬 Mass Communication</div>
+                <div class="category-badge">🎭 Fine Arts & Design</div>
+                <div class="category-badge">🧪 Biotechnology</div>
+                <div class="category-badge">🔋 Electronics & Telecom</div>
+                <div class="category-badge">⚡ Electrical Engineering</div>
+                <div class="category-badge">🏭 Mechanical Engineering</div>
+                <div class="category-badge">👔 Civil Engineering</div>
+                <div class="category-badge">💾 IT & Software</div>
+                <div class="category-badge">🌐 Cyber Security</div>
+                <div class="category-badge">🤖 Artificial Intelligence</div>
+                <div class="category-badge">📈 Data Science</div>
+                <div class="category-badge">🦷 Dental (BDS/MDS)</div>
+                <div class="category-badge">🌱 Ayurveda (BAMS)</div>
+                <div class="category-badge">💉 Homeopathy (BHMS)</div>
+                <div class="category-badge">🧘 Yoga & Naturopathy</div>
+                <div class="category-badge">🔬 Physiotherapy (BPT/MPT)</div>
+                <div class="category-badge">🩺 Paramedical Sciences</div>
+                <div class="category-badge">🎓 Research Programs (PhD)</div>
+                <div class="category-badge">📚 Library Science</div>
+                <div class="category-badge">🗣️ Social Work (MSW)</div>
+                <div class="category-badge">🌍 Environmental Science</div>
+                <div class="category-badge">🔭 Physics & Astronomy</div>
+                <div class="category-badge">🧬 Chemistry & Biochemistry</div>
+                <div class="category-badge">📐 Mathematics & Statistics</div>
+                <div class="category-badge">🏀 Physical Education</div>
+                
+                <!-- Duplicate set for seamless loop -->
+                <div class="category-badge">🔧 Engineering</div>
+                <div class="category-badge">⚕️ Medical (MBBS/BDS)</div>
+                <div class="category-badge">💼 Management (MBA/BBA)</div>
+                <div class="category-badge">⚖️ Law (LLB/BA LLB)</div>
+                <div class="category-badge">🎨 Arts & Humanities</div>
+                <div class="category-badge">🔬 Science (BSc/MSc)</div>
+                <div class="category-badge">💰 Commerce (BCom/MCom)</div>
+                <div class="category-badge">💊 Pharmacy (B.Pharm/D.Pharm)</div>
+                <div class="category-badge">🌿 Agriculture & Allied</div>
+                <div class="category-badge">🏥 Nursing & Allied Health</div>
+                <div class="category-badge">🏗️ Architecture & Planning</div>
+                <div class="category-badge">👨‍🏫 Education (B.Ed/M.Ed)</div>
+                <div class="category-badge">💻 Computer Applications (BCA/MCA)</div>
+                <div class="category-badge">🏨 Hotel Management</div>
+                <div class="category-badge">📊 Chartered Accountancy</div>
+                <div class="category-badge">🎬 Mass Communication</div>
+                <div class="category-badge">🎭 Fine Arts & Design</div>
+                <div class="category-badge">🧪 Biotechnology</div>
+                <div class="category-badge">🔋 Electronics & Telecom</div>
+                <div class="category-badge">⚡ Electrical Engineering</div>
+                <div class="category-badge">🏭 Mechanical Engineering</div>
+                <div class="category-badge">👔 Civil Engineering</div>
+                <div class="category-badge">💾 IT & Software</div>
+                <div class="category-badge">🌐 Cyber Security</div>
+                <div class="category-badge">🤖 Artificial Intelligence</div>
+                <div class="category-badge">📈 Data Science</div>
+                <div class="category-badge">🦷 Dental (BDS/MDS)</div>
+                <div class="category-badge">🌱 Ayurveda (BAMS)</div>
+                <div class="category-badge">💉 Homeopathy (BHMS)</div>
+                <div class="category-badge">🧘 Yoga & Naturopathy</div>
+                <div class="category-badge">🔬 Physiotherapy (BPT/MPT)</div>
+                <div class="category-badge">🩺 Paramedical Sciences</div>
+                <div class="category-badge">🎓 Research Programs (PhD)</div>
+                <div class="category-badge">📚 Library Science</div>
+                <div class="category-badge">🗣️ Social Work (MSW)</div>
+                <div class="category-badge">🌍 Environmental Science</div>
+                <div class="category-badge">🔭 Physics & Astronomy</div>
+                <div class="category-badge">🧬 Chemistry & Biochemistry</div>
+                <div class="category-badge">📐 Mathematics & Statistics</div>
+                <div class="category-badge">🏀 Physical Education</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Admission CTA Section -->
+    <div class="admission-section" id="admission">
+        <div class="admission-content">
+            <h2 class="admission-title">🎓 Want to Get Admission?</h2>
+            <p class="admission-subtitle">Connect with us for direct college admissions - Engineering, Medical, Management, Law & More!</p>
+            
+            <div class="contact-grid">
+                <div class="contact-card" onclick="window.location.href='tel:7783885537'">
+                    <div class="contact-icon">📞</div>
+                    <div class="contact-label">Call Us</div>
+                    <div class="contact-info"><a href="tel:7783885537">7783885537</a></div>
+                </div>
+                
+                <div class="contact-card" onclick="window.open('https://wa.me/917783885537', '_blank')">
+                    <div class="contact-icon">💬</div>
+                    <div class="contact-label">WhatsApp</div>
+                    <div class="contact-info"><a href="https://wa.me/917783885537" target="_blank">7783885537</a></div>
+                </div>
+                
+                <div class="contact-card" onclick="window.location.href='mailto:santoshkumarmehta5537@gmail.com'">
+                    <div class="contact-icon">✉️</div>
+                    <div class="contact-label">Email Us</div>
+                    <div class="contact-info"><a href="/cdn-cgi/l/email-protection#a9dac8c7ddc6dac1c2dcc4c8dbc4ccc1ddc89c9c9a9ee9cec4c8c0c587cac6c4"><span class="__cf_email__" data-cfemail="364557584259455e5d435b57445b535e42570303050176515b575f5a1855595b">[email&#160;protected]</span></a></div>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">📷</div>
+                    <div class="contact-label">Instagram</div>
+                    <div class="contact-info" style="color: #b3b3b3; font-size: 14px;">Coming Soon</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Search Bar -->
+    <div class="search-container">
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search for colleges, states, courses..." onkeyup="filterStates()">
+            <button class="search-btn">Search</button>
+        </div>
+    </div>
+
+    <!-- States Grid -->
+    <div id="states">
+        <h2 class="section-title">Browse Colleges by State</h2>
+        <div class="states-grid" id="statesGrid"></div>
+    </div>
+
+    <!-- Top Institutions -->
+    <div class="top-institutions" id="institutions">
+        <h2 class="section-title" style="padding: 0; margin-bottom: 40px;">Get Admission in Top Institutions</h2>
+        <div class="institutions-grid">
+            <div class="institution-card">
+                <div class="inst-name">IIT Bombay</div>
+                <div class="inst-location">Mumbai, Maharashtra</div>
+                <span class="inst-badge">NIRF #1</span>
+            </div>
+            <div class="institution-card">
+                <div class="inst-name">IIT Delhi</div>
+                <div class="inst-location">New Delhi</div>
+                <span class="inst-badge">NIRF #2</span>
+            </div>
+            <div class="institution-card">
+                <div class="inst-name">IIT Madras</div>
+                <div class="inst-location">Chennai, Tamil Nadu</div>
+                <span class="inst-badge">NIRF #3</span>
+            </div>
+            <div class="institution-card">
+                <div class="inst-name">IIT Kanpur</div>
+                <div class="inst-location">Kanpur, Uttar Pradesh</div>
+                <span class="inst-badge">NIRF #4</span>
+            </div>
+            <div class="institution-card">
+                <div class="inst-name">IIT Kharagpur</div>
+                <div class="inst-location">Kharagpur, West Bengal</div>
+                <span class="inst-badge">NIRF #5</span>
+            </div>
+            <div class="institution-card">
+                <div class="inst-name">IIT Roorkee</div>
+                <div class="inst-location">Roorkee, Uttarakhand</div>
+                <span class="inst-badge">NIRF #6</span>
+            </div>
+            <div class="institution-card">
+                <div class="inst-name">IIT Guwahati</div>
+                <div class="inst-location">Guwahati, Assam</div>
+                <span class="inst-badge">NIRF #7</span>
+            </div>
+            <div class="institution-card">
+                <div class="inst-name">AIIMS Delhi</div>
+                <div class="inst-location">New Delhi</div>
+                <span class="inst-badge">PREMIER MEDICAL</span>
+            </div>
+            <div class="institution-card">
+                <div class="inst-name">IIM Ahmedabad</div>
+                <div class="inst-location">Ahmedabad, Gujarat</div>
+                <span class="inst-badge">NIRF #1 MGMT</span>
+            </div>
+            <div class="institution-card">
+                <div class="inst-name">IIM Bangalore</div>
+                <div class="inst-location">Bangalore, Karnataka</div>
+                <span class="inst-badge">NIRF #2 MGMT</span>
+            </div>
+            <div class="institution-card">
+                <div class="inst-name">NALSAR Hyderabad</div>
+                <div class="inst-location">Hyderabad, Telangana</div>
+                <span class="inst-badge">NLU #2</span>
+            </div>
+            <div class="institution-card">
+                <div class="inst-name">NLU Delhi</div>
+                <div class="inst-location">New Delhi</div>
+                <span class="inst-badge">NLU #1</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer" id="contact">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About UNIHUB INDIA</h3>
+                <p>Your trusted admission partner for 10,343 institutions across 28 states and union territories.</p>
+                <p>We provide direct admission assistance in Engineering, Medical, Management, Law, Arts & Science colleges.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="#states">Browse States</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#admission">Get Admission</a>
+                <a href="#institutions">Top Colleges</a>
+                <a href="#contact">Contact Us</a>
+            </div>
+            <div class="footer-section">
+                <h3>Legal & Policies</h3>
+                <a href="UNIHUB-privacy-policy.html">Privacy Policy</a>
+                <a href="#">Terms & Conditions</a>
+                <a href="#">Refund Policy</a>
+                <a href="#">Disclaimer</a>
+                <a href="#">FAQs</a>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Information</h3>
+                <p>📞 Phone: <a href="tel:7783885537" style="color:#e50914;">7783885537</a></p>
+                <p>💬 WhatsApp: <a href="https://wa.me/917783885537" style="color:#e50914;" target="_blank">7783885537</a></p>
+                <p>✉️ Email: <a href="/cdn-cgi/l/email-protection#473426293328342f2c322a26352a222f33267272747007202a262e2b6924282a" style="color:#e50914;"><span class="__cf_email__" data-cfemail="3546545b415a465d5e4058544758505d415400000602755258545c591b565a58">[email&#160;protected]</span></a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 UNIHUB INDIA. Your Gateway to College Admissions. All Rights Reserved.</p>
+            <p style="margin-top:10px; color:#666;">Covering 28 States & UTs: West Bengal • Tamil Nadu • Madhya Pradesh • Gujarat • Andhra Pradesh • Uttar Pradesh • Telangana • Karnataka • Maharashtra • Rajasthan • Bihar • Kerala • Odisha • Punjab • Haryana • Manipur • Jammu & Kashmir • Nagaland • Arunachal Pradesh • Jharkhand • Delhi NCT • Assam • Meghalaya • Chhattisgarh • Tripura • Uttarakhand • Goa • Himachal Pradesh</p>
+        </div>
+    </div>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        // States data - ALL 28 STATES/UTs
+        const states = [
+            {rank: 1, name: "West Bengal", count: 620, file: "UNIHUB-west-bengal-COMPLETE.html", highlights: ["IIT KGP", "Presidency", "Jadavpur"]},
+            {rank: 2, name: "Tamil Nadu", count: 503, file: "UNIHUB-tamil-nadu-COMPLETE.html", highlights: ["IIT Madras", "Anna Univ", "NIT Trichy"]},
+            {rank: 3, name: "Madhya Pradesh", count: 492, file: "UNIHUB-madhya-pradesh-COMPLETE.html", highlights: ["IIT Indore", "IIM Indore", "AIIMS Bhopal"]},
+            {rank: 4, name: "Gujarat", count: 471, file: "UNIHUB-gujarat-COMPLETE.html", highlights: ["IIT Gandhinagar", "IIM Ahmedabad", "PDPU"]},
+            {rank: 5, name: "Andhra Pradesh", count: 468, file: "UNIHUB-andhra-pradesh-COMPLETE.html", highlights: ["IIT Tirupati", "NIT AP", "GITAM"]},
+            {rank: 6, name: "Uttar Pradesh", count: 466, file: "UNIHUB-uttar-pradesh-COMPLETE.html", highlights: ["IIT Kanpur", "IIT BHU", "AMU"]},
+            {rank: 7, name: "Telangana", count: 459, file: "UNIHUB-telangana-COMPLETE.html", highlights: ["IIT Hyderabad", "IIIT Hyderabad", "NALSAR"]},
+            {rank: 8, name: "Karnataka", count: 451, file: "UNIHUB-karnataka-COMPLETE.html", highlights: ["IISc", "IIM Bangalore", "NLSIU"]},
+            {rank: 9, name: "Maharashtra", count: 448, file: "UNIHUB-maharashtra-COMPLETE.html", highlights: ["IIT Bombay", "VJTI", "SPPU"]},
+            {rank: 10, name: "Rajasthan", count: 438, file: "UNIHUB-rajasthan-COMPLETE.html", highlights: ["IIT Jodhpur", "BITS Pilani", "NLU Jodhpur"]},
+            {rank: 11, name: "Bihar", count: 429, file: "UNIHUB-bihar-COMPLETE.html", highlights: ["IIT Patna", "NIT Patna", "AIIMS Patna"]},
+            {rank: 12, name: "Kerala", count: 423, file: "UNIHUB-kerala-COMPLETE.html", highlights: ["IIT Palakkad", "IIM Kozhikode", "NIT Calicut"]},
+            {rank: 13, name: "Odisha", count: 414, file: "UNIHUB-odisha-COMPLETE.html", highlights: ["IIT Bhubaneswar", "AIIMS", "KIIT"]},
+            {rank: 14, name: "Punjab", count: 398, file: "UNIHUB-punjab-COMPLETE.html", highlights: ["IIT Ropar", "PU", "Thapar"]},
+            {rank: 15, name: "Haryana", count: 386, file: "UNIHUB-haryana-COMPLETE.html", highlights: ["NIT Kurukshetra", "IIM Rohtak", "Ashoka"]},
+            {rank: 16, name: "Manipur", count: 378, file: "UNIHUB-manipur-COMPLETE.html", highlights: ["NSU", "JNIMS", "RIMS"]},
+            {rank: 17, name: "Jammu & Kashmir", count: 329, file: "UNIHUB-jammu-kashmir-COMPLETE.html", highlights: ["IIT Jammu", "NIT Srinagar", "IIM Jammu"]},
+            {rank: 18, name: "Nagaland", count: 317, file: "UNIHUB-nagaland-COMPLETE.html", highlights: ["NIT Nagaland", "NU", "Baptist"]},
+            {rank: 19, name: "Arunachal Pradesh", count: 295, file: "UNIHUB-arunachal-pradesh-COMPLETE.html", highlights: ["NIT AP", "NERIST", "RGU"]},
+            {rank: 20, name: "Jharkhand", count: 288, file: "UNIHUB-jharkhand-COMPLETE.html", highlights: ["IIT ISM", "NIT Jamshedpur", "BIT Mesra"]},
+            {rank: 21, name: "Delhi NCT", count: 275, file: "UNIHUB-delhi-COMPLETE.html", highlights: ["IIT Delhi", "DU", "JNU"]},
+            {rank: 22, name: "Assam", count: 252, file: "UNIHUB-assam-COMPLETE.html", highlights: ["IIT Guwahati", "Cotton Univ", "Tezpur"]},
+            {rank: 23, name: "Meghalaya", count: 249, file: "UNIHUB-meghalaya-COMPLETE.html", highlights: ["IIM Shillong", "NIT", "NEHU"]},
+            {rank: 24, name: "Chhattisgarh", count: 241, file: "UNIHUB-chhattisgarh-COMPLETE.html", highlights: ["IIT Bhilai", "NIT Raipur", "HNLU"]},
+            {rank: 25, name: "Tripura", count: 227, file: "UNIHUB-tripura-COMPLETE.html", highlights: ["NIT Agartala", "TU", "ICFAI"]},
+            {rank: 26, name: "Uttarakhand", count: 215, file: "UNIHUB-uttarakhand-COMPLETE.html", highlights: ["IIT Roorkee", "NIT UK", "AIIMS"]},
+            {rank: 27, name: "Goa", count: 211, file: "UNIHUB-goa-COMPLETE.html", highlights: ["IIT Goa", "BITS Goa", "NIFTEM"]},
+            {rank: 28, name: "Himachal Pradesh", count: 200, file: "UNIHUB-himachal-pradesh-COMPLETE.html", highlights: ["IIT Mandi", "NIT Hamirpur", "AIIMS"]}
+        ];
+
+        // Render states
+        function renderStates(statesToShow = states) {
+            const grid = document.getElementById('statesGrid');
+            grid.innerHTML = statesToShow.map(state => `
+                <div class="state-card" onclick="window.location.href='${state.file}'">
+                    <div class="state-rank">#${state.rank}</div>
+                    <div class="state-name">${state.name}</div>
+                    <div class="state-count">${state.count}</div>
+                    <div class="state-label">Colleges Available</div>
+                    <div class="state-highlights">
+                        ${state.highlights.map(h => `<span class="highlight-badge">${h}</span>`).join('')}
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Filter states
+        function filterStates() {
+            const input = document.getElementById('searchInput').value.toLowerCase();
+            const filtered = states.filter(state => 
+                state.name.toLowerCase().includes(input) ||
+                state.highlights.some(h => h.toLowerCase().includes(input))
+            );
+            renderStates(filtered);
+        }
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Modal functions
+        function closeModal() {
+            const modal = document.getElementById('disclaimerModal');
+            modal.style.opacity = '0';
+            setTimeout(() => {
+                modal.style.display = 'none';
+            }, 300);
+        }
+
+        // Close modal on outside click
+        document.getElementById('disclaimerModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // Close modal on ESC key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        // Initial render
+        renderStates();
+    </script>
+</body>
+</html>
