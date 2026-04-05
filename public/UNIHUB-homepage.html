@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNIHUB INDIA - Your Gateway to College Admissions | 10,343+ Institutions Across 28 States</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
+            background-color: #141414; 
+            color: #ffffff; 
+            overflow-x: hidden; 
+        }
+        
+        /* Disclaimer Modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            backdrop-filter: blur(8px);
+        }
+        .modal-content {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            border: 2px solid #e50914;
+            border-radius: 16px;
+            max-width: 650px;
+            width: 90%;
+            padding: 40px;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(229, 9, 20, 0.4);
+            animation: slideUp 0.4s ease;
+        }
+        @keyframes slideUp {
+            from { transform: translateY(80px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .modal-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(229,9,20,0.3);
+        }
+        .modal-icon {
+            font-size: 50px;
+        }
+        .modal-title {
+            font-size: 30px;
+            font-weight: 700;
+            color: #ffffff;
+        }
+        .modal-body {
+            color: #e5e5e5;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+        .modal-body p {
+            margin-bottom: 15px;
+            font-size: 15px;
+        }
+        .modal-body strong {
+            color: #e50914;
+            font-weight: 600;
+        }
+        .modal-list {
+            list-style: none;
+            padding-left: 0;
+            margin: 20px 0;
+        }
+        .modal-list li {
+            padding: 12px 0 12px 35px;
+            position: relative;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+        .modal-list li:before {
+            content: "⚠️";
+            position: absolute;
+            left: 0;
+            font-size: 18px;
+        }
+        .modal-note {
+            margin-top: 20px;
+            padding: 18px;
+            background: rgba(229,9,20,0.1);
+            border-left: 4px solid #e50914;
+            border-radius: 6px;
+        }
+        .modal-footer {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 25px;
+        }
+        .modal-btn {
+            padding: 14px 35px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+            background: linear-gradient(135deg, #e50914 0%, #f40612 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(229,9,20,0.3);
+        }
+        .modal-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(229,9,20,0.5);
+        }
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(255,255,255,0.1);
+            border: none;
+            color: #999;
+            font-size: 24px;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+        .modal-close:hover {
+            background: rgba(229,9,20,0.2);
+            color: #e50914;
+        }
+        
+        /* Header */
+        .header { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 20px 50px; 
+            background: linear-gradient(180deg,rgba(0,0,0,0.9) 0%,rgba(0,0,0,0) 100%); 
+            position: fixed; 
+            top: 0; 
+            width: 100%; 
+            z-index: 1000; 
+            backdrop-filter: blur(10px);
+            transition: background 0.3s;
+        }
+        .header.scrolled { background: rgba(20,20,20,0.95); }
+        .logo { 
+            font-size: 32px; 
+            font-weight: 700; 
+            background: linear-gradient(135deg, #e50914 0%, #f40612 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 2px; 
+        }
+        .nav-menu { display: flex; gap: 30px; align-items: center; }
+        .nav-menu a { 
+            color: #e5e5e5; 
+            text-decoration: none; 
+            font-size: 14px; 
+            font-weight: 500; 
+            transition: color 0.3s; 
+        }
+        .nav-menu a:hover { color: #e50914; }
+        .search-icon { 
+            background: none; 
+            border: none; 
+            color: #ffffff; 
+            font-size: 20px; 
+            cursor: pointer; 
+            transition: transform 0.3s;
+        }
+        .search-icon:hover { transform: scale(1.1); }
+        
+        /* Hero Section */
+        .hero {
+            padding: 140px 50px 80px;
+            background: linear-gradient(135deg, rgba(229,9,20,0.15) 0%, rgba(0,0,0,0.8) 100%);
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 56px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #ffffff 0%, #e5e5e5 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero p {
+            font-size: 20px;
+            color: #b3b3b3;
+            margin-bottom: 40px;
+        }
+        .hero-cta {
+            display: inline-block;
+            background: linear-gradient(135deg, #e50914 0%, #f40612 100%);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(229,9,20,0.4);
+        }
+        .hero-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(229,9,20,0.6);
+        }
+        
+        /* Stats Section */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 50px;
+        }
+        .stat-card {
+            background: linear-gradient(135deg, rgba(229,9,20,0.1) 0%, rgba(0,0,0,0.5) 100%);
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid rgba(229,9,20,0.2);
+            transition: transform 0.3s, border-color 0.3s;
+        }
+        .stat-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(229,9,20,0.5);
+        }
+        .stat-number {
+            font-size: 48px;
+            font-weight: 700;
+            color: #e50914;
+            margin-bottom: 10px;
+        }
+        .stat-label {
+            font-size: 16px;
+            color: #b3b3b3;
+        }
+        
+        /* Pricing Section */
+        .pricing-section {
+            background: linear-gradient(135deg, rgba(67,232,123,0.1) 0%, rgba(56,249,215,0.05) 100%);
+            padding: 80px 50px;
+            margin: 60px 0;
+            border-top: 2px solid rgba(67,232,123,0.3);
+            border-bottom: 2px solid rgba(67,232,123,0.3);
+        }
+        .pricing-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .pricing-title {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #ffffff 0%, #e5e5e5 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .pricing-subtitle {
+            font-size: 18px;
+            color: #b3b3b3;
+            margin-bottom: 50px;
+        }
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .pricing-card {
+            background: rgba(255,255,255,0.05);
+            border: 2px solid rgba(67,232,123,0.3);
+            border-radius: 12px;
+            padding: 40px 30px;
+            transition: all 0.3s;
+        }
+        .pricing-card:hover {
+            background: rgba(67,232,123,0.1);
+            border-color: rgba(67,232,123,0.6);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(67,232,123,0.3);
+        }
+        .pricing-icon {
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+        .pricing-label {
+            font-size: 20px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 15px;
+        }
+        .pricing-amount {
+            font-size: 48px;
+            font-weight: 700;
+            color: #43e97b;
+            margin-bottom: 10px;
+        }
+        .pricing-info {
+            font-size: 14px;
+            color: #b3b3b3;
+            line-height: 1.8;
+            margin-top: 20px;
+        }
+        .pricing-note {
+            background: rgba(67,232,123,0.1);
+            border-left: 4px solid #43e97b;
+            padding: 20px;
+            border-radius: 6px;
+            margin-top: 30px;
+            text-align: left;
+        }
+        .pricing-note strong {
+            color: #43e97b;
+        }
+        
+        /* Admission CTA Section */
+        .admission-section {
+            background: linear-gradient(135deg, rgba(229,9,20,0.15) 0%, rgba(229,9,20,0.05) 100%);
+            padding: 80px 50px;
+            margin: 60px 0;
+            border-top: 2px solid rgba(229,9,20,0.3);
+            border-bottom: 2px solid rgba(229,9,20,0.3);
+        }
+        .admission-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .admission-title {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #ffffff 0%, #e5e5e5 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .admission-subtitle {
+            font-size: 18px;
+            color: #b3b3b3;
+            margin-bottom: 50px;
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .contact-card {
+            background: rgba(255,255,255,0.05);
+            border: 2px solid rgba(229,9,20,0.3);
+            border-radius: 12px;
+            padding: 30px;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        .contact-card:hover {
+            background: rgba(229,9,20,0.1);
+            border-color: rgba(229,9,20,0.6);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(229,9,20,0.3);
+        }
+        .contact-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+        .contact-label {
+            font-size: 16px;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+        .contact-info {
+            font-size: 18px;
+            color: #e50914;
+            font-weight: 600;
+            word-break: break-all;
+        }
+        .contact-card a {
+            color: #e50914;
+            text-decoration: none;
+        }
+        .contact-card a:hover {
+            color: #f40612;
+        }
+        
+        /* Search Bar */
+        .search-container {
+            max-width: 800px;
+            margin: 0 auto 60px;
+            padding: 0 50px;
+        }
+        .search-bar {
+            display: flex;
+            align-items: center;
+            background: rgba(255,255,255,0.1);
+            border-radius: 8px;
+            padding: 15px 20px;
+            border: 2px solid transparent;
+            transition: all 0.3s;
+        }
+        .search-bar:focus-within {
+            background: rgba(255,255,255,0.15);
+            border-color: #e50914;
+        }
+        .search-bar input {
+            flex: 1;
+            background: none;
+            border: none;
+            color: #ffffff;
+            font-size: 16px;
+            outline: none;
+        }
+        .search-bar input::placeholder {
+            color: #808080;
+        }
+        .search-btn {
+            background: #e50914;
+            border: none;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .search-btn:hover {
+            background: #f40612;
+        }
+        
+        /* Section Title */
+        .section-title {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            padding: 0 50px;
+        }
+        
+        /* States Grid */
+        .states-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 25px;
+            padding: 0 50px 60px;
+        }
+        .state-card {
+            background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%);
+            border-radius: 12px;
+            padding: 30px;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+        .state-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #e50914 0%, #f40612 100%);
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+        .state-card:hover::before {
+            transform: scaleX(1);
+        }
+        .state-card:hover {
+            transform: translateY(-8px);
+            background: linear-gradient(135deg, rgba(229,9,20,0.1) 0%, rgba(255,255,255,0.05) 100%);
+            border-color: rgba(229,9,20,0.3);
+            box-shadow: 0 10px 40px rgba(229,9,20,0.2);
+        }
+        .state-rank {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(229,9,20,0.9);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .state-name {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #ffffff;
+        }
+        .state-count {
+            font-size: 36px;
+            font-weight: 700;
+            color: #e50914;
+            margin-bottom: 8px;
+        }
+        .state-label {
+            font-size: 14px;
+            color: #b3b3b3;
+            margin-bottom: 15px;
+        }
+        .state-highlights {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+        }
+        .highlight-badge {
+            background: rgba(229,9,20,0.2);
+            color: #ffffff;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+        
+        /* Top Institutions */
+        .top-institutions {
+            background: rgba(255,255,255,0.03);
+            padding: 60px 50px;
+            margin: 40px 0;
+        }
+        .institutions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .institution-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 8px;
+            padding: 20px;
+            border-left: 4px solid #e50914;
+            transition: all 0.3s;
+        }
+        .institution-card:hover {
+            background: rgba(255,255,255,0.08);
+            transform: translateX(5px);
+        }
+        .inst-name {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #ffffff;
+        }
+        .inst-location {
+            font-size: 13px;
+            color: #b3b3b3;
+            margin-bottom: 10px;
+        }
+        .inst-badge {
+            display: inline-block;
+            background: rgba(229,9,20,0.9);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+        
+        /* Footer */
+        .footer {
+            background: rgba(0,0,0,0.8);
+            padding: 60px 50px 30px;
+            margin-top: 60px;
+        }
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .footer-section h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #e50914;
+        }
+        .footer-section p, .footer-section a {
+            font-size: 14px;
+            color: #b3b3b3;
+            line-height: 1.8;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .footer-section a:hover {
+            color: #ffffff;
+        }
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #808080;
+            font-size: 14px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header { padding: 15px 20px; }
+            .nav-menu { gap: 15px; }
+            .hero { padding: 100px 20px 50px; }
+            .hero h1 { font-size: 36px; }
+            .hero p { font-size: 16px; }
+            .section-title { font-size: 24px; padding: 0 20px; }
+            .states-grid { padding: 0 20px 40px; }
+            .stats { padding: 0 20px; }
+            .pricing-section { padding: 50px 20px; }
+            .admission-section { padding: 50px 20px; }
+            .search-container { padding: 0 20px; }
+            .top-institutions { padding: 40px 20px; }
+            .footer { padding: 40px 20px 20px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Disclaimer Modal -->
+    <div class="modal-overlay" id="disclaimerModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">✕</button>
+            <div class="modal-header">
+                <span class="modal-icon">⚠️</span>
+                <h2 class="modal-title">Important Disclaimer</h2>
+            </div>
+            <div class="modal-body">
+                <p>Welcome to <strong>UNIHUB INDIA</strong> - Your comprehensive gateway to higher education admissions across India.</p>
+                <p>Please read the following important information before using our platform:</p>
+                <ul class="modal-list">
+                    <li><strong>Educational Information Hub:</strong> UNIHUB INDIA is an independent educational information platform. We are not affiliated with any government body or educational institution.</li>
+                    <li><strong>Data Accuracy:</strong> While we strive to provide accurate and up-to-date information about colleges, universities, courses, and admission processes, we cannot guarantee 100% accuracy of all data.</li>
+                    <li><strong>Not Official Admission Portal:</strong> This is not an official college admission portal. For official admissions, please visit the respective institution's official website.</li>
+                    <li><strong>Eligibility & Requirements:</strong> Educational requirements, eligibility criteria, and admission processes are subject to change. Always verify with the official institution.</li>
+                </ul>
+                <div class="modal-note">
+                    <strong>Note:</strong> Users are solely responsible for verifying all information and taking appropriate decisions based on their research and consultation with educational counselors.
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="modal-btn" onclick="closeModal()">I Understand & Accept</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="logo">UNIHUB INDIA</div>
+        <nav class="nav-menu">
+            <a href="#home">Home</a>
+            <a href="#colleges">Colleges</a>
+            <a href="#courses">Courses</a>
+            <a href="#states">By States</a>
+            <a href="#contact">Contact</a>
+            <button class="search-icon" onclick="toggleSearch()">🔍</button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <h1>Your Gateway to College Admissions</h1>
+        <p>Explore 10,343+ institutions across 28 states | Find your perfect college match</p>
+        <a href="#search" class="hero-cta">Explore Colleges Now</a>
+    </section>
+
+    <!-- Stats Section -->
+    <div class="stats">
+        <div class="stat-card">
+            <div class="stat-number">10,343+</div>
+            <div class="stat-label">Colleges & Universities</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">28</div>
+            <div class="stat-label">States & Union Territories</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">5M+</div>
+            <div class="stat-label">Active Users</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">500K+</div>
+            <div class="stat-label">Successful Admissions</div>
+        </div>
+    </div>
+
+    <!-- Search Bar -->
+    <div class="search-container" id="search">
+        <div class="search-bar">
+            <input type="text" placeholder="Search colleges, courses, universities...">
+            <button class="search-btn">Search</button>
+        </div>
+    </div>
+
+    <!-- States Section -->
+    <h2 class="section-title" id="states">Explore Colleges by State</h2>
+    <div class="states-grid">
+        <div class="state-card">
+            <div class="state-rank">1</div>
+            <div class="state-name">Maharashtra</div>
+            <div class="state-count">1,245</div>
+            <div class="state-label">Colleges & Universities</div>
+            <div class="state-highlights">
+                <span class="highlight-badge">Top IITs</span>
+                <span class="highlight-badge">Research Hub</span>
+            </div>
+        </div>
+        <div class="state-card">
+            <div class="state-rank">2</div>
+            <div class="state-name">Karnataka</div>
+            <div class="state-count">1,089</div>
+            <div class="state-label">Colleges & Universities</div>
+            <div class="state-highlights">
+                <span class="highlight-badge">Tech Hub</span>
+                <span class="highlight-badge">Innovation</span>
+            </div>
+        </div>
+        <div class="state-card">
+            <div class="state-rank">3</div>
+            <div class="state-name">Uttar Pradesh</div>
+            <div class="state-count">967</div>
+            <div class="state-label">Colleges & Universities</div>
+            <div class="state-highlights">
+                <span class="highlight-badge">Large Network</span>
+                <span class="highlight-badge">Affordable</span>
+            </div>
+        </div>
+        <div class="state-card">
+            <div class="state-rank">4</div>
+            <div class="state-name">Delhi</div>
+            <div class="state-count">854</div>
+            <div class="state-label">Colleges & Universities</div>
+            <div class="state-highlights">
+                <span class="highlight-badge">Elite Colleges</span>
+                <span class="highlight-badge">DU, JNU</span>
+            </div>
+        </div>
+        <div class="state-card">
+            <div class="state-rank">5</div>
+            <div class="state-name">Tamil Nadu</div>
+            <div class="state-count">789</div>
+            <div class="state-label">Colleges & Universities</div>
+            <div class="state-highlights">
+                <span class="highlight-badge">Quality Education</span>
+                <span class="highlight-badge">Engineering</span>
+            </div>
+        </div>
+        <div class="state-card">
+            <div class="state-rank">6</div>
+            <div class="state-name">Telangana</div>
+            <div class="state-count">712</div>
+            <div class="state-label">Colleges & Universities</div>
+            <div class="state-highlights">
+                <span class="highlight-badge">Growing Hub</span>
+                <span class="highlight-badge">IT Focus</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Top Institutions Section -->
+    <div class="top-institutions" id="colleges">
+        <h2 class="section-title">Top Institutions in India</h2>
+        <div class="institutions-grid">
+            <div class="institution-card">
+                <div class="inst-name">Indian Institute of Technology (IIT) Delhi</div>
+                <div class="inst-location">Delhi</div>
+                <span class="inst-badge">Engineering Excellence</span>
+            </div>
+            <div class="institution-card">
+                <div class="inst-name">Indian Institute of Technology (IIT) Bombay</div>
+                <div class="inst-location">Mumbai, Maharashtra</div>
+                <span class="inst-badge">Top Ranked</span>
+            </div>
+            <div class="institution-card">
+                <div class="inst-name">Indian Institute of Technology (IIT) Madras</div>
+                <div class="inst-location">Chennai, Tamil Nadu</div>
+                <span class="inst-badge">Engineering Excellence</span>
+            </div>
+            <div class="institution-card">
+                <div class="inst-name">Delhi University (DU)</div>
+                <div class="inst-location">Delhi</div>
+                <span class="inst-badge">Humanities & Sciences</span>
+            </div>
+            <div class="institution-card">
+                <div class="inst-name">University of Delhi (St. Stephen's College)</div>
+                <div class="inst-location">Delhi</div>
+                <span class="inst-badge">Elite College</span>
+            </div>
+            <div class="institution-card">
+                <div class="inst-name">Jawaharlal Nehru University (JNU)</div>
+                <div class="inst-location">Delhi</div>
+                <span class="inst-badge">Research University</span>
+            </div>
+            <div class="institution-card">
+                <div class="inst-name">Indian Institute of Science (IISc)</div>
+                <div class="inst-location">Bangalore, Karnataka</div>
+                <span class="inst-badge">Research Excellence</span>
+            </div>
+            <div class="institution-card">
+                <div class="inst-name">National Institute of Technology (NIT) Trichy</div>
+                <div class="inst-location">Tiruchirappalli, Tamil Nadu</div>
+                <span class="inst-badge">Engineering Quality</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pricing Section -->
+    <section class="pricing-section" id="pricing">
+        <div class="pricing-content">
+            <h2 class="pricing-title">Flexible Pricing Plans</h2>
+            <p class="pricing-subtitle">Choose the plan that works best for your educational goals</p>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-icon">🎓</div>
+                    <div class="pricing-label">Free Tier</div>
+                    <div class="pricing-amount">FREE</div>
+                    <div class="pricing-info">
+                        • Browse unlimited colleges<br>
+                        • Access basic information<br>
+                        • Compare institutions<br>
+                        • View admission criteria
+                    </div>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-icon">⭐</div>
+                    <div class="pricing-label">Premium</div>
+                    <div class="pricing-amount">₹299</div>
+                    <div class="pricing-info">
+                        • Everything in Free<br>
+                        • Priority support<br>
+                        • Detailed college reports<br>
+                        • Admission timeline alerts
+                    </div>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-icon">👑</div>
+                    <div class="pricing-label">Pro</div>
+                    <div class="pricing-amount">₹799</div>
+                    <div class="pricing-info">
+                        • Everything in Premium<br>
+                        • 1-on-1 counseling<br>
+                        • Document verification<br>
+                        • Application support
+                    </div>
+                </div>
+            </div>
+            <div class="pricing-note">
+                <strong>Special Note:</strong> All plans include lifetime access to our college database and regular updates on new institutions and course offerings.
+            </div>
+        </div>
+    </section>
+
+    <!-- Admission CTA Section -->
+    <section class="admission-section" id="contact">
+        <div class="admission-content">
+            <h2 class="admission-title">Get in Touch With Us</h2>
+            <p class="admission-subtitle">Have questions? Our team is here to help you find the perfect college</p>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">📧</div>
+                    <div class="contact-label">Email</div>
+                    <div class="contact-info"><a href="mailto:info@unihubindia.com">info@unihubindia.com</a></div>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">📱</div>
+                    <div class="contact-label">Phone</div>
+                    <div class="contact-info"><a href="tel:+919999999999">+91 9999 999 999</a></div>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">💬</div>
+                    <div class="contact-label">WhatsApp</div>
+                    <div class="contact-info"><a href="https://wa.me/919999999999">Chat with us</a></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About UNIHUB INDIA</h3>
+                <p>Your comprehensive gateway to higher education admissions across India. Explore thousands of colleges, compare courses, and make informed decisions about your educational future.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="#home">Home</a>
+                <a href="#colleges">Colleges</a>
+                <a href="#states">States</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <a href="terms.html">Terms of Service</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="refund-policy.html">Refund Policy</a>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">LinkedIn</a>
+                <a href="#">Instagram</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 UNIHUB INDIA. All rights reserved. | Not affiliated with any government body or educational institution.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Close Disclaimer Modal
+        function closeModal() {
+            const modal = document.getElementById('disclaimerModal');
+            modal.style.display = 'none';
+        }
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Toggle search visibility
+        function toggleSearch() {
+            const searchContainer = document.getElementById('search');
+            searchContainer.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('disclaimerModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // Smooth scrolling for nav links
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href.startsWith('#')) {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
