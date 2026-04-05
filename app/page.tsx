@@ -1,7 +1,6 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { westBengalColleges, searchColleges, type College } from './data/colleges-wb'
 
 interface State {
   rank: number
@@ -18,8 +17,6 @@ export default function Home() {
   const [isHeaderScrolled, setIsHeaderScrolled] = useState(false)
   const [isModalOpen, setIsModalOpen] = useState(true)
   const [isModalClosing, setIsModalClosing] = useState(false)
-  const [collegeSearch, setCollegeSearch] = useState('')
-  const [filteredColleges, setFilteredColleges] = useState<College[]>([])
 
   const statesData: State[] = [
     {
@@ -261,11 +258,6 @@ export default function Home() {
         state.highlights.some((h) => h.toLowerCase().includes(lowerQuery))
     )
     setFilteredStates(filtered)
-  }
-
-  const handleCollegeSearch = (query: string) => {
-    setCollegeSearch(query)
-    setFilteredColleges(searchColleges(query))
   }
 
   const categories = [
@@ -616,71 +608,6 @@ export default function Home() {
             </div>
           ))}
         </div>
-      </div>
-
-      {/* West Bengal Colleges Directory */}
-      <div className="west-bengal-section" id="west-bengal">
-        <h2 className="section-title">🎓 West Bengal - Complete College Directory</h2>
-        <p className="section-subtitle">620 Total Institutions | 11 Categories | Comprehensive Coverage</p>
-
-        {/* College Search */}
-        <div className="college-search-container">
-          <input
-            type="text"
-            placeholder="Search colleges, locations, categories..."
-            value={collegeSearch}
-            onChange={(e) => handleCollegeSearch(e.target.value)}
-            className="college-search-input"
-          />
-        </div>
-
-        {/* College Categories */}
-        {!collegeSearch ? (
-          <div className="college-categories">
-            {westBengalColleges.map((category, idx) => (
-              <div key={idx} className="college-category">
-                <div className="category-header">
-                  <h3 className="category-name">{category.name}</h3>
-                  <span className="category-count">{category.count} institutions</span>
-                </div>
-                <div className="college-grid">
-                  {category.colleges.map((college) => (
-                    <div key={college.id} className="college-card">
-                      <div className="college-code">{college.code}</div>
-                      <div className="college-name">{college.name}</div>
-                      <div className="college-location">📍 {college.location}</div>
-                      {college.established && (
-                        <div className="college-established">Est. {college.established}</div>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        ) : filteredColleges.length > 0 ? (
-          <div className="college-search-results">
-            <p className="search-results-count">Found {filteredColleges.length} colleges</p>
-            <div className="college-grid">
-              {filteredColleges.map((college) => (
-                <div key={college.id} className="college-card">
-                  <div className="college-code">{college.code}</div>
-                  <div className="college-name">{college.name}</div>
-                  <div className="college-location">📍 {college.location}</div>
-                  <div className="college-category-badge">{college.category}</div>
-                  {college.established && (
-                    <div className="college-established">Est. {college.established}</div>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
-        ) : (
-          <div className="no-results">
-            <p>No colleges found matching &quot;{collegeSearch}&quot;</p>
-            <p className="no-results-hint">Try searching by college name or location</p>
-          </div>
-        )}
       </div>
 
       {/* Footer */}
